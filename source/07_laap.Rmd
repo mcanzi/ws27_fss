@@ -1,5 +1,5 @@
 ---
-title: "Language analysis in the asylum procedure"
+title: "Linguistic analysis in the asylum procedure"
 subtitle: "Where did this speaker grow up?"
 author: "Dr Massimiliano Canzi"
 knit: (function(input, ...) rmarkdown::render(input, output_dir = file.path(dirname(input), "..", "docs")))
@@ -34,7 +34,7 @@ source("slides_setup.R", local = knitr::knit_global())
 
 <style>
   :root {
-    --footer-text:  "Language analysis in the asylum procedure";
+    --footer-text:  "Linguistic analysis in the asylum procedure";
     --qr:           `r qr_css`;
     --lecture:      `r lecture_label`;
   }
@@ -97,7 +97,7 @@ Without papers, two kinds of evidence can show where someone comes from: their b
 
 . . .
 
-[Language Analysis in the Asylum Procedure]{.hl} (LAAP, also [LADO]{.hl}, [LOID]{.hl} or [LingID]{.hl}) analyses a claimant's speech for features of language, dialect, grammar and vocabulary, as in speaker profiling, to test whether they grew up where they say.
+[Linguistic Analysis in the Asylum Procedure]{.hl} (LAAP, also [LADO]{.hl}, [LOID]{.hl} or [LingID]{.hl}) analyses a claimant's speech for features of language, dialect, grammar and vocabulary, as in speaker profiling, to test whether they grew up where they say.
 
 ## When is LAAP used?
 
@@ -352,7 +352,7 @@ For the practical sessions (book activity 7A):
 ## References {.refs}
 
 - Cambier-Langeveld, T. (2010). The role of linguists and native speakers in language analysis for the determination of speaker origin. _International Journal of Speech, Language and the Law_, 17(1), 67–93.
-- Cambier-Langeveld, T. (2018). Language analysis in the asylum procedure: Consider the context. In I. M. Nick (Ed.), _Forensic linguistics: Asylum-seekers, refugees and immigrants_ (pp. 1–21). Vernon Press.
+- Cambier-Langeveld, T. (2018). Linguistic analysis in the asylum procedure: Consider the context. In I. M. Nick (Ed.), _Forensic linguistics: Asylum-seekers, refugees and immigrants_ (pp. 1–21). Vernon Press.
 - Foulkes, P., & Wilson, K. (2011). Language analysis for the determination of origin: An empirical study. _Proceedings of the 17th International Congress of Phonetic Sciences_, 691–694.
 - Hoskin, J. (2022). _Shifting the burden: Towards new tests for language analysis in the asylum procedure_ [PhD thesis]. University of York.
 - Hubbuch, P. (2019). "We only want to talk...": Lingua interviews for linguistic analyses for the determination of origin. In P. Patrick, M. Schmid, & K. Zwaan (Eds.), _Language analysis for the determination of origin_ (pp. 41–59). Springer.
