@@ -48,7 +48,7 @@ _Sources: Wildlife Victoria; Dalziell et al. (2012), Animal Behaviour_
 
 ## Who I am
 
-I am Dr Massimiliano Canzi, [Max]{.hl} for short.
+I am Dr Massimiliano Canzi, Max for short.
 
 . . .
 
@@ -77,7 +77,7 @@ _Source: Dalziell & Welbergen (2016), Frontiers in Ecology and Evolution_
 
 ## How the course works
 
-- [Seminar]{.hl}, [day and time]: one chapter of the book per session, with discussion and exercises
+- Seminar, [day and time]: one chapter of the book per session, with discussion and exercises
 - Practical sessions with Praat, later in the semester: measuring speech yourself
 - Office hours: [day and time], by appointment
 - Ilias: announcements, readings and submissions
@@ -100,7 +100,7 @@ Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduc
 . . .
 
 - Written by practitioners and researchers in both fields
-- Real [cases]{.hl}, exercises and suggestions for further reading in every chapter
+- Real cases, exercises and suggestions for further reading in every chapter
 - We cover the forensic phonetics part: chapters 1 to 7, and chapter 13 on expert witnesses
 
 ## Syllabus
@@ -120,7 +120,7 @@ Each session follows one chapter of Leemann et al. (2024).
 
 ## Slides and materials
 
-The slides are written in [R Markdown]{.hl} and shown with `reveal.js`. Each week you get the slides (.html) and the readings.
+The slides are written in R Markdown and shown with `reveal.js`. Each week you get the slides (.html) and the readings.
 
 . . .
 
@@ -132,12 +132,12 @@ The book has exercises in every chapter, and we do many of them together.
 
 . . .
 
-- Forensic questions often have [no single correct answer]{.hl}, so we discuss how you reached yours and how sure you can be
+- Forensic questions often have no single correct answer, so we discuss how you reached yours and how sure you can be
 - Try each exercise before you read the solution
 
 ## What this course is, and is not
 
-This course gives you a [grounding]{.hl} in the methods and problems of forensic speech science, and can be a first step towards further study. Forensic phoneticians train for years, at postgraduate level and in forensic labs.
+This course gives you a grounding in the methods and problems of forensic speech science, and can be a first step towards further study. Forensic phoneticians train for years, at postgraduate level and in forensic labs.
 
 . . .
 
@@ -154,7 +154,7 @@ _Sources: Powys, Taylor & Probets (2013), Environmental Humanities; Probets, Tay
 ## Two fields
 
 - [Forensic phonetics]{.hl} deals with speech and voices as evidence: who is speaking and what was said, or whether a recording has been edited
-- Forensic linguistics deals with language as evidence, from the authorship of a text to the language of police interviews and courtrooms
+- [Forensic linguistics]{.hl} deals with language as evidence, from the authorship of a text to the language of police interviews and courtrooms
 
 . . .
 
@@ -169,7 +169,7 @@ Despite the names, few practitioners work in both. Most specialise further, so c
 
 When you answer the phone, you analyse the first few words, usually without noticing:
 
-- Do I know this [voice]{.hl}?
+- Do I know this voice?
 - Does it match the name on the screen?
 - Roughly how old is the caller, and do they sound local?
 - Do they sound calm?
@@ -196,7 +196,7 @@ A crude [speaker profile]{.hl}: /ʃ/ for Gileadites, /s/ for Ephraimites.
 
 ## Discussion
 
-Is the pronunciation of [one word]{.hl} enough to tell where someone is from?
+Is the pronunciation of one word enough to tell where someone is from?
 
 . . .
 
@@ -239,7 +239,7 @@ ggplot(vowels, aes(F2, F1, colour = recording)) +
   labs(x = "F2 (Hz)", y = "F1 (Hz)", colour = NULL)
 ```
 
-Simulated vowels: the same speaker never says a vowel twice the same way, and different speakers [overlap]{.hl}.
+Simulated vowels: the same speaker never says a vowel twice the same way, and different speakers overlap.
 
 ## What the book covers
 
@@ -263,20 +263,20 @@ _Source: Taylor (2014), The Conversation_
 ## Forensic science on TV
 
 - Experts collect samples, interview suspects and analyse everything, alone
-- Results arrive in [seconds]{.hl}, from impressive software
-- Conclusions are a match or a mismatch, "with 99.4% certainty"
+- Results arrive in seconds, from impressive software
+- Conclusions are a [match]{.hl} or a [mismatch]{.hl}, "with 99.4% certainty"
 - A "voiceprint" on screen matches a stored sample perfectly
 
 ## Forensic science in reality
 
-- Analyses take [days]{.hl}
+- Analyses take days
 - Experts rarely, if ever, report "match" or "mismatch": there is almost always some doubt
 - Objectivity and transparency matter more than speed
 - No two samples of speech are ever identical, so there is no such thing as a voice "match"
 
 ## Even DNA is not a "match"
 
-- A DNA sample from a crime scene is [identical]{.hl} to the suspect's DNA
+- A DNA sample from a crime scene is identical to the suspect's DNA
 - This does not mean the suspect committed the crime: it means they could have
 - So could everyone else who shares that profile, possibly thousands of people
 - Other evidence, such as where the suspect was or a motive, is for the court to weigh
@@ -285,8 +285,8 @@ _Source: Taylor (2014), The Conversation_
 
 The expert weighs the evidence under two competing [propositions]{.hl}:
 
-- Prosecution: the two samples come from the same source
-- Defence: the two samples come from different sources
+- [Prosecution]{.hl}: the two samples come from the same source
+- [Defence]{.hl}: the two samples come from different sources
 
 . . .
 
@@ -317,18 +317,18 @@ Simulated mean F0 of adult male speakers. Solid: offender. Dashed: suspect.
 
 ## Similar is not enough
 
-In both cases, the offender and the suspect differ by only [2 Hz]{.hl}. But:
+In both cases, the offender and the suspect differ by only 2 Hz. But:
 
 - Case 1: about [`r round(cases$share[1] * 100)`%]{.hl} of speakers have a mean F0 within 5 Hz of the offender's
 - Case 2: only about [`r round(cases$share[2] * 100, 1)`%]{.hl} do
 
 . . .
 
-The 2 Hz difference is much stronger evidence in case 2, because so few speakers have such a low F0. How common a feature is in the population is called its typicality.
+The 2 Hz difference is much stronger evidence in case 2, because so few speakers have such a low F0. How common a feature is in the population is called its [typicality]{.hl}.
 
 ## Discussion
 
-A TV expert says: "The voices match, with [99.4% certainty]{.hl}."
+A TV expert says: "The voices match, with 99.4% certainty."
 
 - What could the 99.4% possibly mean, and what would you need to know to judge it?
 - Who should decide whether the suspect is guilty?
@@ -343,19 +343,19 @@ _Source: Dalziell et al. (2021), Current Biology_
 
 ## The material
 
-- Forensic material ranges from the [mundane]{.hl} (phone calls about bank transfers) to the distressing (threats, recordings of crimes)
+- Forensic material ranges from the mundane (phone calls about bank transfers) to the distressing (threats, recordings of crimes)
 - Practitioners describe three main strains: graphic content, pressure, and cases that touch on personal experience (Giménez, Elstein & Queralt, 2020)
 - In this course we only work with the cases discussed in the book
 
 ## Offenders and victims
 
-- Notorious offenders are widely remembered; their [victims]{.hl} much less so
+- Notorious offenders are widely remembered; their victims much less so
 - In 2019, New Zealand's Prime Minister Jacinda Ardern refused to name the man who attacked two mosques in Christchurch
 - Forensic analyses often focus on the person who produced the speech, often the offender: the book asks readers to keep the people harmed in view, and to choose their words with care
 
 ## Ethics
 
-- Know the [limits]{.hl} of your expertise and of your methods, and never comment beyond them
+- Know the limits of your expertise and of your methods, and never comment beyond them
 - Be objective: no conclusion stronger or weaker than the analysis supports
 - The expert's duty is to the court, whichever side asked for the report
 - The accused is presumed innocent: if the evidence leaves doubt, the court must know
@@ -371,9 +371,9 @@ _Source: Dalziell et al. (2021), Current Biology_
 ## Summary
 
 ::: {.takeaway}
-- Forensic phonetics treats [speech]{.hl} as evidence; forensic linguistics treats language as evidence
+- Forensic phonetics treats [speech]{.hl} as evidence; forensic linguistics treats [language]{.hl} as evidence
 - No two speech samples are identical, so experts weigh similarities and differences and do not declare a "match"
-- Similarity counts only together with typicality
+- [Similarity]{.hl} counts only together with typicality
 - The expert assists the court, objectively, within the limits of their expertise
 - Cases involve real people, victims included, so we describe them with care
 :::
