@@ -1,0 +1,632 @@
+---
+title: "Phonetic analysis"
+subtitle: "Segments, prosody and acoustic measurement"
+author: "Dr Massimiliano Canzi"
+knit: (function(input, ...) rmarkdown::render(input, output_dir = file.path(dirname(input), "..", "docs")))
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    css: theme-purple.css
+    highlight: zenburn
+    incremental: true
+    transition: fade
+    background_transition: fade
+    self_contained: true
+    reveal_options:
+      width: 1050
+      height: 700
+      slideNumber: "c/t"
+      showSlideNumber: all
+      controls: true
+      touch: true
+      transitionSpeed: fast
+      navigationMode: linear
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10, fig.height = 4.4, out.width = "100%")
+library(tidyverse)
+
+source("slides_setup.R", local = knitr::knit_global())
+```
+
+# The Prinzivalli case
+
+<style>
+  :root {
+    --footer-text:  "Phonetic analysis";
+    --qr:           `r qr_css`;
+    --lecture:      `r lecture_label`;
+  }
+</style>
+
+::: {.fact}
+`Did you know:` koalas have [fingerprints]{.hl}, and under a microscope they look remarkably like ours. The anthropologist who described them in the 1990s added that koala prints turning up at a crime scene was extremely unlikely.
+
+_Source: Henneberg, Lambert & Leigh (1997), Natural Science_
+:::
+
+## Bomb threats in New York
+
+- In 1983, a caller made a series of [bomb threats]{.hl} by telephone to Pan American Airlines, and some calls were recorded
+- The police charged a suspect, [Paul Prinzivalli]{.hl}
+- His defence sent the threat calls, and a recording of Prinzivalli, to the sociolinguist [William Labov]{.hl}
+
+. . .
+
+Labov showed, by listening and by acoustic analysis, that the caller and the suspect had [different accents]{.hl}.
+
+## Two vowels
+
+- The caller had a [Boston]{.hl} accent: he used almost the same vowel in _bomb_ and _off_
+- Prinzivalli had a [New York]{.hl} accent, which keeps the two vowels apart
+- Prinzivalli was [acquitted]{.hl}; the judge named the phonetic evidence as crucial for reasonable doubt
+
+. . .
+
+One of the earliest documented cases of expert speaker comparison (Labov, 1988).
+
+## Two vowels
+
+```{r prinzivalli, fig.height = 4.3}
+set.seed(2)
+tok <- function(who, word, f1, f2, n = 12) tibble(who, word, F1 = rnorm(n, f1, 35), F2 = rnorm(n, f2, 60))
+pz <- bind_rows(
+  tok("Caller (questioned sample)", "bomb", 720, 1120),
+  tok("Caller (questioned sample)", "off", 700, 1060),
+  tok("Suspect (known sample)", "bomb", 760, 1240),
+  tok("Suspect (known sample)", "off", 560, 900)
+)
+pz_means <- pz |> group_by(who, word) |> summarise(F1 = mean(F1), F2 = mean(F2), .groups = "drop")
+ggplot(pz, aes(F2, F1, colour = word)) +
+  geom_point(size = 2.4, alpha = 0.7) +
+  geom_text(data = pz_means, aes(label = word), size = 6, fontface = "bold", nudge_y = -45) +
+  facet_wrap(~ who) +
+  scale_x_reverse() +
+  scale_y_reverse() +
+  scale_colour_manual(values = c(bomb = kingfisher, off = hornbill)) +
+  labs(x = "F2 (Hz)", y = "F1 (Hz)") +
+  theme(legend.position = "none")
+```
+
+Simulated values, for illustration: the caller [merges]{.hl} the two vowels, the suspect keeps them [apart]{.hl}.
+
+## What the case shows
+
+- A [questioned]{.hl} sample (who is speaking?) is compared with a [known]{.hl} sample (a speaker whose identity we know)
+- Speaker comparison is the [most common]{.hl} type of case in forensic phonetics (session 4)
+- Experts use [auditory]{.hl}, [acoustic]{.hl} and sometimes [automatic]{.hl} methods
+- They analyse speech sounds, like the vowels here, and features of the voice such as intonation and voice quality
+
+## Today
+
+A refresher of the phonetics behind the rest of the course, with a forensic focus:
+
+1. How speech is [produced]{.hl}: the source-filter model, segments and prosody
+2. How speech is [measured]{.hl}: waveforms, spectrograms, formants, f0, voice quality and tempo
+3. Which features forensic phoneticians [actually]{.hl} analyse
+
+. . .
+
+This session follows chapter 2 of Leemann et al. (2024).
+
+# Speech production
+
+::: {.fact}
+`Did you know:` male koalas bellow at about [27 Hz]{.hl} on average: about 20 times lower than expected for an animal of 8 kg, and more typical of an elephant. They do it with a second pair of vocal folds, the [velar vocal folds]{.hl}, outside the larynx.
+
+_Source: Charlton et al. (2013), Current Biology_
+:::
+
+## The source-filter model
+
+- [Source]{.hl}: air pushed up from the lungs sets the [vocal folds]{.hl} vibrating at the glottis
+- [Filter]{.hl}: the oral and nasal tracts shape that sound. Moving the tongue, lips and velum changes their [resonances]{.hl}
+- Like the equaliser of a stereo: the filter boosts some frequencies and damps others
+
+. . .
+
+Tongue high and front, lips spread: [i]. Tongue low and back: [ɑ]. Same source, different filter.
+
+## Source, filter, output
+
+```{r source-filter, fig.height = 4.5}
+f0 <- 120
+freq <- seq(0, 4000, by = 5)
+res_gain <- function(f, fc, bw) fc^2 / sqrt((fc^2 - f^2)^2 + (bw * f)^2)
+filter_db <- function(f) {
+  20 * log10(res_gain(f, 700, 110) * res_gain(f, 1100, 120) * res_gain(f, 2450, 160) * res_gain(f, 3400, 220))
+}
+harm <- tibble(f = seq(f0, 4000, by = f0), source = -12 * log2(f / f0))
+harm <- mutate(harm, output = source + filter_db(f), output = output - max(output))
+filt <- tibble(f = freq[-1], filter = filter_db(freq[-1])) |> mutate(filter = filter - max(filter))
+panels <- bind_rows(
+  transmute(harm, panel = "1. Source: vocal fold vibration (f0 = 120 Hz)", f, db = source, type = "harmonic"),
+  transmute(filt, panel = "2. Filter: vocal tract shaped for [ɑ]", f, db = filter, type = "curve"),
+  transmute(harm, panel = "3. Output: the vowel [ɑ]", f, db = output, type = "harmonic")
+) |> mutate(db = pmax(db, -60))
+ggplot(panels, aes(f, db)) +
+  geom_segment(data = filter(panels, type == "harmonic"), aes(xend = f, yend = -60), colour = kingfisher, linewidth = 0.9) +
+  geom_line(data = filter(panels, type == "curve"), colour = hornbill, linewidth = 1.2) +
+  facet_wrap(~ panel, ncol = 1) +
+  scale_y_continuous(limits = c(-60, 5), breaks = c(-60, -30, 0)) +
+  labs(x = "Frequency (Hz)", y = "Level (dB)")
+```
+
+Simulated spectra: the filter's peaks are the [formants]{.hl}.
+
+## Notation
+
+| | Meaning | Example |
+|---|---|---|
+| [ ] | a sound, in general | [i] |
+| / / | a sound of a particular language (a phoneme) | English /iː/ |
+| < > or _italics_ | letters, spelling | <ee>, _see_ |
+
+## Airstreams
+
+- Most speech uses an [egressive pulmonic]{.hl} airstream: air pushed out from the lungs
+- Some sounds use other airstreams: [clicks]{.hl} draw air inwards
+- In English, clicks are not speech sounds (_tut tut_, or spurring on a horse); in Xhosa and other southern African languages they are consonants
+
+## Segments and prosody
+
+- [Segments]{.hl}: individual consonants and vowels
+- [Prosody]{.hl}, or suprasegmentals: features above single segments, such as stress, intonation, rhythm, tempo, tone and voice quality
+
+. . .
+
+Forensic phoneticians analyse [both]{.hl}.
+
+## Consonants
+
+Three parameters, often abbreviated [VPM]{.hl}:
+
+- [Voicing]{.hl}: do the vocal folds vibrate? _fuzzy_ (voiced /z/) vs _fussy_ (voiceless /s/)
+- [Place]{.hl}: where is the constriction? From bilabial (lips) to glottal (vocal folds)
+- [Manner]{.hl}: how is the air obstructed?
+
+. . .
+
+/z/ is a [voiced alveolar fricative]{.hl}.
+
+## Places of articulation {.smaller}
+
+| Place | Active articulator | Passive articulator | Example |
+|---|---|---|---|
+| Bilabial | lower lip | upper lip | [p b m] |
+| Labiodental | lower lip | upper teeth | [f v] |
+| Dental | tongue tip or blade | upper teeth | [θ ð] |
+| Alveolar | tongue tip or blade | alveolar ridge | [t d s z n] |
+| Postalveolar | tongue tip or blade | rear of alveolar ridge | [ʃ ʒ] |
+| Retroflex | tongue tip | hard palate | [ʈ ɖ] |
+| Palatal | tongue front | hard palate | [j ç] |
+| Velar | tongue back | soft palate | [k g ŋ] |
+| Uvular | tongue back | uvula | [q ʁ] |
+| Pharyngeal | tongue root | rear wall of the pharynx | [ħ ʕ] |
+| Glottal | vocal folds | (none) | [ʔ h] |
+
+## Manners of articulation
+
+- [Obstruents]{.hl}: the airflow is blocked or turbulent
+  - plosives (full closure, then release), fricatives (turbulent airflow), affricates (closure, then slow release with friction)
+- [Sonorants]{.hl}: air escapes easily
+  - nasals (velum lowered), approximants (lateral /l/, central /ɹ/), trills, taps and flaps, and all vowels
+
+## Try it
+
+Describe each consonant by voicing, place and manner:
+
+- the first sound of _mother_
+- the last sound of _beach_
+- the sound written <ng> in _sing_
+- the sound between the vowels in American English _city_
+
+. . .
+
+Voiced bilabial nasal; voiceless postalveolar affricate; voiced velar nasal; voiced alveolar tap.
+
+## Vowels
+
+Three parameters:
+
+- Tongue [height]{.hl}: close (high) to open (low)
+- Tongue [position]{.hl}: front, central, back
+- [Lip rounding]{.hl}: rounded or unrounded
+
+. . .
+
+- [i]: unrounded close front vowel. Add rounding and you get [y], as in German _grün_
+- [ɑ]: unrounded open back vowel. Add rounding and you get [ɒ], as in British English LOT
+- [Diphthongs]{.hl} glide from one quality to another: English _nine_
+
+## Lexical sets
+
+- [Wells (1982)]{.hl} named groups of words after a keyword: PRICE stands for all words with the vowel of _price_ (_guide_, _might_, _nine_)
+- Accents differ in how they pronounce a set, but usually affect all its words in the same way
+- Keywords work for [every accent]{.hl}, unlike phoneme symbols, which imply the standard accent
+
+. . .
+
+- Example: GOOSE has moved [forward]{.hl} in young speakers of standard British English: _goose_, _lose_, _youth_ all changed
+- In some Nigerian and Yorkshire accents, GOOSE is still back, close to [u]
+
+# Prosody
+
+::: {.fact}
+`Did you know:` in koalas, the [pitch]{.hl} of a male's bellow says nothing about his size, but the spacing of its [formants]{.hl} does: larger males have lower, more closely spaced formants.
+
+_Source: Charlton et al. (2011), Journal of Experimental Biology_
+:::
+
+## Fundamental frequency and pitch
+
+- [f0]{.hl} ("F zero"): how often the vocal folds vibrate per second, in Hertz. A measurement
+- [Pitch]{.hl}: how high or low we hear a voice. A percept
+- [Intonation]{.hl}: pitch that carries meaning. _The dog chases the cat_ with a fall is a statement; with a rise, a question
+- [Tone]{.hl}: pitch that distinguishes words. Thai /kʰa/ with a high tone means "to trade", with a falling tone "to kill", with a rising tone "leg"
+
+## Typical f0
+
+```{r f0-groups, fig.height = 3.9}
+set.seed(5)
+f0s <- bind_rows(
+  tibble(group = "Adult men", f0 = rnorm(400, 113, 14)),
+  tibble(group = "Adult women", f0 = rnorm(400, 200, 20)),
+  tibble(group = "Children", f0 = rnorm(400, 310, 30))
+) |> mutate(group = fct_inorder(group))
+ggplot(f0s, aes(f0, fill = group, colour = group)) +
+  geom_density(alpha = 0.35, linewidth = 1) +
+  scale_fill_manual(values = c(kingfisher, hornbill, orchid)) +
+  scale_colour_manual(values = c(kingfisher, hornbill, orchid)) +
+  labs(x = "Mean f0 of a speaker (Hz)", y = NULL, fill = NULL, colour = NULL) +
+  theme(axis.text.y = element_blank())
+```
+
+Simulated speakers. Typical values: men 100–125 Hz, women 180–220 Hz, children above 300 Hz. Larger larynges vibrate more slowly.
+
+## Voice quality
+
+The shape and tension of the glottis change the timbre of the voice:
+
+- [Modal]{.hl} voice: regular vibration
+- [Breathy]{.hl} voice: the glottis does not close fully, air escapes
+- [Whisper]{.hl}: no vibration; turbulent air through a narrow opening
+- [Creaky]{.hl} voice: slow, irregular vibration of the edges of the folds
+
+. . .
+
+Voice quality comes partly from [anatomy]{.hl}, but speakers also vary it (attitude), and it changes with [health]{.hl} and [emotion]{.hl}.
+
+## Prominence and rhythm
+
+- [Prominence]{.hl}: stressed syllables stand out, usually by being louder, longer and higher. _IMport_ (noun) vs _imPORT_ (verb)
+- [Rhythm]{.hl}: traditionally, languages are [stress-timed]{.hl} (stressed syllables at roughly regular intervals, as in English) or [syllable-timed]{.hl} (syllables of roughly equal length, as in French)
+- In reality rhythm is a [continuum]{.hl}: no language fits one type perfectly
+
+## Rhythm
+
+```{r rhythm, fig.height = 3.6}
+eng <- tibble(syl = c("I", "don't", "think", "we", "can", "walk", "up", "the", "hill", "in", "this", "way"),
+              stressed = c(TRUE, FALSE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, TRUE))
+eng_dur <- c(0.30, 0.17, 0.33, 0.10, 0.11, 0.30, 0.10, 0.07, 0.34, 0.09, 0.12, 0.40)
+fr_syl <- c("les", "par", "ti", "ci", "pants", "a", "vaient", "be", "soin", "de", "plus")
+rhythm <- bind_rows(
+  mutate(eng, dur = eng_dur, lang = "English: stress-timed tendency"),
+  tibble(syl = fr_syl, stressed = FALSE, dur = c(0.17, 0.18, 0.16, 0.17, 0.20, 0.15, 0.19, 0.16, 0.21, 0.15, 0.19),
+         lang = "French: syllable-timed tendency")
+) |>
+  group_by(lang) |>
+  mutate(end = cumsum(dur), start = end - dur) |>
+  ungroup()
+ggplot(rhythm, aes(xmin = start, xmax = end - 0.008, ymin = 0, ymax = 1, fill = stressed)) +
+  geom_rect() +
+  geom_text(aes(x = (start + end) / 2, y = 0.5, label = syl), colour = floor_col, size = 4.2, fontface = "bold") +
+  facet_wrap(~ lang, ncol = 1) +
+  scale_fill_manual(values = c(`TRUE` = hornbill, `FALSE` = kingfisher), labels = c("unstressed", "stressed")) +
+  labs(x = "Time (s)", y = NULL, fill = NULL) +
+  theme(axis.text.y = element_blank(), panel.grid.major.y = element_blank())
+```
+
+Simulated syllable durations. English shortens unstressed syllables so that stressed ones come at regular intervals.
+
+## Speech tempo
+
+- [Articulation rate]{.hl}: syllables per second, [without]{.hl} pauses
+- [Speaking rate]{.hl}: syllables per second, [with]{.hl} pauses
+- Fast speakers of English produce about 7–8 syllables per second, slow ones about 3–4
+- Rates depend on the language's syllable structure: mostly CV syllables (Japanese) give higher rates than many consonant clusters (Polish)
+
+## Speech tempo
+
+```{r tempo, fig.height = 2.6}
+chunks <- tibble(
+  start = c(0, 1.45, 1.80, 3.35, 3.85, 5.30),
+  end = c(1.45, 1.80, 3.35, 3.85, 5.30, 6.20),
+  type = c("speech", "pause", "speech", "pause", "speech", "pause")
+)
+speech_time <- sum(with(chunks, (end - start)[type == "speech"]))
+ggplot(chunks, aes(xmin = start, xmax = end, ymin = 0, ymax = 1, fill = type)) +
+  geom_rect(colour = floor_col, linewidth = 1) +
+  scale_fill_manual(values = c(speech = kingfisher, pause = dim_col)) +
+  scale_x_continuous(breaks = 0:6) +
+  labs(x = "Time (s)", y = NULL, fill = NULL) +
+  theme(axis.text.y = element_blank(), panel.grid.major.y = element_blank())
+```
+
+28 syllables in 6.2 s, of which `r speech_time` s are speech:
+
+- Articulation rate: 28 / `r speech_time` = [`r round(28 / speech_time, 1)`]{.hl} syllables per second
+- Speaking rate: 28 / 6.2 = [`r round(28 / 6.2, 1)`]{.hl} syllables per second
+
+# Acoustic analysis
+
+::: {.fact}
+`Did you know:` male koalas have a permanently [descended larynx]{.hl}, the first one found in a marsupial. The formants of their bellows suggest a vocal tract of about 50 cm: nearly the length of the koala's whole body.
+
+_Source: Charlton et al. (2011), Journal of Experimental Biology_
+:::
+
+## Praat
+
+- Free software for speech analysis by Paul [Boersma]{.hl} and David [Weenink]{.hl} (University of Amsterdam); _praat_ is Dutch for "talk"
+- The standard tool for students, researchers and forensic experts
+- Measures f0, formants, intensity and voice quality; annotates recordings; draws figures
+
+. . .
+
+We will use it in the [practical sessions]{.hl}. Today: what the measurements mean.
+
+## The waveform
+
+```{r waveform, fig.height = 3.6}
+set.seed(8)
+sr <- 16000
+tt <- seq(0, 0.08, by = 1 / sr)
+voiced <- function(t, f0) {
+  amps <- c(1, 0.8, 0.9, 0.5, 0.25, 0.2, 0.3, 0.25, 0.1)
+  rowSums(sapply(seq_along(amps), \(k) amps[k] * sin(2 * pi * k * f0 * t + k)))
+}
+wave <- tibble(t = tt) |>
+  mutate(sound = if_else(t < 0.04, "[s]: aperiodic", "[ʊ]: periodic"),
+         amp = if_else(t < 0.04, rnorm(n(), 0, 0.45), voiced(t, 125) / 3))
+ggplot(wave, aes(t * 1000, amp, colour = sound)) +
+  geom_line(linewidth = 0.5) +
+  scale_colour_manual(values = c(hornbill, kingfisher)) +
+  labs(x = "Time (ms)", y = "Amplitude", colour = NULL) +
+  theme(axis.text.y = element_blank())
+```
+
+Simulated signal. Voiceless sounds are [aperiodic]{.hl}; voiced sounds repeat with every vibration of the vocal folds.
+
+## From waveform to frequencies
+
+```{r fourier, fig.height = 4.2}
+tf <- seq(0, 0.02, length.out = 800)
+fr <- bind_rows(
+  tibble(t = tf, part = "H1: 100 Hz (f0)", amp = sin(2 * pi * 100 * tf)),
+  tibble(t = tf, part = "H2: 200 Hz", amp = 0.5 * sin(2 * pi * 200 * tf + 0.6)),
+  tibble(t = tf, part = "H3: 300 Hz", amp = 0.33 * sin(2 * pi * 300 * tf + 1.4))
+)
+fr <- bind_rows(fr, fr |> group_by(t) |> summarise(amp = sum(amp)) |> mutate(part = "Sum: a complex periodic wave")) |>
+  mutate(part = fct_inorder(part))
+ggplot(fr, aes(t * 1000, amp, colour = part == "Sum: a complex periodic wave")) +
+  geom_line(linewidth = 1) +
+  facet_wrap(~ part, ncol = 1) +
+  scale_colour_manual(values = c(`FALSE` = kingfisher, `TRUE` = hornbill)) +
+  labs(x = "Time (ms)", y = NULL) +
+  theme(legend.position = "none", axis.text.y = element_blank())
+```
+
+[Fourier]{.hl}: every complex periodic wave is a sum of sine waves at whole multiples of f0, the [harmonics]{.hl}.
+
+## The spectrogram
+
+- Time on the x-axis, [frequency]{.hl} on the y-axis, [intensity]{.hl} as darkness
+- Each vertical striation is one opening and closing of the glottis (a [glottal pulse]{.hl})
+- The vocal tract keeps changing shape, so the pattern of energy keeps changing: a running record of the [filter]{.hl}
+
+. . .
+
+Try a live spectrogram of your own voice: search for "Chrome Music Lab spectrogram".
+
+## Consonants in the spectrogram
+
+| Manner | What you see |
+|---|---|
+| Plosive | silence (closure), then a short burst (release) |
+| Fricative | aperiodic noise; voiced fricatives add periodic striations |
+| Affricate | closure, a weak burst, then frication noise |
+| Nasal | weaker energy, broad and less clear formants |
+| Approximant | vowel-like formants |
+| Tap, trill | one or several very short interruptions |
+
+## Resonance and formants
+
+- Tap a wine glass: its sound depends on its shape and how much air it holds. The vocal tract works the same way
+- [Formants]{.hl}: the resonances of the vocal tract, dark horizontal bands in a spectrogram
+- [F1]{.hl} goes down as the vowel gets closer: close [i] low F1, open [a] high F1
+- [F2]{.hl} goes up as the vowel gets fronter: front [i] high F2, back [u] low F2
+- [F3]{.hl} reflects lip rounding; [F4]{.hl} and above often carry speaker-specific information
+
+## Bigger tract, lower formants
+
+```{r formants, fig.height = 4.4}
+cardinal <- tibble(
+  vowel = c("i", "e", "ɛ", "a", "ɑ", "ɔ", "o", "u"),
+  F1 = c(240, 390, 610, 850, 750, 500, 360, 250),
+  F2 = c(2400, 2300, 1900, 1610, 940, 700, 640, 595)
+)
+scaled <- bind_rows(
+  mutate(cardinal, voice = "Adult man"),
+  mutate(cardinal, voice = "Adult woman", F1 = F1 * 1.17, F2 = F2 * 1.17),
+  mutate(cardinal, voice = "Child", F1 = F1 * 1.35, F2 = F2 * 1.35)
+) |> mutate(voice = fct_inorder(voice))
+ggplot(scaled, aes(F2, F1, colour = voice, group = voice)) +
+  geom_polygon(fill = NA, linewidth = 0.9) +
+  geom_text(aes(label = vowel), size = 5.5, fontface = "bold", show.legend = FALSE) +
+  scale_x_reverse() +
+  scale_y_reverse() +
+  scale_colour_manual(values = c(kingfisher, hornbill, orchid)) +
+  labs(x = "F2 (Hz)", y = "F1 (Hz)", colour = NULL)
+```
+
+Approximate cardinal vowel formants for an adult man, scaled up for illustration. The [shape]{.hl} stays; the frequencies rise.
+
+## Measuring f0
+
+- Average f0 (mean, median, mode), its variability (standard deviation) and its range (maximum minus minimum)
+- Praat's voice report gives all of these for a selected stretch of speech
+- But every f0 value is an [estimate]{.hl}: the algorithm can be wrong, especially with noise, unusual voice qualities or poor recordings
+
+## When the tracker gets it wrong
+
+```{r f0-errors, fig.height = 3.7}
+set.seed(11)
+track <- tibble(t = seq(0, 2.5, by = 0.01)) |>
+  mutate(f0 = 125 - 14 * t + 12 * exp(-((t - 0.6)^2) / 0.02) + 8 * exp(-((t - 1.8)^2) / 0.03) + rnorm(n(), 0, 2),
+         error = "correct")
+idx_up <- c(70:76, 190:195)
+idx_down <- c(120:126)
+track$f0[idx_up] <- track$f0[idx_up] * 2
+track$f0[idx_down] <- track$f0[idx_down] / 2
+track$error[c(idx_up, idx_down)] <- "octave error"
+ggplot(track, aes(t, f0, colour = error)) +
+  geom_point(size = 1.8) +
+  scale_colour_manual(values = c(correct = kingfisher, `octave error` = hornbill)) +
+  labs(x = "Time (s)", y = "f0 (Hz)", colour = NULL)
+clean_f0 <- track$f0[track$error == "correct"]
+```
+
+Simulated f0 track of an adult man. Mean with errors: [`r round(mean(track$f0))` Hz]{.hl}; without: [`r round(mean(clean_f0))` Hz]{.hl}. Median with errors: `r round(median(track$f0))` Hz.
+
+## Check the numbers
+
+- An adult man speaking normally should give f0 values around [100–130 Hz]{.hl}
+- Values around 200 Hz could be real (a very high register, or falsetto), or the tracker [doubling]{.hl} the true value
+- Halved values work the other way
+- Always [look at the track]{.hl}, and listen, before trusting a summary statistic
+
+## Measuring voice quality
+
+- [Jitter]{.hl}: how much the duration of one vibration cycle varies from the next. Healthy young adults: about 0.5–1%
+- [Shimmer]{.hl}: how much the amplitude varies from cycle to cycle
+- [Harmonics-to-noise ratio]{.hl} (HNR), in dB: the lower it is, the noisier (hoarser, breathier) the voice. Values under 7 dB usually indicate a vocal pathology
+- [H1–H2]{.hl}: the difference between the first two harmonics, a measure of breathiness and creakiness
+
+## Jitter
+
+```{r jitter, fig.height = 3.6}
+set.seed(4)
+jit <- bind_rows(
+  tibble(voice = "Regular vibration", cycle = 1:60, period = 8 + rnorm(60, 0, 0.05)),
+  tibble(voice = "Irregular vibration (for example, a cold)", cycle = 1:60, period = 8 + rnorm(60, 0, 0.28))
+)
+jit_val <- jit |> group_by(voice) |> summarise(jitter = mean(abs(diff(period))) / mean(period) * 100)
+jit <- left_join(jit, jit_val, by = "voice") |> mutate(label = sprintf("%s: jitter %.1f%%", voice, jitter))
+ggplot(jit, aes(cycle, period)) +
+  geom_line(colour = kingfisher, linewidth = 0.9) +
+  geom_point(colour = kingfisher, size = 1.2) +
+  facet_wrap(~ label, ncol = 1) +
+  labs(x = "Vibration cycle", y = "Period (ms)")
+```
+
+Simulated cycle durations of a voice at 125 Hz (8 ms per cycle).
+
+## Measuring rhythm and tempo
+
+- [Prominence]{.hl}: compare f0, duration and intensity of syllables (_IMport_ vs _imPORT_)
+- [Rhythm]{.hl}: compare the variability of intervals between stressed syllables with the variability of all syllables; or of vocalic and consonantal intervals
+- [Tempo]{.hl}: count syllables and divide by duration
+
+. . .
+
+Counting syllables is not trivial: _library_ has three syllables in careful speech but often two in fast speech. Analysts usually count the syllables a word [would]{.hl} have in careful speech.
+
+# Forensic practice
+
+::: {.fact}
+`Did you know:` every male koala's bellow is [individually distinctive]{.hl}, and playback experiments suggest that koalas can tell males apart by their bellows.
+
+_Source: Charlton et al. (2011), PLoS ONE_
+:::
+
+## What experts analyse {.smaller}
+
+Surveys of forensic phoneticians worldwide (Gold & French, 2011, 2019):
+
+- [Vowel formants]{.hl}: almost everyone; F2 most, then F1 and F3, usually at the vowel midpoint
+- [Consonants]{.hl}: most experts, especially fricatives and plosives
+- [f0]{.hl}: everyone; intonation: about 85%
+- [Voice quality]{.hl}: most, largely by ear
+- [Tempo]{.hl} (usually articulation rate): most; [rhythm]{.hl}: about three quarters
+- Also [non-phonetic]{.hl} features: discourse markers, turn-taking, filled pauses, clicks, breathing, throat clearing, laughter
+
+## Why F1 comes second
+
+- Telephone transmission cuts off frequencies below about 300 Hz and above about 3,400 Hz
+- This can [distort F1]{.hl}, especially in close vowels with low F1
+- More on recording quality in session 4
+
+## Which features identify a speaker best?
+
+Experts' answers, most often named first:
+
+1. [Voice quality]{.hl}
+2. [Dialect and accent]{.hl}
+3. [Vowel formants]{.hl}
+4. Speech tempo, f0, rhythm, lexical and grammatical choices, fluency
+
+. . .
+
+But many experts stress that no single feature makes a speaker distinctive: it is the [combination]{.hl} that matters.
+
+## Exercises
+
+The book's exercises for this chapter use a short recording of the sentence _When the sunlight strikes raindrops in the air, they act as a prism and form a rainbow_:
+
+- [Annotate]{.hl} sounds in Praat
+- [Measure]{.hl} F1, F2 and F3 at the midpoints of vowels
+- Calculate the speaker's [articulation rate]{.hl}
+
+. . .
+
+We will do these in the practical sessions.
+
+## Summary
+
+::: {.takeaway}
+- Speech = a [source]{.hl} (vocal fold vibration) shaped by a [filter]{.hl} (the vocal tract)
+- Consonants: voicing, place, manner. Vowels: height, backness, rounding. Lexical sets work for every accent
+- Prosody: f0 and intonation, voice quality, prominence, rhythm, tempo
+- F1 tracks vowel height, F2 backness; bigger vocal tracts mean lower formants
+- Every measurement is an [estimate]{.hl}: check f0 tracks and formant tracks
+- Experts look at many features, and at their [combination]{.hl}
+:::
+
+## References {.refs}
+
+- Gold, E., & French, P. (2011). International practices in forensic speaker comparison. _International Journal of Speech, Language and the Law_, 18(2), 293–307.
+- Gold, E., & French, P. (2019). International practices in forensic speaker comparisons: Second survey. _International Journal of Speech, Language and the Law_, 26(1), 1–20.
+- Labov, W. (1988). The judicial testing of linguistic theory. In D. Tannen (Ed.), _Linguistics in context: Connecting observation and understanding_ (pp. 159–182). Ablex.
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 2.]{.hl}
+- Wells, J. C. (1982). _Accents of English_ (3 vols.). Cambridge University Press.
+
+## Sources of the animal facts {.refs}
+
+- Charlton, B. D., Ellis, W. A. H., Brumm, J., Nilsson, K., & Fitch, W. T. (2011). Perception of male caller identity in koalas (_Phascolarctos cinereus_): Acoustic analysis and playback experiments. _PLoS ONE_, 6(5), e20329. https://doi.org/10.1371/journal.pone.0020329
+- Charlton, B. D., Ellis, W. A. H., McKinnon, A. J., Cowin, G. J., Brumm, J., Nilsson, K., & Fitch, W. T. (2011). Cues to body size in the formant spacing of male koala (_Phascolarctos cinereus_) bellows: Honesty in an exaggerated trait. _Journal of Experimental Biology_, 214(20), 3414–3422. https://doi.org/10.1242/jeb.061358
+- Charlton, B. D., Frey, R., McKinnon, A. J., Fritsch, G., Fitch, W. T., & Reby, D. (2013). Koalas use a novel vocal organ to produce unusually low-pitched mating calls. _Current Biology_, 23(23), R1035–R1036. https://doi.org/10.1016/j.cub.2013.10.069
+- Henneberg, M., Lambert, K. M., & Leigh, C. M. (1997). Fingerprint homoplasy: Koalas and humans. _Natural Science_, 1, 4.
+
+## Slides and code
+
+<div class="qr-block">
+<img src="`r qr_uri`" alt="QR code linking to these slides">
+<div>
+<p>These slides</p>
+<p class="qr-link">mcanzi.github.io/ws27_fss/<wbr>`r lecture_file`</p>
+<p>Code and all sessions</p>
+<p class="qr-link">github.com/mcanzi/ws27_fss</p>
+</div>
+</div>
