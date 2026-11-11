@@ -351,11 +351,10 @@ For the practical sessions (book activity 7A):
 
 ## References {.refs}
 
-- Cambier-Langeveld, T. (2010). The role of linguists and native speakers in language analysis for the determination of speaker origin. _International Journal of Speech, Language and the Law_, 17(1), 67–93.
-- Cambier-Langeveld, T. (2018). Linguistic analysis in the asylum procedure: Consider the context. In I. M. Nick (Ed.), _Forensic linguistics: Asylum-seekers, refugees and immigrants_ (pp. 1–21). Vernon Press.
+- Cambier-Langeveld, T. (2018). Language analysis in the asylum procedure: Consider the context. In I. M. Nick (Ed.), _Forensic linguistics: Asylum-seekers, refugees and immigrants_ (pp. 1–21). Vernon Press.
 - Foulkes, P., & Wilson, K. (2011). Language analysis for the determination of origin: An empirical study. _Proceedings of the 17th International Congress of Phonetic Sciences_, 691–694.
 - Hoskin, J. (2022). _Shifting the burden: Towards new tests for language analysis in the asylum procedure_ [PhD thesis]. University of York.
-- Hubbuch, P. (2019). "We only want to talk...": Lingua interviews for linguistic analyses for the determination of origin. In P. Patrick, M. Schmid, & K. Zwaan (Eds.), _Language analysis for the determination of origin_ (pp. 41–59). Springer.
+- Hubbuch, P. (2019). "We only want to talk...": Lingua interviews for linguistic analyses for the determination of origin (LAAP). In P. Patrick, M. Schmid, & K. Zwaan (Eds.), _Language analysis for the determination of origin_ (pp. 41–59). Springer.
 - [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 7.]{.hl}
 - LNOG [Language and National Origin Group] (2004). Guidelines for the use of language analysis in relation to questions of national origin in refugee cases. _International Journal of Speech, Language and the Law_, 11(2), 261–266.
 
@@ -365,8 +364,8 @@ For the practical sessions (book activity 7A):
 - Pallier, C., Dehaene, S., Poline, J.-B., LeBihan, D., Argenti, A.-M., Dupoux, E., & Mehler, J. (2003). Brain imaging of language plasticity in adopted adults: Can a second language replace the first? _Cerebral Cortex_, 13(2), 155–161.
 - Patrick, P. L., Schmid, M. S., & Zwaan, K. (Eds.). (2019). _Language analysis for the determination of origin: Current perspectives and new directions_. Springer.
 - Schmid, M. S. (2019). Language attrition as a problem for LAAP. In P. Patrick, M. Schmid, & K. Zwaan (Eds.), _Language analysis for the determination of origin_ (pp. 155–165). Springer.
-- UNHCR (2024). _Protecting refugees through international legal instruments and domestic asylum laws_. UNHCR data visualisation.
-- Wilson, K., & Foulkes, P. (2014). Borders, variation, and identity: Language analysis for the determination of origin (LADO). In D. Watt & C. Llamas (Eds.), _Language, borders and identity_ (pp. 218–229). Edinburgh University Press.
+- UNHCR. _States parties to the 1951 Convention relating to the Status of Refugees and the 1967 Protocol_.
+- Wilson, K., & Foulkes, P. (2014). Borders, variation, and identity: Language analysis for the determination of origin (LAAP). In D. Watt & C. Llamas (Eds.), _Language, borders and identity_ (pp. 218–229). Edinburgh University Press.
 
 ## Sources of the animal facts {.refs}
 
