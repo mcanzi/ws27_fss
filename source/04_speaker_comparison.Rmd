@@ -1,0 +1,522 @@
+---
+title: "Speaker comparison"
+subtitle: "Methods, evidence and conclusions"
+author: "Dr Massimiliano Canzi"
+knit: (function(input, ...) rmarkdown::render(input, output_dir = file.path(dirname(input), "..", "docs")))
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    css: theme-purple.css
+    highlight: zenburn
+    incremental: true
+    transition: fade
+    background_transition: fade
+    self_contained: true
+    reveal_options:
+      width: 1050
+      height: 700
+      slideNumber: "c/t"
+      showSlideNumber: all
+      controls: true
+      touch: true
+      transitionSpeed: fast
+      navigationMode: linear
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10, fig.height = 4.4, out.width = "100%")
+library(tidyverse)
+
+source("slides_setup.R", local = knitr::knit_global())
+```
+
+# The David Bieber case
+
+<style>
+  :root {
+    --footer-text:  "Speaker comparison";
+    --qr:           `r qr_css`;
+    --lecture:      `r lecture_label`;
+  }
+</style>
+
+::: {.fact}
+`Did you know:` every bottlenose dolphin develops its own [signature whistle]{.hl}. In playback experiments, dolphins still recognised relatives from synthetic whistles that kept only the whistle's shape, with all voice features removed.
+
+_Source: Janik, Sayigh & Wells (2006), PNAS_
+:::
+
+## Boxing Day, Leeds
+
+- 26 December 2003: two traffic officers stopped a car with [false number plates]{.hl}
+- The driver shot at them and escaped. PC Ian Broadhurst was killed
+- A camera on the police car's dashboard recorded the gunman's [voice]{.hl}, but not his face
+
+## The known samples
+
+- The suspect, [David Bieber]{.hl}, was an American who had lived in Yorkshire for some years under a false identity
+- After his arrest, he said very little in police interviews
+- The police found other known samples: his calls to [telephone betting companies]{.hl}
+
+## A mixed accent
+
+Both recordings had the same unusual mixture:
+
+- [Rhotic]{.hl} /r/, pronounced in all positions (_right_, _pardon_; _road_, _third_): typical of North American accents, not of Yorkshire
+- Typical [Yorkshire]{.hl} FACE and GOAT vowels, and Yorkshire terms of address such as _mate_ and _love_: not found in American accents
+
+. . .
+
+The analyst called it one of the most clear-cut cases he had worked on. Bieber was convicted in December 2004.
+
+## Why it was clear-cut
+
+- The recordings were [similar]{.hl}: the same features in both
+- The combination was [atypical]{.hl}: very few people in the relevant population speak like that
+- And the key features were easy to hear: no acoustic measurement was needed
+
+## Today
+
+1. Why comparing voices is hard
+2. Which features are [ideal]{.hl}, and which features experts analyse
+3. Automatic speaker recognition
+4. How experts express conclusions: [likelihood ratios]{.hl}
+
+. . .
+
+This session follows chapter 4 of Leemann et al. (2024).
+
+# Comparing voices
+
+::: {.fact}
+`Did you know:` dolphin mothers change their signature whistle when their calf is with them, using [higher maximum frequencies]{.hl} and a wider frequency range: a dolphin version of "motherese". The same individual, the same whistle, different values.
+
+_Source: Sayigh et al. (2023), PNAS_
+:::
+
+## Forensic speaker comparison
+
+- A [questioned]{.hl} recording (an unknown speaker) is compared with a [known]{.hl} recording (a suspect, usually from a police interview)
+- Questioned recordings: ransom demands, drug deals arranged by phone, a stalker's voice messages
+- Speaker comparison makes up about [70%]{.hl} of forensic speech casework
+- In the UK, it was first used in evidence in 1965, and now in around 500 cases a year
+
+## Five approaches
+
+1. [Auditory]{.hl} analysis: careful, repeated listening
+2. [Acoustic]{.hl} analysis: measuring the signal with software
+3. Auditory and acoustic analysis combined
+4. [Automatic speaker recognition]{.hl} (ASR)
+5. ASR with human analysis
+
+. . .
+
+Combined auditory-acoustic analysis has been the recommended approach since the 1980s. ASR with human analysis is on the rise.
+
+## There is no "voiceprint"
+
+- 1960s–1980s: the idea that spectrograms could be matched by eye, like fingerprints
+- The FBI used it for years. But in a survey of 2,000 FBI comparisons, examiners reached a decision in only [about a third]{.hl} (Koenig, 1986)
+- Speech scientists rejected it: voices vary too much, and recordings differ too much
+
+. . .
+
+Acoustic analysis itself is valid. Experts measure specific features across many examples, and allow for known differences between recordings.
+
+## No two samples are identical
+
+- Like a signature, speech is a [dynamic]{.hl} movement: no one makes exactly the same movements twice
+- Forensic recordings add more variation:
+  - [speaker]{.hl}: emotion, intoxication, a formal police interview, a taciturn suspect
+  - [technical]{.hl}: background noise, telephone transmission, reverberation, very short samples
+- All of this can change [within]{.hl} a single recording
+
+## So: no "match"
+
+- There will always be differences, and always some similarities
+- The question is not whether features match, but how much the evidence [supports]{.hl} one explanation over another
+- Conclusions are expressed on a [scale]{.hl}, not as yes or no
+
+# Ideal features
+
+::: {.fact}
+`Did you know:` dolphins learn their signature whistles. A calf takes a whistle from its environment as a model, then [modifies]{.hl} it into a new signal of its own. The identity information lies in the pattern of frequency modulation, not in the voice.
+
+_Source: Janik & Sayigh (2013), Journal of Comparative Physiology A_
+:::
+
+## What makes a feature ideal?
+
+- High [between-speaker]{.hl} variation: speakers differ from each other
+- Low [within-speaker]{.hl} variation: stable across the day, health, situations
+- Robust to [transmission]{.hl}: survives the telephone
+- Robust to [disguise and mimicry]{.hl}
+- And practical: frequent, easy to measure
+
+## Similarity and typicality
+
+- [Similarity]{.hl}: how alike are the questioned and known samples?
+- [Typicality]{.hl}: how common is the feature in the [relevant population]{.hl}?
+- The relevant population usually comes from a profile of the questioned speaker: for example, adult men from New Zealand
+- Sometimes it is fixed by the case: if CCTV shows three people in the car, the population is the two others
+
+## Similarity and typicality
+
+```{r typicality, fig.height = 4.2}
+set.seed(44)
+ar <- tibble(ar = rnorm(500, 4.4, 0.4))
+cases <- tribble(
+  ~case, ~Q, ~S,
+  "1: not similar, not typical", 3.45, 5.35,
+  "2: similar, typical", 4.38, 4.46,
+  "3: similar, atypical", 5.30, 5.38,
+  "4: not similar, typical", 3.90, 4.55
+) |> mutate(y = -c(12, 24, 36, 48))
+ggplot(ar, aes(ar)) +
+  geom_histogram(binwidth = 0.1, fill = vine, colour = floor_col) +
+  geom_segment(data = cases, aes(x = Q, xend = S, y = y, yend = y), colour = muted, linewidth = 0.8) +
+  geom_label(data = cases, aes(x = Q, y = y, label = "Q"), fill = kingfisher, colour = floor_col, size = 4.5, label.size = 0) +
+  geom_label(data = cases, aes(x = S, y = y, label = "S"), fill = hornbill, colour = floor_col, size = 4.5, label.size = 0) +
+  geom_text(data = cases, aes(x = 2.95, y = y, label = substr(case, 1, 1)), hjust = 0, colour = mist, size = 5, fontface = "bold") +
+  scale_x_continuous(limits = c(2.9, 6), breaks = seq(3, 6, 0.5)) +
+  labs(x = "Articulation rate (syllables per second)", y = "Speakers")
+```
+
+Simulated population of 500 men (mean 4.4 syllables per second). Q: questioned sample, S: suspect sample.
+
+## Reading the four cases
+
+1. Neither [similar]{.hl} nor typical, at opposite ends: points towards different speakers
+2. Similar but [typical]{.hl}: weak support for the same speaker, since many people speak this fast
+3. Similar and [atypical]{.hl}: relatively strong support for the same speaker
+4. Not very similar, both within the typical range: no strong evidence either way
+
+. . .
+
+And this is one feature. The conclusion rests on many.
+
+## The telephone effect
+
+```{r telephone, fig.height = 3.8}
+tel <- tibble(vowel = fct_inorder(c("[i]", "[ɪ]", "[ɛ]", "[a]")), direct = c(280, 400, 560, 760),
+              landline = direct * (1 + c(22, 16, 12, 6) / 100), mobile = direct * (1 + c(42, 33, 26, 15) / 100)) |>
+  pivot_longer(-vowel, names_to = "recording", values_to = "F1") |>
+  mutate(recording = fct_inorder(recording))
+ggplot(tel, aes(vowel, F1, fill = recording)) +
+  geom_col(position = position_dodge(width = 0.8), width = 0.7) +
+  scale_fill_manual(values = c(direct = muted, landline = hornbill, mobile = kingfisher)) +
+  labs(x = NULL, y = "Measured F1 (Hz)", fill = NULL)
+```
+
+Simulated. Telephones cut energy below about 350 Hz, so [F1 is overestimated]{.hl}: on average by 14% over landlines (Künzel, 2001) and 29% over mobiles (Byrne & Foulkes, 2004). F2 and F3 are largely unaffected.
+
+# Features analysed
+
+::: {.fact}
+`Did you know:` dolphins recognise the signature whistles of former companions after more than [20 years]{.hl} apart: the longest social memory recorded in any non-human species.
+
+_Source: Bruck (2013), Proceedings of the Royal Society B_
+:::
+
+## Many layers
+
+Speech is [componential]{.hl}: it has layers that are largely independent of each other.
+
+- Segments: vowels, consonants, connected speech processes
+- Suprasegmentals: voice quality, f0, intonation, tempo, rhythm
+- Higher-level features: words, grammar, discourse markers, pauses
+- Non-linguistic features: breathing, laughing, throat clearing
+
+. . .
+
+Experts analyse as many as the material allows.
+
+## Vowels
+
+- Analysed by almost everyone: formants depend on anatomy [and]{.hl} on accent
+- Usually well-defined, even in poor recordings
+- Measured at the midpoint, or at several points: [formant dynamics]{.hl}
+- Speakers move between targets in individual ways (McDougall, 2006)
+
+## Formant dynamics
+
+```{r dynamics, fig.height = 4}
+set.seed(9)
+dyn <- tibble(speaker = LETTERS[1:5], start = c(330, 360, 345, 375, 290), end = c(790, 760, 830, 740, 770),
+              onset = c(0.50, 0.45, 0.35, 0.55, 0.66), slope = c(12, 10, 15, 9, 13)) |>
+  expand_grid(t = seq(0.1, 1, by = 0.1)) |>
+  mutate(F1 = start + (end - start) * plogis((t - onset) * slope) + rnorm(n(), 0, 6))
+ggplot(dyn, aes(t * 100, F1, colour = speaker)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 2) +
+  scale_colour_manual(values = c(kingfisher, hornbill, orchid, pandan, mist)) +
+  labs(x = "Time through the diphthong (%)", y = "F1 (Hz)", colour = "Speaker")
+```
+
+Simulated F1 of five speakers in a close-to-open diphthong, like Thai /ia/. Same target, [different routes]{.hl}: E starts low and rises late, C rises early.
+
+## Vowels: caveats
+
+- Telephone transmission raises [F1]{.hl}
+- Louder speech and shouting raise formants
+- So values will not simply "match": the analyst interprets them, allowing for known sources of difference
+
+## Consonants
+
+Often analysed by ear. In British English cases, for example:
+
+- /h/-dropping: _head_ as [ɛd]
+- /θ ð/ as [f v] or as stops
+- /t/ between vowels: [t], [ɾ] or [ʔ] in _better_
+- _-ing_ as [ɪŋ] or [ɪn]
+- /l/ as [l], [ɫ] or a vowel; /r/ present or absent, and its form
+
+. . .
+
+Acoustically: fricatives and nasals carry speaker-specific information, often measured as [centre of gravity]{.hl}. But telephones cut off the high frequencies of fricatives.
+
+## Connected speech processes
+
+Shortcuts in fluent speech, used differently by accent and by speaker:
+
+- [Assimilation]{.hl}: _handbag_ as [ˈhamˌbag]
+- [Elision]{.hl}: _library_ as [ˈlaɪbɹi]
+- [Epenthesis]{.hl}: _hamster_ as [ˈhampstə]
+
+## Voice quality
+
+- Most experts consider it, often with [Vocal Profile Analysis]{.hl} (Laver, 1980), usually in simplified versions (San Segundo et al., 2019)
+- Vocal tract settings (lips, jaw, tongue, larynx height), muscular tension, phonation type
+- Needs substantial [training]{.hl}, and ideally at least 40 seconds of speech
+- Phonation is affected by stress, exhaustion, alcohol and emotion: a difference does not necessarily mean different speakers
+
+## Fundamental frequency
+
+- Mean, range and standard deviation; at least about [one minute]{.hl} of speech for representative values
+- Robust to noise, and survives the telephone: f0 can be reconstructed from the harmonics. Harmonics at 500, 600, 700 and 800 Hz imply an f0 of 100 Hz
+- But f0 varies a lot within a speaker: louder on the phone, higher in read speech, lower in the morning, higher when agitated
+- Most useful for [eliminating]{.hl} suspects, and easy to explain to a court
+
+## f0 in a population
+
+```{r f0-pop, fig.height = 3.6}
+set.seed(126)
+f0p <- tibble(f0 = rnorm(500, 127, 19))
+ggplot(f0p, aes(f0)) +
+  geom_histogram(binwidth = 5, fill = vine, colour = floor_col) +
+  geom_vline(xintercept = median(f0p$f0), colour = kingfisher, linewidth = 1.2) +
+  labs(x = "Mean f0 of a speaker (Hz)", y = "Speakers")
+```
+
+Simulated. In the real Swiss German data (500 men, spontaneous speech), the median is [126 Hz]{.hl} and the range 81–197 Hz (Hedegard et al., 2023). Data like these let us judge typicality.
+
+## Tempo and rhythm
+
+- [Articulation rate]{.hl} varies less within a speaker than speaking rate
+- But research data often come from students. In UK police interviews, suspects sometimes read a statement prepared by their lawyers: often slower and less fluent than their spontaneous speech
+- [Rhythm]{.hl}: the percentage of vocalic intervals (%V) is speaker-specific and robust to speaking style (Leemann, Kolly & Dellwo, 2014)
+
+## Higher-level features
+
+- [Pausing]{.hl} is speaker-specific and fairly stable
+- [Filled pauses]{.hl} (_uh_, _um_): how often, and their acoustics. They performed better than lexical vowels in speaker discrimination (Hughes, Wood & Foulkes, 2016)
+- Tag questions (_innit?_, _right?_), discourse markers (_like_), ways of greeting or answering the phone
+- Probably below the level of [consciousness]{.hl}, so hard to disguise
+
+# Automatic speaker recognition
+
+::: {.fact}
+`Did you know:` dolphins can [address]{.hl} each other. Wild dolphins called back when they heard a copy of their own signature whistle, but not when they heard other whistles: they use learned vocal labels, much like names.
+
+_Source: King & Janik (2013), PNAS_
+:::
+
+## How ASR works
+
+1. [Pre-processing]{.hl}: resampling, voice activity detection
+2. [Feature extraction]{.hl}: usually mel frequency cepstral coefficients (MFCCs)
+3. [Speaker modelling]{.hl}: today, x-vectors from deep neural networks
+4. [Comparison]{.hl} of the questioned and known models: a score
+5. [Score interpretation]{.hl}: converting the score into a likelihood ratio, against a model of the relevant population
+
+## MFCCs
+
+- Not phonetic features like f0 or formants, but compact descriptions of the [whole spectrum]{.hl}, peaks and troughs
+- The [mel scale]{.hl} warps frequency like human hearing: finer at low frequencies
+- Taken from short windows (20–30 ms), 10–20 coefficients every 10 ms or so: thousands per recording
+- The resulting speaker model is sometimes called a "voiceprint", with a different meaning from the 1960s term
+
+## Strengths
+
+- More [objective]{.hl}, though humans still choose the recordings, settings and population
+- [Replicable]{.hl}: same material and settings, same result
+- [Fast]{.hl}: seconds instead of hours
+- In a 2019 survey, over 40% of practitioners used ASR (Gold & French, 2019)
+
+## Weaknesses
+
+- Needs at least about [10 seconds]{.hl} of net speech per sample; 30 seconds is better
+- [Channel mismatch]{.hl}: a telephone call against a recording in a reverberant interview room. Newer x-vector systems cope better
+- A [black box]{.hl}: results cannot be explained in terms a court understands, such as pitch or accent
+- When the book was written, ASR had not yet been admitted in evidence in UK courts
+
+. . .
+
+Most reputable labs use a [human-machine team]{.hl}: ASR plus phonetic analysis, which can catch differences such as accent that ASR might miss.
+
+# Likelihood ratios
+
+::: {.fact}
+`Did you know:` researchers in Sarasota Bay, Florida, have recorded the signature whistles of the same wild dolphin community since [1975]{.hl}: a catalogue of more than 250 individuals, which makes long-term studies of identity possible.
+
+_Source: King et al. (2013), Proceedings of the Royal Society B_
+:::
+
+## From "match" to strength of evidence
+
+- Before the 1990s, conclusions were often [binary]{.hl}: the same speaker, or not
+- Now widely rejected: no speech feature is unique or invariant
+- Most practitioners now express conclusions as [likelihood ratios]{.hl} (LRs), as recommended for forensic science generally (AFSP, 2009)
+
+## Crossing the road
+
+- [Evidence]{.hl}: the traffic you see, its speed, the width of the road
+- Two [hypotheses]{.hl}: I can cross safely; I cannot
+- You weigh how likely the evidence is under each, and cross if the first clearly outweighs the second
+- Other information also matters: how much of a hurry you are in, your experience of this road
+
+. . .
+
+That is Bayesian reasoning. Forensic science just makes it explicit.
+
+## The likelihood ratio
+
+[LR = p(evidence | same speaker) / p(evidence | different speakers)]{.hl}
+
+- How likely is the evidence if the samples come from the [same speaker]{.hl}, relative to [different speakers]{.hl}?
+- LR above 1: support for the same-speaker hypothesis. Below 1: for the different-speaker hypothesis
+- An LR of 100: the evidence is 100 times more likely under one hypothesis than the other
+
+## A shoe print
+
+- A size 13 print at a crime scene. The suspect wears size 13: similarity = 1
+- About 5% of men wear size 13: typicality = 0.05
+- LR = 1 / 0.05 = [20]{.hl}: the print is 20 times more likely if the suspect left it than if a random man did
+
+. . .
+
+The LR does not say whether the suspect left the print. That decision belongs to the [court]{.hl}, which weighs all the evidence.
+
+## Computing an LR
+
+```{r lr, fig.height = 3.8}
+pop <- c(mean = 1.3, sd = 0.6)
+sus <- c(mean = 3.5, sd = 0.75)
+q <- 3.2
+p_same <- dnorm(q, sus["mean"], sus["sd"])
+p_diff <- dnorm(q, pop["mean"], pop["sd"])
+lr <- p_same / p_diff
+curves <- expand_grid(x = seq(-0.5, 6, by = 0.01), source = c("Population", "Suspect")) |>
+  mutate(density = if_else(source == "Population", dnorm(x, pop["mean"], pop["sd"]), dnorm(x, sus["mean"], sus["sd"])))
+ggplot(curves, aes(x, density, colour = source)) +
+  geom_line(linewidth = 1.3) +
+  geom_vline(xintercept = q, colour = mist, linetype = "dashed") +
+  annotate("point", x = q, y = c(p_same, p_diff), colour = mist, size = 3) +
+  scale_colour_manual(values = c(Population = muted, Suspect = kingfisher)) +
+  labs(x = "A measured feature (arbitrary scale)", y = "Probability density", colour = NULL)
+```
+
+Hypothetical data. The questioned value (dashed): `r round(p_same, 3)` / `r signif(p_diff, 2)` = LR of [`r round(lr)`]{.hl}, log~10~LR = `r round(log10(lr), 2)`.
+
+## The verbal scale {.smaller}
+
+| Support for the same-speaker hypothesis | LR | log~10~LR |
+|---|---|---|
+| extremely strong | > 100,000 | > 5 |
+| very strong | 10,000–100,000 | 4–5 |
+| strong | 1,000–10,000 | 3–4 |
+| moderately strong | 100–1,000 | 2–3 |
+| moderate | 10–100 | 1–2 |
+| weak | 1–10 | 0–1 |
+| inconclusive | 1 | 0 |
+
+The scale continues symmetrically below 1 for the different-speaker hypothesis. Adapted from AFSP (2009).
+
+## Why logarithms?
+
+- An LR of 100 is as strong as an LR of [0.01]{.hl}, in the other direction
+- Large numbers and tiny fractions are hard to compare
+- log~10~ makes the scale symmetrical around 0: 100,000 becomes 5, 0.00001 becomes −5
+- Our example: LR `r round(lr)` → log~10~LR `r round(log10(lr), 2)` → [moderately strong]{.hl} support for the same speaker
+
+## A real case
+
+- Australia, 2012–2013: fraud calls to a financial institution were recorded (Enzinger, Morrison & Ochoa, 2016)
+- Relevant population: adult male speakers of [Australian English]{.hl}, from a corpus
+- The questioned call had noise, reverberation and landline transmission. The experts degraded the corpus recordings to [match]{.hl}
+- Result: LR = 3,287 (log~10~LR = 3.52): [strong]{.hl} support for the same-speaker hypothesis
+
+## Discussion
+
+Is an LR of 3,287 big or small?
+
+- What else would you need to know before deciding whether the suspect made the calls?
+- Who should make that decision?
+
+## Exercises
+
+For the practical sessions (book activities 4A and 4B):
+
+- Measure f0 and articulation rate in one questioned and five suspect speakers. Which suspect is most similar, and is the similarity typical?
+- Compare a telephone call with a police interview recording, and write a short report on at least [four features]{.hl}
+
+## Summary
+
+::: {.takeaway}
+- Speaker comparison: a questioned recording against a known one; about 70% of casework
+- There is no voiceprint, and no two samples are identical
+- Experts assess [similarity]{.hl} and [typicality]{.hl} in a relevant population
+- Many features, each with strengths and weaknesses: formants, consonants, voice quality, f0, tempo, rhythm, pauses
+- ASR is fast and replicable, but needs good material and is hard to explain
+- Conclusions as [likelihood ratios]{.hl}: the strength of the evidence, not the verdict
+:::
+
+## References {.refs}
+
+- AFSP [Association of Forensic Science Providers] (2009). Standards for the formulation of evaluative forensic science expert opinion. _Science & Justice_, 49(3), 161–164.
+- Byrne, C., & Foulkes, P. (2004). The "mobile phone effect" on vowel formants. _International Journal of Speech, Language and the Law_, 11(1), 83–102. https://doi.org/10.1558/ijsll.v11i1.83
+- Enzinger, E., Morrison, G. S., & Ochoa, F. (2016). A demonstration of the application of the new paradigm for the evaluation of forensic evidence under conditions reflecting those of a real forensic-voice-comparison case. _Science & Justice_, 56(1), 42–57. https://doi.org/10.1016/j.scijus.2015.06.005
+- Gold, E., & French, P. (2019). International practices in forensic speaker comparisons: Second survey. _International Journal of Speech, Language and the Law_, 26(1), 1–20.
+- Hedegard, H., Fröhlich, A., Tomaschek, F., Steiner, C., & Leemann, A. (2023). Filling the population statistics gap: Swiss German reference data on F0 and speech tempo for forensic contexts. _Proceedings of Interspeech 2023_, 2558–2562. https://doi.org/10.21437/Interspeech.2023-1042
+- Hughes, V., Wood, S., & Foulkes, P. (2016). Strength of forensic voice comparison evidence from the acoustics of filled pauses. _International Journal of Speech, Language and the Law_, 23(1), 99–132. https://doi.org/10.1558/ijsll.v23i1.29874
+- Koenig, B. E. (1986). Spectrographic voice identification: A forensic survey. _Journal of the Acoustical Society of America_, 79, 2088–2090.
+
+## References {.refs}
+
+- Künzel, H. J. (2001). Beware of the "telephone effect": The influence of telephone transmission on the measurement of formant frequencies. _Forensic Linguistics_, 8(1), 80–99. https://doi.org/10.1558/ijsll.v8i1.80
+- Laver, J. (1980). _The phonetic description of voice quality_. Cambridge University Press.
+- Leemann, A., Kolly, M.-J., & Dellwo, V. (2014). Speaker-individuality in suprasegmental temporal features: Implications for forensic voice comparison. _Forensic Science International_, 238, 59–67. https://doi.org/10.1016/j.forsciint.2014.02.019
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 4.]{.hl}
+- McDougall, K. (2006). Dynamic features of speech and the characterization of speakers: Toward a new approach using formant frequencies. _International Journal of Speech, Language and the Law_, 13(1), 89–126. https://doi.org/10.1558/ijsll.v13i1.89
+- San Segundo, E., Foulkes, P., French, P., Harrison, P., Hughes, V., & Kavanagh, C. (2019). The use of the Vocal Profile Analysis for speaker characterization: Methodological proposals. _Journal of the International Phonetic Association_, 49(3), 353–380. https://doi.org/10.1017/S0025100318000130
+
+## Sources of the animal facts {.refs}
+
+- Bruck, J. N. (2013). Decades-long social memory in bottlenose dolphins. _Proceedings of the Royal Society B_, 280(1768), 20131726. https://doi.org/10.1098/rspb.2013.1726
+- Janik, V. M., & Sayigh, L. S. (2013). Communication in bottlenose dolphins: 50 years of signature whistle research. _Journal of Comparative Physiology A_, 199(6), 479–489. https://doi.org/10.1007/s00359-013-0817-7
+- Janik, V. M., Sayigh, L. S., & Wells, R. S. (2006). Signature whistle shape conveys identity information to bottlenose dolphins. _PNAS_, 103(21), 8293–8297. https://doi.org/10.1073/pnas.0509918103
+- King, S. L., Sayigh, L. S., Wells, R. S., Fellner, W., & Janik, V. M. (2013). Vocal copying of individually distinctive signature whistles in bottlenose dolphins. _Proceedings of the Royal Society B_, 280, 20130053. https://doi.org/10.1098/rspb.2013.0053
+- King, S. L., & Janik, V. M. (2013). Bottlenose dolphins can use learned vocal labels to address each other. _PNAS_, 110(32), 13216–13221. https://doi.org/10.1073/pnas.1304459110
+- Sayigh, L. S., El Haddad, N., Tyack, P. L., Janik, V. M., Wells, R. S., & Jensen, F. H. (2023). Bottlenose dolphin mothers modify signature whistles in the presence of their own calves. _PNAS_, 120(27), e2300262120. https://doi.org/10.1073/pnas.2300262120
+
+## Slides and code
+
+<div class="qr-block">
+<img src="`r qr_uri`" alt="QR code linking to these slides">
+<div>
+<p>These slides</p>
+<p class="qr-link">mcanzi.github.io/ws27_fss/<wbr>`r lecture_file`</p>
+<p>Code and all sessions</p>
+<p class="qr-link">github.com/mcanzi/ws27_fss</p>
+</div>
+</div>
