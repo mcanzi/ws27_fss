@@ -1,0 +1,435 @@
+---
+title: "Course introduction"
+subtitle: "Forensic phonetics, forensic linguistics, and this course"
+author: "Dr Massimiliano Canzi"
+knit: (function(input, ...) rmarkdown::render(input, output_dir = file.path(dirname(input), "..", "docs")))
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    css: theme-purple.css
+    highlight: zenburn
+    incremental: true
+    transition: fade
+    background_transition: fade
+    self_contained: true
+    reveal_options:
+      width: 1050
+      height: 700
+      slideNumber: "c/t"
+      showSlideNumber: all
+      controls: true
+      touch: true
+      transitionSpeed: fast
+      navigationMode: linear
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10, fig.height = 4.6, out.width = "100%")
+library(tidyverse)
+
+source("slides_setup.R", local = knitr::knit_global())
+```
+
+# Introduction
+
+<style>
+  :root {
+    --footer-text:  "massimiliano.canzi@uni-konstanz.de";
+    --qr:           `r qr_css`;
+    --lecture:      `r lecture_label`;
+  }
+</style>
+
+::: {.fact}
+`Did you know:` the superb lyrebird of south-eastern Australia is one of the best [vocal mimics]{.hl} known. About 80% of a male's song is made of imitations of other species, mostly other birds, and the imitations are remarkably accurate.
+
+_Sources: Wildlife Victoria; Dalziell et al. (2012), Animal Behaviour_
+:::
+
+## Who I am
+
+I am Dr Massimiliano Canzi, [Max]{.hl} for short.
+
+. . .
+
+I studied linguistics in [Milan]{.hl} (BA), [Manchester]{.hl} (MA) and [York]{.hl} (MSc), and returned to [Manchester]{.hl} for my PhD.
+
+. . .
+
+I work on how listeners [perceive]{.hl} speech and how speakers [produce]{.hl} it, mostly with experiments and quantitative methods. Forensic speech science is one of my interests.
+
+## Who are you?
+
+Tell us briefly:
+
+- Your [name]{.hl} and your [programme]{.hl}
+- How much [phonetics]{.hl} you have done so far
+- A forensic case involving [speech]{.hl} or [language]{.hl} that you have heard of, in the news, in a podcast or on TV
+- One thing you would like to [take away]{.hl} from this course
+
+# The course
+
+::: {.fact}
+`Did you know:` female superb lyrebirds also [sing]{.hl} and mimic, especially when defending their nests, when they imitate predators and alarm calls. Their songs were long overlooked: adult females look almost identical to young males, so singing females were easily taken for males.
+
+_Source: Dalziell & Welbergen (2016), Frontiers in Ecology and Evolution_
+:::
+
+## How the course works
+
+- [Seminar]{.hl}, [day and time]: one chapter of the book per session, with discussion and exercises
+- [Practical sessions]{.hl} with Praat, later in the semester: measuring speech yourself
+- [Office hours]{.hl}: [day and time], by appointment
+- [Ilias]{.hl}: announcements, readings and submissions
+
+## Assessment
+
+| Component | Weight |
+|---|---|
+| [component] | [weight] |
+| [component] | [weight] |
+
+. . .
+
+Details follow on Ilias.
+
+## The book
+
+Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge.
+
+. . .
+
+- Written by practitioners and researchers in both fields
+- Real [cases]{.hl}, [exercises]{.hl} and suggestions for further reading in every chapter
+- We cover the [forensic phonetics]{.hl} part: chapters 1 to 7, and chapter 13 on expert witnesses
+
+## Syllabus
+
+Each session follows one chapter of Leemann et al. (2024).
+
+| | Session | Chapter |
+|---|---|---|
+| 1 | Course introduction | 1 |
+| 2 | Phonetic analysis | 2 |
+| 3 | Speaker profiling | 3 |
+| 4 | Speaker comparison | 4 |
+| 5 | Earwitness evidence | 5 |
+| 6 | Authentication, enhancement and speech content | 6 |
+| 7 | Linguistic analysis in the asylum procedure | 7 |
+| 8 | Expert witnesses | 13 |
+
+## Slides and materials
+
+The slides are written in [R Markdown]{.hl} and shown with `reveal.js`. Each week you get the [slides]{.hl} (.html) and the [readings]{.hl}.
+
+. . .
+
+The figures use [simulated data]{.hl}: realistic numbers, made up for teaching. The code behind every figure is in the .Rmd file, at `github.com/mcanzi/ws27_fss`, if you are curious. You do not need `R` for this course.
+
+## Exercises
+
+The book has exercises in every chapter, and we do many of them together.
+
+. . .
+
+- In forensic work there is often [no single correct answer]{.hl}
+- What matters is how you get to your answer, and how [sure]{.hl} you can be
+- Do the exercises before you read the solutions: this field is learnt by [doing]{.hl}
+
+## What this course is, and is not
+
+- A [grounding]{.hl} in the methods and problems of forensic speech science
+- A first step towards [further study]{.hl}: forensic phoneticians train for years, at postgraduate level and in forensic labs
+- [Not]{.hl} a qualification to do casework
+
+. . .
+
+The same holds for the book, as its authors point out.
+
+# Forensic phonetics and linguistics
+
+::: {.fact}
+`Did you know:` a lyrebird raised in captivity in New South Wales in the 1920s is said to have learnt [flute tunes]{.hl} and passed them on to wild lyrebirds after its release. Flute-like songs can still be heard there, but recordings made over 40 years suggest that the local song has been stable, not newly learnt.
+
+_Sources: Powys, Taylor & Probets (2013), Environmental Humanities; Probets, Taylor & Powys (2020), Corella_
+:::
+
+## Two fields
+
+- [Forensic phonetics]{.hl}: speech and voices as evidence. Who is speaking? What was said? Is a recording genuine?
+- [Forensic linguistics]{.hl}: language as evidence. Who wrote a text? What does it mean? How is language used in police interviews and courts?
+
+. . .
+
+Despite the names, few practitioners work in [both]{.hl}. Most specialise further, so casework is often done by [teams]{.hl}.
+
+## Where the fields meet
+
+- [Language analysis in the asylum procedure]{.hl} (LAAP): where does an asylum seeker's speech suggest they grew up? (session 7)
+- [Record keeping]{.hl}, [report writing]{.hl} and acting as an [expert witness]{.hl}: the same principles apply in both fields, and in all forensic sciences (session 8)
+
+## You do it every day
+
+When you answer the phone, you analyse the first few words, usually without noticing:
+
+- Do I know this [voice]{.hl}?
+- Does it match the [name]{.hl} on the screen?
+- Is the caller [young or old]{.hl}, [local or not]{.hl}, [calm or upset]{.hl}?
+
+. . .
+
+Forensic phonetics asks the same questions, [systematically]{.hl}, and asks how reliable the answers are.
+
+## An old idea: shibboleth
+
+> And the Gileadites took the passages of Jordan before the Ephraimites: and it was so, that when those Ephraimites which were escaped said, Let me go over; that the men of Gilead said unto him, Art thou an Ephraimite? If he said, Nay; Then said they unto him, Say now Shibboleth: and he said Sibboleth: for he could not frame to pronounce it right.
+
+_Judges 12:5–6, King James Bible_
+
+. . .
+
+A crude [speaker profile]{.hl}: /ʃ/ for Gileadites, /s/ for Ephraimites.
+
+## A recent shibboleth
+
+- In 2022, Ukrainians reportedly asked strangers to say [паляниця]{.hl} (_palianytsia_, a kind of bread) to unmask Russian saboteurs (Hyde, 2022)
+- The word was believed to be hard to pronounce for speakers of Russian
+- _Shibboleth_ itself is now an everyday word for any sign of group membership
+
+## Discussion
+
+Is the pronunciation of [one word]{.hl} enough to tell where someone is from?
+
+. . .
+
+- What else could explain the "wrong" pronunciation?
+- What if the speaker [knows]{.hl} the test?
+- What happens if the test gets it wrong?
+
+. . .
+
+The book's answer, and ours: [no]{.hl}. One word is never enough for serious legal decisions. Session 3 shows how profiling is done instead.
+
+## No two samples are the same
+
+```{r vowels-sim, fig.height = 4.4}
+set.seed(27)
+vowel_means <- tibble(
+  vowel = c("FLEECE", "TRAP", "PALM"),
+  f1 = c(290, 720, 640), f2 = c(2250, 1560, 1080)
+)
+sim_vowels <- function(speaker, recording, f1_shift, f2_shift, n = 15) {
+  vowel_means |>
+    mutate(data = map2(f1, f2, \(a, b) tibble(F1 = rnorm(n, a + f1_shift, a * 0.07),
+                                             F2 = rnorm(n, b + f2_shift, b * 0.05)))) |>
+    select(vowel, data) |>
+    unnest(data) |>
+    mutate(speaker = speaker, recording = recording)
+}
+vowels <- bind_rows(
+  sim_vowels("Speaker A", "Speaker A, recording 1", 0, 0),
+  sim_vowels("Speaker A", "Speaker A, recording 2", 15, -40),
+  sim_vowels("Speaker B", "Speaker B", 50, 120)
+)
+ggplot(vowels, aes(F2, F1, colour = recording)) +
+  stat_ellipse(level = 0.68, linewidth = 1) +
+  geom_point(alpha = 0.55, size = 1.8) +
+  geom_text(data = vowel_means, aes(f2, f1, label = vowel), inherit.aes = FALSE,
+            colour = mist, size = 5, nudge_y = -95) +
+  scale_x_reverse() +
+  scale_y_reverse() +
+  labs(x = "F2 (Hz)", y = "F1 (Hz)", colour = NULL)
+```
+
+Simulated vowels: the same speaker never says a vowel twice the same way, and different speakers [overlap]{.hl}.
+
+## What the book covers
+
+| Chapter | Question |
+|---|---|
+| 3 Speaker profiling | What can a voice tell us about the speaker? |
+| 4 Speaker comparison | Do two recordings come from the same speaker? |
+| 5 Earwitness evidence | Can a witness recognise a voice they heard? |
+| 6 Authentication, enhancement, content | Is the recording genuine? What was said? |
+| 7 LAAP | Where did an asylum seeker grow up? |
+| 13 Expert witnesses | How do experts report, and what do courts do with it? |
+
+# Beware the CSI effect
+
+::: {.fact}
+`Did you know:` lyrebirds are famous for imitating [chainsaws]{.hl} and other machines. But the well-known recordings come from captive birds, such as one at Adelaide Zoo: as of 2014, no recording was known of a wild lyrebird mimicking a mechanical sound.
+
+_Source: Taylor (2014), The Conversation_
+:::
+
+## Forensic science on TV
+
+- Experts collect samples, interview suspects and analyse everything, alone
+- Results arrive in [seconds]{.hl}, from impressive software
+- Conclusions are a [match]{.hl} or a [mismatch]{.hl}, "with 99.4% certainty"
+- A "[voiceprint]{.hl}" on screen matches a stored sample perfectly
+
+## Forensic science in reality
+
+- Analyses take [days]{.hl}, not seconds
+- Experts rarely, if ever, report "match" or "mismatch": there is almost always some [doubt]{.hl}
+- [Objectivity]{.hl} and [transparency]{.hl} matter more than speed
+- No two samples of speech are ever identical, so there is no such thing as a voice "match"
+
+## Even DNA is not a "match"
+
+- A DNA sample from a crime scene is [identical]{.hl} to the suspect's DNA
+- This does not mean the suspect committed the crime: it means they [could]{.hl} have
+- So could everyone else who shares that profile, possibly [thousands]{.hl} of people
+- Other evidence (where the suspect was, a motive) is for the [court]{.hl}, not for the forensic scientist
+
+## Two propositions
+
+The expert weighs the evidence under two competing [propositions]{.hl}:
+
+- [Prosecution]{.hl}: the two samples come from the [same]{.hl} source
+- [Defence]{.hl}: the two samples come from [different]{.hl} sources
+
+. . .
+
+The question is not "are they the same?", but: how much more likely is the evidence under one proposition than under the other? More in sessions 4 and 8.
+
+## Similar is not enough
+
+```{r typicality, fig.height = 4.2}
+f0_mean <- 115
+f0_sd <- 20
+cases <- tibble(case = c("Case 1", "Case 2"), offender = c(116, 72), suspect = c(118, 74))
+share <- function(x) pnorm(x + 5, f0_mean, f0_sd) - pnorm(x - 5, f0_mean, f0_sd)
+cases <- mutate(cases, share = share(offender))
+curve_df <- tibble(f0 = seq(45, 185, by = 0.5), density = dnorm(f0, f0_mean, f0_sd))
+ggplot(curve_df, aes(f0, density)) +
+  geom_area(fill = dim_col) +
+  geom_line(colour = muted, linewidth = 0.8) +
+  geom_vline(data = cases, aes(xintercept = offender, colour = case), linewidth = 1.2) +
+  geom_vline(data = cases, aes(xintercept = suspect, colour = case), linewidth = 1.2, linetype = "dashed") +
+  geom_text(data = cases, aes(x = offender, y = 0.0215, label = case, colour = case),
+            size = 5.5, hjust = 1.15) +
+  scale_colour_manual(values = c("Case 1" = kingfisher, "Case 2" = hornbill)) +
+  labs(x = "Mean F0 of the speaker (Hz)", y = "Speakers in the population") +
+  theme(legend.position = "none", axis.text.y = element_blank())
+```
+
+Simulated mean F0 of adult male speakers. Solid: offender. Dashed: suspect.
+
+## Similar is not enough
+
+In both cases, the offender and the suspect differ by only [2 Hz]{.hl}. But:
+
+- Case 1: about [`r round(cases$share[1] * 100)`%]{.hl} of speakers have a mean F0 within 5 Hz of the offender's
+- Case 2: only about [`r round(cases$share[2] * 100, 1)`%]{.hl} do
+
+. . .
+
+The same similarity is much stronger evidence when the feature is [rare]{.hl}. Experts call this [typicality]{.hl}: it matters as much as similarity.
+
+## Discussion
+
+A TV expert says: "The voices match, with [99.4% certainty]{.hl}."
+
+- What could the 99.4% possibly mean?
+- What information would you need to judge it?
+- Who should decide whether the suspect is guilty?
+
+# Working with forensic data
+
+::: {.fact}
+`Did you know:` while courting, a male superb lyrebird imitates a whole [mobbing flock]{.hl}: the alarm calls of several species harassing a predator. He does it when a female tries to leave and during mating, although no predator is around: an acoustic illusion that may keep her from leaving.
+
+_Source: Dalziell et al. (2021), Current Biology_
+:::
+
+## What the data can be like
+
+- Much forensic material is [mundane]{.hl}: phone calls about financial transactions, for example
+- Some is [distressing]{.hl}: threats, violence, recordings of crimes
+- The context of a case can be disturbing even when the recording itself is not
+
+## Looking after yourself
+
+Giménez, Elstein & Queralt (2020) interviewed forensic linguists about their wellbeing. Three themes stood out:
+
+- [Graphic content]{.hl}
+- [Pressure]{.hl}
+- [Personal experiences]{.hl} that a case brings back
+
+. . .
+
+- It is always fine to set [boundaries]{.hl}, take a break, or skip material you cannot face today
+- How serious a crime is says nothing about how much a case will affect you
+- Do not struggle in silence: the university's counselling service, and I, are there to help
+
+## Remember the victims
+
+- Many people know the names of notorious criminals; far fewer know the names of their [victims]{.hl}
+- This gives perpetrators notoriety and takes attention away from the people they harmed
+- In 2019, New Zealand's Prime Minister Jacinda Ardern refused to name the man who attacked two mosques in Christchurch
+
+. . .
+
+Our analyses often focus on the person who produced the speech, often the perpetrator. Keep the [people harmed]{.hl} in mind.
+
+## How we talk about cases
+
+- The words we use about crimes and the people involved carry [power]{.hl}
+- Dark humour can be a way of coping, but you never know who is listening: a victim's or an offender's family member could be in the room
+- Language around these topics keeps changing: we keep learning
+
+## Ethics
+
+- Know the [limits]{.hl} of your expertise and of your methods, and never comment beyond them
+- Be [objective]{.hl}: no conclusion should be stronger or weaker than the analysis supports
+- Do not try to help [either side]{.hl}: the expert assists the court
+- A person accused of a crime is presumed [innocent]{.hl}: if the evidence leaves doubt, the court must know
+
+. . .
+
+Staying impartial is perhaps the hardest skill in the job, and it is learnt through experience, under the guidance of experienced practitioners.
+
+## Further resources
+
+- [IAFPA](https://www.iafpa.net/): the International Association for Forensic Phonetics and Acoustics
+- [IAFLL](https://iafll.org/): the International Association for Forensic and Legal Linguistics
+- _International Journal of Speech, Language and the Law_
+- Nolan, McDougall & Hudson (eds.) (2024), _The Oxford Handbook of Forensic Phonetics_
+- [Forensic Transcription Australia](https://forensictranscription.com.au/): Helen Fraser's site on transcripts of covert recordings
+
+## Summary
+
+::: {.takeaway}
+- Forensic phonetics treats [speech]{.hl} as evidence; forensic linguistics treats [language]{.hl} as evidence
+- No two speech samples are identical: experts weigh [similarities]{.hl} and [differences]{.hl}, never declare a "match"
+- Similarity counts only together with [typicality]{.hl}
+- The expert assists the court, [objectively]{.hl}, within the limits of their expertise
+- The material can be hard: look after yourself, and remember the people behind the cases
+:::
+
+## References {.smaller}
+
+- Dalziell, A. H., Maisey, A. C., Magrath, R. D., & Welbergen, J. A. (2021). Male lyrebirds create a complex acoustic illusion of a mobbing flock during courtship and copulation. _Current Biology_, 31(9), 1970–1976. https://doi.org/10.1016/j.cub.2021.02.003
+- Dalziell, A. H., & Welbergen, J. A. (2016). Elaborate mimetic vocal displays by female superb lyrebirds. _Frontiers in Ecology and Evolution_, 4, 34. https://doi.org/10.3389/fevo.2016.00034
+- Dalziell, A. H., Welbergen, J. A., Igic, B., & Magrath, R. D. (2012). Fooling the experts: Accurate vocal mimicry in the song of the superb lyrebird. _Animal Behaviour_, 83, 1401–1410. https://doi.org/10.1016/j.anbehav.2012.03.009
+- Giménez, R., Elstein, S., & Queralt, S. (2020). The pandemic and the forensic linguistics caseworker's wellbeing: Effects and recommendations. _International Journal of Speech, Language and the Law_, 27(2), 1–22.
+- Hyde, L. (2022, February 26). Saboteurs spark suspicion and solidarity in Kyiv. _Politico_.
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 1.]{.hl}
+- Powys, V., Taylor, H., & Probets, C. (2013). A little flute music: Mimicry, memory, and narrativity. _Environmental Humanities_, 3, 43–70. https://doi.org/10.1215/22011919-3611230
+- Probets, C., Taylor, H., & Powys, V. (2020). A sonographic analysis of a flute-like dialect in territorial songs of the superb lyrebird _Menura novaehollandiae_ in the New South Wales North Coast and New England Tableland bioregions. _Corella_.
+- Taylor, H. (2014). Lyrebirds mimicking chainsaws: Fact or lie? _The Conversation_.
+- Wildlife Victoria. Superb lyrebird. https://wildlifevictoria.org.au/learn/native-species-post/superb-lyrebird/
+
+## Slides and code
+
+<div class="qr-block">
+<img src="`r qr_uri`" alt="QR code linking to these slides">
+<div>
+<p>These slides</p>
+<p class="qr-link">mcanzi.github.io/ws27_fss/<wbr>`r lecture_file`</p>
+<p>Code and all sessions</p>
+<p class="qr-link">github.com/mcanzi/ws27_fss</p>
+</div>
+</div>
