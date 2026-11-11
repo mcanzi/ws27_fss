@@ -74,8 +74,8 @@ _Source: Flower, Gribble & Ridley (2014), Science_
 
 Your folder contains:
 
-- one [questioned]{.hl} recording, `Q.wav`: a phone recording of the first two sentences of the passage
-- four [known]{.hl} recordings, `K1.wav` to `K4.wav`: booth recordings of the same passage by four "suspects"
+- one [questioned]{.hl} recording, `Q.wav`: sentences B, read by one speaker
+- four [known]{.hl} recordings, `K1.wav` to `K4.wav`: sentences A, read by four "suspects"
 
 . . .
 
@@ -83,21 +83,21 @@ The speaker of Q may or may not be one of the four. Your task is to assess, for 
 
 ## Step 1: listen first
 
-- Listen to Q several times, then to each K. Write down your auditory impressions before you measure anything: accent, voice quality, speed, anything unusual
+- Listen to Q several times, then to each K. Write down your auditory impressions before you measure anything: accent, voice quality, speed, anything unusual. Listen in particular to the /r/ in _dark_, _water_, _car_ and _heard_, and the /t/ in _water_
 - Note whether you think you recognise a classmate, and at what point. A familiar voice can bias the rest of the analysis (sessions 5 and 8)
 - Keep the order in which you listened, and decide in the group how to avoid reading your first impression into the measurements
 
 ## Step 2: measure
 
-For Q and each K, on the first two sentences:
+For Q and each K:
 
 1. Median f0 and standard deviation (Pulses > Voice report)
-2. Articulation rate of the first sentence (28 syllables)
-3. F1 and F2 at the midpoint of the vowels in _North_ and _Sun_, and in both tokens of _cloak_
+2. Articulation rate: 42 syllables in Q, 41 in each K
+3. F1 and F2 at the midpoint of the stressed vowels in _dark_, _water_ and _heard_, which occur in both sets
 
 . . .
 
-Q is a phone recording and the Ks are booth recordings. Remember from the last session which measures changed between your own phone and booth recordings.
+Q and the Ks contain different sentences. Remember from the last session how much your own values changed between sentences A and B.
 
 ## Step 3: similarity and typicality
 
@@ -123,7 +123,7 @@ Simulated preview. Q and K2 are similar, but several classmates have a median f0
 
 ## Step 4: conclusions
 
-- For each suspect, combine the features into one conclusion on the verbal scale of session 4, from strong support for different speakers to strong support for the same speaker. Give the two or three observations that weigh most, and say which differences you think come from the recording conditions
+- For each suspect, combine the features into one conclusion on the verbal scale of session 4, from strong support for different speakers to strong support for the same speaker. Give the two or three observations that weigh most, and say which differences you think are within-speaker variation
 - Present your conclusions to the class before the answers are revealed
 
 # Profiling
@@ -136,7 +136,7 @@ _Source: Flower, Gribble & Ridley (2014), Science_
 
 ## An unknown speaker
 
-Your group receives a booth recording of the passage by a classmate who is not in your case folder. Write a short profile (session 3):
+Your group receives the word list and sentences A of a classmate who is not in your case folder. Write a short profile (session 3):
 
 - first language and, if you can, region, and other languages that might have influenced the speaker's English
 - anything else the voice suggests, such as an age range
@@ -154,7 +154,7 @@ For each point, give the features that support it, with time points in the recor
 
 ## Who is behind the disguise?
 
-Your group receives four disguised readings (D1–D4) and four normal readings (N1–N4) by the same four speakers, in shuffled order.
+Your group receives four disguised readings of sentences A (D1–D4) and four normal readings (N1–N4) by the same four speakers, in shuffled order.
 
 1. Match each disguised reading to a normal one, by ear first
 2. Then measure median f0, its standard deviation and articulation rate in each recording, and check whether the numbers support your matches
@@ -196,7 +196,7 @@ Simulated preview. In class, we plot your normal and disguised readings, with th
 ## Discussion
 
 - How did knowing some of the voices affect your analysis, and how could a lab prevent this?
-- Which features were most useful in the comparison, and which were least robust to the change from booth to phone?
+- Which features were most useful in the comparison, and which varied most between sentences A and B?
 - How far did the class data work as a population? Who would be the relevant population in a real case?
 
 ## Summary
@@ -204,7 +204,7 @@ Simulated preview. In class, we plot your normal and disguised readings, with th
 ::: {.takeaway}
 - A comparison weighs [similarity]{.hl} against [typicality]{.hl} in a relevant population, here the class
 - Listening comes first, and familiarity with a voice can bias the rest of the analysis
-- A recording mismatch (phone and booth) changes some measures more than others
+- Some measures vary more than others within a speaker, even between two readings on the same day
 - A profile is only as strong as the features behind each claim
 - Disguise changes some features and leaves others, which can still link the speaker to their normal voice
 :::

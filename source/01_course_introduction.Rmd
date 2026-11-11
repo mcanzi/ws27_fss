@@ -117,7 +117,7 @@ Sessions 1–8 each follow one chapter of Leemann et al. (2024).
 | 6 | Authentication, enhancement and speech content | 6 |
 | 7 | Linguistic analysis in the asylum procedure | 7 |
 | 8 | Expert witnesses | 13 |
-| 9 | Praat practical 1: recording and measuring your own voice | 2, 4 |
+| 9 | Praat practical 1: measuring your own voice | 2, 4 |
 | 10 | Praat practical 2: casework with the class recordings | 3–5 |
 
 ## Slides and materials
@@ -136,6 +136,54 @@ The book has exercises in every chapter, and we do many of them together.
 
 - Forensic questions often have no single correct answer, so we discuss how you reached yours and how sure you can be
 - Try each exercise before you read the solution
+
+## Recording your voice
+
+For the Praat practicals (sessions 9 and 10), each of you records yourself once in the LingLab booth, at any time before session 9. It takes about 15 minutes.
+
+| Item | Content | File name |
+|---|---|---|
+| Word list | 19 words in the frame _Say ___ again_, read three times | `S07_words.wav` |
+| Sentences A | three sentences, read normally | `S07_A.wav` |
+| Sentences B | three other sentences, read normally | `S07_B.wav` |
+| Disguise | sentences A again, in a disguised voice | `S07_A_disguise.wav` |
+
+. . .
+
+Use the ID you receive in place of S07, and upload the four files to the course folder.
+
+## The word list
+
+Read each word in the frame _Say ___ again_, for example _Say heed again_:
+
+| | | | |
+|---|---|---|---|
+| heed | hid | head | had |
+| hard | hod | hoard | hood |
+| who'd | heard | hud | think |
+| this | three | car | nurse |
+| water | butter | little | |
+
+. . .
+
+Read the whole list three times, at your normal speed. The first eleven words differ only in the vowel; the others contain sounds that vary across accents of English.
+
+## Sentences A and B {.smaller}
+
+| Set A | Set B |
+|---|---|
+| The north wind blew hard across the dark water all night. | In the dark, the water looked cold and much deeper than it was. |
+| My sister thinks the red car parked by the school is hers. | Nobody thinks a car like that belongs in such a quiet street. |
+| We heard the news on the radio and called two friends at once. | They heard a loud noise and ran back to the house. |
+
+. . .
+
+Read each set at your normal speed, as one short text.
+
+## The disguised reading
+
+- Read set A once more, in a voice that you think would stop your classmates from recognising you. Choose your own strategy, for example a different pitch, a different accent, a creaky or nasal voice. Do not whisper: we need f0
+- Write down your strategy on the form you receive, and do not tell your classmates
 
 ## What this course is, and is not
 
