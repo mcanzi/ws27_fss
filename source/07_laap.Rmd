@@ -1,0 +1,387 @@
+---
+title: "Language analysis in the asylum procedure"
+subtitle: "Where did this speaker grow up?"
+author: "Dr Massimiliano Canzi"
+knit: (function(input, ...) rmarkdown::render(input, output_dir = file.path(dirname(input), "..", "docs")))
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    css: theme-purple.css
+    highlight: zenburn
+    incremental: true
+    transition: fade
+    background_transition: fade
+    self_contained: true
+    reveal_options:
+      width: 1050
+      height: 700
+      slideNumber: "c/t"
+      showSlideNumber: all
+      controls: true
+      touch: true
+      transitionSpeed: fast
+      navigationMode: linear
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10, fig.height = 4.4, out.width = "100%")
+library(tidyverse)
+
+source("slides_setup.R", local = knitr::knit_global())
+```
+
+# A claim from Daraa
+
+<style>
+  :root {
+    --footer-text:  "Language analysis in the asylum procedure";
+    --qr:           `r qr_css`;
+    --lecture:      `r lecture_label`;
+  }
+</style>
+
+::: {.fact}
+`Did you know:` sperm whales communicate with [codas], short patterns of clicks, and whales that share a coda dialect form a "vocal clan". Across the Pacific, researchers have identified seven clans, each with its own dialect.
+
+_Source: Hersh et al. (2022), PNAS_
+:::
+
+## Syrian or Egyptian?
+
+A man who had arrived in the UK said he came from Daraa, a city in southern Syria, which he had left at 16 (Matras, 2018).
+
+- His language was clearly Arabic, but his speech mixed Syrian and Egyptian features. A language analysis found too many inconsistencies for a speaker from Daraa, and his claim was rejected
+- He won his appeal with a second analysis, which explained the Egyptian features by his exposure to urban varieties, where Egyptian features spread into other dialects
+
+## His speech
+
+| English        | Applicant              | Syria (Daraa)     | Egypt (Cairo)     |
+|----------------|------------------------|-------------------|-------------------|
+| here           | [hoːn]                 | /hoːn/            | /henaː/           |
+| don't go       | [laː truħ]             | /laː truħ/        | /maː tiruħ/       |
+| two sons and a daughter | [waladeːn uː binit] | /waladeːn uː binit/ | /waladiːn wa bint/ |
+| like this      | [heːk] ~ [kida]        | /heːk/            | /kida/            |
+| teacher (f.)   | [mudarrísa]            | /mudárrisa/       | /mudarrísa/       |
+
+Adapted from Matras (2018), as in Leemann et al. (2024). The accent marks word stress.
+
+## Today
+
+1. Asylum, and what LAAP is for
+2. The interview, the analysis and the report
+3. Why origin is hard to tell from speech
+4. Linguists or native speakers?
+
+. . .
+
+This session follows chapter 7 of Leemann et al. (2024).
+
+# Asylum and LAAP
+
+::: {.fact}
+`Did you know:` in the Pacific, the "identity codas" that mark a clan are [more distinct] where two clans share the same waters, much as human groups mark their identity more strongly where they meet.
+
+_Source: Hersh et al. (2022), PNAS_
+:::
+
+## Asylum seekers and refugees
+
+- An [asylum seeker]{.hl} has applied for protection and is waiting for a decision. A [refugee]{.hl} has been granted it, because they would be at risk if they returned
+- Grounds include persecution for religion, race, nationality, sexuality, membership of a social group, or political opinion
+- The 1951 UN Refugee Convention sets out their rights. 149 states are party to the Convention, its 1967 Protocol, or both
+- The [burden of proof]{.hl} lies with the asylum seeker, and many arrive without a passport or other papers
+
+## Body and story
+
+Without papers, two kinds of evidence can show where someone comes from: their body (for example medical evidence of torture or injury) and their story, including the way they speak.
+
+. . .
+
+[Language Analysis in the Asylum Procedure]{.hl} (LAAP, also [LADO]{.hl}, [LOID]{.hl} or [LingID]{.hl}) analyses a claimant's speech for features of language, dialect, grammar and vocabulary, as in speaker profiling, to test whether they grew up where they say.
+
+## When is LAAP used?
+
+- When there are doubts about where an asylum seeker grew up, for example because their account is inconsistent
+- When a rejected applicant is to be deported, and the authorities must decide where to send them
+- When a refugee is suspected of having lied about their origin, and the residence permit may be withdrawn
+
+## Agencies and numbers
+
+- LAAP began in the 1990s in Sweden and Switzerland. The Netherlands (OCILA), Switzerland (LINGUA) and Germany (BAMF) have their own government units; other countries contract the work out to firms and academics
+- In 2014, the UK's outsourced analyses of Somali claims by the firm Språkab contained significant errors, and a warning was issued about its reports. The UK moved its contracts to Verified AB
+
+## Outcomes differ a lot
+
+```{r outcomes, fig.height = 3.4}
+out <- tibble(country = c("Netherlands (2008)", "Switzerland", "United Kingdom"),
+              share = c(43, 50, 5)) |>
+  mutate(country = fct_inorder(country))
+ggplot(out, aes(country, share)) +
+  geom_col(fill = kingfisher, width = 0.6) +
+  geom_text(aes(label = paste0(c("", "about ", "about "), share, "%")), vjust = -0.5, colour = mist, size = 5) +
+  scale_y_continuous(limits = c(0, 60), labels = \(x) paste0(x, "%")) +
+  labs(x = NULL, y = "Reports against\nthe claimed origin")
+```
+
+Figures as reported in Leemann et al. (2024). The Netherlands runs LAAP in about 10% of asylum cases, Switzerland 600–1,000 interviews a year. UK figure from a recent survey (Hoskin, 2022).
+
+## Counter-experts
+
+In some countries, including the Netherlands and the UK, a rejected applicant can ask an independent [counter-expert]{.hl} to assess the report. The counter-expert works for the asylum seeker, re-analyses the recordings, and may make new ones.
+
+. . .
+
+Judges only take the counter-report seriously if it raises strong doubt about the original.
+
+# Interview and analysis
+
+::: {.fact}
+`Did you know:` off Dominica, the "1+1+3" coda, three evenly spaced clicks after two slower ones, has been the most common coda for at least 30 years, and has only ever been recorded in the [Caribbean].
+
+_Source: Gero, Bøttcher, Whitehead & Madsen (2016), Royal Society Open Science_
+:::
+
+## The 2004 guidelines
+
+In 2004, 19 linguists from the US, Europe and Australia drew up guidelines for LAAP (LNOG, 2004). Among their points:
+
+- Linguists advise; the decision lies with the government, which weighs the analysis with other evidence
+- Linguists assess [socialisation]{.hl}, where and how someone grew up. [Nationality]{.hl} is a political category with no direct link to language. Third-generation Italians in Switzerland may speak like other Swiss and hold an Italian passport
+- Analysts should be qualified linguists. Native speakers should not act as experts, even if they are trained translators or interpreters
+- Analysts should always express [degrees of certainty]{.hl}. A plain yes or no is not enough
+
+. . .
+
+Professional bodies have endorsed the guidelines, but they say nothing about how to run an interview, analyse it, or write a report.
+
+## The interview in the UK
+
+- If an immigration officer doubts the claimed origin after the first screening interview, a letter invites the applicant to a language analysis interview
+- The interview is run by a contracted company (currently Verified AB, in Sweden), over a secure telephone or video link, with an interpreter. The interviewer asks open questions, and analysts later assess the recording
+
+## The interview in Switzerland
+
+- LINGUA interviews by telephone, which protects the identity of both sides and lets experts work from abroad. Interviewers are linguists or trained native speakers, with no interpreter
+- The interviewer does not see the asylum file and does not know the reasons for the claim. The aim is a natural conversation: build rapport, show interest, and assume that everything the claimant says is true
+- An interview lasts 45–90 minutes, about childhood, family, education, religion, work, languages and daily life, sometimes with word lists or picture tasks. Questions about currency or local politics can also come up
+
+## An awkward start
+
+From the opening of a LINGUA interview, translated (Hubbuch, 2019):
+
+> **C**: I do, I do, but who are you?
+> **I**: Well, how shall I put this… I am an independent expert.
+> **C**: And where are you?
+> **I**: It doesn't matter.
+> **C**: Mhm. Yes it does.
+
+. . .
+
+The interview that followed was successful. In most cases, LAAP is reported to be straightforward (Hubbuch, 2019).
+
+## The report
+
+In the UK, a LAAP report should:
+
+- describe the linguistic features found (phonetics, phonology, vocabulary, syntax) and how well the claimant knew the claimed area
+- cite the literature consulted and the methods used, say who was present and who analysed, and list their qualifications
+- say openly where the analyst was unsure, for example under time pressure
+- be written for non-linguists
+
+## Problems with reports
+
+Not all agencies follow these principles. Some reports do not make clear how the interview was run or how the conclusion was reached.
+
+- Some state conclusions in their own [ad hoc]{.hl} terms. A standard scale, such as the [verbal likelihood ratio scale]{.hl} of session 4, would make reports easier to compare
+- Peer review would help, but data protection law makes it hard to send recordings to another analyst, especially in another country
+
+## Sango or not?
+
+An applicant said he came from the Central African Republic and spoke Sango, Gbaya and French. Asked to translate simple French words, he could not speak Sango or Gbaya fluently (Cambier-Langeveld, 2018).
+
+| English | French  | Applicant | Sango  |
+|---------|---------|-----------|--------|
+| head    | tête    | [sətok]   | /li/   |
+| fish    | poisson | [gwɛk]    | /susu/ |
+| I       | je      | [ɲi]      | /mbi/  |
+| dog     | chien   | [gwi]     | /mbo/  |
+
+. . .
+
+His words matched Moghomo, a language spoken in Cameroon.
+
+# Why it is hard
+
+::: {.fact}
+`Did you know:` sperm whale codas vary in timing with the conversation and sometimes gain an extra click. Researchers call these features [rubato and ornamentation], and found that they combine with rhythm and tempo into a large inventory of distinct codas.
+
+_Source: Sharma et al. (2024), Nature Communications_
+:::
+
+## Four complications
+
+Placing someone by their speech seems easy: we do it every time we meet a stranger. In an asylum interview, four things get in the way:
+
+1. Applicants are often multilingual and mobile
+2. People change the way they speak over their lifetime
+3. Applicants may change their speech during the interview
+4. Some languages and varieties are hardly studied
+
+## Languages and borders
+
+- In a small, homogeneous population the task can be easy: someone from Chechnya should speak Chechen, and a false claimant may manage only a few words
+- But many applicants mix languages, or come from [diglossic]{.hl} societies such as Arabic-speaking ones, with a [low variety]{.hl} at home and a very different [high variety]{.hl} in official settings
+- Language boundaries rarely match political ones: the German of Vorarlberg in Austria is very close to neighbouring Swiss German, and the English of Berwick-upon-Tweed has Scottish features
+- Years in refugee camps or asylum housing can reshape speech too, through contact with other languages and dialects
+
+## Language attrition
+
+- [Attrition]{.hl} is the loss of some first-language competence after a long time in a place where the language is not spoken: smaller vocabulary, more hesitations, less stable grammar
+- When the US soldier Bowe Bergdahl was released in 2014 after five years in Taliban captivity, his family said he had trouble speaking English. Many people refused to believe it
+- English footballers and managers such as Joey Barton and Steve McClaren were ridiculed for picking up a slight foreign accent after working abroad
+
+## Native or not?
+
+```{r nativeness, fig.height = 3.7}
+set.seed(70)
+rate <- function(n, p) sample(1:6, n, replace = TRUE, prob = p)
+nat <- bind_rows(
+  tibble(group = "L1 German, never left", rating = rate(20, c(.55, .30, .15, 0, 0, 0))),
+  tibble(group = "L1 German, abroad 9+ years", rating = rate(20, c(.30, .30, .20, .12, .06, .02))),
+  tibble(group = "L2 German speakers", rating = rate(20, c(.05, .10, .15, .20, .25, .25)))
+) |> mutate(group = fct_inorder(group))
+ggplot(nat, aes(rating, group, colour = group)) +
+  geom_vline(xintercept = 3.5, linetype = "dashed", colour = muted) +
+  geom_jitter(width = 0.25, height = 0.2, size = 3, alpha = 0.85, show.legend = FALSE) +
+  scale_x_continuous(breaks = 1:6, labels = c("1\nnative", 2:5, "6\nnon-native")) +
+  scale_colour_manual(values = c(hornbill, kingfisher, orchid)) +
+  labs(x = "Foreign accent rating by native listeners", y = NULL)
+```
+
+Simulated, following the pattern of a 2007 study described in Leemann et al. (2024): some native speakers who had lived abroad for years were rated non-native, and some learners passed as native. Nativeness is gradient.
+
+## Children and trauma
+
+- Adults born in Korea and adopted by French families between the ages of three and eight could no longer pick out Korean from other languages (Pallier et al., 2003)
+- Other studies show that adoptees can lose their first language within months or weeks
+- A boy who came to the Netherlands from Angola at nine forgot his Portuguese. At 17 he faced deportation; the authorities did not believe he could have forgotten it (Schmid, 2019)
+- Someone who avoids a language linked to traumatic events may seem unable to speak it
+
+## Stories that may or may not be true
+
+- A woman claimed to be a monolingual Kurmanji speaker from Syria. The analysis found her Kurmanji non-native. On appeal, a new analyst explained her accent by a possible other childhood language, which she had not mentioned before
+- A 17-year-old claimed to be from Syria, but his Arabic was Egyptian. He said he had lived two years in Egypt after leaving Syria at 13, and later shared a flat with an Egyptian
+
+. . .
+
+No study can show how a Syrian teenager's dialect changes in two years in Egypt. In such cases the analysis rests on the analyst's judgement of the claimed circumstances.
+
+## In the interview itself
+
+- Talking to an invisible stranger on the phone, in a rare language or stigmatised dialect taken out of its usual setting, is far from natural speech. Researchers call this [deterritorialised]{.hl} language
+- Applicants may switch to the variety they think will help their case, or [accommodate]{.hl} to the interviewer. LINGUA asks them to speak as they do with family and friends
+- Asked "what is your language?", people may name the official language (Chinese, Bengali) and not the one they speak, or call their language a dialect. Some languages have several names, such as Uyghur and Turki
+
+## Persecuted and little-studied languages
+
+- Speaking a language may itself have been a reason for persecution, as for Welsh and Gaelic in Britain in the past, Basque, Catalan and Galician under Franco, and Tamil in Sri Lanka. Applicants may be reluctant to admit to it
+- Some varieties have hardly been studied, or only long ago. The Bajuni variety spoken by islanders in Somalia is close to dying out, and fieldwork in conflict areas is difficult
+- Speech communities may be so small that agencies keep interviewers anonymous
+
+# Who should analyse?
+
+::: {.fact}
+`Did you know:` off Dominica, two sperm whale clans share the same waters, but family units only [associate within their own clan], one of them with "1+1+3" codas and the other mostly with regular codas.
+
+_Source: Gero, Bøttcher, Whitehead & Madsen (2016), Royal Society Open Science_
+:::
+
+## The case against native speakers
+
+- The 2004 guidelines exclude native speakers as experts, and some countries require a degree in linguistics, which excludes them in law
+- Critics argue that native speakers lack training and tools. They may know nothing of attrition or language variation, the literature, or how to write a report
+
+## The case for native speakers
+
+- Native speakers are on average better than non-native linguists at telling where speakers of their language come from (Foulkes & Wilson, 2011; Hoskin, 2022), and accuracy grows with familiarity with the dialect
+- Many can justify their decisions in fairly precise terms, and are aware of regional and social variation
+- LAAP also means judging whether speech is genuine. Applicants may fake an accent or rehearse answers, and native speakers often notice such anomalies better
+
+## A compromise
+
+In 2009, the International Association for Forensic Phonetics and Acoustics (IAFPA) accepted a role for trained native speakers working under the supervision of linguists. In practice:
+
+1. the linguist analyses, in close consultation with a native speaker
+2. a trained native speaker analyses, under close supervision
+3. the linguist is also a native speaker, which is rare
+4. a native speaker trains in linguistics
+
+. . .
+
+The Netherlands uses native speaker analysts; in Switzerland, native speakers may take part in interviews, but only linguists analyse.
+
+## Where research is going
+
+- Experiments compare linguists and untrained native speakers at classifying accents and at spotting fake speakers. Agencies have started to open some cases to researchers, which has shown, for example, why some interview questions fail to get the answers they aim for
+- Other work looks at the role of interpreters, and at speech technology that classifies languages and accents. The German authorities have reportedly trialled such tools
+
+## Discussion
+
+- Should a native speaker without linguistic training ever decide where someone grew up?
+- How would you weigh a claimant's explanation of unexpected features, such as years spent in another country, when no research can test it?
+
+## Activity
+
+For the practical sessions (book activity 7A):
+
+1. Record two native speakers of a dialect reading a short passage of 5–10 sentences
+2. Record two non-native speakers reading the same passage, imitating that dialect
+3. Play the four recordings to three native and three non-native listeners of the dialect, who do not know the speakers. For each, they say whether the speaker is native, and how certain they are (1–3)
+4. Count hits, misses, false alarms and correct rejections for each listener group, and compare their confidence
+
+## Summary
+
+::: {.takeaway}
+- [LAAP]{.hl} tests whether an asylum seeker's speech fits the place where they claim to have grown up
+- Linguists assess [socialisation]{.hl}, where someone grew up, and should express [degrees of certainty]{.hl}
+- Interviews and reports vary a lot between countries, and there are no agreed protocols
+- Multilingualism, mobility, [attrition]{.hl}, trauma, the interview situation and little-studied varieties all make origin hard to tell
+- Native speakers are good at recognising their own varieties, but should work with trained linguists
+:::
+
+## References {.refs}
+
+- Cambier-Langeveld, T. (2010). The role of linguists and native speakers in language analysis for the determination of speaker origin. _International Journal of Speech, Language and the Law_, 17(1), 67–93.
+- Cambier-Langeveld, T. (2018). Language analysis in the asylum procedure: Consider the context. In I. M. Nick (Ed.), _Forensic linguistics: Asylum-seekers, refugees and immigrants_ (pp. 1–21). Vernon Press.
+- Foulkes, P., & Wilson, K. (2011). Language analysis for the determination of origin: An empirical study. _Proceedings of the 17th International Congress of Phonetic Sciences_, 691–694.
+- Hoskin, J. (2022). _Shifting the burden: Towards new tests for language analysis in the asylum procedure_ [PhD thesis]. University of York.
+- Hubbuch, P. (2019). "We only want to talk...": Lingua interviews for linguistic analyses for the determination of origin. In P. Patrick, M. Schmid, & K. Zwaan (Eds.), _Language analysis for the determination of origin_ (pp. 41–59). Springer.
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 7.]{.hl}
+- LNOG [Language and National Origin Group] (2004). Guidelines for the use of language analysis in relation to questions of national origin in refugee cases. _International Journal of Speech, Language and the Law_, 11(2), 261–266.
+
+## References {.refs}
+
+- Matras, Y. (2018), cited in Leemann et al. (2024), chapter 7.
+- Pallier, C., Dehaene, S., Poline, J.-B., LeBihan, D., Argenti, A.-M., Dupoux, E., & Mehler, J. (2003). Brain imaging of language plasticity in adopted adults: Can a second language replace the first? _Cerebral Cortex_, 13(2), 155–161.
+- Patrick, P. L., Schmid, M. S., & Zwaan, K. (Eds.). (2019). _Language analysis for the determination of origin: Current perspectives and new directions_. Springer.
+- Schmid, M. S. (2019). Language attrition as a problem for LAAP. In P. Patrick, M. Schmid, & K. Zwaan (Eds.), _Language analysis for the determination of origin_ (pp. 155–165). Springer.
+- UNHCR (2024). _Protecting refugees through international legal instruments and domestic asylum laws_. UNHCR data visualisation.
+- Wilson, K., & Foulkes, P. (2014). Borders, variation, and identity: Language analysis for the determination of origin (LADO). In D. Watt & C. Llamas (Eds.), _Language, borders and identity_ (pp. 218–229). Edinburgh University Press.
+
+## Sources of the animal facts {.refs}
+
+- Gero, S., Bøttcher, A., Whitehead, H., & Madsen, P. T. (2016). Socially segregated, sympatric sperm whale clans in the Atlantic Ocean. _Royal Society Open Science_, 3(6), 160061. https://doi.org/10.1098/rsos.160061
+- Hersh, T. A., Gero, S., Rendell, L., Cantor, M., Weilgart, L., Amano, M., ... Whitehead, H. (2022). Evidence from sperm whale clans of symbolic marking in non-human cultures. _PNAS_, 119(37), e2201692119. https://doi.org/10.1073/pnas.2201692119
+- Sharma, P., Gero, S., Payne, R., Gruber, D. F., Rus, D., Torralba, A., & Andreas, J. (2024). Contextual and combinatorial structure in sperm whale vocalisations. _Nature Communications_, 15, 3617. https://doi.org/10.1038/s41467-024-47221-8
+
+## Slides and code
+
+<div class="qr-block">
+<img src="`r qr_uri`" alt="QR code linking to these slides">
+<div>
+<p>These slides</p>
+<p class="qr-link">mcanzi.github.io/ws27_fss/<wbr>`r lecture_file`</p>
+<p>Code and all sessions</p>
+<p class="qr-link">github.com/mcanzi/ws27_fss</p>
+</div>
+</div>
