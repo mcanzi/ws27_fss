@@ -46,7 +46,7 @@ source("slides_setup.R", local = knitr::knit_global())
 _Source: Henneberg, Lambert & Leigh (1997), Natural Science_
 :::
 
-## Bomb threats in New York
+## Bomb threats against an airline
 
 - In 1983, a caller made a series of [bomb threats]{.hl} by telephone to Pan American Airlines, and some calls were recorded
 - The police charged a suspect, [Paul Prinzivalli]{.hl}
@@ -167,7 +167,7 @@ Simulated spectra: the filter's peaks are the [formants]{.hl}.
 
 - Most speech uses an [egressive pulmonic]{.hl} airstream: air pushed out from the lungs
 - Some sounds use other airstreams: [clicks]{.hl} draw air inwards
-- In English, clicks are not speech sounds (_tut tut_, or spurring on a horse); in Xhosa and other southern African languages they are consonants
+- In English, clicks are not speech sounds (_tut tut_, or spurring on a horse); in some African languages, such as Xhosa, they are consonants
 
 ## Segments and prosody
 
@@ -283,7 +283,7 @@ ggplot(f0s, aes(f0, fill = group, colour = group)) +
   theme(axis.text.y = element_blank())
 ```
 
-Simulated speakers. Typical values: men 100–125 Hz, women 180–220 Hz, children above 300 Hz. Larger larynges vibrate more slowly.
+Simulated speakers. Typical values: men 100–125 Hz, women 180–220 Hz, children above 300 Hz. Longer, heavier vocal folds vibrate more slowly.
 
 ## Voice quality
 
@@ -341,8 +341,8 @@ Simulated syllable durations. English shortens unstressed syllables so that stre
 
 ```{r tempo, fig.height = 2.6}
 chunks <- tibble(
-  start = c(0, 1.45, 1.80, 3.35, 3.85, 5.30),
-  end = c(1.45, 1.80, 3.35, 3.85, 5.30, 6.20),
+  start = c(0, 1.60, 1.95, 3.55, 4.15, 5.74),
+  end = c(1.60, 1.95, 3.55, 4.15, 5.74, 6.20),
   type = c("speech", "pause", "speech", "pause", "speech", "pause")
 )
 speech_time <- sum(with(chunks, (end - start)[type == "speech"]))
@@ -471,7 +471,7 @@ ggplot(scaled, aes(F2, F1, colour = voice, group = voice)) +
   labs(x = "F2 (Hz)", y = "F1 (Hz)", colour = NULL)
 ```
 
-Approximate cardinal vowel formants for an adult man, scaled up for illustration. The [shape]{.hl} stays; the frequencies rise.
+Approximate cardinal vowel formants for an adult man (Catford, 1988), scaled up for illustration. The [shape]{.hl} stays; the frequencies rise.
 
 ## Measuring f0
 
@@ -541,7 +541,7 @@ Simulated cycle durations of a voice at 125 Hz (8 ms per cycle).
 
 . . .
 
-Counting syllables is not trivial: _library_ has three syllables in careful speech but often two in fast speech. Analysts usually count the syllables a word [would]{.hl} have in careful speech.
+Counting syllables is not trivial: _library_ has three syllables in careful speech but often two in fast speech. It is usually easier to count the syllables a word [would]{.hl} have in careful speech.
 
 # Forensic practice
 
@@ -564,8 +564,8 @@ Surveys of forensic phoneticians worldwide (Gold & French, 2011, 2019):
 
 ## Why F1 comes second
 
-- Telephone transmission cuts off frequencies below about 300 Hz and above about 3,400 Hz
-- This can [distort F1]{.hl}, especially in close vowels with low F1
+- Landline telephones pass only about 350 to 3,400 Hz
+- This tends to [raise F1]{.hl} estimates, especially in close vowels with low F1
 - More on recording quality in session 4
 
 ## Which features identify a speaker best?
@@ -606,10 +606,11 @@ We will do these in the practical sessions.
 
 ## References {.refs}
 
+- Catford, J. C. (1988). _A practical introduction to phonetics_. Oxford University Press.
 - Gold, E., & French, P. (2011). International practices in forensic speaker comparison. _International Journal of Speech, Language and the Law_, 18(2), 293–307.
 - Gold, E., & French, P. (2019). International practices in forensic speaker comparisons: Second survey. _International Journal of Speech, Language and the Law_, 26(1), 1–20.
 - Labov, W. (1988). The judicial testing of linguistic theory. In D. Tannen (Ed.), _Linguistics in context: Connecting observation and understanding_ (pp. 159–182). Ablex.
-- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 2.]{.hl}
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapters 2 and 4.]{.hl}
 - Wells, J. C. (1982). _Accents of English_ (3 vols.). Cambridge University Press.
 
 ## Sources of the animal facts {.refs}

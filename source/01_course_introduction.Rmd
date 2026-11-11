@@ -368,7 +368,7 @@ _Source: Dalziell et al. (2021), Current Biology_
 - [IAFPA](https://www.iafpa.net/): the International Association for Forensic Phonetics and Acoustics
 - [IAFLL](https://iafll.org/): the International Association for Forensic and Legal Linguistics
 - _International Journal of Speech, Language and the Law_
-- Nolan, McDougall & Hudson (eds.) (2024), _The Oxford Handbook of Forensic Phonetics_
+- Nolan, McDougall & Hudson (eds.) (in press), _The Oxford Handbook of Forensic Phonetics_
 - [Forensic Transcription Australia](https://forensictranscription.com.au/): Helen Fraser's site on transcripts of covert recordings
 
 ## Summary
@@ -384,7 +384,7 @@ _Source: Dalziell et al. (2021), Current Biology_
 ## References {.refs}
 
 - [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 1.]{.hl}
-- Giménez, R., Elstein, S., & Queralt, S. (2020). The pandemic and the forensic linguistics caseworker's wellbeing: Effects and recommendations. _International Journal of Speech, Language and the Law_, 27(2), 1–22.
+- Giménez, R., Elstein, S., & Queralt, S. (2020). The pandemic and the forensic linguistics caseworker's wellbeing: Effects and recommendations. _International Journal of Speech, Language and the Law_, 27(2), 233–254. https://doi.org/10.1558/ijsll.19548
 - Hyde, L. (2022, February 26). Saboteurs spark suspicion and solidarity in Kyiv. _Politico_.
 
 ## Sources of the animal facts {.refs}
