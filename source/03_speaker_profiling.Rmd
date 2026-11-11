@@ -1,0 +1,526 @@
+---
+title: "Speaker profiling"
+subtitle: "What a voice can and cannot tell us"
+author: "Dr Massimiliano Canzi"
+knit: (function(input, ...) rmarkdown::render(input, output_dir = file.path(dirname(input), "..", "docs")))
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    css: theme-purple.css
+    highlight: zenburn
+    incremental: true
+    transition: fade
+    background_transition: fade
+    self_contained: true
+    reveal_options:
+      width: 1050
+      height: 700
+      slideNumber: "c/t"
+      showSlideNumber: all
+      controls: true
+      touch: true
+      transitionSpeed: fast
+      navigationMode: linear
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10, fig.height = 4.4, out.width = "100%")
+library(tidyverse)
+
+source("slides_setup.R", local = knitr::knit_global())
+```
+
+# The Yorkshire Ripper hoax
+
+<style>
+  :root {
+    --footer-text:  "Speaker profiling";
+    --qr:           `r qr_css`;
+    --lecture:      `r lecture_label`;
+  }
+</style>
+
+::: {.fact}
+`Did you know:` a computer can tell red deer stags apart by their roars. Researchers used [cepstral coefficients]{.hl} and [hidden Markov models]{.hl}, two techniques from automatic human speech recognition.
+
+_Source: Reby et al. (2006), Journal of the Acoustical Society of America_
+:::
+
+## A tape from Sunderland
+
+- Between 1975 and 1980, a man murdered [13 women]{.hl} in the north of England: the "Yorkshire Ripper"
+- Between 1978 and 1979, the police received letters and a [tape]{.hl} from a man claiming to be the killer
+- The letters were posted in [Sunderland]{.hl}, and the voice on the tape had a north-eastern accent
+
+## Stanley Ellis
+
+- Phonetician and dialectologist, and a former fieldworker for the [Survey of English Dialects]{.hl}
+- The police asked him for a [speaker profile]{.hl}: where was the caller from?
+- He used dialect atlases, then made his own recordings in Sunderland
+- He placed the speaker in [Southwick or Castletown]{.hl}, two areas of Sunderland
+
+. . .
+
+The tape was played on television and at football grounds. No suspect was found.
+
+## The wrong suspect pool
+
+- Ellis and his colleague Jack Windsor Lewis came to think the tape was a [hoax]{.hl}, but the investigation stayed centred on Sunderland (French, Harrison & Windsor Lewis, 2006)
+- The real killer, [Peter Sutcliffe]{.hl}, was from West Yorkshire and had a Yorkshire accent
+- He had been questioned earlier, and released partly because his accent was not north-eastern
+- He was arrested in 1981. The murders had continued in the meantime
+
+## The hoaxer
+
+- In 2005, DNA from the hoax letters matched [John Samuel Humble]{.hl}
+- He was convicted of perverting the course of justice and sentenced to eight years
+- He had grown up about [a mile]{.hl} from the area Ellis had named
+
+. . .
+
+The profile was remarkably accurate. The assumption that the speaker was the killer was not.
+
+## Today
+
+1. What a speaker profile is, and when it is needed
+2. What experts can usually infer: the [key information]{.hl}
+3. What needs [caution]{.hl}, and what experts leave out of reports
+4. Voice [disguise]{.hl} and spoofing
+
+. . .
+
+This session follows chapter 3 of Leemann et al. (2024).
+
+# Speaker profiling
+
+::: {.fact}
+`Did you know:` red deer stags listen to a rival's [formants]{.hl}. In playback experiments, stags responded to roars whose formants simulated rivals of different sizes, and adjusted their own formants to what they heard.
+
+_Source: Reby et al. (2005), Proceedings of the Royal Society B_
+:::
+
+## When is a profile needed?
+
+The police have a recording of an [unknown speaker]{.hl}, but no suspect:
+
+- ransom demands in kidnappings, telephone threats
+- masked robberies, or speakers out of camera view
+- surveillance recordings from bugged buildings or cars
+- people who refuse to document their identity
+
+. . .
+
+The aim is to [narrow down]{.hl} the suspect pool. In a kidnapping, a profile may be needed within hours.
+
+## How often?
+
+- J P French Associates (UK): about [2–5]{.hl} profiling cases a year, out of 100–150
+- Bundeskriminalamt (BKA, Germany): about [10–20%]{.hl} of casework, because the BKA also does investigative work
+- Profiling also feeds other tasks: transcription, reference populations for speaker comparison (session 4), language analysis in asylum cases (session 7)
+
+## Three kinds of information {.smaller}
+
+| Key information | May be added | Strong caution |
+|---|---|---|
+| sex and gender | speech disorders | age |
+| regional background | drugs and alcohol | height, weight, face |
+| social background | | psychological state |
+| language(s) and L2 influence | | |
+| speaking style: read or spontaneous | | |
+| environment, time and date | | |
+
+## What limits a profile
+
+- The [quantity and quality]{.hl} of the recording: case recordings are often short and poor
+- How well the language or dialect is [documented]{.hl}
+- The [experience]{.hl} of the analyst
+
+. . .
+
+No recording contains enough evidence for every dimension in the table.
+
+# Key information
+
+::: {.fact}
+`Did you know:` female red deer prefer stags that [sound bigger]{.hl}. Hinds in oestrus moved towards roars whose lower formants simulated larger males: the first evidence that female mammals use an acoustic cue to body size when choosing a mate.
+
+_Source: Charlton, Reby & McComb (2007), Biology Letters_
+:::
+
+## Sex and gender
+
+- Most speakers in forensic cases are [men]{.hl}
+- The main acoustic cue to speaker sex is [f0]{.hl}: adult men usually have longer, heavier vocal folds
+- Sex and gender interact: speakers can raise or lower their pitch, within anatomical limits, and adjust other features such as formants
+
+## Swiss German f0
+
+```{r f0-sex, fig.height = 3.9}
+set.seed(31)
+sw <- bind_rows(
+  tibble(sex = "Men", style = "Read", f0 = rnorm(500, 125, 18)),
+  tibble(sex = "Men", style = "Spontaneous", f0 = rnorm(500, 129, 19)),
+  tibble(sex = "Women", style = "Read", f0 = rnorm(500, 201, 22)),
+  tibble(sex = "Women", style = "Spontaneous", f0 = rnorm(500, 198, 23))
+)
+ggplot(sw, aes(f0, colour = sex, linetype = style)) +
+  annotate("rect", xmin = 150, xmax = 170, ymin = -Inf, ymax = Inf, fill = vine, alpha = 0.8) +
+  geom_density(linewidth = 1.1) +
+  scale_colour_manual(values = c(Men = kingfisher, Women = hornbill)) +
+  scale_x_continuous(breaks = seq(75, 300, 25)) +
+  labs(x = "Mean f0 of a speaker (Hz)", y = NULL, colour = NULL, linetype = NULL) +
+  theme(axis.text.y = element_blank())
+```
+
+Simulated from the means of 1,000 Swiss German speakers (Hedegard et al., 2023). Shaded: [150–170 Hz]{.hl}, where men and women overlap.
+
+## f0 is not fixed
+
+- A man robbed a petrol station on camera: his mean f0 was [228 Hz]{.hl}. After his arrest, his normal f0 was [140 Hz]{.hl} (Boss, 1996)
+- Health, intoxication, stress and emotion all change f0
+- Average f0 also differs between languages: Japanese women typically speak with higher f0 than American women
+
+## Regional background
+
+How far we can locate a speaker depends on:
+
+- how much [regional variation]{.hl} the language has
+- how [mobile]{.hl} the speakers are
+- how much [research]{.hl} on regional variation exists
+
+. . .
+
+The UK, Germany, Switzerland, France, the Netherlands and the US have long traditions of dialectology. The classic British source is the [Survey of English Dialects]{.hl} (SED): over 300 localities, more than a thousand questions, collected in the 1950s.
+
+## FOOT and STRUT
+
+- In much of northern England, FOOT and STRUT have the same vowel: _look_ and _luck_ [rhyme]{.hl}
+- In the south, they are different (the FOOT–STRUT [split]{.hl})
+- The SED shows the divide as it was in the 1950s, mostly from older rural men, often one speaker per place
+- Newer data from the English Dialects App (2016) suggest that the northern pattern is [receding]{.hl}
+
+## A moving boundary
+
+```{r foot-strut, fig.height = 3.8}
+fs <- expand_grid(position = seq(0, 1, by = 0.01), period = c("1950s", "2016")) |>
+  mutate(boundary = if_else(period == "1950s", 0.45, 0.6),
+         split = plogis((boundary - position) * 14) * 100)
+ggplot(fs, aes(position, split, colour = period)) +
+  geom_line(linewidth = 1.4) +
+  scale_colour_manual(values = c(`1950s` = muted, `2016` = kingfisher)) +
+  scale_x_continuous(breaks = c(0, 1), labels = c("South coast", "Scottish border")) +
+  labs(x = NULL, y = "Speakers with a split (%)", colour = NULL)
+```
+
+Simulated, to show the trend: the split spreads [north]{.hl}, so a 1950s map can point an analyst in the wrong direction.
+
+## How good are experts?
+
+```{r koester, fig.height = 3.2}
+kz <- tibble(group = fct_inorder(c("Forensic experts", "Naive listeners")), error = c(15, 60))
+ggplot(kz, aes(group, error)) +
+  geom_col(fill = c(kingfisher, muted), width = 0.55) +
+  geom_errorbar(data = filter(kz, group == "Naive listeners"), aes(ymin = 50, ymax = 70), width = 0.15, colour = mist, linewidth = 1) +
+  scale_y_continuous(limits = c(0, 75)) +
+  coord_flip() +
+  labs(x = NULL, y = "Error rate in regional accent identification (%)")
+```
+
+15 German experts, 20 one-minute samples (Köster et al., 2012). Naive listeners: about 50–70% in other studies. Some experts took about a minute per sample, others about an hour.
+
+## Automatic accent recognition
+
+- Most profiling is still done by humans, with auditory and acoustic analysis
+- Automatic systems are improving, but need [plenty of good-quality speech]{.hl}: some need at least three minutes per speaker
+- Case recordings are often short and noisy
+
+. . .
+
+In practice, analysts usually report a [broad area]{.hl} ("northern England"), narrowed only when specific features allow it. In Australia or New Zealand, there is little regional variation to work with.
+
+## Social background
+
+- The UK has a strong tradition of class differences in speech, though weaker than a few decades ago
+- The US shows class differences too, but less than the UK
+- Norway and German-speaking Switzerland: much regional, less social variation
+- Australia and New Zealand: social variation, little regional variation
+
+## Labov's department stores
+
+- New York City, early 1960s: [Saks]{.hl} (upper-class customers), [Macy's]{.hl} (middle class), [S. Klein]{.hl} (working class)
+- Labov asked staff where to find an item he knew was on the fourth floor
+- Then he pretended not to hear, to get a careful repetition of "[fourth floor]{.hl}"
+- He noted whether each /r/ was pronounced
+
+## Labov's department stores
+
+```{r labov, fig.height = 3.9}
+lb <- expand_grid(store = fct_inorder(c("Saks", "Macy's", "S. Klein")),
+                  word = fct_inorder(c("fourth", "floor")),
+                  utterance = fct_inorder(c("First answer", "Repetition"))) |>
+  mutate(r = c(30, 40, 62, 70, 15, 25, 42, 56, 4, 6, 10, 20))
+ggplot(lb, aes(store, r, fill = utterance)) +
+  geom_col(position = position_dodge(width = 0.8), width = 0.7) +
+  facet_wrap(~ word) +
+  scale_fill_manual(values = c(muted, kingfisher)) +
+  labs(x = NULL, y = "/r/ pronounced (%)", fill = NULL)
+```
+
+Simulated percentages showing the [pattern]{.hl} Labov found: more /r/ in the upper-class store, in careful repetitions, and in _floor_ than in _fourth_.
+
+## Which language?
+
+- Not always obvious, especially for less widely known languages, or when speakers [switch]{.hl} between languages
+- Experts often work with a native-speaker consultant
+- Many terrorism cases in the early 2000s were first assumed to involve Arabic. Linguists found they were more often in [Pashto, Sylheti or Urdu]{.hl}
+
+## First and second language speakers
+
+```{r l2, fig.height = 3.6}
+l2 <- tibble(language = fct_inorder(c("English", "French", "Urdu", "Swahili")),
+             L1 = c(373, 80, 70, 16), L2 = c(1000, 194, 161, 55)) |>
+  pivot_longer(c(L1, L2), names_to = "speakers", values_to = "millions") |>
+  mutate(label = if_else(language == "English" & speakers == "L2", "over 1,000", as.character(millions)))
+ggplot(l2, aes(language, millions, fill = speakers)) +
+  geom_col(position = position_dodge(width = 0.8), width = 0.7) +
+  geom_text(aes(label = label), position = position_dodge(width = 0.8), vjust = -0.4, colour = mist, size = 5) +
+  scale_fill_manual(values = c(L1 = muted, L2 = kingfisher)) +
+  scale_y_continuous(limits = c(0, 1120)) +
+  labs(x = NULL, y = "Speakers (millions)", fill = NULL)
+```
+
+Ethnologue (2022) figures, as reported in Leemann et al. (2024). An L2 speaker on a forensic recording is not surprising.
+
+## From the L2 back to the L1
+
+- Stereotypical transfer is easy to spot: French and German speakers often say [s z]{.hl} for English /θ ð/
+- In the other direction, English speakers struggle with uvular [ʁ] in German and French, or trilled /r/ in Spanish and Arabic
+- Beyond stereotypes, identifying the L1 is [much harder]{.hl}
+- And even then, the L1 may say little about origin: Arabic is an official language in 22 states and has over 400 million speakers
+
+## Speaking style
+
+- [Read]{.hl} speech suggests a prepared text, and possibly a planned crime
+- [Spontaneous]{.hl} speech is more variable and more reduced, with false starts, repetitions, filled pauses and discourse markers
+- The Yorkshire Ripper tape: slow, long silent pauses, no disfluencies. It was read
+- It was made of [four separate recordings]{.hl}, and the music at the end had been on the cassette before the message: a sign of planning (French et al., 2006)
+
+## Environment, time and date
+
+- Background sounds can place a speaker: station announcements, church bells, traffic, trams
+- In a German case, an expert heard [young birds being fed]{.hl}. An ornithologist helped establish the time of day and the location
+- Indoors or outdoors? The reflections of sound off walls can even help reconstruct the room ("roomprints")
+
+## Electrical network frequency
+
+- Mains electricity leaves a faint [hum]{.hl} on many recordings (nominally 50 Hz in Europe)
+- Its exact frequency drifts randomly over time, in the same way across a whole grid
+- Matched against a reference log, it can show [when]{.hl} a recording was made, and whether it was [edited]{.hl}
+
+## Electrical network frequency
+
+```{r enf, fig.height = 3.9}
+set.seed(12)
+grid <- tibble(t = 0:600, Hz = 50 + cumsum(rnorm(601, 0, 0.004)))
+grid$Hz <- grid$Hz - mean(grid$Hz) + 50
+rec <- filter(grid, between(t, 340, 400)) |> mutate(Hz = Hz + rnorm(n(), 0, 0.0015))
+ggplot(grid, aes(t / 60, Hz)) +
+  annotate("rect", xmin = 340 / 60, xmax = 400 / 60, ymin = -Inf, ymax = Inf, fill = vine, alpha = 0.9) +
+  geom_line(colour = muted, linewidth = 0.8) +
+  geom_point(data = rec, colour = kingfisher, size = 1.8) +
+  labs(x = "Time in the reference log (minutes)", y = "Mains frequency (Hz)")
+```
+
+Simulated. Grey: the grid's reference log. Orange: the hum extracted from a one-minute recording, which matches only one stretch of the log.
+
+# Handle with care
+
+::: {.fact}
+`Did you know:` in red deer, the voice really does reveal size. The lowest formants of a stag's roar go [down]{.hl} with body weight and age, while f0 does not track weight in adult stags. In humans, the link between voice and body size is weak.
+
+_Source: Reby & McComb (2003), Animal Behaviour_
+:::
+
+## Speech disorders
+
+- Rare in casework, but very [diagnostic]{.hl} when they occur
+- Phoneticians consult speech pathologists to classify them
+- Disorders can have physical, neuro-motor or functional causes, and each leaves different traces
+- A treated speaker may even be on record with a clinic
+
+## Alcohol
+
+- Alcohol affects fine motor control. Apical consonants suffer: _check_ [tʃɛk] can become [ʃɛk] ([deaffrication]{.hl})
+- f0 usually rises, speaking rate slows, disfluencies increase
+- But effects depend on the amount and on [mood]{.hl}: one drinker becomes slow and monotonous, another lively and high-pitched
+
+## Other drugs
+
+- Cannabis: more variable voice onset time, flatter f0
+- Stimulants: more fluent and talkative, shorter pauses
+- LSD: semantic errors rather than disfluency (_butterfly_ for a bee)
+- Opioids: effects similar to depressants
+
+. . .
+
+The conundrum: we usually do not know how the person [normally]{.hl} speaks. In 1989, the radio speech of the captain of the _Exxon Valdez_ was analysed for intoxication, with inconclusive results.
+
+## Age
+
+- Some differences are obvious: a five-year-old and a fifty-year-old
+- But no cue tracks age neatly across the lifespan, and ageing differs between individuals
+- Men: f0 drops at puberty, falls until about 40, stays stable until about 60, then rises slightly
+- Women: f0 drops at puberty and again after menopause
+- f0 also changes over the day: many people are lower in the morning
+
+## Age
+
+```{r age, fig.height = 3.9}
+set.seed(7)
+ages <- bind_rows(
+  tibble(sex = "Men", age = runif(300, 20, 85)) |>
+    mutate(mean = case_when(age < 40 ~ 128 - 0.4 * (age - 20), age < 60 ~ 120, TRUE ~ 120 + 0.5 * (age - 60))),
+  tibble(sex = "Women", age = runif(300, 20, 85)) |>
+    mutate(mean = if_else(age < 50, 205, 205 - 1.1 * (age - 50)))
+) |> mutate(f0 = mean + rnorm(n(), 0, if_else(sex == "Men", 15, 20)))
+ggplot(ages, aes(age, f0, colour = sex)) +
+  geom_point(alpha = 0.45, size = 1.6) +
+  geom_line(aes(y = mean), linewidth = 1.4) +
+  scale_colour_manual(values = c(Men = kingfisher, Women = hornbill)) +
+  labs(x = "Age (years)", y = "Mean f0 (Hz)", colour = NULL)
+```
+
+Simulated speakers. The trends are real, but a man at 120 Hz could be 25 or 75. Humans and automatic systems typically err by about [±10 years]{.hl}.
+
+## Height, weight and faces
+
+- A heavyweight boxer and a jockey: who has the lower voice? Most people say the boxer. In reality, voice and body size are only [weakly]{.hl} correlated
+- Reliable reports do not estimate height or weight
+- AI systems such as _Speech2Face_ reconstruct a face from speech, and estimate age, gender and ethnicity fairly well (Oh et al., 2019)
+- But they are [opaque]{.hl}: we cannot check which features drove a decision. Of limited forensic use
+
+## Lies and emotions
+
+- Listeners and automatic systems cannot detect lies [above chance]{.hl}
+- We read emotions from voices fairly well in everyday life, but the cues are not universal and vary by language and community
+- "Voice stress analysis" and "layered voice analysis" are sold to police forces, insurers and airports. Independent research finds them at chance level
+
+. . .
+
+Forensic phoneticians do not regard these systems as having [any validity]{.hl}.
+
+# Disguise and spoofing
+
+::: {.fact}
+`Did you know:` red deer stags have a [descended larynx]{.hl}, like adult humans. When roaring, they pull it down even further, to the sternum. The longer vocal tract lowers their formants and makes them sound larger.
+
+_Source: Fitch & Reby (2001), Proceedings of the Royal Society B_
+:::
+
+## Voice disguise
+
+- A deliberate attempt to change one's voice to [hide one's identity]{.hl}
+- Most common in blackmail and kidnapping. The BKA estimates it occurs in about [15–25%]{.hl} of profiling and speaker comparison cases
+- Electronic voice changers are easy to get, but [hardly ever]{.hl} used in real cases
+- Common methods: raising pitch, whispering, a nasal voice, a pen between the teeth, a fake accent, covering the face
+
+## Covering the face
+
+```{r mask, fig.height = 3.8}
+set.seed(21)
+sp <- tibble(f = seq(200, 10000, by = 50)) |>
+  mutate(open = -((f - 7000) / 2600)^2 * 9 + rnorm(n(), 0, 1.2),
+         covered = open - pmin(pmax((f - 1500) / 6500, 0), 1) * 12) |>
+  pivot_longer(c(open, covered), names_to = "condition", values_to = "dB") |>
+  mutate(condition = fct_recode(fct_inorder(condition), "No covering" = "open", "Cloth over the mouth" = "covered"))
+ggplot(sp, aes(f / 1000, dB, colour = condition)) +
+  geom_line(linewidth = 0.9) +
+  scale_colour_manual(values = c(muted, kingfisher)) +
+  labs(x = "Frequency (kHz)", y = "Level (dB)", colour = NULL)
+```
+
+Simulated spectrum of [s]. Cloth damps the [high frequencies]{.hl} where much of a fricative's energy lies. Face masks do the same.
+
+## Does disguise work?
+
+- Often, yes. Whispering lowers identification rates in voice line-ups (Orchard & Yarmey, 1995)
+- Faking another accent can bring identification close to chance
+- But imitation is hard to sustain: the longer the recording, the more [slips]{.hl}
+- Real variation is systematic; an imitator rarely reproduces all of it
+
+. . .
+
+In a case one of the book's authors worked on, a caller kept up a consistent fake foreign accent. But his habit of saying [f]{.hl} for /v/ (_very_ as [fɛɹi]) came through anyway.
+
+## Spoofing
+
+- [Deepfakes]{.hl}: synthetic voices and videos
+- In 2019, fraudsters used a fake voice of a German parent company's chief executive to get the head of a UK firm to transfer [€220,000]{.hl}
+- Spoofing will likely reach forensic casework; research on telling fake voices from real ones is under way
+
+## Discussion
+
+In 2005, a man was arrested at Dover with a fake passport as "Lord Buckingham". He claimed to have been educated at Harrow and Cambridge. The media suspected South African, Australian or Eastern European origins.
+
+- How would you test these hypotheses from his police interview?
+- What would you expect from a Harrow and Cambridge accent?
+
+## What the experts found
+
+- Mostly standard southern British English, but some postvocalic /r/, yod-dropping, and _Buckingham_ with a full final syllable: signs of [American English]{.hl}
+- Not Australian or South African English (neither is rhotic); no traces of an Eastern European L1
+- Some features fitted neither British nor American English, and the team struggled to agree
+- His sister recognised his photo: he was [Charles Stopford]{.hl}, who had served a jail term in Florida
+
+## Exercise
+
+For the practical sessions (book activity 3A):
+
+- Listen to about two minutes of a speaker from an online dialect archive
+- Build a simple profile: where from? how old? education? read or spontaneous?
+- Back every claim with the [features]{.hl} you heard
+
+## Summary
+
+::: {.takeaway}
+- A profile narrows down suspects when there is a recording but [no suspect]{.hl}
+- Key information: sex, regional and social background, language and L2, speaking style, environment
+- Dialect maps date quickly; experts combine them with fresh data and experience
+- Drugs, disorders: possible but cautious. Age, body size, lies: [strong caution]{.hl}
+- Disguise is common and often effective, but hard to sustain
+- An accurate profile is still only as useful as the assumptions behind it
+:::
+
+## References {.refs}
+
+- Boss, D. (1996). The problem of F0 and real-life speaker identification: A case study. _Forensic Linguistics_, 3(1), 155–159. https://doi.org/10.1558/ijsll.v3i1.155
+- French, P., Harrison, P., & Windsor Lewis, J. (2006). R v John Samuel Humble: The Yorkshire Ripper hoaxer trial. _International Journal of Speech, Language and the Law_, 13(2), 255–273. https://doi.org/10.1558/ijsll.2006.13.2.255
+- Hedegard, H., Fröhlich, A., Tomaschek, F., Steiner, C., & Leemann, A. (2023). Filling the population statistics gap: Swiss German reference data on F0 and speech tempo for forensic contexts. _Proceedings of Interspeech 2023_, 2558–2562. https://doi.org/10.21437/Interspeech.2023-1042
+- Köster, O., Kehrein, R., Masthoff, K., & Boubaker, Y. H. (2012). The tell-tale accent: Identification of regionally marked speech in German telephone conversations by forensic phoneticians. _International Journal of Speech, Language and the Law_, 19(1), 51–71. https://doi.org/10.1558/ijsll.v19i1.51
+
+## References {.refs}
+
+- Labov, W. (1966). _The social stratification of English in New York City_. Center for Applied Linguistics.
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 3.]{.hl}
+- Oh, T.-H., Dekel, T., Kim, C., Mosseri, I., Freeman, W. T., Rubinstein, M., & Matusik, W. (2019). Speech2Face: Learning the face behind a voice. _Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition_, 7539–7548.
+- Orchard, T. L., & Yarmey, A. D. (1995). The effects of whispers, voice-sample duration, and voice distinctiveness on criminal speaker identification. _Applied Cognitive Psychology_, 9(3), 249–260.
+
+## Sources of the animal facts {.refs}
+
+- Charlton, B. D., Reby, D., & McComb, K. (2007). Female red deer prefer the roars of larger males. _Biology Letters_, 3(4), 382–385. https://doi.org/10.1098/rsbl.2007.0244
+- Fitch, W. T., & Reby, D. (2001). The descended larynx is not uniquely human. _Proceedings of the Royal Society B_, 268(1477), 1669–1675. https://doi.org/10.1098/rspb.2001.1704
+- Reby, D., André-Obrecht, R., Galinier, A., Farinas, J., & Cargnelutti, B. (2006). Cepstral coefficients and hidden Markov models reveal idiosyncratic voice characteristics in red deer (_Cervus elaphus_) stags. _Journal of the Acoustical Society of America_, 120(6), 4080–4089.
+- Reby, D., & McComb, K. (2003). Anatomical constraints generate honesty: Acoustic cues to age and weight in the roars of red deer stags. _Animal Behaviour_, 65(3), 519–530. https://doi.org/10.1006/anbe.2003.2078
+- Reby, D., McComb, K., Cargnelutti, B., Darwin, C., Fitch, W. T., & Clutton-Brock, T. (2005). Red deer stags use formants as assessment cues during intrasexual agonistic interactions. _Proceedings of the Royal Society B_, 272(1566), 941–947. https://doi.org/10.1098/rspb.2004.2954
+
+## Slides and code
+
+<div class="qr-block">
+<img src="`r qr_uri`" alt="QR code linking to these slides">
+<div>
+<p>These slides</p>
+<p class="qr-link">mcanzi.github.io/ws27_fss/<wbr>`r lecture_file`</p>
+<p>Code and all sessions</p>
+<p class="qr-link">github.com/mcanzi/ws27_fss</p>
+</div>
+</div>
