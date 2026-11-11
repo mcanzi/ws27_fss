@@ -327,6 +327,30 @@ McGehee (1937): listeners picked a voice they had heard once out of five. After 
 - Confidence says little about accuracy for unfamiliar voices (Hammersley & Read, 1985; Smith et al., 2020). For familiar voices, confidence and accuracy do go together (Yarmey et al., 2001)
 - Describing the voice before the line-up can make identification less accurate, without lowering confidence. This is [verbal overshadowing]{.hl} (Perfect, Hunt & Harris, 2002)
 
+## Confidence and accuracy
+
+```{r confidence, fig.height = 3.7}
+set.seed(55)
+n_lis <- 40
+cf <- bind_rows(
+  tibble(voices = "Unfamiliar voices", conf = runif(n_lis, 2, 7)) |>
+    mutate(acc = rbinom(n_lis, 10, 0.45) / 10),
+  tibble(voices = "Familiar voices", conf = runif(n_lis, 2, 7)) |>
+    mutate(acc = rbinom(n_lis, 10, plogis(-2.5 + 0.6 * conf)) / 10)
+) |> mutate(voices = fct_inorder(voices))
+r_lab <- cf |> group_by(voices) |> summarise(r = cor(conf, acc)) |>
+  mutate(lab = paste0("r = ", sprintf("%.2f", r)))
+ggplot(cf, aes(conf, acc)) +
+  geom_point(colour = kingfisher, size = 2.8, alpha = 0.85) +
+  geom_smooth(method = "lm", se = FALSE, colour = hornbill, linewidth = 1.2) +
+  geom_text(data = r_lab, aes(x = 2, y = 1.05, label = lab), hjust = 0, colour = mist, size = 5) +
+  facet_wrap(~ voices) +
+  scale_y_continuous(limits = c(0, 1.08), breaks = seq(0, 1, 0.25), labels = \(x) paste0(x * 100, "%")) +
+  labs(x = "Mean confidence (1–7)", y = "Correct identifications")
+```
+
+Simulated, following the pattern in the studies on the previous slide. Each point is one listener: mean confidence, and the share of correct identifications over ten trials.
+
 ## Ability
 
 Some listeners are simply better than others, so averages from experiments cannot predict how reliable one witness is.
