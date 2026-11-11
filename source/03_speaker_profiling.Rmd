@@ -41,7 +41,7 @@ source("slides_setup.R", local = knitr::knit_global())
 </style>
 
 ::: {.fact}
-`Did you know:` a computer can tell red deer stags apart by their roars. Researchers used [cepstral coefficients]{.hl} and [hidden Markov models]{.hl}, two techniques from automatic human speech recognition.
+`Did you know:` a computer can tell red deer stags apart by their roars. Researchers used [cepstral coefficients]{.hl} and hidden Markov models, two techniques from automatic human speech recognition.
 
 _Source: Reby et al. (2006), Journal of the Acoustical Society of America_
 :::
@@ -49,15 +49,15 @@ _Source: Reby et al. (2006), Journal of the Acoustical Society of America_
 ## A tape from Sunderland
 
 - Between 1975 and 1980, a man murdered [13 women]{.hl} in the north of England: the "Yorkshire Ripper"
-- Between 1978 and 1979, the police received letters and a [tape]{.hl} from a man claiming to be the killer
-- The letters were posted in [Sunderland]{.hl}, and the voice on the tape had a north-eastern accent
+- Between 1978 and 1979, the police received letters and a tape from a man claiming to be the killer
+- The letters were posted in Sunderland, and the voice on the tape had a north-eastern accent
 
 ## Stanley Ellis
 
 - Phonetician and dialectologist, and a former fieldworker for the [Survey of English Dialects]{.hl}
-- The police asked him for a [speaker profile]{.hl}: where was the caller from?
+- The police asked him for a speaker profile: where was the caller from?
 - He used dialect atlases, then made his own recordings in Sunderland
-- He placed the speaker in [Southwick or Castletown]{.hl}, two areas of Sunderland
+- He placed the speaker in Southwick or Castletown, two areas of Sunderland
 
 . . .
 
@@ -66,26 +66,25 @@ The tape was played on television and at football grounds. No suspect was found.
 ## The wrong suspect pool
 
 - Ellis and his colleague Jack Windsor Lewis came to think the tape was a [hoax]{.hl}, but the investigation stayed centred on Sunderland (French, Harrison & Windsor Lewis, 2006)
-- The real killer, [Peter Sutcliffe]{.hl}, was from West Yorkshire and had a Yorkshire accent
+- The real killer, Peter Sutcliffe, was from West Yorkshire and had a Yorkshire accent
 - Police had interviewed him several times, and ruled him out partly because his accent and handwriting did not match the hoaxer's
 - He was arrested in 1981. The murders had continued in the meantime
 
 ## The hoaxer
 
-- In 2005, DNA from the hoax letters matched [John Samuel Humble]{.hl}
-- He was convicted of perverting the course of justice and sentenced to eight years
-- He had grown up about [a mile]{.hl} from the area Ellis had named
+- In 2005, DNA from the hoax letters matched [John Samuel Humble]{.hl}, who was convicted of perverting the course of justice and sentenced to eight years
+- He had grown up about a mile from the area Ellis had named
 
 . . .
 
-The profile was remarkably accurate. The assumption that the speaker was the killer was not.
+Ellis's profile turned out to be almost exact. The mistake was the assumption that the man on the tape was the killer.
 
 ## Today
 
 1. What a speaker profile is, and when it is needed
 2. What experts can usually infer: the [key information]{.hl}
-3. What needs [caution]{.hl}, and what experts leave out of reports
-4. Voice [disguise]{.hl} and spoofing
+3. What needs caution, and what experts leave out of reports
+4. Voice disguise and spoofing
 
 . . .
 
@@ -110,12 +109,12 @@ The police have a recording of an [unknown speaker]{.hl}, but no suspect:
 
 . . .
 
-The aim is to [narrow down]{.hl} the suspect pool. In a kidnapping, a profile may be needed within hours.
+The aim is to narrow down the suspect pool. In a kidnapping, a profile may be needed within hours.
 
 ## How often?
 
 - J P French Associates (UK): about [2–5]{.hl} profiling cases a year, out of 100–150
-- Bundeskriminalamt (BKA, Germany): about [10–20%]{.hl} of casework, because the BKA also does investigative work
+- Bundeskriminalamt (BKA, Germany): about 10–20% of casework, because the BKA also does investigative work
 - Profiling also feeds other tasks: transcription, reference populations for speaker comparison (session 4), language analysis in asylum cases (session 7)
 
 ## Three kinds of information {.smaller}
@@ -131,13 +130,9 @@ The aim is to [narrow down]{.hl} the suspect pool. In a kidnapping, a profile ma
 
 ## What limits a profile
 
-- The [quantity and quality]{.hl} of the recording: case recordings are often short and poor
-- How well the language or dialect is [documented]{.hl}
-- The [experience]{.hl} of the analyst
-
-. . .
-
-No recording contains enough evidence for every dimension in the table.
+- Case recordings are often [short and poor]{.hl} in quality
+- Some languages and dialects are far better documented than others, and analysts differ in experience
+- No real recording gives evidence on every dimension in the table
 
 # Key information
 
@@ -150,7 +145,7 @@ _Source: Charlton, Reby & McComb (2007), Biology Letters_
 ## Sex and gender
 
 - Most speakers in forensic cases are [men]{.hl}
-- The main acoustic cue to speaker sex is [f0]{.hl}: adult men usually have longer, heavier vocal folds
+- The main acoustic cue to speaker sex is f0: adult men usually have longer, heavier vocal folds
 - Sex and gender interact: speakers can raise or lower their pitch, within anatomical limits, and adjust other features such as formants
 
 ## Swiss German f0
@@ -176,28 +171,23 @@ Simulated from the means of 1,000 Swiss German speakers (Hedegard et al., 2023).
 
 ## f0 is not fixed
 
-- A man robbed a petrol station on camera: his mean f0 was [228 Hz]{.hl}. After his arrest, his normal f0 was [140 Hz]{.hl} (Boss, 1996)
-- Health, intoxication, stress and emotion all change f0
-- Average f0 also differs between languages: Japanese women typically speak with higher f0 than American women
+- A man robbed a petrol station on camera: his mean f0 was [228 Hz]{.hl}. After his arrest, his normal f0 was 140 Hz (Boss, 1996)
+- Health, intoxication, stress and emotion all change f0, and average f0 also differs between languages: Japanese women typically speak with higher f0 than American women
 
 ## Regional background
 
-How far we can locate a speaker depends on:
-
-- how much [regional variation]{.hl} the language has
-- how [mobile]{.hl} the speakers are
-- how much [research]{.hl} on regional variation exists
+How precisely a speaker can be located depends on how much [regional variation]{.hl} the language has, how mobile its speakers are, and how much research on that variation exists.
 
 . . .
 
-The UK, Germany, Switzerland, France, the Netherlands and the US have long traditions of dialectology. The classic British source is the [Survey of English Dialects]{.hl} (SED): over 300 localities, more than a thousand questions, collected mainly in the 1950s.
+The UK, Germany, Switzerland, France, the Netherlands and the US have long traditions of dialectology. The classic British source is the Survey of English Dialects (SED): over 300 localities, more than a thousand questions, collected mainly in the 1950s.
 
 ## FOOT and STRUT
 
 - In much of northern England, FOOT and STRUT have the same vowel: _look_ and _luck_ [sound the same]{.hl}
-- In the south, they are different (the FOOT–STRUT [split]{.hl})
+- In the south, they are different (the FOOT–STRUT split)
 - The SED shows the divide as it was in the 1950s, mostly from older rural men, often one speaker per place
-- Newer data from the English Dialects App (2016) suggest that the northern pattern is [receding]{.hl}
+- Newer data from the English Dialects App (2016) suggest that the northern pattern is receding
 
 ## A moving boundary
 
@@ -231,12 +221,11 @@ ggplot(kz, aes(group, error)) +
 ## Automatic accent recognition
 
 - Most profiling is still done by humans, with auditory and acoustic analysis
-- Automatic systems are improving, but need [plenty of good-quality speech]{.hl}: some need at least three minutes per speaker
-- Case recordings are often short and noisy
+- Automatic systems are improving, but need [plenty of good-quality speech]{.hl}: some need at least three minutes per speaker, while case recordings are often short and noisy
 
 . . .
 
-In practice, analysts usually report a [broad area]{.hl} ("northern England"), narrowed only when specific features allow it. In Australia or New Zealand, there is little regional variation to work with.
+In practice, analysts usually report a broad area ("northern England"), narrowed only when specific features allow it. In Australia or New Zealand, there is little regional variation to work with.
 
 ## Social background
 
@@ -247,9 +236,9 @@ In practice, analysts usually report a [broad area]{.hl} ("northern England"), n
 
 ## Labov's department stores
 
-- New York City, early 1960s: [Saks]{.hl} (upper-class customers), [Macy's]{.hl} (middle class), [S. Klein]{.hl} (working class)
+- New York City, early 1960s: [Saks]{.hl} (upper-class customers), Macy's (middle class), S. Klein (working class)
 - Labov asked staff where to find an item he knew was on the fourth floor
-- Then he pretended not to hear, to get a careful repetition of "[fourth floor]{.hl}"
+- Then he pretended not to hear, to get a careful repetition of "fourth floor"
 - He noted whether each /r/ was pronounced
 
 ## Labov's department stores
@@ -272,7 +261,7 @@ Simulated percentages showing the [pattern]{.hl} Labov found: more /r/ in the up
 
 - Not always obvious, especially for less widely known languages, or when speakers [switch]{.hl} between languages
 - Experts often work with a native-speaker consultant
-- Many terrorism cases in the early 2000s were first assumed to involve Arabic. Linguists found they were more often in [Pashto, Sylheti or Urdu]{.hl}
+- Many terrorism cases in the early 2000s were first assumed to involve Arabic. Linguists found they were more often in Pashto, Sylheti or Urdu
 
 ## First and second language speakers
 
@@ -295,15 +284,15 @@ Ethnologue (2022) figures, as reported in Leemann et al. (2024). An L2 speaker o
 
 - Stereotypical transfer is easy to spot: French and German speakers often say [s z]{.hl} for English /θ ð/
 - In the other direction, English speakers struggle with uvular [ʁ] in German and French, or trilled /r/ in Spanish and Arabic
-- Beyond stereotypes, identifying the L1 is [much harder]{.hl}
+- Beyond stereotypes, identifying the L1 is much harder
 - And even then, the L1 may say little about origin: Arabic is an official language in more than 20 countries
 
 ## Speaking style
 
 - [Read]{.hl} speech suggests a prepared text, and possibly a planned crime
-- [Spontaneous]{.hl} speech is more variable and more reduced, with false starts, repetitions, filled pauses and discourse markers
+- Spontaneous speech is more variable and more reduced, with false starts, repetitions, filled pauses and discourse markers
 - The Yorkshire Ripper tape: slow, long silent pauses, no disfluencies. It was read
-- It was made of [four separate recordings]{.hl}, and the music at the end had been on the cassette before the message: a sign of planning (French et al., 2006)
+- It was made of four separate recordings, and the music at the end had been on the cassette before the message: a sign of planning (French et al., 2006)
 
 ## Environment, time and date
 
@@ -314,8 +303,7 @@ Ethnologue (2022) figures, as reported in Leemann et al. (2024). An L2 speaker o
 ## Electrical network frequency
 
 - Mains electricity leaves a faint [hum]{.hl} on many recordings (nominally 50 Hz in Europe)
-- Its exact frequency drifts randomly over time, in the same way across a whole grid
-- Matched against a reference log, it can show [when]{.hl} a recording was made, and whether it was [edited]{.hl}
+- Its exact frequency drifts randomly over time, in the same way across a whole grid. Matched against a reference log, it can show when a recording was made, and whether it was edited
 
 ## Electrical network frequency
 
@@ -352,7 +340,7 @@ _Source: Reby & McComb (2003), Animal Behaviour_
 
 - Alcohol affects fine motor control. Apical consonants suffer: _check_ [tʃɛk] can become [ʃɛk] ([deaffrication]{.hl})
 - f0 usually rises, speaking rate slows, disfluencies increase
-- But effects depend on the amount and on [mood]{.hl}: one drinker becomes slow and monotonous, another lively and high-pitched
+- But effects depend on the amount and on mood: one drinker becomes slow and monotonous, another lively and high-pitched
 
 ## Other drugs
 
@@ -397,7 +385,7 @@ Simulated speakers. The trends are real, but a man at 120 Hz could be 25 or 75. 
 - A heavyweight boxer and a jockey: who has the lower voice? Most people say the boxer. In reality, voice and body size are only [weakly]{.hl} correlated
 - Reliable reports do not estimate height or weight
 - AI systems such as _Speech2Face_ reconstruct a face from speech, and estimate age, gender and ethnicity fairly well (Oh et al., 2019)
-- But they are [opaque]{.hl}: we cannot check which features drove a decision. Of limited forensic use
+- But they are opaque: we cannot check which features drove a decision. Of limited forensic use
 
 ## Lies and emotions
 
@@ -407,7 +395,7 @@ Simulated speakers. The trends are real, but a man at 120 Hz could be 25 or 75. 
 
 . . .
 
-Forensic phoneticians do not regard these systems as having [any validity]{.hl}.
+Forensic phoneticians do not regard these systems as having any validity.
 
 # Disguise and spoofing
 
@@ -420,8 +408,8 @@ _Source: Fitch & Reby (2001), Proceedings of the Royal Society B_
 ## Voice disguise
 
 - A deliberate attempt to change one's voice to [hide one's identity]{.hl}
-- Most common in blackmail and kidnapping. The BKA estimates it occurs in about [15–25%]{.hl} of profiling and speaker comparison cases
-- Electronic voice changers are easy to get, but [hardly ever]{.hl} used in real cases
+- Most common in blackmail and kidnapping. The BKA estimates it occurs in about 15–25% of profiling and speaker comparison cases
+- Electronic voice changers are easy to get, but hardly ever used in real cases
 - Common methods: raising pitch, whispering, a nasal voice, a pen between the teeth, a fake accent, covering the face
 
 ## Covering the face
@@ -450,12 +438,11 @@ Simulated spectrum of [s]. Cloth damps the [high frequencies]{.hl} where much of
 
 . . .
 
-In a case one of the book's authors worked on, a caller kept up a consistent fake foreign accent. But his habit of saying [f]{.hl} for /v/ (_very_ as [fɛɹi]) came through anyway.
+In a case one of the book's authors worked on, a caller kept up a consistent fake foreign accent. But his habit of saying f for /v/ (_very_ as [fɛɹi]) came through anyway.
 
 ## Spoofing
 
-- [Deepfakes]{.hl}: synthetic voices and videos
-- In 2019, fraudsters used a fake voice of a German parent company's chief executive to get the head of a UK firm to transfer [€220,000]{.hl}
+- In 2019, fraudsters used a [deepfake]{.hl} of the voice of a German parent company's chief executive to get the head of a UK firm to transfer €220,000
 - Spoofing will likely reach forensic casework; research on telling fake voices from real ones is under way
 
 ## Discussion
@@ -470,7 +457,7 @@ In January 2005, a man was arrested at Dover: his British passport, in the name 
 - Mostly standard southern British English, but some postvocalic /r/, yod-dropping, and _Buckingham_ with a full final syllable: signs of [American English]{.hl}
 - Not Australian or South African English (neither is rhotic); no traces of an Eastern European L1
 - Some features fitted neither British nor American English, and the team struggled to agree
-- His family recognised his photo, and fingerprints confirmed it: he was [Charles Stopford]{.hl}, an American from Florida
+- His family recognised his photo, and fingerprints confirmed it: he was Charles Stopford, an American from Florida
 
 ## Exercise
 
@@ -486,9 +473,9 @@ For the practical sessions (book activity 3A):
 - A profile narrows down suspects when there is a recording but [no suspect]{.hl}
 - Key information: sex, regional and social background, language and L2, speaking style, environment
 - Dialect maps date quickly; experts combine them with fresh data and experience
-- Drugs, disorders: possible but cautious. Age, body size, lies: [strong caution]{.hl}
+- Drugs and disorders can be assessed with caution; age, body size and lying need strong caution
 - Disguise is common and often effective, but hard to sustain
-- An accurate profile is still only as useful as the assumptions behind it
+- In the Yorkshire Ripper case, an accurate profile still misled the investigation, because of a wrong assumption about who was speaking
 :::
 
 ## References {.refs}

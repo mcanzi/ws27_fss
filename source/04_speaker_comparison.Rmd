@@ -48,22 +48,20 @@ _Source: Janik, Sayigh & Wells (2006), PNAS_
 
 ## Boxing Day, Leeds
 
-- 26 December 2003: two traffic officers stopped a car with [false number plates]{.hl}
-- The driver shot at them and escaped. PC Ian Broadhurst was killed
-- A camera on the police car's dashboard recorded the gunman's [voice]{.hl}, but not his face
+- On 26 December 2003, two traffic officers stopped a car with [false number plates]{.hl}. The driver shot at them and escaped, and PC Ian Broadhurst was killed
+- A camera on the police car's dashboard recorded the gunman's voice, but not his face
 
 ## The known samples
 
 - The suspect, [David Bieber]{.hl}, was an American who had lived in Yorkshire for some years under a false identity
-- After his arrest, he said very little in police interviews
-- The police found other known samples: his calls to [telephone betting companies]{.hl}
+- After his arrest he said very little in police interviews, so the police used other known samples: his calls to telephone betting companies
 
 ## A mixed accent
 
 Both recordings had the same unusual mixture:
 
 - [Rhotic]{.hl} /r/, pronounced in all positions (_right_, _pardon_; _road_, _third_): typical of North American accents, not of Yorkshire
-- Typical [Yorkshire]{.hl} FACE and GOAT vowels, and Yorkshire terms of address such as _mate_ and _love_: not found in American accents
+- Typical Yorkshire FACE and GOAT vowels, and Yorkshire terms of address such as _mate_ and _love_: not found in American accents
 
 . . .
 
@@ -72,7 +70,7 @@ The analyst called it one of the most clear-cut cases he had worked on. Bieber w
 ## Why it was clear-cut
 
 - The recordings were [similar]{.hl}: the same features in both
-- The combination was [atypical]{.hl}: very few people in the relevant population speak like that
+- The combination was atypical: very few people in the relevant population speak like that
 - And the key features were easy to hear: no acoustic measurement was needed
 
 ## Today
@@ -80,7 +78,7 @@ The analyst called it one of the most clear-cut cases he had worked on. Bieber w
 1. Why comparing voices is hard
 2. Which features are [ideal]{.hl}, and which features experts analyse
 3. Automatic speaker recognition
-4. How experts express conclusions: [likelihood ratios]{.hl}
+4. How experts express conclusions: likelihood ratios
 
 . . .
 
@@ -89,24 +87,24 @@ This session follows chapter 4 of Leemann et al. (2024).
 # Comparing voices
 
 ::: {.fact}
-`Did you know:` dolphin mothers change their signature whistle when their calf is with them, using [higher maximum frequencies]{.hl} and a wider frequency range: a dolphin version of "motherese". The same individual, the same whistle, different values.
+`Did you know:` dolphin mothers change their signature whistle when their calf is with them, using [higher maximum frequencies]{.hl} and a wider frequency range: a dolphin version of "motherese".
 
 _Source: Sayigh et al. (2023), PNAS_
 :::
 
 ## Forensic speaker comparison
 
-- A [questioned]{.hl} recording (an unknown speaker) is compared with a [known]{.hl} recording (a suspect, usually from a police interview)
+- A [questioned]{.hl} recording (an unknown speaker) is compared with a known recording (a suspect, usually from a police interview)
 - Questioned recordings: ransom demands, drug deals arranged by phone, a stalker's voice messages
-- Speaker comparison makes up about [70%]{.hl} of forensic speech casework
+- Speaker comparison makes up about 70% of forensic speech casework
 - In the UK, it was first used in evidence in 1965, and now in around 500 cases a year
 
 ## Five approaches
 
 1. [Auditory]{.hl} analysis: careful, repeated listening
-2. [Acoustic]{.hl} analysis: measuring the signal with software
+2. Acoustic analysis: measuring the signal with software
 3. Auditory and acoustic analysis combined
-4. [Automatic speaker recognition]{.hl} (ASR)
+4. Automatic speaker recognition (ASR)
 5. ASR with human analysis
 
 . . .
@@ -127,20 +125,19 @@ Acoustic analysis itself is valid. Experts measure specific features across many
 
 - Like a signature, speech is a [dynamic]{.hl} movement: no one makes exactly the same movements twice
 - Forensic recordings add more variation:
-  - [speaker]{.hl}: emotion, intoxication, a formal police interview, a taciturn suspect
-  - [technical]{.hl}: background noise, telephone transmission, reverberation, very short samples
-- All of this can change [within]{.hl} a single recording
+  - speaker: emotion, intoxication, a formal police interview, a taciturn suspect
+  - technical: background noise, telephone transmission, reverberation, very short samples
+- All of this can change within a single recording
 
 ## So: no "match"
 
-- There will always be differences, and always some similarities
-- The question is not whether features match, but how much the evidence [supports]{.hl} one explanation over another
-- Conclusions are expressed on a [scale]{.hl}, not as yes or no
+- Two recordings will always show some differences and some similarities
+- The expert assesses how strongly the evidence [supports]{.hl} one explanation over the other, and reports this on a scale
 
 # Ideal features
 
 ::: {.fact}
-`Did you know:` dolphins learn their signature whistles. A calf takes a whistle from its environment as a model, then [modifies]{.hl} it into a new signal of its own. The identity information lies in the pattern of frequency modulation, not in the voice.
+`Did you know:` dolphins learn their signature whistles. A calf takes a whistle from its environment as a model, then [modifies]{.hl} it into a new signal of its own. The identity information lies in the pattern of frequency modulation, independently of voice features.
 
 _Source: Janik & Sayigh (2013), Journal of Comparative Physiology A_
 :::
@@ -148,15 +145,15 @@ _Source: Janik & Sayigh (2013), Journal of Comparative Physiology A_
 ## What makes a feature ideal?
 
 - High [between-speaker]{.hl} variation: speakers differ from each other
-- Low [within-speaker]{.hl} variation: stable across the day, health, situations
-- Robust to [transmission]{.hl}: survives the telephone
-- Robust to [disguise and mimicry]{.hl}
+- Low within-speaker variation: stable across the day, health, situations
+- Robust to transmission: survives the telephone
+- Robust to disguise and mimicry
 - And practical: frequent, easy to measure
 
 ## Similarity and typicality
 
 - [Similarity]{.hl}: how alike are the questioned and known samples?
-- [Typicality]{.hl}: how common is the feature in the [relevant population]{.hl}?
+- Typicality: how common is the feature in the relevant population?
 - The relevant population usually comes from a profile of the questioned speaker: for example, adult men from New Zealand
 - Sometimes it is fixed by the case: if CCTV shows three people in the car, the population is the two others
 
@@ -187,13 +184,13 @@ Simulated population of 500 men (mean 4.4 syllables per second). Q: questioned s
 ## Reading the four cases
 
 1. Neither [similar]{.hl} nor typical, at opposite ends: points towards different speakers
-2. Similar but [typical]{.hl}: weak support for the same speaker, since many people speak this fast
-3. Similar and [atypical]{.hl}: relatively strong support for the same speaker
+2. Similar but typical: weak support for the same speaker, since many people speak this fast
+3. Similar and atypical: relatively strong support for the same speaker
 4. Not very similar, both within the typical range: no strong evidence either way
 
 . . .
 
-And this is one feature. The conclusion rests on many.
+In a real case, articulation rate would be one of many features in the analysis.
 
 ## The telephone effect
 
@@ -233,10 +230,9 @@ Experts analyse as many as the material allows.
 
 ## Vowels
 
-- Analysed by almost everyone: formants depend on anatomy [and]{.hl} on accent
-- Usually well-defined, even in poor recordings
-- Measured at the midpoint, or at several points: [formant dynamics]{.hl}
-- Speakers move between targets in individual ways (McDougall, 2006)
+- Almost everyone analyses vowels, because formants depend on both anatomy and accent
+- They are usually well-defined, even in poor recordings
+- Formants can be measured at the midpoint, or at several points to capture [formant dynamics]{.hl}: speakers move between targets in individual ways (McDougall, 2006)
 
 ## Formant dynamics
 
@@ -253,12 +249,11 @@ ggplot(dyn, aes(t * 100, F1, colour = speaker)) +
   labs(x = "Time through the diphthong (%)", y = "F1 (Hz)", colour = "Speaker")
 ```
 
-Simulated F1 of five speakers in a close-to-open diphthong, like Thai /ia/. Same target, [different routes]{.hl}: E starts low and rises late, C rises early.
+Simulated F1 of five speakers in a close-to-open diphthong, like Thai /ia/. The speakers aim at the same vowels but move between them [differently]{.hl}: E starts low and rises late, C rises early.
 
 ## Vowels: caveats
 
-- Telephone transmission raises [F1]{.hl}
-- Louder speech and shouting raise formants
+- Telephone transmission raises [F1]{.hl}, and louder speech and shouting raise formants in general
 - So values will not simply "match": the analyst interprets them, allowing for known sources of difference
 
 ## Consonants
@@ -280,14 +275,14 @@ Acoustically: fricatives and nasals carry speaker-specific information, often me
 Shortcuts in fluent speech, used differently by accent and by speaker:
 
 - [Assimilation]{.hl}: _handbag_ as [ˈhamˌbag]
-- [Elision]{.hl}: _library_ as [ˈlaɪbɹi]
-- [Epenthesis]{.hl}: _hamster_ as [ˈhampstə]
+- Elision: _library_ as [ˈlaɪbɹi]
+- Epenthesis: _hamster_ as [ˈhampstə]
 
 ## Voice quality
 
 - Most experts consider it, often with [Vocal Profile Analysis]{.hl} (Laver, 1980), usually in simplified versions (San Segundo et al., 2019)
 - Vocal tract settings (lips, jaw, tongue, larynx height), muscular tension, phonation type
-- Needs substantial [training]{.hl}, and ideally at least 40 seconds of speech
+- Needs substantial training, and ideally at least 40 seconds of speech
 - Phonation is affected by stress, exhaustion, alcohol and emotion: a difference does not necessarily mean different speakers
 
 ## Fundamental frequency
@@ -295,7 +290,7 @@ Shortcuts in fluent speech, used differently by accent and by speaker:
 - Mean, range and standard deviation; at least about [one minute]{.hl} of speech for representative values
 - Robust to noise, and survives the telephone: f0 can be reconstructed from the harmonics. Harmonics at 500, 600, 700 and 800 Hz imply an f0 of 100 Hz
 - But f0 varies a lot within a speaker: louder on the phone, higher in read speech, lower in the morning, higher when agitated
-- Most useful for [eliminating]{.hl} suspects, and easy to explain to a court
+- Most useful for eliminating suspects, and easy to explain to a court
 
 ## f0 in a population
 
@@ -314,14 +309,14 @@ Simulated. In the real Swiss German data (500 men, spontaneous speech), the medi
 
 - [Articulation rate]{.hl} varies less within a speaker than speaking rate
 - But research data often come from students. In UK police interviews, suspects sometimes read a statement prepared by their lawyers: often slower and less fluent than their spontaneous speech
-- [Rhythm]{.hl}: the percentage of vocalic intervals (%V) is speaker-specific and robust to speaking style (Leemann, Kolly & Dellwo, 2014)
+- Rhythm: the percentage of vocalic intervals (%V) is speaker-specific and robust to speaking style (Leemann, Kolly & Dellwo, 2014)
 
 ## Higher-level features
 
 - [Pausing]{.hl} is speaker-specific and fairly stable
-- [Filled pauses]{.hl} (_uh_, _um_): how often, and their acoustics. Their acoustics discriminate speakers well, especially _um_ (Hughes, Wood & Foulkes, 2016)
+- Filled pauses (_uh_, _um_): how often, and their acoustics. Their acoustics discriminate speakers well, especially _um_ (Hughes, Wood & Foulkes, 2016)
 - Tag questions (_innit?_, _right?_), discourse markers (_like_), ways of greeting or answering the phone
-- Probably below the level of [consciousness]{.hl}, so hard to disguise
+- Probably below the level of consciousness, so hard to disguise
 
 # Automatic speaker recognition
 
@@ -334,35 +329,35 @@ _Source: King & Janik (2013), PNAS_
 ## How ASR works
 
 1. [Pre-processing]{.hl}: resampling, voice activity detection
-2. [Feature extraction]{.hl}: usually mel frequency cepstral coefficients (MFCCs)
-3. [Speaker modelling]{.hl}: today, x-vectors from deep neural networks
-4. [Comparison]{.hl} of the questioned and known models: a score
-5. [Score interpretation]{.hl}: converting the score into a likelihood ratio, against a model of the relevant population
+2. Feature extraction: usually mel frequency cepstral coefficients (MFCCs)
+3. Speaker modelling: today, x-vectors from deep neural networks
+4. Comparison of the questioned and known models: a score
+5. Score interpretation: converting the score into a likelihood ratio, against a model of the relevant population
 
 ## MFCCs
 
 - Not phonetic features like f0 or formants, but compact descriptions of the [whole spectrum]{.hl}, peaks and troughs
-- The [mel scale]{.hl} warps frequency like human hearing: finer at low frequencies
+- The mel scale warps frequency like human hearing: finer at low frequencies
 - Taken from short windows (20–30 ms), 10–20 coefficients every 10 ms or so: thousands per recording
 - The resulting speaker model is sometimes called a "voiceprint", with a different meaning from the 1960s term
 
 ## Strengths
 
 - More [objective]{.hl}, though humans still choose the recordings, settings and population
-- [Replicable]{.hl}: same material and settings, same result
-- [Fast]{.hl}: seconds instead of hours
+- Replicable: same material and settings, same result
+- Fast: seconds instead of hours
 - In a 2019 survey, over 40% of practitioners used ASR (Gold & French, 2019)
 
 ## Weaknesses
 
 - Needs at least about [10 seconds]{.hl} of net speech per sample; 30 seconds is better
-- [Channel mismatch]{.hl}: a telephone call against a recording in a reverberant interview room. Newer x-vector systems cope better
-- A [black box]{.hl}: results cannot be explained in terms a court understands, such as pitch or accent
+- Channel mismatch: a telephone call against a recording in a reverberant interview room. Newer x-vector systems cope better
+- A black box: results cannot be explained in terms a court understands, such as pitch or accent
 - When the book was written, ASR had not yet been admitted in evidence in UK courts
 
 . . .
 
-Most reputable labs use a [human-machine team]{.hl}: ASR plus phonetic analysis, which can catch differences such as accent that ASR might miss.
+Most reputable labs use a human-machine team: ASR plus phonetic analysis, which can catch differences such as accent that ASR might miss.
 
 # Likelihood ratios
 
@@ -374,26 +369,25 @@ _Source: King et al. (2013), Proceedings of the Royal Society B_
 
 ## From "match" to strength of evidence
 
-- Before the 1990s, conclusions were often [binary]{.hl}: the same speaker, or not
-- Now widely rejected: no speech feature is unique or invariant
-- Most practitioners now express conclusions as [likelihood ratios]{.hl} (LRs), as recommended for forensic science generally (AFSP, 2009)
+- Before the 1990s, conclusions were often [binary]{.hl} (the same speaker, or not). This is now widely rejected, because no speech feature is unique or invariant
+- Most practitioners now express conclusions as likelihood ratios (LRs), as recommended for forensic science generally (AFSP, 2009)
 
 ## Crossing the road
 
 - [Evidence]{.hl}: the traffic you see, its speed, the width of the road
-- Two [hypotheses]{.hl}: I can cross safely; I cannot
+- Two hypotheses: I can cross safely; I cannot
 - You weigh how likely the evidence is under each, and cross if the first clearly outweighs the second
 - Other information also matters: how much of a hurry you are in, your experience of this road
 
 . . .
 
-That is Bayesian reasoning. Forensic science just makes it explicit.
+This is Bayesian reasoning, which forensic science applies formally.
 
 ## The likelihood ratio
 
 [LR = p(evidence | same speaker) / p(evidence | different speakers)]{.hl}
 
-- How likely is the evidence if the samples come from the [same speaker]{.hl}, relative to [different speakers]{.hl}?
+- How likely is the evidence if the samples come from the same speaker, relative to different speakers?
 - LR above 1: support for the same-speaker hypothesis. Below 1: for the different-speaker hypothesis
 - An LR of 100: the evidence is 100 times more likely under one hypothesis than the other
 
@@ -405,7 +399,7 @@ That is Bayesian reasoning. Forensic science just makes it explicit.
 
 . . .
 
-The LR does not say whether the suspect left the print. That decision belongs to the [court]{.hl}, which weighs all the evidence.
+The LR does not say whether the suspect left the print. That decision belongs to the court, which weighs all the evidence.
 
 ## Computing an LR
 
@@ -447,14 +441,14 @@ The scale continues symmetrically below 1 for the different-speaker hypothesis (
 - An LR of 100 is as strong as an LR of [0.01]{.hl}, in the other direction
 - Large numbers and tiny fractions are hard to compare
 - log~10~ makes the scale symmetrical around 0: 1,000,000 becomes 6, 0.000001 becomes −6
-- Our example: LR `r round(lr)` → log~10~LR `r round(log10(lr), 2)` → [moderately strong]{.hl} support for the same speaker
+- Our example: LR `r round(lr)` → log~10~LR `r round(log10(lr), 2)` → moderately strong support for the same speaker
 
 ## A real case
 
 - Australia, 2012–2013: fraud calls to a financial institution were recorded (Enzinger, Morrison & Ochoa, 2016)
 - Relevant population: adult male speakers of [Australian English]{.hl}, from a corpus
-- The questioned call had noise, reverberation and landline transmission. The experts degraded the corpus recordings to [match]{.hl}
-- Result: LR = 3,287 (log~10~LR = 3.52): [strong]{.hl} support for the same-speaker hypothesis
+- The questioned call had noise, reverberation and landline transmission. The experts degraded the corpus recordings to match
+- Result: LR = 3,287 (log~10~LR = 3.52): strong support for the same-speaker hypothesis
 
 ## Discussion
 
@@ -475,10 +469,10 @@ For the practical sessions (book activities 4A and 4B):
 ::: {.takeaway}
 - Speaker comparison: a questioned recording against a known one; about 70% of casework
 - There is no voiceprint, and no two samples are identical
-- Experts assess [similarity]{.hl} and [typicality]{.hl} in a relevant population
+- Experts assess [similarity]{.hl} and typicality in a relevant population
 - Many features, each with strengths and weaknesses: formants, consonants, voice quality, f0, tempo, rhythm, pauses
 - ASR is fast and replicable, but needs good material and is hard to explain
-- Conclusions as [likelihood ratios]{.hl}: the strength of the evidence, not the verdict
+- Conclusions are expressed as likelihood ratios, which give the strength of the evidence and leave the verdict to the court
 :::
 
 ## References {.refs}

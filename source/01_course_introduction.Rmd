@@ -52,20 +52,20 @@ I am Dr Massimiliano Canzi, [Max]{.hl} for short.
 
 . . .
 
-I studied linguistics in [Milan]{.hl} (BA), [Manchester]{.hl} (MA) and [York]{.hl} (MSc), and returned to [Manchester]{.hl} for my PhD.
+I studied linguistics in Milan (BA), Manchester (MA) and York (MSc), and returned to Manchester for my PhD.
 
 . . .
 
-I work on how listeners [perceive]{.hl} speech and how speakers [produce]{.hl} it, mostly with experiments and quantitative methods. Forensic speech science is one of my interests.
+I work on how listeners perceive speech and how speakers produce it, mostly with experiments and quantitative methods. Forensic speech science is one of my interests.
 
 ## Who are you?
 
 Tell us briefly:
 
-- Your [name]{.hl} and your [programme]{.hl}
-- How much [phonetics]{.hl} you have done so far
-- A forensic case involving [speech]{.hl} or [language]{.hl} that you have heard of, in the news, in a podcast or on TV
-- One thing you would like to [take away]{.hl} from this course
+- Your name and your programme
+- How much phonetics you have done so far
+- A forensic case involving speech or language that you have heard of, in the news, in a podcast or on TV
+- One thing you would like to take away from this course
 
 # The course
 
@@ -78,9 +78,9 @@ _Source: Dalziell & Welbergen (2016), Frontiers in Ecology and Evolution_
 ## How the course works
 
 - [Seminar]{.hl}, [day and time]: one chapter of the book per session, with discussion and exercises
-- [Practical sessions]{.hl} with Praat, later in the semester: measuring speech yourself
-- [Office hours]{.hl}: [day and time], by appointment
-- [Ilias]{.hl}: announcements, readings and submissions
+- Practical sessions with Praat, later in the semester: measuring speech yourself
+- Office hours: [day and time], by appointment
+- Ilias: announcements, readings and submissions
 
 ## Assessment
 
@@ -100,8 +100,8 @@ Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduc
 . . .
 
 - Written by practitioners and researchers in both fields
-- Real [cases]{.hl}, [exercises]{.hl} and suggestions for further reading in every chapter
-- We cover the [forensic phonetics]{.hl} part: chapters 1 to 7, and chapter 13 on expert witnesses
+- Real [cases]{.hl}, exercises and suggestions for further reading in every chapter
+- We cover the forensic phonetics part: chapters 1 to 7, and chapter 13 on expert witnesses
 
 ## Syllabus
 
@@ -120,11 +120,11 @@ Each session follows one chapter of Leemann et al. (2024).
 
 ## Slides and materials
 
-The slides are written in [R Markdown]{.hl} and shown with `reveal.js`. Each week you get the [slides]{.hl} (.html) and the [readings]{.hl}.
+The slides are written in [R Markdown]{.hl} and shown with `reveal.js`. Each week you get the slides (.html) and the readings.
 
 . . .
 
-The figures use [simulated data]{.hl}: realistic numbers, made up for teaching. The code behind every figure is in the .Rmd file, at `github.com/mcanzi/ws27_fss`, if you are curious. You do not need `R` for this course.
+The figures use simulated data: realistic numbers, made up for teaching. The code behind every figure is in the .Rmd file, at `github.com/mcanzi/ws27_fss`, if you are curious. You do not need `R` for this course.
 
 ## Exercises
 
@@ -132,53 +132,51 @@ The book has exercises in every chapter, and we do many of them together.
 
 . . .
 
-- In forensic work there is often [no single correct answer]{.hl}
-- What matters is how you get to your answer, and how [sure]{.hl} you can be
-- Do the exercises before you read the solutions: this field is learnt by [doing]{.hl}
+- Forensic questions often have [no single correct answer]{.hl}, so we discuss how you reached yours and how sure you can be
+- Try each exercise before you read the solution
 
 ## What this course is, and is not
 
-- A [grounding]{.hl} in the methods and problems of forensic speech science
-- A first step towards [further study]{.hl}: forensic phoneticians train for years, at postgraduate level and in forensic labs
-- [Not]{.hl} a qualification to do casework
+This course gives you a [grounding]{.hl} in the methods and problems of forensic speech science, and can be a first step towards further study. Forensic phoneticians train for years, at postgraduate level and in forensic labs.
 
 . . .
 
-The same holds for the book, as its authors point out.
+It does not qualify you to do casework, and the book's authors say the same about their book.
 
 # Forensic phonetics and linguistics
 
 ::: {.fact}
-`Did you know:` a lyrebird raised in captivity in New South Wales in the 1920s is said to have learnt [flute tunes]{.hl} and passed them on to wild lyrebirds after its release. Flute-like songs can still be heard there, but recordings made over 40 years suggest that the local song has been stable, not newly learnt.
+`Did you know:` a lyrebird raised in captivity in New South Wales in the 1920s is said to have learnt [flute tunes]{.hl} and passed them on to wild lyrebirds after its release. Flute-like songs can still be heard there, but recordings made over 40 years suggest that the local song has stayed stable over that period.
 
 _Sources: Powys, Taylor & Probets (2013), Environmental Humanities; Probets, Taylor & Powys (2020), Corella_
 :::
 
 ## Two fields
 
-- [Forensic phonetics]{.hl}: speech and voices as evidence. Who is speaking? What was said? Is a recording genuine?
-- [Forensic linguistics]{.hl}: language as evidence. Who wrote a text? What does it mean? How is language used in police interviews and courts?
+- [Forensic phonetics]{.hl} deals with speech and voices as evidence: who is speaking and what was said, or whether a recording has been edited
+- Forensic linguistics deals with language as evidence, from the authorship of a text to the language of police interviews and courtrooms
 
 . . .
 
-Despite the names, few practitioners work in [both]{.hl}. Most specialise further, so casework is often done by [teams]{.hl}.
+Despite the names, few practitioners work in both. Most specialise further, so casework is often done by teams.
 
 ## Where the fields meet
 
 - [Language analysis in the asylum procedure]{.hl} (LAAP): where does an asylum seeker's speech suggest they grew up? (session 7)
-- [Record keeping]{.hl}, [report writing]{.hl} and acting as an [expert witness]{.hl}: the same principles apply in both fields, and in all forensic sciences (session 8)
+- Record keeping, report writing and acting as an expert witness: the same principles apply in both fields, and in all forensic sciences (session 8)
 
 ## You do it every day
 
 When you answer the phone, you analyse the first few words, usually without noticing:
 
 - Do I know this [voice]{.hl}?
-- Does it match the [name]{.hl} on the screen?
-- Is the caller [young or old]{.hl}, [local or not]{.hl}, [calm or upset]{.hl}?
+- Does it match the name on the screen?
+- Roughly how old is the caller, and do they sound local?
+- Do they sound calm?
 
 . . .
 
-Forensic phonetics asks the same questions, [systematically]{.hl}, and asks how reliable the answers are.
+Forensic phonetics asks similar questions, with systematic methods and an estimate of how reliable each answer is.
 
 ## An old idea: shibboleth
 
@@ -203,12 +201,12 @@ Is the pronunciation of [one word]{.hl} enough to tell where someone is from?
 . . .
 
 - What else could explain the "wrong" pronunciation?
-- What if the speaker [knows]{.hl} the test?
+- What if the speaker knows the test?
 - What happens if the test gets it wrong?
 
 . . .
 
-The book's answer, and ours: [no]{.hl}. One word is never enough for serious legal decisions. Session 3 shows how profiling is done instead.
+No: a single word is not a sound basis for a legal decision, and the book makes the same point. Session 3 covers how profiling is actually done.
 
 ## No two samples are the same
 
@@ -266,33 +264,33 @@ _Source: Taylor (2014), The Conversation_
 
 - Experts collect samples, interview suspects and analyse everything, alone
 - Results arrive in [seconds]{.hl}, from impressive software
-- Conclusions are a [match]{.hl} or a [mismatch]{.hl}, "with 99.4% certainty"
-- A "[voiceprint]{.hl}" on screen matches a stored sample perfectly
+- Conclusions are a match or a mismatch, "with 99.4% certainty"
+- A "voiceprint" on screen matches a stored sample perfectly
 
 ## Forensic science in reality
 
-- Analyses take [days]{.hl}, not seconds
-- Experts rarely, if ever, report "match" or "mismatch": there is almost always some [doubt]{.hl}
-- [Objectivity]{.hl} and [transparency]{.hl} matter more than speed
+- Analyses take [days]{.hl}
+- Experts rarely, if ever, report "match" or "mismatch": there is almost always some doubt
+- Objectivity and transparency matter more than speed
 - No two samples of speech are ever identical, so there is no such thing as a voice "match"
 
 ## Even DNA is not a "match"
 
 - A DNA sample from a crime scene is [identical]{.hl} to the suspect's DNA
-- This does not mean the suspect committed the crime: it means they [could]{.hl} have
-- So could everyone else who shares that profile, possibly [thousands]{.hl} of people
-- Other evidence (where the suspect was, a motive) is for the [court]{.hl}, not for the forensic scientist
+- This does not mean the suspect committed the crime: it means they could have
+- So could everyone else who shares that profile, possibly thousands of people
+- Other evidence, such as where the suspect was or a motive, is for the court to weigh
 
 ## Two propositions
 
 The expert weighs the evidence under two competing [propositions]{.hl}:
 
-- [Prosecution]{.hl}: the two samples come from the [same]{.hl} source
-- [Defence]{.hl}: the two samples come from [different]{.hl} sources
+- Prosecution: the two samples come from the same source
+- Defence: the two samples come from different sources
 
 . . .
 
-The question is not "are they the same?", but: how much more likely is the evidence under one proposition than under the other? More in sessions 4 and 8.
+The expert then asks how much more likely the evidence is under one proposition than under the other. More in sessions 4 and 8.
 
 ## Similar is not enough
 
@@ -326,14 +324,13 @@ In both cases, the offender and the suspect differ by only [2 Hz]{.hl}. But:
 
 . . .
 
-The same similarity is much stronger evidence when the feature is [rare]{.hl}. Experts call this [typicality]{.hl}: it matters as much as similarity.
+The 2 Hz difference is much stronger evidence in case 2, because so few speakers have such a low F0. How common a feature is in the population is called its typicality.
 
 ## Discussion
 
 A TV expert says: "The voices match, with [99.4% certainty]{.hl}."
 
-- What could the 99.4% possibly mean?
-- What information would you need to judge it?
+- What could the 99.4% possibly mean, and what would you need to know to judge it?
 - Who should decide whether the suspect is guilty?
 
 # Working with forensic data
@@ -346,22 +343,22 @@ _Source: Dalziell et al. (2021), Current Biology_
 
 ## The material
 
-- Forensic material ranges from the [mundane]{.hl} (phone calls about bank transfers) to the [distressing]{.hl} (threats, recordings of crimes)
-- Practitioners describe three main strains: [graphic content]{.hl}, [pressure]{.hl}, and cases that touch on [personal experience]{.hl} (Giménez, Elstein & Queralt, 2020)
+- Forensic material ranges from the [mundane]{.hl} (phone calls about bank transfers) to the distressing (threats, recordings of crimes)
+- Practitioners describe three main strains: graphic content, pressure, and cases that touch on personal experience (Giménez, Elstein & Queralt, 2020)
 - In this course we only work with the cases discussed in the book
 
 ## Offenders and victims
 
 - Notorious offenders are widely remembered; their [victims]{.hl} much less so
 - In 2019, New Zealand's Prime Minister Jacinda Ardern refused to name the man who attacked two mosques in Christchurch
-- Forensic analyses often focus on the person who produced the speech, often the offender: the book asks readers to keep the [people harmed]{.hl} in view, and to choose their words with care
+- Forensic analyses often focus on the person who produced the speech, often the offender: the book asks readers to keep the people harmed in view, and to choose their words with care
 
 ## Ethics
 
 - Know the [limits]{.hl} of your expertise and of your methods, and never comment beyond them
-- Be [objective]{.hl}: no conclusion stronger or weaker than the analysis supports
-- The expert assists the [court]{.hl}, not either side
-- The accused is presumed [innocent]{.hl}: if the evidence leaves doubt, the court must know
+- Be objective: no conclusion stronger or weaker than the analysis supports
+- The expert's duty is to the court, whichever side asked for the report
+- The accused is presumed innocent: if the evidence leaves doubt, the court must know
 
 ## Further resources
 
@@ -374,11 +371,11 @@ _Source: Dalziell et al. (2021), Current Biology_
 ## Summary
 
 ::: {.takeaway}
-- Forensic phonetics treats [speech]{.hl} as evidence; forensic linguistics treats [language]{.hl} as evidence
-- No two speech samples are identical: experts weigh [similarities]{.hl} and [differences]{.hl}, never declare a "match"
-- Similarity counts only together with [typicality]{.hl}
-- The expert assists the court, [objectively]{.hl}, within the limits of their expertise
-- Behind every case are real [people]{.hl}
+- Forensic phonetics treats [speech]{.hl} as evidence; forensic linguistics treats language as evidence
+- No two speech samples are identical, so experts weigh similarities and differences and do not declare a "match"
+- Similarity counts only together with typicality
+- The expert assists the court, objectively, within the limits of their expertise
+- Cases involve real people, victims included, so we describe them with care
 :::
 
 ## References {.refs}

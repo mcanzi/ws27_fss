@@ -49,18 +49,18 @@ _Source: Henneberg, Lambert & Leigh (1997), Natural Science_
 ## Bomb threats against an airline
 
 - In 1983, a caller made a series of [bomb threats]{.hl} by telephone to Pan American Airlines, and some calls were recorded
-- The police charged a suspect, [Paul Prinzivalli]{.hl}
-- His defence sent the threat calls, and a recording of Prinzivalli, to the sociolinguist [William Labov]{.hl}
+- The police charged a suspect, Paul Prinzivalli
+- His defence sent the threat calls, and a recording of Prinzivalli, to the sociolinguist William Labov
 
 . . .
 
-Labov showed, by listening and by acoustic analysis, that the caller and the suspect had [different accents]{.hl}.
+Labov showed, by listening and by acoustic analysis, that the caller and the suspect had different accents.
 
 ## Two vowels
 
 - The caller had a [Boston]{.hl} accent: he used almost the same vowel in _bomb_ and _off_
-- Prinzivalli had a [New York]{.hl} accent, which keeps the two vowels apart
-- Prinzivalli was [acquitted]{.hl}; the judge named the phonetic evidence as crucial for reasonable doubt
+- Prinzivalli had a New York accent, which keeps the two vowels apart
+- Prinzivalli was acquitted; the judge named the phonetic evidence as crucial for reasonable doubt
 
 . . .
 
@@ -89,13 +89,13 @@ ggplot(pz, aes(F2, F1, colour = word)) +
   theme(legend.position = "none")
 ```
 
-Simulated values, for illustration: the caller [merges]{.hl} the two vowels, the suspect keeps them [apart]{.hl}.
+Simulated values, for illustration: the caller [merges]{.hl} the two vowels, the suspect keeps them apart.
 
 ## What the case shows
 
-- A [questioned]{.hl} sample (who is speaking?) is compared with a [known]{.hl} sample (a speaker whose identity we know)
-- Speaker comparison is the [most common]{.hl} type of case in forensic phonetics (session 4)
-- Experts use [auditory]{.hl}, [acoustic]{.hl} and sometimes [automatic]{.hl} methods
+- A [questioned]{.hl} sample (who is speaking?) is compared with a known sample (a speaker whose identity we know)
+- Speaker comparison is the most common type of case in forensic phonetics (session 4)
+- Experts use auditory, acoustic and sometimes automatic methods
 - They analyse speech sounds, like the vowels here, and features of the voice such as intonation and voice quality
 
 ## Today
@@ -103,8 +103,8 @@ Simulated values, for illustration: the caller [merges]{.hl} the two vowels, the
 A refresher of the phonetics behind the rest of the course, with a forensic focus:
 
 1. How speech is [produced]{.hl}: the source-filter model, segments and prosody
-2. How speech is [measured]{.hl}: waveforms, spectrograms, formants, f0, voice quality and tempo
-3. Which features forensic phoneticians [actually]{.hl} analyse
+2. How speech is measured: waveforms, spectrograms, formants, f0, voice quality and tempo
+3. Which features forensic phoneticians actually analyse
 
 . . .
 
@@ -113,20 +113,20 @@ This session follows chapter 2 of Leemann et al. (2024).
 # Speech production
 
 ::: {.fact}
-`Did you know:` male koalas bellow at about [27 Hz]{.hl} on average: about 20 times lower than expected for an animal of 8 kg, and more typical of an elephant. They do it with a second pair of vocal folds, the [velar vocal folds]{.hl}, outside the larynx.
+`Did you know:` male koalas bellow at about [27 Hz]{.hl} on average: about 20 times lower than expected for an animal of 8 kg, and more typical of an elephant. They do it with a second pair of vocal folds, the velar vocal folds, outside the larynx.
 
 _Source: Charlton et al. (2013), Current Biology_
 :::
 
 ## The source-filter model
 
-- [Source]{.hl}: air pushed up from the lungs sets the [vocal folds]{.hl} vibrating at the glottis
-- [Filter]{.hl}: the oral and nasal tracts shape that sound. Moving the tongue, lips and velum changes their [resonances]{.hl}
-- Like the equaliser of a stereo: the filter boosts some frequencies and damps others
+- Air pushed up from the lungs sets the vocal folds vibrating at the glottis. This vibration is the [source]{.hl}
+- The oral and nasal tracts then shape the sound, acting as a filter. Moving the tongue, lips and velum changes their resonances
+- The filter works a bit like a stereo equaliser, boosting some frequencies and damping others
 
 . . .
 
-Tongue high and front, lips spread: [i]. Tongue low and back: [ɑ]. Same source, different filter.
+With the tongue high and front and the lips spread, the output is [i]; with the tongue low and back, it is [ɑ]. The source can stay the same in both.
 
 ## Source, filter, output
 
@@ -165,30 +165,23 @@ Simulated spectra: the filter's peaks are the [formants]{.hl}.
 
 ## Airstreams
 
-- Most speech uses an [egressive pulmonic]{.hl} airstream: air pushed out from the lungs
-- Some sounds use other airstreams: [clicks]{.hl} draw air inwards
-- In English, clicks are not speech sounds (_tut tut_, or spurring on a horse); in some African languages, such as Xhosa, they are consonants
+Most speech uses an [egressive pulmonic]{.hl} airstream, with air pushed out from the lungs. Some sounds use other airstreams: clicks, for example, draw air inwards. In English, clicks are not speech sounds (_tut tut_, or spurring on a horse), but in some African languages, such as Xhosa, they are consonants.
 
 ## Segments and prosody
 
-- [Segments]{.hl}: individual consonants and vowels
-- [Prosody]{.hl}, or suprasegmentals: features above single segments, such as stress, intonation, rhythm, tempo, tone and voice quality
-
-. . .
-
-Forensic phoneticians analyse [both]{.hl}.
+Segments are individual consonants and vowels. [Prosody]{.hl}, or suprasegmentals, covers features that stretch over more than one segment, such as stress, intonation, rhythm, tempo, tone and voice quality. Forensic phoneticians analyse both.
 
 ## Consonants
 
 Three parameters, often abbreviated [VPM]{.hl}:
 
-- [Voicing]{.hl}: do the vocal folds vibrate? _fuzzy_ (voiced /z/) vs _fussy_ (voiceless /s/)
-- [Place]{.hl}: where is the constriction? From bilabial (lips) to glottal (vocal folds)
-- [Manner]{.hl}: how is the air obstructed?
+- Voicing: do the vocal folds vibrate? _fuzzy_ (voiced /z/) vs _fussy_ (voiceless /s/)
+- Place: where is the constriction? From bilabial (lips) to glottal (vocal folds)
+- Manner: how is the air obstructed?
 
 . . .
 
-/z/ is a [voiced alveolar fricative]{.hl}.
+/z/ is a voiced alveolar fricative.
 
 ## Places of articulation {.smaller}
 
@@ -210,7 +203,7 @@ Three parameters, often abbreviated [VPM]{.hl}:
 
 - [Obstruents]{.hl}: the airflow is blocked or turbulent
   - plosives (full closure, then release), fricatives (turbulent airflow), affricates (closure, then slow release with friction)
-- [Sonorants]{.hl}: air escapes easily
+- Sonorants: air escapes easily
   - nasals (velum lowered), approximants (lateral /l/, central /ɹ/), trills, taps and flaps, and all vowels
 
 ## Try it
@@ -231,40 +224,39 @@ Voiced bilabial nasal; voiceless postalveolar affricate; voiced velar nasal; voi
 Three parameters:
 
 - Tongue [height]{.hl}: close (high) to open (low)
-- Tongue [position]{.hl}: front, central, back
-- [Lip rounding]{.hl}: rounded or unrounded
+- Tongue position: front, central, back
+- Lip rounding: rounded or unrounded
 
 . . .
 
 - [i]: unrounded close front vowel. Add rounding and you get [y], as in German _grün_
 - [ɑ]: unrounded open back vowel. Add rounding and you get [ɒ], as in British English LOT
-- [Diphthongs]{.hl} glide from one quality to another: English _nine_
+- Diphthongs glide from one quality to another: English _nine_
 
 ## Lexical sets
 
 - [Wells (1982)]{.hl} named groups of words after a keyword: PRICE stands for all words with the vowel of _price_ (_guide_, _might_, _nine_)
 - Accents differ in how they pronounce a set, but usually affect all its words in the same way
-- Keywords work for [every accent]{.hl}, unlike phoneme symbols, which imply the standard accent
+- Keywords work for every accent, unlike phoneme symbols, which imply the standard accent
 
 . . .
 
-- Example: GOOSE has moved [forward]{.hl} in young speakers of standard British English: _goose_, _lose_, _youth_ all changed
+- Example: GOOSE has moved forward in young speakers of standard British English: _goose_, _lose_, _youth_ all changed
 - In some Nigerian and Yorkshire accents, GOOSE is still back, close to [u]
 
 # Prosody
 
 ::: {.fact}
-`Did you know:` in koalas, the [pitch]{.hl} of a male's bellow says nothing about his size, but the spacing of its [formants]{.hl} does: larger males have lower, more closely spaced formants.
+`Did you know:` in koalas, the [pitch]{.hl} of a male's bellow says nothing about his size, but the spacing of its formants does: larger males have lower, more closely spaced formants.
 
 _Source: Charlton et al. (2011), Journal of Experimental Biology_
 :::
 
 ## Fundamental frequency and pitch
 
-- [f0]{.hl} ("F zero"): how often the vocal folds vibrate per second, in Hertz. A measurement
-- [Pitch]{.hl}: how high or low we hear a voice. A percept
-- [Intonation]{.hl}: pitch that carries meaning. _The dog chases the cat_ with a fall is a statement; with a rise, a question
-- [Tone]{.hl}: pitch that distinguishes words. Thai /kʰa/ with a high tone means "to trade", with a falling tone "to kill", with a rising tone "leg"
+- [f0]{.hl} ("F zero") is the number of vocal fold vibrations per second, in Hertz, so it is a measurement. Pitch is how high or low we hear a voice, which makes it a percept
+- When pitch carries meaning over a phrase, we call it intonation. _The dog chases the cat_ with a fall is a statement; with a rise, a question
+- In tone languages, pitch also distinguishes words. Thai /kʰa/ with a high tone means "to trade", with a falling tone "to kill", with a rising tone "leg"
 
 ## Typical f0
 
@@ -290,19 +282,18 @@ Simulated speakers. Typical values: men 100–125 Hz, women 180–220 Hz, childr
 The shape and tension of the glottis change the timbre of the voice:
 
 - [Modal]{.hl} voice: regular vibration
-- [Breathy]{.hl} voice: the glottis does not close fully, air escapes
-- [Whisper]{.hl}: no vibration; turbulent air through a narrow opening
-- [Creaky]{.hl} voice: slow, irregular vibration of the edges of the folds
+- Breathy voice: the glottis does not close fully, air escapes
+- Whisper: no vibration; turbulent air through a narrow opening
+- Creaky voice: slow, irregular vibration of the edges of the folds
 
 . . .
 
-Voice quality comes partly from [anatomy]{.hl}, but speakers also vary it (attitude), and it changes with [health]{.hl} and [emotion]{.hl}.
+Voice quality comes partly from anatomy, but speakers also vary it (attitude), and it changes with health and emotion.
 
 ## Prominence and rhythm
 
 - [Prominence]{.hl}: stressed syllables stand out, usually by being louder, longer and higher. _IMport_ (noun) vs _imPORT_ (verb)
-- [Rhythm]{.hl}: traditionally, languages are [stress-timed]{.hl} (stressed syllables at roughly regular intervals, as in English) or [syllable-timed]{.hl} (syllables of roughly equal length, as in French)
-- In reality rhythm is a [continuum]{.hl}: no language fits one type perfectly
+- Languages are traditionally classed as stress-timed (stressed syllables at roughly regular intervals, as in English) or syllable-timed (syllables of roughly equal length, as in French). In reality rhythm is a continuum, and no language fits either type perfectly
 
 ## Rhythm
 
@@ -332,8 +323,8 @@ Simulated syllable durations. English shortens unstressed syllables so that stre
 
 ## Speech tempo
 
-- [Articulation rate]{.hl}: syllables per second, [without]{.hl} pauses
-- [Speaking rate]{.hl}: syllables per second, [with]{.hl} pauses
+- [Articulation rate]{.hl}: syllables per second, without pauses
+- Speaking rate: syllables per second, with pauses
 - Fast speakers of English produce about 7–8 syllables per second, slow ones about 3–4
 - Rates depend on the language's syllable structure: mostly CV syllables (Japanese) give higher rates than many consonant clusters (Polish)
 
@@ -357,7 +348,7 @@ ggplot(chunks, aes(xmin = start, xmax = end, ymin = 0, ymax = 1, fill = type)) +
 28 syllables in 6.2 s, of which `r speech_time` s are speech:
 
 - Articulation rate: 28 / `r speech_time` = [`r round(28 / speech_time, 1)`]{.hl} syllables per second
-- Speaking rate: 28 / 6.2 = [`r round(28 / 6.2, 1)`]{.hl} syllables per second
+- Speaking rate: 28 / 6.2 = `r round(28 / 6.2, 1)` syllables per second
 
 # Acoustic analysis
 
@@ -369,13 +360,12 @@ _Source: Charlton et al. (2011), Journal of Experimental Biology_
 
 ## Praat
 
-- Free software for speech analysis by Paul [Boersma]{.hl} and David [Weenink]{.hl} (University of Amsterdam); _praat_ is Dutch for "talk"
-- The standard tool for students, researchers and forensic experts
+- Free software for speech analysis by Paul [Boersma]{.hl} and David Weenink (University of Amsterdam), and the standard tool for students, researchers and forensic experts. _Praat_ is Dutch for "talk"
 - Measures f0, formants, intensity and voice quality; annotates recordings; draws figures
 
 . . .
 
-We will use it in the [practical sessions]{.hl}. Today: what the measurements mean.
+We will use Praat in the practical sessions. Today is about what its measurements mean.
 
 ## The waveform
 
@@ -418,13 +408,13 @@ ggplot(fr, aes(t * 1000, amp, colour = part == "Sum: a complex periodic wave")) 
   theme(legend.position = "none", axis.text.y = element_blank())
 ```
 
-[Fourier]{.hl}: every complex periodic wave is a sum of sine waves at whole multiples of f0, the [harmonics]{.hl}.
+[Fourier]{.hl}: every complex periodic wave is a sum of sine waves at whole multiples of f0, the harmonics.
 
 ## The spectrogram
 
-- Time on the x-axis, [frequency]{.hl} on the y-axis, [intensity]{.hl} as darkness
-- Each vertical striation is one opening and closing of the glottis (a [glottal pulse]{.hl})
-- The vocal tract keeps changing shape, so the pattern of energy keeps changing: a running record of the [filter]{.hl}
+- Time on the x-axis, [frequency]{.hl} on the y-axis, intensity as darkness
+- Each vertical striation is one opening and closing of the glottis (a glottal pulse)
+- The vocal tract keeps changing shape, so the pattern of energy keeps changing: a running record of the filter
 
 . . .
 
@@ -445,9 +435,9 @@ Try a live spectrogram of your own voice: search for "Chrome Music Lab spectrogr
 
 - Tap a wine glass: its sound depends on its shape and how much air it holds. The vocal tract works the same way
 - [Formants]{.hl}: the resonances of the vocal tract, dark horizontal bands in a spectrogram
-- [F1]{.hl} goes down as the vowel gets closer: close [i] low F1, open [a] high F1
-- [F2]{.hl} goes up as the vowel gets fronter: front [i] high F2, back [u] low F2
-- [F3]{.hl} reflects lip rounding; [F4]{.hl} and above often carry speaker-specific information
+- F1 goes down as the vowel gets closer: close [i] low F1, open [a] high F1
+- F2 goes up as the vowel gets fronter: front [i] high F2, back [u] low F2
+- F3 reflects lip rounding; F4 and above often carry speaker-specific information
 
 ## Bigger tract, lower formants
 
@@ -471,12 +461,11 @@ ggplot(scaled, aes(F2, F1, colour = voice, group = voice)) +
   labs(x = "F2 (Hz)", y = "F1 (Hz)", colour = NULL)
 ```
 
-Approximate cardinal vowel formants for an adult man (Catford, 1988), scaled up for illustration. The [shape]{.hl} stays; the frequencies rise.
+Approximate cardinal vowel formants for an adult man (Catford, 1988), scaled up for illustration. The vowel space keeps its [shape]{.hl} but moves up in frequency.
 
 ## Measuring f0
 
-- Average f0 (mean, median, mode), its variability (standard deviation) and its range (maximum minus minimum)
-- Praat's voice report gives all of these for a selected stretch of speech
+- Praat's voice report gives the average f0 (mean, median, mode), its standard deviation and its range for a selected stretch of speech
 - But every f0 value is an [estimate]{.hl}: the algorithm can be wrong, especially with noise, unusual voice qualities or poor recordings
 
 ## When the tracker gets it wrong
@@ -498,21 +487,21 @@ ggplot(track, aes(t, f0, colour = error)) +
 clean_f0 <- track$f0[track$error == "correct"]
 ```
 
-Simulated f0 track of an adult man. Mean with errors: [`r round(mean(track$f0))` Hz]{.hl}; without: [`r round(mean(clean_f0))` Hz]{.hl}. Median with errors: `r round(median(track$f0))` Hz.
+Simulated f0 track of an adult man. Mean with errors: [`r round(mean(track$f0))` Hz]{.hl}; without: `r round(mean(clean_f0))` Hz. Median with errors: `r round(median(track$f0))` Hz.
 
 ## Check the numbers
 
 - An adult man speaking normally should give f0 values around [100–130 Hz]{.hl}
-- Values around 200 Hz could be real (a very high register, or falsetto), or the tracker [doubling]{.hl} the true value
+- Values around 200 Hz could be real (a very high register, or falsetto), or the tracker doubling the true value
 - Halved values work the other way
-- Always [look at the track]{.hl}, and listen, before trusting a summary statistic
+- Always look at the track, and listen, before trusting a summary statistic
 
 ## Measuring voice quality
 
-- [Jitter]{.hl}: how much the duration of one vibration cycle varies from the next. Healthy young adults: about 0.5–1%
-- [Shimmer]{.hl}: how much the amplitude varies from cycle to cycle
-- [Harmonics-to-noise ratio]{.hl} (HNR), in dB: the lower it is, the noisier (hoarser, breathier) the voice. Values under 7 dB usually indicate a vocal pathology
-- [H1–H2]{.hl}: the difference between the first two harmonics, a measure of breathiness and creakiness
+- [Jitter]{.hl} measures how much the duration of one vibration cycle varies from the next. In healthy young adults it is about 0.5–1%
+- Shimmer is the same idea for amplitude
+- The harmonics-to-noise ratio (HNR), in dB, falls as a voice gets noisier, hoarser or breathier. Values under 7 dB usually indicate a vocal pathology
+- H1–H2, the difference between the first two harmonics, is used as a measure of breathiness and creakiness
 
 ## Jitter
 
@@ -535,13 +524,13 @@ Simulated cycle durations of a voice at 125 Hz (8 ms per cycle).
 
 ## Measuring rhythm and tempo
 
-- [Prominence]{.hl}: compare f0, duration and intensity of syllables (_IMport_ vs _imPORT_)
-- [Rhythm]{.hl}: compare the variability of intervals between stressed syllables with the variability of all syllables; or of vocalic and consonantal intervals
-- [Tempo]{.hl}: count syllables and divide by duration
+- For prominence, compare the f0, duration and intensity of syllables (_IMport_ vs _imPORT_)
+- [Rhythm]{.hl} measures compare how variable different intervals are: between stressed syllables, between all syllables, or between vowels and consonants
+- Tempo is simpler: count the syllables and divide by the duration
 
 . . .
 
-Counting syllables is not trivial: _library_ has three syllables in careful speech but often two in fast speech. It is usually easier to count the syllables a word [would]{.hl} have in careful speech.
+Counting syllables is not trivial: _library_ has three syllables in careful speech but often two in fast speech. It is usually easier to count the syllables a word would have in careful speech.
 
 # Forensic practice
 
@@ -555,39 +544,37 @@ _Source: Charlton et al. (2011), PLoS ONE_
 
 Surveys of forensic phoneticians worldwide (Gold & French, 2011, 2019):
 
-- [Vowel formants]{.hl}: almost everyone; F2 most, then F1 and F3, usually at the vowel midpoint
-- [Consonants]{.hl}: most experts, especially fricatives and plosives
-- [f0]{.hl}: everyone; intonation: about 85%
-- [Voice quality]{.hl}: most, largely by ear
-- [Tempo]{.hl} (usually articulation rate): most; [rhythm]{.hl}: about three quarters
-- Also [non-phonetic]{.hl} features: discourse markers, turn-taking, filled pauses, clicks, breathing, throat clearing, laughter
+- Almost everyone measures [vowel formants]{.hl}: F2 most often, then F1 and F3, usually at the vowel midpoint
+- Most also analyse consonants, especially fricatives and plosives
+- Everyone measures f0, and about 85% analyse intonation
+- Most assess voice quality, largely by ear
+- Most measure tempo (usually articulation rate); about three quarters look at rhythm
+- Non-phonetic features come up too: discourse markers, turn-taking, filled pauses, clicks, breathing, throat clearing, laughter
 
 ## Why F1 comes second
 
-- Landline telephones pass only about 350 to 3,400 Hz
-- This tends to [raise F1]{.hl} estimates, especially in close vowels with low F1
-- More on recording quality in session 4
+Landline telephones pass only about 350 to 3,400 Hz. This tends to [raise F1]{.hl} estimates, especially in close vowels with low F1. We come back to recording quality in session 4.
 
 ## Which features identify a speaker best?
 
 Experts' answers, most often named first:
 
 1. [Voice quality]{.hl}
-2. [Dialect and accent]{.hl}
-3. [Vowel formants]{.hl}
+2. Dialect and accent
+3. Vowel formants
 4. Speech tempo, f0, rhythm, lexical and grammatical choices, fluency
 
 . . .
 
-But many experts stress that no single feature makes a speaker distinctive: it is the [combination]{.hl} that matters.
+Many experts added that they rely on combinations of features, because no single feature is distinctive enough on its own.
 
 ## Exercises
 
 The book's exercises for this chapter use a short recording of the sentence _When the sunlight strikes raindrops in the air, they act as a prism and form a rainbow_:
 
 - [Annotate]{.hl} sounds in Praat
-- [Measure]{.hl} F1, F2 and F3 at the midpoints of vowels
-- Calculate the speaker's [articulation rate]{.hl}
+- Measure F1, F2 and F3 at the midpoints of vowels
+- Calculate the speaker's articulation rate
 
 . . .
 
@@ -596,12 +583,12 @@ We will do these in the practical sessions.
 ## Summary
 
 ::: {.takeaway}
-- Speech = a [source]{.hl} (vocal fold vibration) shaped by a [filter]{.hl} (the vocal tract)
+- Speech = a [source]{.hl} (vocal fold vibration) shaped by a filter (the vocal tract)
 - Consonants: voicing, place, manner. Vowels: height, backness, rounding. Lexical sets work for every accent
 - Prosody: f0 and intonation, voice quality, prominence, rhythm, tempo
 - F1 tracks vowel height, F2 backness; bigger vocal tracts mean lower formants
-- Every measurement is an [estimate]{.hl}: check f0 tracks and formant tracks
-- Experts look at many features, and at their [combination]{.hl}
+- Every measurement is an estimate: check f0 tracks and formant tracks
+- Experts look at many features, and at their combination
 :::
 
 ## References {.refs}
