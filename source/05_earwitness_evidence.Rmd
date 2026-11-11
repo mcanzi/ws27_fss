@@ -41,7 +41,7 @@ source("slides_setup.R", local = knitr::knit_global())
 </style>
 
 ::: {.fact}
-`Did you know:` elephants in Amboseli, Kenya, react more defensively to recordings of [Maasai men], who occasionally spear elephants, than to Kamba men saying the same sentence in their own language. Voices of Maasai women and boys cause much less alarm.
+`Did you know:` elephants in Amboseli, Kenya, react more defensively to recordings of [Maasai men]{.hl}, who occasionally spear elephants, than to Kamba men saying the same sentence in their own language. Voices of Maasai women and boys cause much less alarm.
 
 _Source: McComb, Shannon, Sayialel & Moss (2014), PNAS_
 :::
@@ -82,7 +82,7 @@ This session follows chapter 5 of Leemann et al. (2024).
 # Earwitnesses
 
 ::: {.fact}
-`Did you know:` an adult female African elephant is estimated to know the contact calls of about 14 families, around [100 adult females] in total, and can tell family members from more distant acquaintances by voice alone.
+`Did you know:` an adult female African elephant is estimated to know the contact calls of about 14 families, around [100 adult females]{.hl} in total, and can tell family members from more distant acquaintances by voice alone.
 
 _Source: McComb, Moss, Sayialel & Baker (2000), Animal Behaviour_
 :::
@@ -126,7 +126,7 @@ Few police forces have a protocol for asking about a voice. The Netherlands Fore
 # Voice parades
 
 ::: {.fact}
-`Did you know:` when the researchers resynthesised the Maasai recordings so that men's and women's voices had the [same pitch], elephants still reacted to the men's voices as the more dangerous ones.
+`Did you know:` when the researchers resynthesised the Maasai recordings so that men's and women's voices had the [same pitch]{.hl}, elephants still reacted to the men's voices as the more dangerous ones.
 
 _Source: McComb, Shannon, Sayialel & Moss (2014), PNAS_
 :::
@@ -231,7 +231,7 @@ Results also depend a lot on the speaker: some voices are much easier to recogni
 # What affects accuracy
 
 ::: {.fact}
-`Did you know:` female elephants can recognise the contact call of a family member at distances of up to [2.5 km], although recognition usually works over 1–1.5 km.
+`Did you know:` female elephants can recognise the contact call of a family member at distances of up to [2.5 km]{.hl}, although recognition usually works over 1–1.5 km.
 
 _Source: McComb, Reby, Baker, Moss & Sayialel (2003), Animal Behaviour_
 :::
@@ -369,7 +369,7 @@ Experiments cannot recreate the stress of a crime. They show general patterns, b
 # Earwitnesses in court
 
 ::: {.fact}
-`Did you know:` wild African elephants seem to address each other with individually specific, [name-like calls], and respond more strongly to recordings of calls that were originally addressed to them.
+`Did you know:` wild African elephants seem to address each other with individually specific, [name-like calls]{.hl}, and respond more strongly to recordings of calls that were originally addressed to them.
 
 _Source: Pardo et al. (2024), Nature Ecology & Evolution_
 :::

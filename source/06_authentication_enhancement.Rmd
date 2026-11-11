@@ -41,7 +41,7 @@ source("slides_setup.R", local = knitr::knit_global())
 </style>
 
 ::: {.fact}
-`Did you know:` greater horseshoe bats call louder in noise, like humans (the [Lombard effect]), and also raise the frequency of their calls. Both changes appear in the very first call after the noise starts.
+`Did you know:` greater horseshoe bats call louder in noise, like humans (the [Lombard effect]{.hl}), and also raise the frequency of their calls. Both changes appear in the very first call after the noise starts.
 
 _Source: Hage, Jiang, Berquist, Feng & Metzner (2013), PNAS_
 :::
@@ -94,7 +94,7 @@ The recording may also have been edited before investigators received it.
 # Authentication
 
 ::: {.fact}
-`Did you know:` some tiger moths jam bat sonar with ultrasonic clicks. In experiments with _Bertholdia trigona_, bats missed even [tethered moths] on four out of five passes.
+`Did you know:` some tiger moths jam bat sonar with ultrasonic clicks. In experiments with _Bertholdia trigona_, bats missed even [tethered moths]{.hl} on four out of five passes.
 
 _Source: Corcoran, Barber & Conner (2009), Science_
 :::
@@ -160,7 +160,7 @@ Simulated. The traffic noise drops abruptly for half a second and comes back jus
 # Enhancement
 
 ::: {.fact}
-`Did you know:` the tiger moth _Bertholdia trigona_ produces its jamming clicks with a [tymbal], a sound-producing organ, at rates of up to about 4,500 clicks per second.
+`Did you know:` the tiger moth _Bertholdia trigona_ produces its jamming clicks with a [tymbal]{.hl}, a sound-producing organ, at rates of up to about 4,500 clicks per second.
 
 _Source: Corcoran, Barber & Conner (2009), Science_
 :::
@@ -247,7 +247,7 @@ Simulated spectra. The filter removes the hiss above 7 kHz, and with it the uppe
 # Speech content
 
 ::: {.fact}
-`Did you know:` Egyptian fruit bat squabbles in the roost sound alike to us, but analysis of about 15,000 calls showed that they carry information about who is calling, the context, and even [who is addressed].
+`Did you know:` Egyptian fruit bat squabbles in the roost sound alike to us, but analysis of about 15,000 calls showed that they carry information about who is calling, the context, and even [who is addressed]{.hl}.
 
 _Source: Prat, Taub & Yovel (2016), Scientific Reports_
 :::
@@ -310,7 +310,7 @@ Invented example in the format of Foulkes et al. (2019). English in bold; M: a m
 # Questioned utterances
 
 ::: {.fact}
-`Did you know:` in horseshoe bats, call loudness rose only when the noise covered the [main frequency] of their calls, while call frequency rose for almost every noise band tested. The two adjustments seem to be controlled separately.
+`Did you know:` in horseshoe bats, call loudness rose only when the noise covered the [main frequency]{.hl} of their calls, while call frequency rose for almost every noise band tested. The two adjustments seem to be controlled separately.
 
 _Source: Hage, Jiang, Berquist, Feng & Metzner (2013), PNAS_
 :::

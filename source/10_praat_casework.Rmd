@@ -41,7 +41,7 @@ source("slides_setup.R", local = knitr::knit_global())
 </style>
 
 ::: {.fact}
-`Did you know:` fork-tailed drongos in the Kalahari give [false alarm calls] when a meerkat or a bird finds food. The forager runs for cover, and the drongo takes the food.
+`Did you know:` fork-tailed drongos in the Kalahari give [false alarm calls]{.hl} when a meerkat or a bird finds food. The forager runs for cover, and the drongo takes the food.
 
 _Source: Flower, Gribble & Ridley (2014), Science_
 :::
@@ -65,7 +65,7 @@ The recordings are yours, from the last session. Your own voice is never in your
 # A mock speaker comparison
 
 ::: {.fact}
-`Did you know:` drongos [mimic the alarm calls] of other species, including those of the animals they are trying to rob, and these mimicked alarms kept pied babblers away from their food longer than the drongo's own alarm.
+`Did you know:` drongos [mimic the alarm calls]{.hl} of other species, including those of the animals they are trying to rob, and these mimicked alarms kept pied babblers away from their food longer than the drongo's own alarm.
 
 _Source: Flower, Gribble & Ridley (2014), Science_
 :::
@@ -129,7 +129,7 @@ Simulated preview. Q and K2 are similar, but several classmates have a median f0
 # Profiling
 
 ::: {.fact}
-`Did you know:` each drongo used between 9 and 32 types of alarm call, and after a [failed theft] it was more likely to switch to a different call on its next attempt.
+`Did you know:` each drongo used between 9 and 32 types of alarm call, and after a [failed theft]{.hl} it was more likely to switch to a different call on its next attempt.
 
 _Source: Flower, Gribble & Ridley (2014), Science_
 :::

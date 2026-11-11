@@ -41,7 +41,7 @@ source("slides_setup.R", local = knitr::knit_global())
 </style>
 
 ::: {.fact}
-`Did you know:` white-handed gibbons sing in duets, and a group that spots a predator sings a different song. It uses the same notes as the morning duet, but [in a different order].
+`Did you know:` white-handed gibbons sing in duets, and a group that spots a predator sings a different song. It uses the same notes as the morning duet, but [in a different order]{.hl}.
 
 _Source: Clarke, Reichard & Zuberbühler (2006), PLoS ONE_
 :::
@@ -70,7 +70,7 @@ This session follows chapter 13 of Leemann et al. (2024).
 # Who is an expert?
 
 ::: {.fact}
-`Did you know:` when one gibbon group sang its predator song, [neighbouring groups] joined in, and gibbons that were away from their group answered it.
+`Did you know:` when one gibbon group sang its predator song, [neighbouring groups]{.hl} joined in, and gibbons that were away from their group answered it.
 
 _Source: Clarke, Reichard & Zuberbühler (2006), PLoS ONE_
 :::
@@ -94,7 +94,7 @@ Courts also need to rely only on reputable disciplines. Automatic speaker recogn
 # Rules in the US and the UK
 
 ::: {.fact}
-`Did you know:` gibbons sing like trained [sopranos]. Recorded in a helium-enriched atmosphere, a gibbon tuned its vocal tract resonance to the pitch of its voice, the technique human sopranos use to sing high notes loudly.
+`Did you know:` gibbons sing like trained [sopranos]{.hl}. Recorded in a helium-enriched atmosphere, a gibbon tuned its vocal tract resonance to the pitch of its voice, the technique human sopranos use to sing high notes loudly.
 
 _Source: Koda et al. (2012), American Journal of Physical Anthropology_
 :::
@@ -182,7 +182,7 @@ Events in order, with even spacing. The first statutory Code covers England and 
 # Principles and regulation
 
 ::: {.fact}
-`Did you know:` gibbon duets have [rhythm]. In 215 recordings of 12 lar gibbons, note onsets were more regular, like the ticking of a clock, when the gibbons sang in duet than when they sang alone.
+`Did you know:` gibbon duets have [rhythm]{.hl}. In 215 recordings of 12 lar gibbons, note onsets were more regular, like the ticking of a clock, when the gibbons sang in duet than when they sang alone.
 
 _Source: Raimondi et al. (2023), Proceedings of the Royal Society B_
 :::
@@ -239,7 +239,7 @@ Adapted from Leemann et al. (2024).
 # Writing the report
 
 ::: {.fact}
-`Did you know:` in gibbon duets, each partner's [note onsets] predict the other's, and the two sing in synchrony more often than chance. Males and females differ in how they balance their own regularity against keeping time with the partner.
+`Did you know:` in gibbon duets, each partner's [note onsets]{.hl} predict the other's, and the two sing in synchrony more often than chance. Males and females differ in how they balance their own regularity against keeping time with the partner.
 
 _Source: Raimondi et al. (2023), Proceedings of the Royal Society B_
 :::
@@ -279,7 +279,7 @@ The court, or an expert for the other side, may ask for working notes and measur
 # The expert in court
 
 ::: {.fact}
-`Did you know:` gibbons sing in dense rainforest. With soprano tuning, the voice puts its energy into one [pure tone], and the authors link these melodious songs to life in dense forest where visibility is poor.
+`Did you know:` gibbons sing in dense rainforest. With soprano tuning, the voice puts its energy into one [pure tone]{.hl}, and the authors link these melodious songs to life in dense forest where visibility is poor.
 
 _Source: Koda et al. (2012), American Journal of Physical Anthropology_
 :::

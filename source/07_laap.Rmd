@@ -41,7 +41,7 @@ source("slides_setup.R", local = knitr::knit_global())
 </style>
 
 ::: {.fact}
-`Did you know:` sperm whales communicate with [codas], short patterns of clicks, and whales that share a coda dialect form a "vocal clan". Across the Pacific, researchers have identified seven clans, each with its own dialect.
+`Did you know:` sperm whales communicate with [codas]{.hl}, short patterns of clicks, and whales that share a coda dialect form a "vocal clan". Across the Pacific, researchers have identified seven clans, each with its own dialect.
 
 _Source: Hersh et al. (2022), PNAS_
 :::
@@ -79,7 +79,7 @@ This session follows chapter 7 of Leemann et al. (2024).
 # Asylum and LAAP
 
 ::: {.fact}
-`Did you know:` in the Pacific, the "identity codas" that mark a clan are [more distinct] where two clans share the same waters, much as human groups mark their identity more strongly where they meet.
+`Did you know:` in the Pacific, the "identity codas" that mark a clan are [more distinct]{.hl} where two clans share the same waters, much as human groups mark their identity more strongly where they meet.
 
 _Source: Hersh et al. (2022), PNAS_
 :::
@@ -136,7 +136,7 @@ Judges only take the counter-report seriously if it raises strong doubt about th
 # Interview and analysis
 
 ::: {.fact}
-`Did you know:` off Dominica, the "1+1+3" coda, three evenly spaced clicks after two slower ones, has been the most common coda for at least 30 years, and has only ever been recorded in the [Caribbean].
+`Did you know:` off Dominica, the "1+1+3" coda, three evenly spaced clicks after two slower ones, has been the most common coda for at least 30 years, and has only ever been recorded in the [Caribbean]{.hl}.
 
 _Source: Gero, Bøttcher, Whitehead & Madsen (2016), Royal Society Open Science_
 :::
@@ -218,7 +218,7 @@ His words matched Moghomo, a language spoken in Cameroon.
 # Why it is hard
 
 ::: {.fact}
-`Did you know:` sperm whale codas vary in timing with the conversation and sometimes gain an extra click. Researchers call these features [rubato and ornamentation], and found that they combine with rhythm and tempo into a large inventory of distinct codas.
+`Did you know:` sperm whale codas vary in timing with the conversation and sometimes gain an extra click. Researchers call these features [rubato and ornamentation]{.hl}, and found that they combine with rhythm and tempo into a large inventory of distinct codas.
 
 _Source: Sharma et al. (2024), Nature Communications_
 :::
@@ -296,7 +296,7 @@ No study can show how a Syrian teenager's dialect changes in two years in Egypt.
 # Who should analyse?
 
 ::: {.fact}
-`Did you know:` off Dominica, two sperm whale clans share the same waters, but family units only [associate within their own clan], one of them with "1+1+3" codas and the other mostly with regular codas.
+`Did you know:` off Dominica, two sperm whale clans share the same waters, but family units only [associate within their own clan]{.hl}, one of them with "1+1+3" codas and the other mostly with regular codas.
 
 _Source: Gero, Bøttcher, Whitehead & Madsen (2016), Royal Society Open Science_
 :::

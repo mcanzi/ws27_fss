@@ -41,7 +41,7 @@ source("slides_setup.R", local = knitr::knit_global())
 </style>
 
 ::: {.fact}
-`Did you know:` young male zebra finches learn their song from adult males, in a [sensitive period] between about 35 and 90 days after hatching.
+`Did you know:` young male zebra finches learn their song from adult males, in a [sensitive period]{.hl} between about 35 and 90 days after hatching.
 
 _Source: Tchernichovski, Mitra, Lints & Nottebohm (2001), Science_
 :::
@@ -75,7 +75,7 @@ Open copies of your files, and keep the originals untouched, as in real casework
 # Praat basics
 
 ::: {.fact}
-`Did you know:` a young zebra finch kept alone with its father imitates his song closely. When it can hear the model song more often, the [imitation is less complete].
+`Did you know:` a young zebra finch kept alone with its father imitates his song closely. When it can hear the model song more often, the [imitation is less complete]{.hl}.
 
 _Source: Tchernichovski, Lints, Mitra & Nottebohm (1999), PNAS_
 :::
@@ -101,7 +101,7 @@ If a formant track or pitch track looks wrong later, these settings are the firs
 # Vowels
 
 ::: {.fact}
-`Did you know:` zebra finch song imitation is not always gradual. In some young birds, a note stayed far from the model for days and was then [corrected abruptly], by a sudden doubling of its period.
+`Did you know:` zebra finch song imitation is not always gradual. In some young birds, a note stayed far from the model for days and was then [corrected abruptly]{.hl}, by a sudden doubling of its period.
 
 _Source: Tchernichovski, Mitra, Lints & Nottebohm (2001), Science_
 :::
@@ -144,7 +144,7 @@ This is within-speaker variation. In a speaker comparison, a difference between 
 # f0 and articulation rate
 
 ::: {.fact}
-`Did you know:` in zebra finch song, a [motif] lasts only about half a second to one and a half seconds. A song bout repeats it several times.
+`Did you know:` in zebra finch song, a [motif]{.hl} lasts only about half a second to one and a half seconds. A song bout repeats it several times.
 
 _Source: Tchernichovski, Lints, Mitra & Nottebohm (1999), PNAS_
 :::
