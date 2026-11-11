@@ -194,7 +194,7 @@ In a real case, articulation rate would be one of many features in the analysis.
 
 ## The telephone effect
 
-```{r telephone, fig.height = 3.8}
+```{r telephone, fig.height = 3.3}
 tel <- tibble(vowel = fct_inorder(c("[i]", "[ɪ]", "[ɛ]", "[a]")), direct = c(280, 400, 560, 760),
               landline = direct * (1 + c(14, 9, 5, 0) / 100), mobile = direct * (1 + c(42, 33, 26, 15) / 100)) |>
   pivot_longer(-vowel, names_to = "recording", values_to = "F1") |>
@@ -205,7 +205,7 @@ ggplot(tel, aes(vowel, F1, fill = recording)) +
   labs(x = NULL, y = "Measured F1 (Hz)", fill = NULL)
 ```
 
-Simulated. Telephones cut energy below about 350 Hz, so F1 is overestimated, most in vowels with low F1: by up to about 14% over landlines (Künzel, 2001), and on average by 29% over mobiles (Byrne & Foulkes, 2004). F2 and F3 are largely unaffected.
+Simulated. Telephones cut energy below about 350 Hz, which raises measured F1, most in low-F1 vowels: up to about 14% on landlines (Künzel, 2001), 29% on average on mobiles (Byrne & Foulkes, 2004).
 
 # Features analysed
 
