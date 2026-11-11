@@ -67,7 +67,7 @@ The tape was played on television and at football grounds. No suspect was found.
 
 - Ellis and his colleague Jack Windsor Lewis came to think the tape was a [hoax]{.hl}, but the investigation stayed centred on Sunderland (French, Harrison & Windsor Lewis, 2006)
 - The real killer, [Peter Sutcliffe]{.hl}, was from West Yorkshire and had a Yorkshire accent
-- He had been questioned earlier, and released partly because his accent was not north-eastern
+- Police had interviewed him several times, and ruled him out partly because his accent and handwriting did not match the hoaxer's
 - He was arrested in 1981. The murders had continued in the meantime
 
 ## The hoaxer
@@ -190,11 +190,11 @@ How far we can locate a speaker depends on:
 
 . . .
 
-The UK, Germany, Switzerland, France, the Netherlands and the US have long traditions of dialectology. The classic British source is the [Survey of English Dialects]{.hl} (SED): over 300 localities, more than a thousand questions, collected in the 1950s.
+The UK, Germany, Switzerland, France, the Netherlands and the US have long traditions of dialectology. The classic British source is the [Survey of English Dialects]{.hl} (SED): over 300 localities, more than a thousand questions, collected mainly in the 1950s.
 
 ## FOOT and STRUT
 
-- In much of northern England, FOOT and STRUT have the same vowel: _look_ and _luck_ [rhyme]{.hl}
+- In much of northern England, FOOT and STRUT have the same vowel: _look_ and _luck_ [sound the same]{.hl}
 - In the south, they are different (the FOOT–STRUT [split]{.hl})
 - The SED shows the divide as it was in the 1950s, mostly from older rural men, often one speaker per place
 - Newer data from the English Dialects App (2016) suggest that the northern pattern is [receding]{.hl}
@@ -296,7 +296,7 @@ Ethnologue (2022) figures, as reported in Leemann et al. (2024). An L2 speaker o
 - Stereotypical transfer is easy to spot: French and German speakers often say [s z]{.hl} for English /θ ð/
 - In the other direction, English speakers struggle with uvular [ʁ] in German and French, or trilled /r/ in Spanish and Arabic
 - Beyond stereotypes, identifying the L1 is [much harder]{.hl}
-- And even then, the L1 may say little about origin: Arabic is an official language in 22 states and has over 400 million speakers
+- And even then, the L1 may say little about origin: Arabic is an official language in more than 20 countries
 
 ## Speaking style
 
@@ -460,7 +460,7 @@ In a case one of the book's authors worked on, a caller kept up a consistent fak
 
 ## Discussion
 
-In 2005, a man was arrested at Dover with a fake passport as "Lord Buckingham". He claimed to have been educated at Harrow and Cambridge. The media suspected South African, Australian or Eastern European origins.
+In January 2005, a man was arrested at Dover: his British passport, in the name of Christopher Buckingham, used the identity of a baby who died in 1963. He called himself Lord Buckingham and claimed to have been educated at Harrow and Cambridge. The media suspected South African, Australian or Eastern European origins.
 
 - How would you test these hypotheses from his police interview?
 - What would you expect from a Harrow and Cambridge accent?
@@ -470,7 +470,7 @@ In 2005, a man was arrested at Dover with a fake passport as "Lord Buckingham". 
 - Mostly standard southern British English, but some postvocalic /r/, yod-dropping, and _Buckingham_ with a full final syllable: signs of [American English]{.hl}
 - Not Australian or South African English (neither is rhotic); no traces of an Eastern European L1
 - Some features fitted neither British nor American English, and the team struggled to agree
-- His sister recognised his photo: he was [Charles Stopford]{.hl}, who had served a jail term in Florida
+- His family recognised his photo, and fingerprints confirmed it: he was [Charles Stopford]{.hl}, an American from Florida
 
 ## Exercise
 
@@ -500,16 +500,16 @@ For the practical sessions (book activity 3A):
 
 ## References {.refs}
 
-- Labov, W. (1966). _The social stratification of English in New York City_. Center for Applied Linguistics.
+- Labov, W. (1966). _The social stratification of English in New York City_. Center for Applied Linguistics, Washington, DC.
 - [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 3.]{.hl}
-- Oh, T.-H., Dekel, T., Kim, C., Mosseri, I., Freeman, W. T., Rubinstein, M., & Matusik, W. (2019). Speech2Face: Learning the face behind a voice. _Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition_, 7539–7548.
+- Oh, T.-H., Dekel, T., Kim, C., Mosseri, I., Freeman, W. T., Rubinstein, M., & Matusik, W. (2019). Speech2Face: Learning the face behind a voice. _Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition_, 7539–7548. https://doi.org/10.1109/CVPR.2019.00772
 - Orchard, T. L., & Yarmey, A. D. (1995). The effects of whispers, voice-sample duration, and voice distinctiveness on criminal speaker identification. _Applied Cognitive Psychology_, 9(3), 249–260.
 
 ## Sources of the animal facts {.refs}
 
 - Charlton, B. D., Reby, D., & McComb, K. (2007). Female red deer prefer the roars of larger males. _Biology Letters_, 3(4), 382–385. https://doi.org/10.1098/rsbl.2007.0244
 - Fitch, W. T., & Reby, D. (2001). The descended larynx is not uniquely human. _Proceedings of the Royal Society B_, 268(1477), 1669–1675. https://doi.org/10.1098/rspb.2001.1704
-- Reby, D., André-Obrecht, R., Galinier, A., Farinas, J., & Cargnelutti, B. (2006). Cepstral coefficients and hidden Markov models reveal idiosyncratic voice characteristics in red deer (_Cervus elaphus_) stags. _Journal of the Acoustical Society of America_, 120(6), 4080–4089.
+- Reby, D., André-Obrecht, R., Galinier, A., Farinas, J., & Cargnelutti, B. (2006). Cepstral coefficients and hidden Markov models reveal idiosyncratic voice characteristics in red deer (_Cervus elaphus_) stags. _Journal of the Acoustical Society of America_, 120, 4080–4089.
 - Reby, D., & McComb, K. (2003). Anatomical constraints generate honesty: Acoustic cues to age and weight in the roars of red deer stags. _Animal Behaviour_, 65(3), 519–530. https://doi.org/10.1006/anbe.2003.2078
 - Reby, D., McComb, K., Cargnelutti, B., Darwin, C., Fitch, W. T., & Clutton-Brock, T. (2005). Red deer stags use formants as assessment cues during intrasexual agonistic interactions. _Proceedings of the Royal Society B_, 272(1566), 941–947. https://doi.org/10.1098/rspb.2004.2954
 
