@@ -344,52 +344,24 @@ A TV expert says: "The voices match, with [99.4% certainty]{.hl}."
 _Source: Dalziell et al. (2021), Current Biology_
 :::
 
-## What the data can be like
+## The material
 
-- Much forensic material is [mundane]{.hl}: phone calls about financial transactions, for example
-- Some is [distressing]{.hl}: threats, violence, recordings of crimes
-- The context of a case can be disturbing even when the recording itself is not
+- Forensic material ranges from the [mundane]{.hl} (phone calls about bank transfers) to the [distressing]{.hl} (threats, recordings of crimes)
+- Practitioners describe three main strains: [graphic content]{.hl}, [pressure]{.hl}, and cases that touch on [personal experience]{.hl} (Giménez, Elstein & Queralt, 2020)
+- In this course we only work with the cases discussed in the book
 
-## Looking after yourself
+## Offenders and victims
 
-Giménez, Elstein & Queralt (2020) interviewed forensic linguists about their wellbeing. Three themes stood out:
-
-- [Graphic content]{.hl}
-- [Pressure]{.hl}
-- [Personal experiences]{.hl} that a case brings back
-
-. . .
-
-- It is always fine to set [boundaries]{.hl}, take a break, or skip material you cannot face today
-- How serious a crime is says nothing about how much a case will affect you
-- Do not struggle in silence: the university's counselling service, and I, are there to help
-
-## Remember the victims
-
-- Many people know the names of notorious criminals; far fewer know the names of their [victims]{.hl}
-- This gives perpetrators notoriety and takes attention away from the people they harmed
+- Notorious offenders are widely remembered; their [victims]{.hl} much less so
 - In 2019, New Zealand's Prime Minister Jacinda Ardern refused to name the man who attacked two mosques in Christchurch
-
-. . .
-
-Our analyses often focus on the person who produced the speech, often the perpetrator. Keep the [people harmed]{.hl} in mind.
-
-## How we talk about cases
-
-- The words we use about crimes and the people involved carry [power]{.hl}
-- Dark humour can be a way of coping, but you never know who is listening: a victim's or an offender's family member could be in the room
-- Language around these topics keeps changing: we keep learning
+- Forensic analyses often focus on the person who produced the speech, often the offender: the book asks readers to keep the [people harmed]{.hl} in view, and to choose their words with care
 
 ## Ethics
 
 - Know the [limits]{.hl} of your expertise and of your methods, and never comment beyond them
-- Be [objective]{.hl}: no conclusion should be stronger or weaker than the analysis supports
-- Do not try to help [either side]{.hl}: the expert assists the court
-- A person accused of a crime is presumed [innocent]{.hl}: if the evidence leaves doubt, the court must know
-
-. . .
-
-Staying impartial is perhaps the hardest skill in the job, and it is learnt through experience, under the guidance of experienced practitioners.
+- Be [objective]{.hl}: no conclusion stronger or weaker than the analysis supports
+- The expert assists the [court]{.hl}, not either side
+- The accused is presumed [innocent]{.hl}: if the evidence leaves doubt, the court must know
 
 ## Further resources
 
@@ -406,17 +378,20 @@ Staying impartial is perhaps the hardest skill in the job, and it is learnt thro
 - No two speech samples are identical: experts weigh [similarities]{.hl} and [differences]{.hl}, never declare a "match"
 - Similarity counts only together with [typicality]{.hl}
 - The expert assists the court, [objectively]{.hl}, within the limits of their expertise
-- The material can be hard: look after yourself, and remember the people behind the cases
+- Behind every case are real [people]{.hl}
 :::
 
-## References {.smaller}
+## References {.refs}
+
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 1.]{.hl}
+- Giménez, R., Elstein, S., & Queralt, S. (2020). The pandemic and the forensic linguistics caseworker's wellbeing: Effects and recommendations. _International Journal of Speech, Language and the Law_, 27(2), 1–22.
+- Hyde, L. (2022, February 26). Saboteurs spark suspicion and solidarity in Kyiv. _Politico_.
+
+## Sources of the animal facts {.refs}
 
 - Dalziell, A. H., Maisey, A. C., Magrath, R. D., & Welbergen, J. A. (2021). Male lyrebirds create a complex acoustic illusion of a mobbing flock during courtship and copulation. _Current Biology_, 31(9), 1970–1976. https://doi.org/10.1016/j.cub.2021.02.003
 - Dalziell, A. H., & Welbergen, J. A. (2016). Elaborate mimetic vocal displays by female superb lyrebirds. _Frontiers in Ecology and Evolution_, 4, 34. https://doi.org/10.3389/fevo.2016.00034
 - Dalziell, A. H., Welbergen, J. A., Igic, B., & Magrath, R. D. (2012). Fooling the experts: Accurate vocal mimicry in the song of the superb lyrebird. _Animal Behaviour_, 83, 1401–1410. https://doi.org/10.1016/j.anbehav.2012.03.009
-- Giménez, R., Elstein, S., & Queralt, S. (2020). The pandemic and the forensic linguistics caseworker's wellbeing: Effects and recommendations. _International Journal of Speech, Language and the Law_, 27(2), 1–22.
-- Hyde, L. (2022, February 26). Saboteurs spark suspicion and solidarity in Kyiv. _Politico_.
-- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 1.]{.hl}
 - Powys, V., Taylor, H., & Probets, C. (2013). A little flute music: Mimicry, memory, and narrativity. _Environmental Humanities_, 3, 43–70. https://doi.org/10.1215/22011919-3611230
 - Probets, C., Taylor, H., & Powys, V. (2020). A sonographic analysis of a flute-like dialect in territorial songs of the superb lyrebird _Menura novaehollandiae_ in the New South Wales North Coast and New England Tableland bioregions. _Corella_.
 - Taylor, H. (2014). Lyrebirds mimicking chainsaws: Fact or lie? _The Conversation_.

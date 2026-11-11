@@ -522,6 +522,20 @@ body {
   font-size: calc(1.45em / 0.75);
 }
 
+/* reference lists: small enough that long lists stay above the footer */
+.reveal .slides section.refs {
+  font-size: 0.6em;
+}
+
+.reveal .slides section.refs > h2 {
+  font-size: calc(1.45em / 0.6);
+}
+
+.reveal .slides section.refs li {
+  margin-bottom: 0.35em;
+}
+
+
 .reveal .columns {
   display: flex;
   gap: 1.2em;
