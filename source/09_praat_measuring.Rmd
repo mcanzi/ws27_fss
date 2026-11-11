@@ -58,7 +58,7 @@ Both sessions build on the activities in chapters 2 and 4 of Leemann et al. (202
 
 | File | Content | Used for |
 |---|---|---|
-| `S07_words.wav` | 19 words in _Say ___ again_, three times | vowels today; profiling next time |
+| `S07_words.wav` | 19 words in _Say \_\_\_ again_, three times | vowels today; profiling next time |
 | `S07_A.wav` | sentences A | f0 and articulation rate today; known samples next time |
 | `S07_B.wav` | sentences B | f0 and articulation rate today; questioned samples next time |
 | `S07_A_disguise.wav` | sentences A, disguised | the disguise test next time |

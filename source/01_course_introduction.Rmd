@@ -143,7 +143,7 @@ For the Praat practicals (sessions 9 and 10), each of you records yourself once 
 
 | Item | Content | File name |
 |---|---|---|
-| Word list | 19 words in the frame _Say ___ again_, read three times | `S07_words.wav` |
+| Word list | 19 words in the frame _Say \_\_\_ again_, read three times | `S07_words.wav` |
 | Sentences A | three sentences, read normally | `S07_A.wav` |
 | Sentences B | three other sentences, read normally | `S07_B.wav` |
 | Disguise | sentences A again, in a disguised voice | `S07_A_disguise.wav` |
@@ -154,7 +154,7 @@ Use the ID you receive in place of S07, and upload the four files to the course 
 
 ## The word list
 
-Read each word in the frame _Say ___ again_, for example _Say heed again_:
+Read each word in the frame _Say \_\_\_ again_, for example _Say heed again_:
 
 | | | | |
 |---|---|---|---|
