@@ -48,20 +48,21 @@ _Source: McComb, Shannon, Sayialel & Moss (2014), PNAS_
 
 ## A ransom in the Bronx
 
-- In March 1932, the baby son of the aviator Charles Lindbergh was kidnapped from the family home in New Jersey
-- On 2 April 1932, an intermediary handed over $50,000 at St Raymond's Cemetery in the Bronx while Lindbergh waited in a car nearby. He never saw the man who took the money. In the dark, a voice with a foreign accent called out "Hey, Doctor!" from some distance away
+- In March 1932, the 20-month-old son of the aviator Charles Lindbergh was taken from his nursery in New Jersey. A note asked for a ransom of $50,000
+- A month later, Lindbergh drove his negotiator to a cemetery in the Bronx for the handover and stayed in the car, 70 to 100 metres away. In the dark, someone shouted to the negotiator: "Hey, Doctor! Over here, over here!" Lindbergh never saw the man, and a month later the child was found dead
 
 ## Two and a half years later
 
 - In September 1934, Bruno Richard Hauptmann was arrested with some of the ransom money
 - Before a grand jury, Lindbergh said it would be very difficult for him to pick out a man by that voice
-- He was then taken to the district attorney's office, where Hauptmann was asked to repeat the words. Lindbergh said he recognised the voice
-- At the trial in January 1935 he testified: "That was Hauptmann's voice." Hauptmann was convicted and executed in 1936
+- He then listened to Hauptmann repeat the words from the cemetery, and said he was certain that this was the kidnapper
+- At the trial in 1935 he testified: "That was Hauptmann's voice." Hauptmann was convicted of the abduction and murder, and executed in 1936
 
 ## How much weight would you give it?
 
-- Lindbergh heard two or three words, once, in the dark and under great stress, and 29 months passed before he heard Hauptmann speak
-- He was played one voice only, and he knew that this man was the suspect
+- Lindbergh heard a few words, once, from 70 to 100 metres away, and 29 months passed before he heard Hauptmann speak
+- He heard one voice only, and he knew that this man was the suspect
+- The court accepted his testimony without asking him to show that he could recognise Hauptmann's voice
 
 . . .
 
@@ -69,10 +70,10 @@ The case led the psychologist Frances McGehee to run the first experiments on me
 
 ## Today
 
-1. Earwitnesses, and familiar versus unfamiliar voices
-2. What affects earwitness accuracy
-3. Voice parades
-4. Voice identification by lay listeners in court
+1. Earwitnesses, and how they describe voices
+2. Voice parades: how they are built and run
+3. What affects earwitness accuracy
+4. Earwitness evidence in court
 
 . . .
 
@@ -88,81 +89,39 @@ _Source: McComb, Moss, Sayialel & Baker (2000), Animal Behaviour_
 
 ## Earwitness evidence
 
-- An [earwitness]{.hl} heard a perpetrator without seeing them: a masked robber, a caller on the phone, a blindfolded victim, a voice in the dark
-- Often there is no recording, and the voice exists only in the witness's memory
+- An [earwitness]{.hl} heard a perpetrator without seeing them. Typical cases: a sexual assault where the victim could not see the attacker, a masked robbery, obscene phone calls that were never recorded, a terrorist plot overheard on the radio
+- There is no usable recording, so the voice exists only in the witness's memory
 - The witness performs [naive speaker recognition]{.hl}, with no phonetic training. Last session was about [technical speaker recognition]{.hl}, the analysis of recordings by experts (Nolan, 1983)
+
+## Ears and eyes
+
+- The little research that compares the two suggests that people identify others less well by voice than by face (Olson, Juslin & Winman, 1998). One likely reason: when someone speaks, we attend to what they say, and rarely study the voice itself
+- Earwitness evidence is also under-researched, and until recently there was no agreed procedure for voice line-ups
 
 ## Familiar and unfamiliar voices
 
-- We recognise [familiar voices]{.hl} (relatives, friends, colleagues) every day, often from a few words on the phone. An earwitness usually has to recognise an [unfamiliar voice]{.hl}, heard once and often briefly
-- Recognising familiar voices and telling unfamiliar voices apart are separate abilities (Van Lancker & Kreiman, 1987)
+- [Familiar voices]{.hl} (parents, siblings, close friends) are easier to identify. We have heard them at all times of day, in many moods, even drunk, so we know their within-speaker variation
+- An earwitness usually has to recognise an [unfamiliar voice]{.hl}, heard once and often briefly. Recognising familiar voices and telling unfamiliar voices apart are separate abilities (Van Lancker & Kreiman, 1987)
 
 ## Familiar voices can fool us too
 
-Yarmey (2004) played listeners short sounds by people they knew and by strangers.
+- Members of a close social network who had known each other for two years, and lived together, still misidentified each other on the telephone (Foulkes & Barron, 2000)
+- The phonetician Peter Ladefoged had trouble identifying his own mother on the phone from just "hello" (Ladefoged & Ladefoged, 1980)
+- Yarmey (2004) played listeners short sounds by people they knew. They named the speaker correctly about half the time from "hello", "help me" or a laugh, and less than 30% of the time from coughs, sighs and other sounds
 
-- Listeners named a familiar speaker correctly about half the time from "hello", "help me" or a laugh, and less than 30% of the time from coughs, sighs and other sounds
-- They also gave a wrong name to 22–30% of the strangers they took for someone familiar
-- Confidence rarely went together with accuracy, and lay people's beliefs about how well they recognise voices were unrealistic
+## Describing a voice
 
-# What affects accuracy
+- Most people lack the vocabulary to describe a voice: a witness may notice an odd /s/ without being able to say what was odd about it. And what does the witness mean by a "soft" or "tinny" voice, by "local", or by "high pitch"?
+- Listeners also misread features. People in England often take a [rhotic]{.hl} speaker to be American, although rhoticity is also found in Canada, Ireland, Scotland, the Caribbean, parts of England and New Zealand, and among many L2 speakers of English
 
-::: {.fact}
-`Did you know:` female elephants can recognise the contact call of a family member at distances of up to [2.5 km], although recognition usually works over 1–1.5 km.
+## Interviewing a witness about a voice
 
-_Source: McComb, Reby, Baker, Moss & Sayialel (2003), Animal Behaviour_
-:::
+Few police forces have a protocol for asking about a voice. The Netherlands Forensic Institute does:
 
-## Two kinds of factor
-
-- Some factors belong to the original event and cannot be changed afterwards, such as how long the witness heard the voice, any disguise, or the time until the identification. Research on eyewitnesses calls them [estimator variables]{.hl}
-- Others depend on how the police run the identification: how many voices, how long each sample is, what the witness is told. These are [system variables]{.hl}, and better procedures can reduce errors
-
-## Delay
-
-```{r mcgehee, fig.height = 4.1}
-mcg <- tibble(days = c(1, 7, 14, 30, 90, 150), correct = c(83, 81, 69, 57, 35, 13),
-              label = c("1 day", "1 week", "2 weeks", "1 month", "3 months", "5 months"))
-ggplot(mcg, aes(days, correct)) +
-  geom_hline(yintercept = 20, linetype = "dashed", colour = muted) +
-  annotate("text", x = 150, y = 25, label = "chance: 1 in 5", hjust = 1, colour = muted, size = 5) +
-  geom_line(colour = hornbill, linewidth = 1) +
-  geom_point(colour = hornbill, size = 4) +
-  geom_text(aes(label = label), nudge_y = 9, colour = mist, size = 4.5) +
-  scale_y_continuous(limits = c(0, 100), labels = \(x) paste0(x, "%")) +
-  scale_x_continuous(breaks = NULL, limits = c(-5, 160)) +
-  labs(x = "Time between hearing the voice and the test", y = "Correct")
-```
-
-McGehee (1937): listeners tried to pick out a man's voice they had heard once from a set of five male voices. Group sizes differed between delays, and the decline was not tested statistically (Papcun, Kreiman & Davis, 1989).
-
-## Exposure and sample length
-
-- Orchard & Yarmey (1995): students heard a mock kidnapper for either 30 seconds or 8 minutes, and tried to pick him out of a six-voice lineup two days later. Those who had heard 8 minutes did better
-- Everyone overestimated how long they had listened, the 30-second group most of all
-
-## Disguise
-
-- [Whisper]{.hl} is one of the easiest disguises: the vocal folds do not vibrate, so there is no f0, and pitch and intonation disappear
-- In Orchard & Yarmey (1995), a whispered voice, or a change in tone of voice between the crime and the lineup, made identification harder, whether or not the target voice was in the lineup
-
-## Accent
-
-- Listeners recognise voices better in their own accent than in an unfamiliar one: the [other-accent effect]{.hl}. Stevenage, Clarke & McNeill (2012) found it with English and Scottish listeners, more strongly for the English listeners
-- Braun et al. (2018) found a version of it inside one region: listeners from Tyneside, Wearside and Teesside missed the target less often when the lineup was in their own local accent
-- A similar effect exists for voices speaking an unfamiliar language (Thompson, 1987)
-
-## Describing the voice
-
-- Perfect, Hunt & Harris (2002) asked some listeners to describe the voice before the lineup. Their identifications were less accurate, an effect known as [verbal overshadowing]{.hl}, although they felt just as confident
-- In the same study, hearing the voice over a telephone lowered confidence without affecting accuracy
-
-## Confidence
-
-For voices, confidence is a poor guide to accuracy.
-
-- The link between confidence and accuracy is weak or absent in most studies (Perfect et al., 2002; Yarmey, 2004; Smith et al., 2020)
-- Smith et al. (2020) noted that many earwitnesses rate their confidence in the middle of the scale
+1. The witness's language background and what happened at the crime scene
+2. An open question: describe the voice and the speech, so that the witness is not led
+3. More and more specific questions about regional and foreign accents, speech impediments and slang
+4. Pairs of descriptors, such as fast–slow, high–low, young–old
 
 # Voice parades
 
@@ -174,17 +133,28 @@ _Source: McComb, Shannon, Sayialel & Moss (2014), PNAS_
 
 ## The voice parade
 
-- A [voice parade]{.hl} (or voice lineup) is the earwitness version of an identity parade: the suspect's voice is played among the voices of [foils]{.hl}, people known to be innocent
-- England and Wales are the only common-law jurisdiction with guidelines written for voice parades (Home Office Circular 057/2003). Detective Sergeant John McFarlane of the Metropolitan Police wrote them with the phonetician Francis Nolan
+- A [voice parade]{.hl} (or voice line-up) tests whether the witness can recognise the voice they claim to have heard. The suspect's voice is played among the voices of [foils]{.hl}, people known to be innocent
+- Phoneticians may be asked to build the parade, or to assess the fairness of one built by someone else, often the police
+- Official guidelines exist in the Netherlands and in England and Wales. The English ones (Home Office Circular 057/2003) are based on the Dutch ones and were written by Detective Sergeant John McFarlane with the phonetician Francis Nolan: the McFarlane guidelines
+
+## Choosing the foils
+
+Foils are matched on two things.
+
+- The witness's description, with caution: in practice, sex, broad accent type, age and ethnicity
+- The suspect's own voice, which matters more. With [suspect resemblance]{.hl}, the foils share the suspect's accent, f0 and speech tempo
+
+. . .
+
+Foils that sound very like the suspect make the task much harder, and foils that sound too different make the suspect stand out: picture one low voice among eight high ones. Speaker recognition software may help with this choice in future.
 
 ## Building a parade
 
-The procedure is modelled on visual identity parades.
-
-- A phonetician first listens to the suspect's police interview, to check that the voice is suitable for a parade
-- The parade has nine voices: the suspect and eight foils of similar age and accent, usually taken from other police interviews
-- Each sample lasts about a minute, and is edited so that it contains nothing about the crime and no clue to who the speaker is
-- The witness is told that the offender's voice may or may not be in the parade, and hears all nine samples before deciding
+- Usually five to eight foils; England and Wales use eight, so nine voices in all
+- About 60 seconds of speech per voice, although recent studies suggest that 15–30 seconds may be enough
+- All samples in the same speaking style as each other and as the voice the witness heard. Spontaneous speech gives better recognition than read speech
+- In England and Wales, samples are spliced together from police interviews, so that the listener attends to the voice and not the content, and contain no mention of any crime
+- All this has to happen quickly, because the witness's memory of the voice fades
 
 ## Is the parade fair?
 
@@ -204,27 +174,175 @@ ggplot(mock, aes(voice, n, fill = suspect)) +
   labs(x = "Voice in the parade (E is the suspect)", y = "Mock witnesses")
 ```
 
-Simulated. In a [mock witness test]{.hl}, listeners who never heard the offender go through the parade. If the suspect stands out, they pick the suspect far more often than chance (dashed line: 36 listeners, 1 in 9).
+Simulated. The McFarlane guidelines recommend a [mock witness test]{.hl}: people who know nothing about the case go through the parade. Their choices should be random (dashed line: 36 listeners, 1 in 9).
 
-## A parade in court
+## An unfair line-up
 
-- London, 2002: a man had overheard his landlord arranging with a younger man to set fire to a house, and a woman died in a fire there that night. He said he could recognise the younger man's voice (Nolan, 2003)
-- The parade used extracts from the suspect's police interviews. The foils came from interviews with young men from the same London Asian community
-- The witness picked out the suspect's voice, and also recognised him in a visual parade. With the other evidence, both men were convicted
+Butcher (1996) assessed a 12-voice line-up in South Australia.
+
+- The suspect did not stand out in f0 or articulation rate: rates ranged from 4 to 6 syllables per second, and his was just over 5
+- His was the only sample with [v] for /ð/, as in _other_: common in British accents, rare in Australia
+- The witness had mentioned this feature in interview, and none of the foils had it. The judge ruled the line-up evidence inadmissible
+
+## Serial and sequential parades
+
+- In a [serial parade]{.hl} ("all at once"), recommended in the UK, the witness hears every voice, may replay any of them, and then decides. This puts a heavy load on working memory
+- In a [sequential parade]{.hl} ("one at a time"), 20–25 sentences by the suspect and the foils are played in random order, and the witness answers yes or no after each. A score of about 85% or more is usually taken to mean that the witness can identify the target (Hollien, 2012), but repeated sentences let witnesses learn the voices, and some then "lock in" on the wrong one
+
+## Four outcomes
+
+|                    | Picks the target | Picks a foil | Says "not present" |
+|--------------------|------------------|--------------|--------------------|
+| Target present     | [hit]{.hl}       | [false alarm]{.hl} | [miss]{.hl}  |
+| Target absent      |                  | false alarm  | [correct rejection]{.hl} |
+
+. . .
+
+A parade can be [target-present]{.hl} or [target-absent]{.hl}. If the suspect is innocent, the parade is in effect target-absent, and a false alarm can point to an innocent person.
+
+## On the day
+
+- The witness sits at a computer with a slide presentation, one voice per slide, and can replay all voices from the last slide
+- A police officer supervises, ideally one with no part in the case or in building the parade
+- The defence solicitor chooses the order of the voices, checks the material, and may leave the room during the parade
+- The witness's reactions and answers are video recorded. The witness usually listens without headphones, so that the observers can hear which voice is playing
+
+## The case behind the guidelines
+
+- London, 2001: Harbans Johal died in a house fire, and her partner Didar Bains was arrested for arson
+- Bains's lodger said he had overheard Bains arranging the fire with another man, and recognised that voice as Assad Khan, a gardener who had worked at the house
+- McFarlane and Nolan built a voice parade, and the witness picked out Khan. Nolan later noted two problems: the witness already knew Khan's voice, so the parade should have tested familiar voice recognition, and Khan's f0 was high compared with the foils
+- The judge admitted the parade evidence. Before the jury considered it, Bains admitted the plot, and both men were convicted of murder (Nolan, 2003)
 
 ## How accurate are parades?
 
-- In a Dutch study, listeners picked the right voice in 42% of [target-present]{.hl} lineups. In [target-absent]{.hl} lineups, 51% picked an innocent voice (Kerstholt et al., 2003)
+- In a Dutch study, listeners picked the right voice in 42% of target-present line-ups. In target-absent line-ups, 51% picked an innocent voice (Kerstholt et al., 2003)
 - Smith et al. (2020) used nine-voice parades. When the target was present, 39% picked the target; when the target was absent, only 6% rejected the parade
-- Results also depend a lot on the speaker: some voices are much easier to recognise than others
+
+. . .
+
+Results also depend a lot on the speaker: some voices are much easier to recognise than others.
 
 ## Improving the procedure
 
-- Pautz et al. (2023) found that 15-second samples worked as well as the 60 seconds in the guidelines, which would make parades quicker to build
-- A six-voice parade was no more accurate than a nine-voice one. They recommend keeping nine voices, because with more foils an innocent suspect is less likely to be picked by chance
+- Pautz et al. (2023) found that 15-second samples worked as well as 60-second ones. A six-voice parade was no more accurate than a nine-voice one, and they recommend keeping nine voices, because with more foils an innocent suspect is less likely to be picked by chance
 - A stronger warning, reminding witnesses that a wrong choice could convict an innocent person, made them less likely to pick anyone, whether or not the target was present (Smith et al., 2023)
 
-# Lay listeners in court
+# What affects accuracy
+
+::: {.fact}
+`Did you know:` female elephants can recognise the contact call of a family member at distances of up to [2.5 km], although recognition usually works over 1–1.5 km.
+
+_Source: McComb, Reby, Baker, Moss & Sayialel (2003), Animal Behaviour_
+:::
+
+## Three groups of factors
+
+Leemann et al. (2024) group them by where they come from:
+
+- the perpetrator's voice: familiarity, typicality, accent and language
+- the speech the witness heard, and the delay before the parade
+- the listener: age, gender, attention, ability, confidence
+
+## The perpetrator's voice
+
+- Courts treat a witness who knew the speaker as more believable. Voice parades are not usually held in that case, because the question changes: can the witness recognise the person they claim to know?
+- [Typicality]{.hl} matters too. A voice with features that are rare in the witness's experience, such as a lisp or an unusual accent, is easier to pick out than one that shares most features with the population
+
+## Accent and language
+
+- Monolingual English listeners identified English speakers better than Spanish speakers, whether they spoke Spanish or English with a Spanish accent (Thompson, 1987). Performance nearly doubles when the listener understands the language
+- Listeners also recognise voices better in their own accent: the [other-accent effect]{.hl} (Stevenage, Clarke & McNeill, 2012). Braun et al. (2018) found it even between Tyneside, Wearside and Teesside
+- In an unfamiliar accent or language, listeners spend their attention on understanding, and less on cues to the speaker such as pitch and speaking rate
+
+## Recording quality
+
+```{r telephone, fig.height = 3.6}
+tel <- tibble(pair = rep(c("Same speaker", "Different speakers"), each = 3),
+              condition = rep(c("both studio", "both telephone", "studio + telephone"), 2),
+              rating = c(3.1, 2.7, 4.0, 6.5, 6.0, 6.9)) |>
+  mutate(pair = fct_inorder(pair), condition = fct_inorder(condition))
+ggplot(tel, aes(pair, rating, fill = condition)) +
+  geom_col(position = position_dodge(width = 0.8), width = 0.7) +
+  scale_fill_manual(values = c(muted, hornbill, kingfisher)) +
+  scale_y_continuous(limits = c(0, 9), breaks = c(1, 5, 9)) +
+  labs(x = NULL, y = "Rated difference (1–9)", fill = NULL)
+```
+
+Simulated, following the pattern in Nolan, McDougall & Hudson (2013). Voices sound most alike over the telephone, which cuts speaker-specific frequencies, and most different when one sample is studio quality and the other telephone.
+
+## What this means for parades
+
+- Parade samples should match the original transmission: if the witness heard the perpetrator on a landline, the parade should use telephone samples
+- A voice first heard angry and then heard calm in a parade is identified very poorly, because within-speaker variation is high. Background noise at the crime scene, such as traffic or machines, can make things worse
+
+## Disguise
+
+- Disguise can make identification rates drop sharply. [Whisper]{.hl} is one of the easiest disguises: the vocal folds do not vibrate, so there is no f0
+- In Orchard & Yarmey (1995), a whispered voice, or a change in tone between the crime and the line-up, made identification harder, whether or not the target voice was in the line-up
+- Natural causes alter the voice too: a heavy cold, hoarseness, a mask over the mouth. With a strong disguise, a parade may not be worth holding
+
+## How much speech?
+
+- Some studies find better identification after longer exposure (Cook & Wilding, 1997), others a much smaller effect (Künzel, 1990). Longer exposure never seems to hurt, and there is no length after which identification becomes reliable
+- Hearing the perpetrator in several moods or styles may help, by showing more within-speaker variation. Witnesses who talked with the perpetrator do better than those who only overheard (Hammersley & Read, 1985)
+
+## How long did they hear it?
+
+- Witnesses often cite a long exposure as the reason for their confidence, but they are poor judges of it. In Orchard & Yarmey (1995), students heard a mock kidnapper for 30 seconds or 8 minutes, and almost all overestimated how long they had listened, the 30-second group most of all
+- Courts should be cautious about claims of long exposure unless something else confirms them
+
+## Delay
+
+```{r mcgehee, fig.height = 3.9}
+mcg <- tibble(days = c(1, 7, 14, 30, 90, 150), correct = c(83, 81, 69, 57, 35, 13),
+              label = c("1 day", "1 week", "2 weeks", "1 month", "3 months", "5 months"))
+ggplot(mcg, aes(days, correct)) +
+  geom_hline(yintercept = 20, linetype = "dashed", colour = muted) +
+  annotate("text", x = 150, y = 25, label = "chance: 1 in 5", hjust = 1, colour = muted, size = 5) +
+  geom_line(colour = hornbill, linewidth = 1) +
+  geom_point(colour = hornbill, size = 4) +
+  geom_text(aes(label = label), nudge_y = 9, colour = mist, size = 4.5) +
+  scale_y_continuous(limits = c(0, 100), labels = \(x) paste0(x, "%")) +
+  scale_x_continuous(breaks = NULL, limits = c(-5, 160)) +
+  labs(x = "Time between hearing the voice and the test", y = "Correct")
+```
+
+McGehee (1937): listeners picked a voice they had heard once out of five. After five months, identification fell below chance. Most later studies also find a decline (Papcun, Kreiman & Davis, 1989), some a smaller one (Van Wallendael et al., 1994).
+
+## Why delay matters in court
+
+- Unlike exposure, the delay between the crime and the parade is almost always known exactly
+- An identification made soon after the crime carries more weight than one made months later, and expert reports treat the delay as one indicator of reliability. Results differ between studies partly because some voices are much easier to recognise than others
+
+## The listener
+
+- Listeners tend to identify voices of their own sex better, but male voices are identified better overall
+- Children identify voices above chance, and reach adult performance at about age 10. Listeners aged 16 to 40 usually do better than those over 40
+- Listeners told to pay attention to a voice do better later. A victim under threat may not have attended to the voice at all
+
+## Expectation and confidence
+
+- Because of [confirmation bias]{.hl}, a listener who expects a particular voice tends to hear it in the line-up, especially when they think they know the speaker
+- Confidence says little about accuracy for unfamiliar voices (Hammersley & Read, 1985; Smith et al., 2020). For familiar voices, confidence and accuracy do go together (Yarmey et al., 2001)
+- Describing the voice before the line-up can make identification less accurate, without lowering confidence. This is [verbal overshadowing]{.hl} (Perfect, Hunt & Harris, 2002)
+
+## Ability
+
+Some listeners are simply better than others, so averages from experiments cannot predict how reliable one witness is.
+
+- McGehee (1944) found that musically trained listeners did best at picking the odd voice out of five. Research is now looking for voice "super-recognisers", and the Metropolitan Police in London have used such skills for intelligence work
+- Blind listeners outperformed sighted listeners on studio-quality speech (Braun, 2016), and Belgian police have recruited blind listeners for some forensic tasks
+
+## Experiments and real cases
+
+The most reliable earwitness knew the voice, heard a lot of it in good conditions and without disguise, talked with the perpetrator in an accent they know, heard several speaking styles, paid attention, and took part in a parade soon after. In practice, a witness rarely meets more than a few of these conditions.
+
+. . .
+
+Experiments cannot recreate the stress of a crime. They show general patterns, but cannot tell us how good one particular witness is. A real event may leave a stronger memory than a laboratory task with nothing at stake.
+
+# Earwitnesses in court
 
 ::: {.fact}
 `Did you know:` wild African elephants seem to address each other with individually specific, [name-like calls], and respond more strongly to recordings of calls that were originally addressed to them.
@@ -232,16 +350,49 @@ Simulated. In a [mock witness test]{.hl}, listeners who never heard the offender
 _Source: Pardo et al. (2024), Nature Ecology & Evolution_
 :::
 
-## R v Hersey (1998)
+## Rarely used
 
-- Two men in balaclavas robbed a shop, and the shopkeeper believed he recognised one of the voices
-- The police held a live voice parade, which the Court of Appeal accepted. It said that juries need a warning about voice identification, adapted from the warning used for eyewitnesses
+- Voice parades take time and money, and many police officers do not know about them. Only 4 of the 43 police forces in England and Wales used them between 2005 and 2015 (Robson, 2017), and fewer than ten are known from Australia (McGorrery & McMahon, 2017)
+- Courts differ: some give earwitness evidence more weight than it deserves, others dismiss it. In England and Wales, the US, Canada and Australia, defendants have been convicted on earwitness identification alone
+
+## What should a jury weigh?
+
+Australian jury directions on voice identification ask (McGorrery & McMahon, 2017):
+
+- Was the offender a stranger to the witness?
+- What opportunity did the witness have to hear the voice, and how attentive were they?
+- How clearly did they hear it? Was it disguised?
+- Was anything distinctive about the voice?
+- How long and how loud was what they heard, and how long ago?
+
+## R v Golledge (Australia) {.smaller}
+
+A blindfolded man was assaulted and threatened by two men. He knew one of them. Twelve days later he heard eleven voices, and said one sounded similar to the second man, without being sure. The court found his identification unreliable:
+
+- the offender was a stranger, and the victim had described nothing distinctive about the voice
+- twelve days had passed
+- he had smoked cannabis and taken Valium that morning
+- he had told the police the man had a New Zealand accent, but the voice he chose did not
+- he seemed to choose by eliminating the other voices
+- the parade samples were calm statements, while he had heard insults and threats
+
+## R v Burrell (Australia)
+
+- A kidnapper phoned the office of the victim's husband to call off the search. The receptionist described the voice as husky, an educated man in his forties
+- The police played her a spontaneous answer by the suspect, Burrell, from an earlier interview, and six police officers reading the same words. She said two of the seven sounded similar, one of them Burrell's
+- The foils were not screened for similarity, the samples were short, and Burrell's was the only spontaneous one
+- The court admitted the evidence anyway, because it was circumstantial and not the main evidence
+
+## R v Hersey (England, 1998)
+
+- Two men in balaclavas robbed a shop, talking to each other throughout. The shopkeeper became convinced that one voice was that of a regular customer, Hersey
+- The police held a live voice parade, and the Court of Appeal upheld the conviction. It said that juries need a warning about voice identification, adapted from the warning used for eyewitnesses
 
 . . .
 
 The 2003 guidelines later advised against live parades of this kind.
 
-## R v Flynn and St John (2008)
+## R v Flynn and St John (England, 2008)
 
 - A recording device in a van picked up the voices of men preparing a robbery
 - Four police officers said they recognised the voices of the two defendants, from their contact with them after the arrest (for St John, about two hours and twenty minutes). Two experts for the defence said that the recording was too poor to identify anyone
@@ -267,54 +418,76 @@ In R v Crow (2021), the identification rested on five one-syllable words, shoute
 - Which of today's factors apply here, and how does the case compare with Lindbergh's?
 - Should a court hear evidence like this, and what should the jury be told?
 
-## Exercises
+## Activities
 
-For the practical sessions:
+For the practical sessions (book activities 5A–5D):
 
-- Plan a voice parade for a case described in class: what you need from the police, how you choose the foils, and how you check that the parade is fair
-- Take part in a short parade yourselves: hear a voice for one minute, then try to pick it out of nine after a break, and rate your confidence
+- 5A: cut a recording of a famous person into clips of one, two, three syllables and so on in Praat. How many syllables do listeners need to name the speaker?
+- 5B: build a six-voice serial parade from a speech corpus, play a "criminal" sentence, and run the parade straight away
+- 5C: the same parade with a three-day delay. Do listeners do worse than in 5B?
+- 5D: think of times you misidentified a voice, or someone misidentified yours. What went wrong?
 
 ## Summary
 
 ::: {.takeaway}
-- An [earwitness]{.hl} heard a voice without seeing the speaker, and usually without a recording
-- Unfamiliar voices are much harder to recognise than familiar ones, and even familiar voices are misidentified
-- Accuracy drops with delay, short exposure, disguise and an unfamiliar accent; describing the voice can make it worse
-- Confidence is a poor guide to accuracy
-- In England and Wales, [voice parades]{.hl} follow the 2003 guidelines: nine voices, warning that the offender may be absent, a mock witness test for fairness
-- Courts treat voice recognition by lay listeners, police officers included, with great caution
+- An [earwitness]{.hl} heard a voice without seeing the speaker, usually with no recording
+- Witnesses describe voices poorly, and even familiar voices are misidentified
+- A [voice parade]{.hl} tests the witness's recognition: foils matched to the suspect's voice, one speaking style, a warning that the offender may be absent, and a mock witness test for fairness
+- Accuracy drops with delay, short exposure, disguise, a mismatch in recording quality or speaking style, and an unfamiliar accent or language. Listeners differ widely
+- Confidence is a poor guide to accuracy for unfamiliar voices
+- Courts should weigh earwitness evidence with great caution, together with other evidence
 :::
 
 ## References {.refs}
 
+- Braun, A. (2016). _The speaker identification ability of blind and sighted listeners: An empirical investigation_. Springer.
 - Braun, A., Llamas, C., Watt, D., French, P., & Robertson, D. (2018). Sub-regional "other-accent" effects on lay listeners' speaker identification abilities: A voice line-up study with speakers and listeners from the North East of England. _International Journal of Speech, Language and the Law_, 25(2). https://doi.org/10.1558/ijsll.37340
+- Butcher, A. (1996). Getting the voice line-up right: Analysis of a multiple auditory confrontation. _Proceedings of the 6th Australian International Conference on Speech Science and Technology_, 97–102.
+- Cook, S., & Wilding, J. (1997). Earwitness testimony 2: Voices, faces and context. _Applied Cognitive Psychology_, 11, 527–541.
+- Foulkes, P., & Barron, A. (2000). Telephone speaker recognition amongst members of a close social network. _Forensic Linguistics_, 7, 180–198.
+- Hammersley, R., & Read, J. D. (1985). The effect of participation in a conversation on recognition and identification of the speakers' voices. _Law and Human Behavior_, 9, 71–81.
+- Hollien, H. (2012). On earwitness lineups. _Investigative Sciences Journal_, 4(1), 1–17.
 - Home Office (2003). _Advice on the use of voice identification parades_. Home Office Circular 057/2003.
 - Kerstholt, J. H., Jansen, E. J. M., van Amelsvoort, A. G., & Broeders, A. P. A. (2003). Earwitness line-ups: Effects of speech duration, retention interval and acoustic environment on identification accuracy. _Proceedings of Eurospeech 2003_, 709–712. https://doi.org/10.21437/Eurospeech.2003-302
-- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 5.]{.hl}
-- McGehee, F. (1937). The reliability of the identification of the human voice. _Journal of General Psychology_, 17(2), 249–271. https://doi.org/10.1080/00221309.1937.9917999
-- Nolan, F. (1983). _The phonetic bases of speaker recognition_. Cambridge University Press.
-- Nolan, F. (2003). A recent voice parade. _International Journal of Speech, Language and the Law_, 10(2), 277–291. https://doi.org/10.1558/sll.2003.10.2.277
-- Orchard, T. L., & Yarmey, A. D. (1995). The effects of whispers, voice-sample duration, and voice distinctiveness on criminal speaker identification. _Applied Cognitive Psychology_, 9(3), 249–260. https://doi.org/10.1002/acp.2350090306
+- Künzel, H. J. (1990). _Sprechererkennung durch linguistisch naive Personen_. Steiner.
+- Ladefoged, P., & Ladefoged, J. (1980). The ability of listeners to identify voices. _UCLA Working Papers in Phonetics_, 49, 43–51.
 
 ## References {.refs}
 
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 5.]{.hl}
+- McGehee, F. (1937). The reliability of the identification of the human voice. _Journal of General Psychology_, 17(2), 249–271. https://doi.org/10.1080/00221309.1937.9917999
+- McGehee, F. (1944). An experimental study of voice recognition. _Journal of General Psychology_, 31(1), 53–65.
+- McGorrery, P. G., & McMahon, M. (2017). A fair "hearing": Earwitness identifications and voice identification parades. _International Journal of Evidence and Proof_, 21(3), 262–286.
+- Nolan, F. (1983). _The phonetic bases of speaker recognition_. Cambridge University Press.
+- Nolan, F. (2003). A recent voice parade. _International Journal of Speech, Language and the Law_, 10(2), 277–291. https://doi.org/10.1558/sll.2003.10.2.277
+- Nolan, F., McDougall, K., & Hudson, T. (2013). Effects of the telephone on perceived voice similarity: Implications for voice line-ups. _International Journal of Speech, Language and the Law_, 20(2), 229–246.
+- Olson, N., Juslin, P., & Winman, A. (1998). Realism of confidence in earwitness versus eyewitness identification. _Journal of Experimental Psychology: Applied_, 4(2), 101–118.
+- Orchard, T. L., & Yarmey, A. D. (1995). The effects of whispers, voice-sample duration, and voice distinctiveness on criminal speaker identification. _Applied Cognitive Psychology_, 9(3), 249–260. https://doi.org/10.1002/acp.2350090306
 - Papcun, G., Kreiman, J., & Davis, A. (1989). Long-term memory for unfamiliar voices. _Journal of the Acoustical Society of America_, 85(2), 913–925.
 - Pautz, N., McDougall, K., Mueller-Johnson, K., Nolan, F., Paver, A., & Smith, H. M. J. (2023). Identifying unfamiliar voices: Examining the system variables of sample duration and parade size. _Quarterly Journal of Experimental Psychology_. https://doi.org/10.1177/17470218231155738
 - Perfect, T. J., Hunt, L. J., & Harris, C. M. (2002). Verbal overshadowing in voice recognition. _Applied Cognitive Psychology_, 16(8), 973–980. https://doi.org/10.1002/acp.920
+
+## References {.refs}
+
+- Robson, J. (2017). A fair hearing? The use of voice identification parades in criminal investigations in England and Wales. _Criminal Law Review_, 1, 36–50.
 - Smith, H. M. J., Bird, K., Roeser, J., Robson, J., Braber, N., Wright, D., & Stacey, P. C. (2020). Voice parade procedures: Optimising witness performance. _Memory_, 28(1), 2–17.
 - Smith, H. M. J., Roeser, J., Pautz, N., Davis, J. P., Robson, J., Wright, D., Braber, N., & Stacey, P. C. (2023). Evaluating earwitness identification procedures: Adapting pre-parade instructions and parade procedure. _Memory_, 31(1), 147–161. https://doi.org/10.1080/09658211.2022.2129065
-- Solan, L. M., & Tiersma, P. M. (2003). Hearing voices: Speaker identification in court. _Hastings Law Journal_, 54(2), 373. https://repository.uclawsf.edu/hastings_law_journal/vol54/iss2/2
+- Solan, L. M., & Tiersma, P. M. (2003). Hearing voices: Speaker identification in court. _Hastings Law Journal_, 54(2), 373–435.
 - Stevenage, S. V., Clarke, G., & McNeill, A. (2012). The "other-accent" effect in voice recognition. _Journal of Cognitive Psychology_, 24(6), 647–653. https://doi.org/10.1080/20445911.2012.675321
 - Thompson, C. P. (1987). A language effect in voice identification. _Applied Cognitive Psychology_, 1, 121–131.
 - Van Lancker, D., & Kreiman, J. (1987). Unfamiliar voice discrimination and familiar voice recognition are independent and unordered abilities. _Neuropsychologia_, 25, 829–834.
+- Van Wallendael, L. R., Surace, A., Parsons, D. H., & Brown, M. (1994). "Earwitness" voice recognition: Factors affecting accuracy and impact on jurors. _Applied Cognitive Psychology_, 8, 661–677.
 - Yarmey, A. D. (2004). Common-sense beliefs, recognition and the identification of familiar and unfamiliar speakers from verbal and non-linguistic vocalizations. _International Journal of Speech, Language and the Law_, 11(2), 267. https://doi.org/10.1558/sll.2004.11.2.267
+- Yarmey, A. D., Yarmey, A. L., Yarmey, M. J., & Parliament, L. (2001). Commonsense beliefs and the identification of familiar voices. _Applied Cognitive Psychology_, 15(3), 283–299.
 
 ## Cases {.refs}
 
+- R v Assad Khan (Central Criminal Court, 2002), described in Nolan (2003)
+- R v Burrell (Australia, 2001 and 2009), discussed in McGorrery & McMahon (2017)
 - R v Crow [2021] EWCA Crim 617
 - R v Flynn and St John [2008] EWCA Crim 970
+- R v Golledge (Australia), discussed in McGorrery & McMahon (2017)
 - R v Hersey [1998] Crim LR 281
-- R v Khan and Bains (Central Criminal Court, 2002), described in Nolan (2003)
 - State of New Jersey v. Hauptmann (1935), discussed in Solan & Tiersma (2003)
 
 ## Sources of the animal facts {.refs}
