@@ -1,0 +1,314 @@
+---
+title: "Praat practical 1"
+subtitle: "Recording and measuring your own voice"
+author: "Dr Massimiliano Canzi"
+knit: (function(input, ...) rmarkdown::render(input, output_dir = file.path(dirname(input), "..", "docs")))
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    css: theme-purple.css
+    highlight: zenburn
+    incremental: true
+    transition: fade
+    background_transition: fade
+    self_contained: true
+    reveal_options:
+      width: 1050
+      height: 700
+      slideNumber: "c/t"
+      showSlideNumber: all
+      controls: true
+      touch: true
+      transitionSpeed: fast
+      navigationMode: linear
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10, fig.height = 4.4, out.width = "100%")
+library(tidyverse)
+
+source("slides_setup.R", local = knitr::knit_global())
+```
+
+# Before the session
+
+<style>
+  :root {
+    --footer-text:  "Praat practical 1";
+    --qr:           `r qr_css`;
+    --lecture:      `r lecture_label`;
+  }
+</style>
+
+::: {.fact}
+`Did you know:` young male zebra finches learn their song from adult males, in a [sensitive period] between about 35 and 90 days after hatching.
+
+_Source: Tchernichovski, Mitra, Lints & Nottebohm (2001), Science_
+:::
+
+## Two practical sessions
+
+In this session you measure vowels, f0 and articulation rate in your own recordings. In the next one, the recordings of the whole class become the material for a mock speaker comparison, speaker profiling and a disguise test.
+
+Both sessions build on the activities in chapters 2 and 4 of Leemann et al. (2024), with your voices in place of the book's files.
+
+. . .
+
+Do the recordings on the next slides before the first session.
+
+## What to record
+
+Record each item as a separate file:
+
+| Item | In the LingLab booth | On your phone |
+|---|---|---|
+| The passage "The North Wind and the Sun", read normally | yes | yes |
+| The word list, read three times | yes | yes |
+| The passage, read in a disguised voice | yes | no |
+
+. . .
+
+Book a booth slot in the LingLab. Make the phone recording in a quiet room, with the phone about 20 cm from your mouth.
+
+## The passage {.smaller}
+
+The North Wind and the Sun were disputing which was the stronger, when a traveller came along wrapped in a warm cloak. They agreed that the one who first succeeded in making the traveller take his cloak off should be considered stronger than the other. Then the North Wind blew as hard as he could, but the more he blew the more closely did the traveller fold his cloak around him; and at last the North Wind gave up the attempt. Then the Sun shined out warmly, and immediately the traveller took off his cloak. And so the North Wind was obliged to confess that the Sun was the stronger of the two.
+
+. . .
+
+Read it once silently first, then at your normal speed.
+
+## The word list
+
+Read each word in the frame _Say ___ again_, for example _Say heed again_:
+
+| | | | |
+|---|---|---|---|
+| heed | hid | head | had |
+| hard | hod | hoard | hood |
+| who'd | heard | hud | |
+
+. . .
+
+Read the whole list three times. Each word has a different vowel between /h/ and /d/, so the vowel is easy to find and measure.
+
+## The disguised reading
+
+- Read the passage once more, in the booth, in a voice that you think would stop people from recognising you. Choose your own strategy, for example a different pitch, a different accent, a creaky or nasal voice. Do not whisper: we need f0
+- Write down your strategy on the form you receive, and do not tell your classmates
+
+## Files and names
+
+- Booth recordings are saved as WAV (44.1 kHz, 16 bit, mono)
+- If your phone saves .m4a files, convert them to WAV, for example in Audacity, because Praat cannot open them
+- Name each file with the ID you receive, the device and the item, for example `S07_booth_passage.wav`, `S07_phone_words.wav`, `S07_booth_disguise.wav`
+- Upload the five files to the course folder before the first session
+
+## Today
+
+1. Praat basics
+2. Vowels: annotating and measuring formants
+3. f0 and articulation rate
+4. The class data
+
+# Praat basics
+
+::: {.fact}
+`Did you know:` a young zebra finch kept alone with its father imitates his song closely. When it can hear the model song more often, the [imitation is less complete].
+
+_Source: Tchernichovski, Lints, Mitra & Nottebohm (1999), PNAS_
+:::
+
+## Opening a recording
+
+1. Open Praat, then Open > Read from file..., and choose `S07_booth_words.wav`
+2. With the sound selected in the Objects window, click View & Edit
+3. The top panel shows the [waveform]{.hl}, the lower panel the [spectrogram]{.hl}
+4. Select a stretch with the mouse and press Tab to play it. Use the zoom buttons at the bottom to zoom in and out
+
+. . .
+
+Work on copies: keep the original files untouched, as in real casework (session 6).
+
+## Settings for your voice
+
+Praat's default settings suit some voices better than others. Check two of them before you measure:
+
+- Formants > Formant settings: set the maximum formant (called "formant ceiling" in recent versions) to about 5000 Hz for a low voice and 5500 Hz for a high voice
+- Pitch > Pitch settings: set the pitch range to about 75–300 Hz for a low voice and 100–500 Hz for a high voice
+
+. . .
+
+If a formant track or pitch track looks wrong later, these settings are the first thing to change.
+
+# Vowels
+
+::: {.fact}
+`Did you know:` zebra finch song imitation is not always gradual. In some young birds, a note stayed far from the model for days and was then [corrected abruptly], by a sudden doubling of its period.
+
+_Source: Tchernichovski, Mitra, Lints & Nottebohm (2001), Science_
+:::
+
+## A TextGrid
+
+1. In the Objects window, select your word list recording, then Annotate > To TextGrid...
+2. Type `vowel` as the tier name, leave the point tiers empty, and click OK
+3. Select the Sound and the TextGrid together and click View & Edit
+4. Click at the start of each vowel and press Enter to add a boundary, then do the same at its end. Type the word in the interval, for example `heed`
+5. Save the TextGrid: select it in the Objects window, then Save > Save as text file...
+
+## Where does the vowel start and end?
+
+Between /h/ and /d/, the vowel is the stretch with clear formants and a regular waveform.
+
+- At the start, the breathy noise of /h/ gives way to voicing. At the end, the formants stop where the closure for /d/ begins
+- Mark the vowels in the first reading of the list. If time allows, add the second and third readings
+
+## Measuring formants
+
+1. Formants > Show formants
+2. Check that the red dots follow the dark formant bands. If they jump or miss a band, change the maximum formant in Formant settings
+3. Click in the middle of the vowel and press F1, then F2 (on some laptops, Fn + F1). Praat shows the values in Hz
+4. Write down F1 and F2 for each vowel
+
+. . .
+
+The midpoint is the usual compromise: far enough from both consonants to be fairly stable. Session 4 showed that formant dynamics can also tell speakers apart.
+
+## Phone and booth
+
+- Measure F1 and F2 for the same vowels in your phone recording of the word list
+- Are the values the same? Where do they differ, and why might they?
+
+. . .
+
+Session 4 discussed the telephone effect, where the band limit of a telephone line raises F1 measurements. A phone's recording app does not filter the sound in the same way, but its microphone and compression still shape it.
+
+# f0 and articulation rate
+
+::: {.fact}
+`Did you know:` in zebra finch song, a [motif] lasts only about half a second to one and a half seconds. A song bout repeats it several times.
+
+_Source: Tchernichovski, Lints, Mitra & Nottebohm (1999), PNAS_
+:::
+
+## f0 of the passage
+
+1. Open your booth recording of the passage and click View & Edit
+2. Pitch > Show pitch, then Pulses > Show pulses
+3. Select the whole passage, then Pulses > Voice report
+4. Write down the median, mean, standard deviation, minimum and maximum pitch
+
+. . .
+
+Look at the pitch track before you trust the numbers. Octave jumps, where the track suddenly halves or doubles, distort the mean and the range (session 2).
+
+## Articulation rate
+
+[Articulation rate]{.hl} is the number of syllables per second, with pauses removed (session 2). Use the first sentence of the passage, which has 28 syllables in its careful form:
+
+1. Select the sentence from the start of the first word to the end of the last, and note the duration shown in the bar below the spectrogram
+2. Find the pauses longer than 100 ms inside the sentence, and subtract their total duration
+3. Divide 28 by the remaining duration
+
+## The same in the phone recording
+
+- Measure median f0 and articulation rate in your phone recording of the passage
+- Compare them with the booth values: which measure changed more, and why?
+
+. . .
+
+f0 is robust to the recording channel, but your speech also changes between recordings: speed, effort, and how you read the text the second time.
+
+# The class data
+
+## Entering your values
+
+Enter your measurements in the class spreadsheet, under your ID:
+
+- F1 and F2 of each vowel, from the booth and the phone recording
+- median f0, mean f0, standard deviation, minimum and maximum, and the articulation rate of the first sentence, booth and phone
+
+. . .
+
+We then look at the class data together in R.
+
+## A vowel space for the class
+
+```{r vowels, fig.height = 3.9}
+set.seed(91)
+vowels <- tribble(
+  ~word, ~F1, ~F2,
+  "heed", 290, 2300, "hid", 390, 1950, "head", 560, 1750, "had", 760, 1550,
+  "hard", 700, 1150, "hod", 600, 950, "hoard", 460, 750, "hood", 400, 1000,
+  "who'd", 310, 1500, "heard", 520, 1400, "hud", 660, 1250
+)
+spk <- tibble(id = sprintf("S%02d", 1:20), k = runif(20, 0.85, 1.2))
+vs <- expand_grid(spk, vowels) |>
+  mutate(F1 = F1 * k * exp(rnorm(n(), 0, 0.07)), F2 = F2 * k * exp(rnorm(n(), 0, 0.06)))
+vm <- vs |> group_by(word) |> summarise(F1 = mean(F1), F2 = mean(F2))
+ggplot(vs, aes(F2, F1)) +
+  geom_point(colour = muted, size = 1.6, alpha = 0.7) +
+  geom_label(data = vm, aes(label = word), colour = kingfisher, fill = floor_col, size = 4.5, label.size = 0) +
+  scale_x_reverse() + scale_y_reverse() +
+  labs(x = "F2 (Hz)", y = "F1 (Hz)")
+```
+
+Simulated preview. Each grey point is one speaker's vowel; in class, the points will be yours.
+
+## What to look for
+
+- How much do speakers differ for the same vowel? Part of the spread comes from vocal tract size: longer vocal tracts have lower formants overall
+- Do speakers with different first languages use the same vowel space?
+- Where do your own vowels fall?
+
+. . .
+
+These differences matter in the next session: a feature that varies a lot across the class says less about who is speaking than one that is rare.
+
+## f0 across the class
+
+```{r f0class, fig.height = 3.6}
+set.seed(92)
+f0c <- tibble(id = sprintf("S%02d", 1:20),
+              booth = c(rnorm(8, 115, 15), rnorm(12, 205, 22))) |>
+  mutate(phone = booth * exp(rnorm(20, 0.02, 0.04)))
+ggplot(f0c, aes(booth, phone)) +
+  geom_abline(slope = 1, intercept = 0, colour = muted, linetype = "dashed") +
+  geom_point(colour = kingfisher, size = 3.5) +
+  labs(x = "Median f0, booth (Hz)", y = "Median f0, phone (Hz)")
+```
+
+Simulated preview. Points on the dashed line have the same median f0 in both recordings.
+
+## Summary
+
+::: {.takeaway}
+- A [TextGrid]{.hl} marks where each vowel starts and ends, and makes measurements reproducible
+- Formant and pitch settings must suit the voice, and every track needs checking by eye
+- Median f0 and [articulation rate]{.hl} describe a speaker's pitch and speed in a passage
+- The same speaker gives different values in different recordings, and the class data show how much speakers differ from each other
+:::
+
+## References {.refs}
+
+- Boersma, P., & Weenink, D. (2025). _Praat: Doing phonetics by computer_ [Computer program]. https://www.praat.org
+- International Phonetic Association (1999). _Handbook of the International Phonetic Association_. Cambridge University Press. (The North Wind and the Sun.)
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Activities 2A–2C and 4A.]{.hl}
+
+## Sources of the animal facts {.refs}
+
+- Tchernichovski, O., Lints, T., Mitra, P. P., & Nottebohm, F. (1999). Vocal imitation in zebra finches is inversely related to model abundance. _PNAS_, 96(22), 12901–12904. https://doi.org/10.1073/pnas.96.22.12901
+- Tchernichovski, O., Mitra, P. P., Lints, T., & Nottebohm, F. (2001). Dynamics of the vocal imitation process: How a zebra finch learns its song. _Science_, 291(5513), 2564–2569. https://doi.org/10.1126/science.1058522
+
+## Slides and code
+
+<div class="qr-block">
+<img src="`r qr_uri`" alt="QR code linking to these slides">
+<div>
+<p>These slides</p>
+<p class="qr-link">mcanzi.github.io/ws27_fss/<wbr>`r lecture_file`</p>
+<p>Code and all sessions</p>
+<p class="qr-link">github.com/mcanzi/ws27_fss</p>
+</div>
+</div>

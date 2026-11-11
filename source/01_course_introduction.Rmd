@@ -105,7 +105,7 @@ Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduc
 
 ## Syllabus
 
-Each session follows one chapter of Leemann et al. (2024).
+Sessions 1–8 each follow one chapter of Leemann et al. (2024).
 
 | | Session | Chapter |
 |---|---|---|
@@ -117,6 +117,8 @@ Each session follows one chapter of Leemann et al. (2024).
 | 6 | Authentication, enhancement and speech content | 6 |
 | 7 | Linguistic analysis in the asylum procedure | 7 |
 | 8 | Expert witnesses | 13 |
+| 9 | Praat practical 1: recording and measuring your own voice | 2, 4 |
+| 10 | Praat practical 2: casework with the class recordings | 3–5 |
 
 ## Slides and materials
 

@@ -1,0 +1,231 @@
+---
+title: "Praat practical 2"
+subtitle: "Casework with the class recordings"
+author: "Dr Massimiliano Canzi"
+knit: (function(input, ...) rmarkdown::render(input, output_dir = file.path(dirname(input), "..", "docs")))
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    css: theme-purple.css
+    highlight: zenburn
+    incremental: true
+    transition: fade
+    background_transition: fade
+    self_contained: true
+    reveal_options:
+      width: 1050
+      height: 700
+      slideNumber: "c/t"
+      showSlideNumber: all
+      controls: true
+      touch: true
+      transitionSpeed: fast
+      navigationMode: linear
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10, fig.height = 4.4, out.width = "100%")
+library(tidyverse)
+
+source("slides_setup.R", local = knitr::knit_global())
+```
+
+# The class as a case
+
+<style>
+  :root {
+    --footer-text:  "Praat practical 2";
+    --qr:           `r qr_css`;
+    --lecture:      `r lecture_label`;
+  }
+</style>
+
+::: {.fact}
+`Did you know:` fork-tailed drongos in the Kalahari give [false alarm calls] when a meerkat or a bird finds food. The forager runs for cover, and the drongo takes the food.
+
+_Source: Flower, Gribble & Ridley (2014), Science_
+:::
+
+## Today
+
+1. A mock speaker comparison
+2. Profiling an unknown speaker
+3. Disguise
+4. What the class data show
+
+. . .
+
+The recordings are yours, from the last session. Your own voice is never in your group's material.
+
+## Groups and folders
+
+- You work in groups of three. Each group receives a case folder, a profiling recording and a set of disguise recordings. File names in the folders are codes, and do not show whose voice it is
+- Keep the measurements from the last session at hand: you need the same procedures today
+
+# A mock speaker comparison
+
+::: {.fact}
+`Did you know:` drongos [mimic the alarm calls] of other species, including those of the animals they are trying to rob, and these mimicked alarms kept pied babblers away from their food longer than the drongo's own alarm.
+
+_Source: Flower, Gribble & Ridley (2014), Science_
+:::
+
+## The case
+
+Your folder contains:
+
+- one [questioned]{.hl} recording, `Q.wav`: a phone recording of the first two sentences of the passage
+- four [known]{.hl} recordings, `K1.wav` to `K4.wav`: booth recordings of the same passage by four "suspects"
+
+. . .
+
+The speaker of Q may or may not be one of the four. Your task is to assess, for each suspect, whether the evidence supports the same-speaker or the different-speaker hypothesis, and how strongly.
+
+## Step 1: listen first
+
+- Listen to Q several times, then to each K. Write down your auditory impressions before you measure anything: accent, voice quality, speed, anything unusual
+- Note whether you think you recognise a classmate, and at what point. A familiar voice can bias the rest of the analysis (sessions 5 and 8)
+- Keep the order in which you listened, and decide in the group how to avoid reading your first impression into the measurements
+
+## Step 2: measure
+
+For Q and each K, on the first two sentences:
+
+1. Median f0 and standard deviation (Pulses > Voice report)
+2. Articulation rate of the first sentence (28 syllables)
+3. F1 and F2 at the midpoint of the vowels in _North_ and _Sun_, and in both tokens of _cloak_
+
+. . .
+
+Q is a phone recording and the Ks are booth recordings. Remember from the last session which measures changed between your own phone and booth recordings.
+
+## Step 3: similarity and typicality
+
+For each feature, ask how close Q is to each K, its [similarity]{.hl}, and how common Q's values are in the relevant population, their [typicality]{.hl}. Here, the population is the class, from the spreadsheet of the last session.
+
+- A shared value that half the class also has is weak evidence. A shared value that is rare in the class is stronger
+
+## The class as a population
+
+```{r population, fig.height = 3.6}
+set.seed(101)
+pop <- tibble(f0 = c(rnorm(8, 115, 15), rnorm(12, 205, 22)))
+ggplot(pop, aes(f0)) +
+  geom_histogram(binwidth = 10, fill = vine, colour = floor_col) +
+  geom_vline(xintercept = 178, colour = kingfisher, linewidth = 1.3) +
+  geom_vline(xintercept = 182, colour = hornbill, linewidth = 1.3, linetype = "dashed") +
+  annotate("text", x = 172, y = 3.6, label = "Q", colour = kingfisher, size = 5, hjust = 1) +
+  annotate("text", x = 188, y = 3.6, label = "K2", colour = hornbill, size = 5, hjust = 0) +
+  labs(x = "Median f0 of each speaker in the class (Hz)", y = "Speakers")
+```
+
+Simulated preview. Q and K2 are similar, but several classmates have a median f0 in the same range, so f0 alone does not set K2 apart. In class we look at the real distribution in R.
+
+## Step 4: conclusions
+
+- For each suspect, combine the features into one conclusion on the verbal scale of session 4, from strong support for different speakers to strong support for the same speaker. Give the two or three observations that weigh most, and say which differences you think come from the recording conditions
+- Present your conclusions to the class before the answers are revealed
+
+# Profiling
+
+::: {.fact}
+`Did you know:` each drongo used between 9 and 32 types of alarm call, and after a [failed theft] it was more likely to switch to a different call on its next attempt.
+
+_Source: Flower, Gribble & Ridley (2014), Science_
+:::
+
+## An unknown speaker
+
+Your group receives a booth recording of the passage by a classmate who is not in your case folder. Write a short profile (session 3):
+
+- first language and, if you can, region, and other languages that might have influenced the speaker's English
+- anything else the voice suggests, such as an age range
+
+. . .
+
+For each point, give the features that support it, with time points in the recording, and say how confident you are.
+
+## Checking the profile
+
+- Your lecturer checks your profile against the information on the speaker's form
+- Which claims were right, which features led you there, and which claims went beyond what the recording could show?
+
+# Disguise
+
+## Who is behind the disguise?
+
+Your group receives four disguised readings (D1–D4) and four normal readings (N1–N4) by the same four speakers, in shuffled order.
+
+1. Match each disguised reading to a normal one, by ear first
+2. Then measure median f0, its standard deviation and articulation rate in each recording, and check whether the numbers support your matches
+3. Write down how confident you are in each match
+
+## What did the disguise change?
+
+For each pair you matched:
+
+- Which strategy do you think the speaker used: pitch, accent, voice quality, speed?
+- Which features changed, and which stayed the same?
+- Which features helped you see through the disguise?
+
+. . .
+
+Session 5 showed that disguise lowers the accuracy of earwitnesses. Here you can see which features a disguise changes, and which it leaves alone.
+
+## Disguise in the class
+
+```{r disguise, fig.height = 3.8}
+set.seed(102)
+dg <- tibble(id = sprintf("S%02d", 1:20),
+             strategy = sample(c("pitch", "accent", "voice quality"), 20, replace = TRUE, prob = c(0.45, 0.3, 0.25)),
+             normal = c(rnorm(8, 115, 15), rnorm(12, 205, 22))) |>
+  mutate(disguised = case_when(strategy == "pitch" ~ normal * exp(rnorm(n(), 0, 0.35)),
+                               TRUE ~ normal * exp(rnorm(n(), 0, 0.08))),
+         id = fct_reorder(id, normal))
+ggplot(dg, aes(y = id)) +
+  geom_segment(aes(x = normal, xend = disguised, yend = id, colour = strategy),
+               arrow = arrow(length = unit(0.12, "cm")), linewidth = 1) +
+  geom_point(aes(x = normal), colour = mist, size = 1.8) +
+  scale_colour_manual(values = c(pitch = kingfisher, accent = hornbill, `voice quality` = orchid)) +
+  labs(x = "Median f0 (Hz): normal reading (dot) to disguised reading (arrow)", y = NULL, colour = NULL) +
+  theme(axis.text.y = element_blank(), panel.grid.major.y = element_blank())
+```
+
+Simulated preview. In class, we plot your normal and disguised readings, with the strategy from your forms.
+
+## Discussion
+
+- How did knowing some of the voices affect your analysis, and how could a lab prevent this?
+- Which features were most useful in the comparison, and which were least robust to the change from booth to phone?
+- How far did the class data work as a population? Who would be the relevant population in a real case?
+
+## Summary
+
+::: {.takeaway}
+- A comparison weighs [similarity]{.hl} against [typicality]{.hl} in a relevant population, here the class
+- Listening comes first, and familiarity with a voice can bias the rest of the analysis
+- A recording mismatch (phone and booth) changes some measures more than others
+- A profile is only as strong as the features behind each claim
+- Disguise changes some features and leaves others, which can still link the speaker to their normal voice
+:::
+
+## References {.refs}
+
+- Boersma, P., & Weenink, D. (2025). _Praat: Doing phonetics by computer_ [Computer program]. https://www.praat.org
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapters 3, 4 and 5.]{.hl}
+
+## Sources of the animal facts {.refs}
+
+- Flower, T. P., Gribble, M., & Ridley, A. R. (2014). Deception by flexible alarm mimicry in an African bird. _Science_, 344(6183), 513. https://doi.org/10.1126/science.1249723
+
+## Slides and code
+
+<div class="qr-block">
+<img src="`r qr_uri`" alt="QR code linking to these slides">
+<div>
+<p>These slides</p>
+<p class="qr-link">mcanzi.github.io/ws27_fss/<wbr>`r lecture_file`</p>
+<p>Code and all sessions</p>
+<p class="qr-link">github.com/mcanzi/ws27_fss</p>
+</div>
+</div>
