@@ -103,7 +103,7 @@ Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduc
 - Real cases, exercises and suggestions for further reading in every chapter
 - We cover the forensic phonetics part: chapters 1 to 7, and chapter 13 on expert witnesses
 
-## Syllabus
+## Syllabus {.smaller}
 
 Sessions 1–8 each follow one chapter of Leemann et al. (2024).
 
@@ -137,7 +137,7 @@ The book has exercises in every chapter, and we do many of them together.
 - Forensic questions often have no single correct answer, so we discuss how you reached yours and how sure you can be
 - Try each exercise before you read the solution
 
-## Recording your voice
+## Recording your voice {.smaller}
 
 For the Praat practicals (sessions 9 and 10), each of you records yourself once in the LingLab booth, at any time before session 9. It takes about 15 minutes.
 
