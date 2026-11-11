@@ -1,6 +1,6 @@
 # Forensic Speech Science
 
-Slides for *Forensic Speech Science* (Dr Massimiliano Canzi, Department of Linguistics, University of Konstanz). Each session follows one chapter of Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024), *An Introduction to Forensic Phonetics and Forensic Linguistics*, Routledge: chapters 1 to 7 (forensic phonetics and LAAP) and chapter 13 (expert witnesses). The figures use simulated data.
+Slides for *Forensic Speech Science* (Dr Massimiliano Canzi, Department of Linguistics, University of Konstanz). Each session follows one chapter of Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024), *An Introduction to Forensic Phonetics and Forensic Linguistics*, Routledge: chapters 1 to 7 (forensic phonetics and LAAP) and chapter 13 (expert witnesses). The figures use simulated data, except for published results that are labelled as such (for example McGehee, 1937, in session 5).
 
 | | Session | Chapter |
 |---|---|---|

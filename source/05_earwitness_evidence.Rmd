@@ -1,0 +1,337 @@
+---
+title: "Earwitness evidence"
+subtitle: "Voice recognition and voice parades"
+author: "Dr Massimiliano Canzi"
+knit: (function(input, ...) rmarkdown::render(input, output_dir = file.path(dirname(input), "..", "docs")))
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    css: theme-purple.css
+    highlight: zenburn
+    incremental: true
+    transition: fade
+    background_transition: fade
+    self_contained: true
+    reveal_options:
+      width: 1050
+      height: 700
+      slideNumber: "c/t"
+      showSlideNumber: all
+      controls: true
+      touch: true
+      transitionSpeed: fast
+      navigationMode: linear
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10, fig.height = 4.4, out.width = "100%")
+library(tidyverse)
+
+source("slides_setup.R", local = knitr::knit_global())
+```
+
+# The Lindbergh case
+
+<style>
+  :root {
+    --footer-text:  "Earwitness evidence";
+    --qr:           `r qr_css`;
+    --lecture:      `r lecture_label`;
+  }
+</style>
+
+::: {.fact}
+`Did you know:` elephants in Amboseli, Kenya, react more defensively to recordings of [Maasai men], who occasionally spear elephants, than to Kamba men saying the same sentence in their own language. Voices of Maasai women and boys cause much less alarm.
+
+_Source: McComb, Shannon, Sayialel & Moss (2014), PNAS_
+:::
+
+## A ransom in the Bronx
+
+- In March 1932, the baby son of the aviator Charles Lindbergh was kidnapped from the family home in New Jersey
+- On 2 April 1932, an intermediary handed over $50,000 at St Raymond's Cemetery in the Bronx while Lindbergh waited in a car nearby. He never saw the man who took the money. In the dark, a voice with a foreign accent called out "Hey, Doctor!" from some distance away
+
+## Two and a half years later
+
+- In September 1934, Bruno Richard Hauptmann was arrested with some of the ransom money
+- Before a grand jury, Lindbergh said it would be very difficult for him to pick out a man by that voice
+- He was then taken to the district attorney's office, where Hauptmann was asked to repeat the words. Lindbergh said he recognised the voice
+- At the trial in January 1935 he testified: "That was Hauptmann's voice." Hauptmann was convicted and executed in 1936
+
+## How much weight would you give it?
+
+- Lindbergh heard two or three words, once, in the dark and under great stress, and 29 months passed before he heard Hauptmann speak
+- He was played one voice only, and he knew that this man was the suspect
+
+. . .
+
+The case led the psychologist Frances McGehee to run the first experiments on memory for voices (McGehee, 1937).
+
+## Today
+
+1. Earwitnesses, and familiar versus unfamiliar voices
+2. What affects earwitness accuracy
+3. Voice parades
+4. Voice identification by lay listeners in court
+
+. . .
+
+This session follows chapter 5 of Leemann et al. (2024).
+
+# Earwitnesses
+
+::: {.fact}
+`Did you know:` an adult female African elephant is estimated to know the contact calls of about 14 families, around [100 adult females] in total, and can tell family members from more distant acquaintances by voice alone.
+
+_Source: McComb, Moss, Sayialel & Baker (2000), Animal Behaviour_
+:::
+
+## Earwitness evidence
+
+- An [earwitness]{.hl} heard a perpetrator without seeing them: a masked robber, a caller on the phone, a blindfolded victim, a voice in the dark
+- Often there is no recording, and the voice exists only in the witness's memory
+- The witness performs [naive speaker recognition]{.hl}, with no phonetic training. Last session was about [technical speaker recognition]{.hl}, the analysis of recordings by experts (Nolan, 1983)
+
+## Familiar and unfamiliar voices
+
+- We recognise [familiar voices]{.hl} (relatives, friends, colleagues) every day, often from a few words on the phone. An earwitness usually has to recognise an [unfamiliar voice]{.hl}, heard once and often briefly
+- Recognising familiar voices and telling unfamiliar voices apart are separate abilities (Van Lancker & Kreiman, 1987)
+
+## Familiar voices can fool us too
+
+Yarmey (2004) played listeners short sounds by people they knew and by strangers.
+
+- Listeners named a familiar speaker correctly about half the time from "hello", "help me" or a laugh, and less than 30% of the time from coughs, sighs and other sounds
+- They also gave a wrong name to 22–30% of the strangers they took for someone familiar
+- Confidence rarely went together with accuracy, and lay people's beliefs about how well they recognise voices were unrealistic
+
+# What affects accuracy
+
+::: {.fact}
+`Did you know:` female elephants can recognise the contact call of a family member at distances of up to [2.5 km], although recognition usually works over 1–1.5 km.
+
+_Source: McComb, Reby, Baker, Moss & Sayialel (2003), Animal Behaviour_
+:::
+
+## Two kinds of factor
+
+- Some factors belong to the original event and cannot be changed afterwards, such as how long the witness heard the voice, any disguise, or the time until the identification. Research on eyewitnesses calls them [estimator variables]{.hl}
+- Others depend on how the police run the identification: how many voices, how long each sample is, what the witness is told. These are [system variables]{.hl}, and better procedures can reduce errors
+
+## Delay
+
+```{r mcgehee, fig.height = 4.1}
+mcg <- tibble(days = c(1, 7, 14, 30, 90, 150), correct = c(83, 81, 69, 57, 35, 13),
+              label = c("1 day", "1 week", "2 weeks", "1 month", "3 months", "5 months"))
+ggplot(mcg, aes(days, correct)) +
+  geom_hline(yintercept = 20, linetype = "dashed", colour = muted) +
+  annotate("text", x = 150, y = 25, label = "chance: 1 in 5", hjust = 1, colour = muted, size = 5) +
+  geom_line(colour = hornbill, linewidth = 1) +
+  geom_point(colour = hornbill, size = 4) +
+  geom_text(aes(label = label), nudge_y = 9, colour = mist, size = 4.5) +
+  scale_y_continuous(limits = c(0, 100), labels = \(x) paste0(x, "%")) +
+  scale_x_continuous(breaks = NULL, limits = c(-5, 160)) +
+  labs(x = "Time between hearing the voice and the test", y = "Correct")
+```
+
+McGehee (1937): listeners tried to pick out a man's voice they had heard once from a set of five male voices. Group sizes differed between delays, and the decline was not tested statistically (Papcun, Kreiman & Davis, 1989).
+
+## Exposure and sample length
+
+- Orchard & Yarmey (1995): students heard a mock kidnapper for either 30 seconds or 8 minutes, and tried to pick him out of a six-voice lineup two days later. Those who had heard 8 minutes did better
+- Everyone overestimated how long they had listened, the 30-second group most of all
+
+## Disguise
+
+- [Whisper]{.hl} is one of the easiest disguises: the vocal folds do not vibrate, so there is no f0, and pitch and intonation disappear
+- In Orchard & Yarmey (1995), a whispered voice, or a change in tone of voice between the crime and the lineup, made identification harder, whether or not the target voice was in the lineup
+
+## Accent
+
+- Listeners recognise voices better in their own accent than in an unfamiliar one: the [other-accent effect]{.hl}. Stevenage, Clarke & McNeill (2012) found it with English and Scottish listeners, more strongly for the English listeners
+- Braun et al. (2018) found a version of it inside one region: listeners from Tyneside, Wearside and Teesside missed the target less often when the lineup was in their own local accent
+- A similar effect exists for voices speaking an unfamiliar language (Thompson, 1987)
+
+## Describing the voice
+
+- Perfect, Hunt & Harris (2002) asked some listeners to describe the voice before the lineup. Their identifications were less accurate, an effect known as [verbal overshadowing]{.hl}, although they felt just as confident
+- In the same study, hearing the voice over a telephone lowered confidence without affecting accuracy
+
+## Confidence
+
+For voices, confidence is a poor guide to accuracy.
+
+- The link between confidence and accuracy is weak or absent in most studies (Perfect et al., 2002; Yarmey, 2004; Smith et al., 2020)
+- Smith et al. (2020) noted that many earwitnesses rate their confidence in the middle of the scale
+
+# Voice parades
+
+::: {.fact}
+`Did you know:` when the researchers resynthesised the Maasai recordings so that men's and women's voices had the [same pitch], elephants still reacted to the men's voices as the more dangerous ones.
+
+_Source: McComb, Shannon, Sayialel & Moss (2014), PNAS_
+:::
+
+## The voice parade
+
+- A [voice parade]{.hl} (or voice lineup) is the earwitness version of an identity parade: the suspect's voice is played among the voices of [foils]{.hl}, people known to be innocent
+- England and Wales are the only common-law jurisdiction with guidelines written for voice parades (Home Office Circular 057/2003). Detective Sergeant John McFarlane of the Metropolitan Police wrote them with the phonetician Francis Nolan
+
+## Building a parade
+
+The procedure is modelled on visual identity parades.
+
+- A phonetician first listens to the suspect's police interview, to check that the voice is suitable for a parade
+- The parade has nine voices: the suspect and eight foils of similar age and accent, usually taken from other police interviews
+- Each sample lasts about a minute, and is edited so that it contains nothing about the crime and no clue to who the speaker is
+- The witness is told that the offender's voice may or may not be in the parade, and hears all nine samples before deciding
+
+## Is the parade fair?
+
+```{r mock, fig.height = 3.6}
+set.seed(51)
+voices <- c(LETTERS[1:8], "J")
+mock <- bind_rows(
+  tibble(parade = "Fair parade", voice = voices, n = as.vector(rmultinom(1, 36, rep(1 / 9, 9)))),
+  tibble(parade = "Biased parade", voice = voices, n = as.vector(rmultinom(1, 36, c(rep(0.06, 4), 0.52, rep(0.06, 4)))))
+) |>
+  mutate(parade = fct_inorder(parade), suspect = voice == "E")
+ggplot(mock, aes(voice, n, fill = suspect)) +
+  geom_col(width = 0.7) +
+  geom_hline(yintercept = 4, linetype = "dashed", colour = muted) +
+  facet_wrap(~parade) +
+  scale_fill_manual(values = c(`FALSE` = vine, `TRUE` = hornbill), guide = "none") +
+  labs(x = "Voice in the parade (E is the suspect)", y = "Mock witnesses")
+```
+
+Simulated. In a [mock witness test]{.hl}, listeners who never heard the offender go through the parade. If the suspect stands out, they pick the suspect far more often than chance (dashed line: 36 listeners, 1 in 9).
+
+## A parade in court
+
+- London, 2002: a man had overheard his landlord arranging with a younger man to set fire to a house, and a woman died in a fire there that night. He said he could recognise the younger man's voice (Nolan, 2003)
+- The parade used extracts from the suspect's police interviews. The foils came from interviews with young men from the same London Asian community
+- The witness picked out the suspect's voice, and also recognised him in a visual parade. With the other evidence, both men were convicted
+
+## How accurate are parades?
+
+- In a Dutch study, listeners picked the right voice in 42% of [target-present]{.hl} lineups. In [target-absent]{.hl} lineups, 51% picked an innocent voice (Kerstholt et al., 2003)
+- Smith et al. (2020) used nine-voice parades. When the target was present, 39% picked the target; when the target was absent, only 6% rejected the parade
+- Results also depend a lot on the speaker: some voices are much easier to recognise than others
+
+## Improving the procedure
+
+- Pautz et al. (2023) found that 15-second samples worked as well as the 60 seconds in the guidelines, which would make parades quicker to build
+- A six-voice parade was no more accurate than a nine-voice one. They recommend keeping nine voices, because with more foils an innocent suspect is less likely to be picked by chance
+- A stronger warning, reminding witnesses that a wrong choice could convict an innocent person, made them less likely to pick anyone, whether or not the target was present (Smith et al., 2023)
+
+# Lay listeners in court
+
+::: {.fact}
+`Did you know:` wild African elephants seem to address each other with individually specific, [name-like calls], and respond more strongly to recordings of calls that were originally addressed to them.
+
+_Source: Pardo et al. (2024), Nature Ecology & Evolution_
+:::
+
+## R v Hersey (1998)
+
+- Two men in balaclavas robbed a shop, and the shopkeeper believed he recognised one of the voices
+- The police held a live voice parade, which the Court of Appeal accepted. It said that juries need a warning about voice identification, adapted from the warning used for eyewitnesses
+
+. . .
+
+The 2003 guidelines later advised against live parades of this kind.
+
+## R v Flynn and St John (2008)
+
+- A recording device in a van picked up the voices of men preparing a robbery
+- Four police officers said they recognised the voices of the two defendants, from their contact with them after the arrest (for St John, about two hours and twenty minutes). Two experts for the defence said that the recording was too poor to identify anyone
+
+## What the court said {.smaller}
+
+The Court of Appeal quashed both convictions and ordered a retrial. A lay listener's ability to recognise a voice depends on:
+
+- the quality of the recording
+- the time between hearing the known voice and hearing the recording
+- the listener's general ability to recognise voices
+- the nature and length of the speech sample
+- how familiar the listener is with the known voice
+
+. . .
+
+Police officers count as [lay listeners]{.hl}, and their evidence "must be treated with great caution and great care".
+
+## Discussion
+
+In R v Crow (2021), the identification rested on five one-syllable words, shouted, lasting no more than two seconds. The evidence was admitted.
+
+- Which of today's factors apply here, and how does the case compare with Lindbergh's?
+- Should a court hear evidence like this, and what should the jury be told?
+
+## Exercises
+
+For the practical sessions:
+
+- Plan a voice parade for a case described in class: what you need from the police, how you choose the foils, and how you check that the parade is fair
+- Take part in a short parade yourselves: hear a voice for one minute, then try to pick it out of nine after a break, and rate your confidence
+
+## Summary
+
+::: {.takeaway}
+- An [earwitness]{.hl} heard a voice without seeing the speaker, and usually without a recording
+- Unfamiliar voices are much harder to recognise than familiar ones, and even familiar voices are misidentified
+- Accuracy drops with delay, short exposure, disguise and an unfamiliar accent; describing the voice can make it worse
+- Confidence is a poor guide to accuracy
+- In England and Wales, [voice parades]{.hl} follow the 2003 guidelines: nine voices, warning that the offender may be absent, a mock witness test for fairness
+- Courts treat voice recognition by lay listeners, police officers included, with great caution
+:::
+
+## References {.refs}
+
+- Braun, A., Llamas, C., Watt, D., French, P., & Robertson, D. (2018). Sub-regional "other-accent" effects on lay listeners' speaker identification abilities: A voice line-up study with speakers and listeners from the North East of England. _International Journal of Speech, Language and the Law_, 25(2). https://doi.org/10.1558/ijsll.37340
+- Home Office (2003). _Advice on the use of voice identification parades_. Home Office Circular 057/2003.
+- Kerstholt, J. H., Jansen, E. J. M., van Amelsvoort, A. G., & Broeders, A. P. A. (2003). Earwitness line-ups: Effects of speech duration, retention interval and acoustic environment on identification accuracy. _Proceedings of Eurospeech 2003_, 709–712. https://doi.org/10.21437/Eurospeech.2003-302
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 5.]{.hl}
+- McGehee, F. (1937). The reliability of the identification of the human voice. _Journal of General Psychology_, 17(2), 249–271. https://doi.org/10.1080/00221309.1937.9917999
+- Nolan, F. (1983). _The phonetic bases of speaker recognition_. Cambridge University Press.
+- Nolan, F. (2003). A recent voice parade. _International Journal of Speech, Language and the Law_, 10(2), 277–291. https://doi.org/10.1558/sll.2003.10.2.277
+- Orchard, T. L., & Yarmey, A. D. (1995). The effects of whispers, voice-sample duration, and voice distinctiveness on criminal speaker identification. _Applied Cognitive Psychology_, 9(3), 249–260. https://doi.org/10.1002/acp.2350090306
+
+## References {.refs}
+
+- Papcun, G., Kreiman, J., & Davis, A. (1989). Long-term memory for unfamiliar voices. _Journal of the Acoustical Society of America_, 85(2), 913–925.
+- Pautz, N., McDougall, K., Mueller-Johnson, K., Nolan, F., Paver, A., & Smith, H. M. J. (2023). Identifying unfamiliar voices: Examining the system variables of sample duration and parade size. _Quarterly Journal of Experimental Psychology_. https://doi.org/10.1177/17470218231155738
+- Perfect, T. J., Hunt, L. J., & Harris, C. M. (2002). Verbal overshadowing in voice recognition. _Applied Cognitive Psychology_, 16(8), 973–980. https://doi.org/10.1002/acp.920
+- Smith, H. M. J., Bird, K., Roeser, J., Robson, J., Braber, N., Wright, D., & Stacey, P. C. (2020). Voice parade procedures: Optimising witness performance. _Memory_, 28(1), 2–17.
+- Smith, H. M. J., Roeser, J., Pautz, N., Davis, J. P., Robson, J., Wright, D., Braber, N., & Stacey, P. C. (2023). Evaluating earwitness identification procedures: Adapting pre-parade instructions and parade procedure. _Memory_, 31(1), 147–161. https://doi.org/10.1080/09658211.2022.2129065
+- Solan, L. M., & Tiersma, P. M. (2003). Hearing voices: Speaker identification in court. _Hastings Law Journal_, 54(2), 373. https://repository.uclawsf.edu/hastings_law_journal/vol54/iss2/2
+- Stevenage, S. V., Clarke, G., & McNeill, A. (2012). The "other-accent" effect in voice recognition. _Journal of Cognitive Psychology_, 24(6), 647–653. https://doi.org/10.1080/20445911.2012.675321
+- Thompson, C. P. (1987). A language effect in voice identification. _Applied Cognitive Psychology_, 1, 121–131.
+- Van Lancker, D., & Kreiman, J. (1987). Unfamiliar voice discrimination and familiar voice recognition are independent and unordered abilities. _Neuropsychologia_, 25, 829–834.
+- Yarmey, A. D. (2004). Common-sense beliefs, recognition and the identification of familiar and unfamiliar speakers from verbal and non-linguistic vocalizations. _International Journal of Speech, Language and the Law_, 11(2), 267. https://doi.org/10.1558/sll.2004.11.2.267
+
+## Cases {.refs}
+
+- R v Crow [2021] EWCA Crim 617
+- R v Flynn and St John [2008] EWCA Crim 970
+- R v Hersey [1998] Crim LR 281
+- R v Khan and Bains (Central Criminal Court, 2002), described in Nolan (2003)
+- State of New Jersey v. Hauptmann (1935), discussed in Solan & Tiersma (2003)
+
+## Sources of the animal facts {.refs}
+
+- McComb, K., Moss, C., Sayialel, S., & Baker, L. (2000). Unusually extensive networks of vocal recognition in African elephants. _Animal Behaviour_, 59(6), 1103–1109. https://doi.org/10.1006/anbe.2000.1406
+- McComb, K., Reby, D., Baker, L., Moss, C., & Sayialel, S. (2003). Long-distance communication of acoustic cues to social identity in African elephants. _Animal Behaviour_, 65(2), 317–329.
+- McComb, K., Shannon, G., Sayialel, K. N., & Moss, C. (2014). Elephants can determine ethnicity, gender, and age from acoustic cues in human voices. _PNAS_, 111(14), 5433–5438. https://doi.org/10.1073/pnas.1321543111
+- Pardo, M. A., Fristrup, K., Lolchuragi, D. S., Poole, J. H., Granli, P., Moss, C., Douglas-Hamilton, I., & Wittemyer, G. (2024). African elephants address one another with individually specific name-like calls. _Nature Ecology & Evolution_, 8(7), 1353–1364. https://doi.org/10.1038/s41559-024-02420-w
+
+## Slides and code
+
+<div class="qr-block">
+<img src="`r qr_uri`" alt="QR code linking to these slides">
+<div>
+<p>These slides</p>
+<p class="qr-link">mcanzi.github.io/ws27_fss/<wbr>`r lecture_file`</p>
+<p>Code and all sessions</p>
+<p class="qr-link">github.com/mcanzi/ws27_fss</p>
+</div>
+</div>
