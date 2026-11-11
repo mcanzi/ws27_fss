@@ -61,8 +61,8 @@
   --shadow:     0 18px 50px rgba(0, 0, 0, 0.55);
   --glow-1:     rgba(104, 128, 146, 0.12);   /* the night sky behind the trees */
   --glow-2:     rgba(147, 88, 224, 0.07);    /* violet */
-  --logo-pink:  #dc7286;
-  --logo-violet: #9358e0;
+  --title-top:  #dc7286;   /* titles: the logo's pink above, violet below */
+  --title-bottom: #9358e0;
   --on-accent:  #121310;
   --marker:     rgba(213, 129, 63, 0.30);   /* emphasis highlighter */
   --output-bg:  #151713;   /* R output under the code */
@@ -198,6 +198,17 @@ body {
 .reveal section.title-slide.level1 > h1 {
   font-size: 2.6em;
   max-width: 80%;
+}
+
+/* the title of the title slide and of the section slides: a gradient from
+   --title-top to --title-bottom (set with the palette above), as the name
+   and the page titles on mcanzi.github.io */
+.reveal #title-slide h1.title,
+.reveal section.title-slide.level1 > h1 {
+  background: linear-gradient(180deg, var(--title-top) 8%, var(--title-bottom) 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ---- fact cards on the section slides (::: {.fact} in the Rmd) -------
@@ -633,16 +644,4 @@ body {
   font-size: 0.58em;
   color: var(--hornbill);
   margin-bottom: 1.1em;
-}
-
-/* ---- purple theme only: titles in the colours of the Resonance logo, pink
-   above and violet below, as the name and page titles on the website ----- */
-
-.reveal #title-slide h1.title,
-.reveal section.title-slide.level1 > h1 {
-  background: linear-gradient(180deg, var(--logo-pink) 8%, var(--logo-violet) 92%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: var(--logo-violet);
 }
