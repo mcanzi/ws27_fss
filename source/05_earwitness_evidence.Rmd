@@ -207,7 +207,7 @@ A parade can be [target-present]{.hl} or [target-absent]{.hl}. If the suspect is
 - The defence solicitor chooses the order of the voices, checks the material, and may leave the room during the parade
 - The witness's reactions and answers are video recorded. The witness usually listens without headphones, so that the observers can hear which voice is playing
 
-## The case behind the guidelines
+## The case behind the guidelines {.smaller}
 
 - London, 2001: Harbans Johal died in a house fire, and her partner Didar Bains was arrested for arson
 - Bains's lodger said he had overheard Bains arranging the fire with another man, and recognised that voice as Assad Khan, a gardener who had worked at the house
@@ -434,8 +434,8 @@ For the practical sessions (book activities 5A–5D):
 - Witnesses describe voices poorly, and even familiar voices are misidentified
 - A [voice parade]{.hl} tests the witness's recognition: foils matched to the suspect's voice, one speaking style, a warning that the offender may be absent, and a mock witness test for fairness
 - Accuracy drops with delay, short exposure, disguise, a mismatch in recording quality or speaking style, and an unfamiliar accent or language. Listeners differ widely
-- Confidence is a poor guide to accuracy for unfamiliar voices
-- Courts should weigh earwitness evidence with great caution, together with other evidence
+- For unfamiliar voices, confidence is a poor guide to accuracy
+- Courts should weigh earwitness evidence with great caution, alongside other evidence
 :::
 
 ## References {.refs}
@@ -447,16 +447,19 @@ For the practical sessions (book activities 5A–5D):
 - Foulkes, P., & Barron, A. (2000). Telephone speaker recognition amongst members of a close social network. _Forensic Linguistics_, 7, 180–198.
 - Hammersley, R., & Read, J. D. (1985). The effect of participation in a conversation on recognition and identification of the speakers' voices. _Law and Human Behavior_, 9, 71–81.
 - Hollien, H. (2012). On earwitness lineups. _Investigative Sciences Journal_, 4(1), 1–17.
+
+## References {.refs}
+
 - Home Office (2003). _Advice on the use of voice identification parades_. Home Office Circular 057/2003.
 - Kerstholt, J. H., Jansen, E. J. M., van Amelsvoort, A. G., & Broeders, A. P. A. (2003). Earwitness line-ups: Effects of speech duration, retention interval and acoustic environment on identification accuracy. _Proceedings of Eurospeech 2003_, 709–712. https://doi.org/10.21437/Eurospeech.2003-302
 - Künzel, H. J. (1990). _Sprechererkennung durch linguistisch naive Personen_. Steiner.
 - Ladefoged, P., & Ladefoged, J. (1980). The ability of listeners to identify voices. _UCLA Working Papers in Phonetics_, 49, 43–51.
-
-## References {.refs}
-
 - [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 5.]{.hl}
 - McGehee, F. (1937). The reliability of the identification of the human voice. _Journal of General Psychology_, 17(2), 249–271. https://doi.org/10.1080/00221309.1937.9917999
 - McGehee, F. (1944). An experimental study of voice recognition. _Journal of General Psychology_, 31(1), 53–65.
+
+## References {.refs}
+
 - McGorrery, P. G., & McMahon, M. (2017). A fair "hearing": Earwitness identifications and voice identification parades. _International Journal of Evidence and Proof_, 21(3), 262–286.
 - Nolan, F. (1983). _The phonetic bases of speaker recognition_. Cambridge University Press.
 - Nolan, F. (2003). A recent voice parade. _International Journal of Speech, Language and the Law_, 10(2), 277–291. https://doi.org/10.1558/sll.2003.10.2.277
@@ -464,16 +467,19 @@ For the practical sessions (book activities 5A–5D):
 - Olson, N., Juslin, P., & Winman, A. (1998). Realism of confidence in earwitness versus eyewitness identification. _Journal of Experimental Psychology: Applied_, 4(2), 101–118.
 - Orchard, T. L., & Yarmey, A. D. (1995). The effects of whispers, voice-sample duration, and voice distinctiveness on criminal speaker identification. _Applied Cognitive Psychology_, 9(3), 249–260. https://doi.org/10.1002/acp.2350090306
 - Papcun, G., Kreiman, J., & Davis, A. (1989). Long-term memory for unfamiliar voices. _Journal of the Acoustical Society of America_, 85(2), 913–925.
-- Pautz, N., McDougall, K., Mueller-Johnson, K., Nolan, F., Paver, A., & Smith, H. M. J. (2023). Identifying unfamiliar voices: Examining the system variables of sample duration and parade size. _Quarterly Journal of Experimental Psychology_. https://doi.org/10.1177/17470218231155738
-- Perfect, T. J., Hunt, L. J., & Harris, C. M. (2002). Verbal overshadowing in voice recognition. _Applied Cognitive Psychology_, 16(8), 973–980. https://doi.org/10.1002/acp.920
 
 ## References {.refs}
 
+- Pautz, N., McDougall, K., Mueller-Johnson, K., Nolan, F., Paver, A., & Smith, H. M. J. (2023). Identifying unfamiliar voices: Examining the system variables of sample duration and parade size. _Quarterly Journal of Experimental Psychology_. https://doi.org/10.1177/17470218231155738
+- Perfect, T. J., Hunt, L. J., & Harris, C. M. (2002). Verbal overshadowing in voice recognition. _Applied Cognitive Psychology_, 16(8), 973–980. https://doi.org/10.1002/acp.920
 - Robson, J. (2017). A fair hearing? The use of voice identification parades in criminal investigations in England and Wales. _Criminal Law Review_, 1, 36–50.
 - Smith, H. M. J., Bird, K., Roeser, J., Robson, J., Braber, N., Wright, D., & Stacey, P. C. (2020). Voice parade procedures: Optimising witness performance. _Memory_, 28(1), 2–17.
 - Smith, H. M. J., Roeser, J., Pautz, N., Davis, J. P., Robson, J., Wright, D., Braber, N., & Stacey, P. C. (2023). Evaluating earwitness identification procedures: Adapting pre-parade instructions and parade procedure. _Memory_, 31(1), 147–161. https://doi.org/10.1080/09658211.2022.2129065
 - Solan, L. M., & Tiersma, P. M. (2003). Hearing voices: Speaker identification in court. _Hastings Law Journal_, 54(2), 373–435.
 - Stevenage, S. V., Clarke, G., & McNeill, A. (2012). The "other-accent" effect in voice recognition. _Journal of Cognitive Psychology_, 24(6), 647–653. https://doi.org/10.1080/20445911.2012.675321
+
+## References {.refs}
+
 - Thompson, C. P. (1987). A language effect in voice identification. _Applied Cognitive Psychology_, 1, 121–131.
 - Van Lancker, D., & Kreiman, J. (1987). Unfamiliar voice discrimination and familiar voice recognition are independent and unordered abilities. _Neuropsychologia_, 25, 829–834.
 - Van Wallendael, L. R., Surace, A., Parsons, D. H., & Brown, M. (1994). "Earwitness" voice recognition: Factors affecting accuracy and impact on jurors. _Applied Cognitive Psychology_, 8, 661–677.

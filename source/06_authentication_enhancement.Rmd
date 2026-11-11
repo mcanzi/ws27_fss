@@ -188,7 +188,7 @@ Adapted from Zjalic (2020), as in Leemann et al. (2024).
 - Television makes enhancement look like magic. Public expectations are distorted, which is sometimes called the "CSI effect"
 - What the microphone never captured cannot be recovered, for example because the speaker was too far away. Speech completely masked by a passing truck, or several people talking at once, are close to impossible to resolve
 
-## Before enhancing
+## Before enhancing {.smaller}
 
 - The expert works on a copy. The original stays untouched, and the copy keeps the same sampling rate and quantisation
 - The copy is examined in a sound-treated room, with headphones that have a broad and flat frequency response, so that what the expert hears is as close as possible to what is on the recording
@@ -265,7 +265,7 @@ _Source: Prat, Taub & Yovel (2016), Scientific Reports_
 - Words and grammar are kept as spoken (_he weren't_), but spelling is standard: a dropped /h/ or [f] for /θ/ is not usually shown
 - Recordings in several languages raise questions of translation as well
 
-## A transcript in three languages
+## A transcript in three languages {.smaller}
 
 Foulkes, French & Wilson (2019) describe a case from Ghana: an hour-long recording of five men, apparently discussing a cocaine importation. All five agreed they were there, so the question was who said what.
 
@@ -297,7 +297,7 @@ _Source: Hage, Jiang, Berquist, Feng & Metzner (2013), PNAS_
 - Sometimes one phrase, word or even one sound matters in a case. There may be no agreed version, or two competing ones
 - The phonetician analyses the questioned stretch acoustically, ideally comparing it with clear examples of the candidate words from the same recording, and with what is known about the speaker's accent
 
-## "I" or "they"?
+## "I" or "they"? {.smaller}
 
 - In a police interview, Alex Murdaugh, later tried in South Carolina for murdering his wife and son, said: _This is so bad, X did him/it so bad_
 - The investigating officers heard X as _I_, apparently a confession. Murdaugh said it was _they_
@@ -368,7 +368,7 @@ ggplot(vot, aes(vot, fill = word)) +
 
 Simulated, following the pattern in Morrison et al. (2014). _Tim_ has a long positive VOT, _dom_ a negative one (prevoicing). The disputed token falls among the _dom_ tokens, and so did its vowel formants: the witness most likely said _dom_.
 
-## A cockpit voice recording
+## A cockpit voice recording {.smaller}
 
 - Cockpit voice recorders keep the last 30 minutes to two hours, from the pilots' headsets, a cockpit microphone and the cabin intercom. The cockpit microphone also picks up engines, alarms and other sounds
 - In March 2015, Germanwings flight 9525 began a rapid descent half an hour into the flight, stopped answering air traffic control, and crashed in the French Alps, killing all 150 people on board
@@ -395,7 +395,7 @@ For the practical sessions (book activities 6A–6C):
 - [Enhancement]{.hl} aims at intelligibility, even at the cost of quality. It cannot recover what was never recorded, and every step must be documented
 - Transcripts are interpretations, and need blind analysis, cross-checking and marked uncertainty
 - Questioned utterances are best resolved by acoustic comparison with clear tokens from the same speaker and recording
-- Priming is powerful, so juries should not be given transcripts of passages that experts cannot resolve
+- Because of priming, juries should not get transcripts of passages that experts cannot resolve
 :::
 
 ## References {.refs}
