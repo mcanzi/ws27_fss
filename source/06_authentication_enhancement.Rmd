@@ -393,7 +393,7 @@ For the practical sessions (book activities 6A–6C):
 - Work on recordings follows a [chain of evidence]{.hl}, and experts always work on copies
 - [Authentication]{.hl} looks for edits and synthetic speech: critical listening, the noise floor, splices, ENF, metadata
 - [Enhancement]{.hl} aims at intelligibility, even at the cost of quality. It cannot recover what was never recorded, and every step must be documented
-- Transcripts are interpretations, and need blind analysis, cross-checking and marked uncertainty
+- Transcripts need blind analysis, cross-checks and marked uncertainty
 - Questioned utterances are best resolved by acoustic comparison with clear tokens from the same speaker and recording
 - Because of priming, juries should not get transcripts of passages that experts cannot resolve
 :::

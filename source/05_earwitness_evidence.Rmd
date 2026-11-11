@@ -435,7 +435,7 @@ For the practical sessions (book activities 5A–5D):
 - A [voice parade]{.hl} tests the witness's recognition: foils matched to the suspect's voice, one speaking style, a warning that the offender may be absent, and a mock witness test for fairness
 - Accuracy drops with delay, short exposure, disguise, a mismatch in recording quality or speaking style, and an unfamiliar accent or language. Listeners differ widely
 - For unfamiliar voices, confidence is a poor guide to accuracy
-- Courts should weigh earwitness evidence with great caution, alongside other evidence
+- Courts should weigh earwitness evidence with great caution
 :::
 
 ## References {.refs}

@@ -147,6 +147,11 @@ In 2004, 19 linguists from the US, Europe and Australia drew up guidelines for L
 
 - Linguists advise; the decision lies with the government, which weighs the analysis with other evidence
 - Linguists assess [socialisation]{.hl}, where and how someone grew up. [Nationality]{.hl} is a political category with no direct link to language. Third-generation Italians in Switzerland may speak like other Swiss and hold an Italian passport
+
+## Who analyses, and how certain?
+
+The guidelines also set out who should do the analysis, and how to state the result:
+
 - Analysts should be qualified linguists. Native speakers should not act as experts, even if they are trained translators or interpreters
 - Analysts should always express [degrees of certainty]{.hl}. A plain yes or no is not enough
 
