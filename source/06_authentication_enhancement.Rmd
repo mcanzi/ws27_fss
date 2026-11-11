@@ -1,0 +1,437 @@
+---
+title: "Authentication, enhancement and speech content"
+subtitle: "Is the recording genuine, and what was said?"
+author: "Dr Massimiliano Canzi"
+knit: (function(input, ...) rmarkdown::render(input, output_dir = file.path(dirname(input), "..", "docs")))
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    css: theme-purple.css
+    highlight: zenburn
+    incremental: true
+    transition: fade
+    background_transition: fade
+    self_contained: true
+    reveal_options:
+      width: 1050
+      height: 700
+      slideNumber: "c/t"
+      showSlideNumber: all
+      controls: true
+      touch: true
+      transitionSpeed: fast
+      navigationMode: linear
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10, fig.height = 4.4, out.width = "100%")
+library(tidyverse)
+
+source("slides_setup.R", local = knitr::knit_global())
+```
+
+# The Rodney King tape
+
+<style>
+  :root {
+    --footer-text:  "Authentication, enhancement and speech content";
+    --qr:           `r qr_css`;
+    --lecture:      `r lecture_label`;
+  }
+</style>
+
+::: {.fact}
+`Did you know:` greater horseshoe bats call louder in noise, like humans (the [Lombard effect]), and also raise the frequency of their calls. Both changes appear in the very first call after the noise starts.
+
+_Source: Hage, Jiang, Berquist, Feng & Metzner (2013), PNAS_
+:::
+
+## A video with poor audio
+
+- In 1991, a bystander filmed Rodney King, a Black man, being beaten by several white Los Angeles police officers
+- All four officers were charged and acquitted. At a later civil rights trial, two of them were sentenced to 30 months in prison. That conviction rested mainly on the pictures. The audio, with a police helicopter overhead, was considered too poor to be admitted
+
+## Two questions for a phonetician
+
+Angelika Braun later analysed the soundtrack (Braun, 1994).
+
+- Did the officers shout racial slurs, as King said? After filtering out as much of the helicopter noise as possible, she heard none
+- Was a taser fired? King's facial injuries came from falling, and the question was whether he fell because of a taser or was hit in the face with batons. She compared known samples of taser noise with the recording. Its spectrogram showed regular vertical striations typical of a taser, so a taser had probably made him fall
+
+## Today
+
+1. Audio forensics and the chain of evidence
+2. Authentication: has the recording been changed?
+3. Enhancement: making speech easier to understand
+4. Speech content determination: transcripts and questioned utterances
+
+. . .
+
+This session follows chapter 6 of Leemann et al. (2024).
+
+# Audio forensics
+
+::: {.fact}
+`Did you know:` Mexican free-tailed bats jam each other's sonar. When a rival closes in on an insect, a bat can give a call that overlaps the rival's final "feeding buzz", and the rival then misses its prey most of the time.
+
+_Source: Corcoran & Conner (2014), Science_
+:::
+
+## Covert recordings
+
+Much casework involves covert recordings of people who have been bugged. The microphone may be hidden under clothing or behind an obstacle, people may talk quietly, and engines or music may cover the speech.
+
+. . .
+
+The recording may also have been edited before investigators received it.
+
+## Who does what
+
+- [Audio forensics]{.hl} covers checking that a recording is authentic, enhancing it, working out what was said and who said it, and helping to reconstruct events
+- Authentication and enhancement are technical, and usually done by audio engineers. Working out what was said needs linguistic and phonetic training
+- Every step is documented in a [chain of evidence]{.hl}: who received, copied, accessed or changed the material, and when. This protects the evidence from interference while it is with the police, lawyers or experts
+
+# Authentication
+
+::: {.fact}
+`Did you know:` some tiger moths jam bat sonar with ultrasonic clicks. In experiments with _Bertholdia trigona_, bats missed even [tethered moths] on four out of five passes.
+
+_Source: Corcoran, Barber & Conner (2009), Science_
+:::
+
+## Has the recording been changed?
+
+- [Authentication]{.hl} establishes whether a recording has been [tampered]{.hl} with (edited), or created artificially, which is called [spoofing]{.hl}
+- Someone might remove incriminating words, or insert material. Authentication can also compare versions of a recording where nobody intended to deceive. The work is slow, and a skilled forger may leave no trace that an expert can find under time pressure
+
+## Critical listening
+
+The expert listens many times, in a quiet room with good equipment, while looking at the waveform and spectrogram, and notes anomalies:
+
+- sudden changes in background noise or in loudness
+- clicks and other abrupt sounds
+- odd syntax or breaks in the flow of conversation
+- sudden voice breaks, which may point to a synthetic voice
+
+. . .
+
+Several experts may listen together and reach a joint view.
+
+## Tape and digital files
+
+- On analogue tape, the signal is a pattern on the magnetic surface, which special equipment can make visible. In the Yorkshire Ripper hoax case (session 3), this showed that the speech had been recorded over existing music
+- Digital files have no physical form, but the electric network frequency (ENF, session 3) can show whether a recording has been edited
+- For both, experts check level changes, such as voices suddenly getting louder, and the [noise floor]{.hl}: the background sound of a recording, which normally stays fairly constant
+
+## A change in the noise floor
+
+```{r noisefloor, fig.height = 3.6}
+set.seed(66)
+sr <- 2000
+t <- seq(0, 4, by = 1 / sr)
+traffic <- rnorm(length(t), 0, 0.10)
+speech <- sin(2 * pi * 140 * t) * pmax(0, sin(2 * pi * 1.3 * t))^3 * 0.6
+gap <- t > 1.95 & t < 2.45
+sig <- speech + ifelse(gap, rnorm(length(t), 0, 0.02), traffic)
+nf <- tibble(t, sig)
+ggplot(nf, aes(t, sig)) +
+  geom_line(colour = kingfisher, linewidth = 0.2) +
+  annotate("rect", xmin = 1.95, xmax = 2.45, ymin = -Inf, ymax = Inf, fill = hornbill, alpha = 0.15) +
+  annotate("text", x = 2.2, y = 0.85, label = "traffic noise\ndisappears", colour = hornbill, size = 4.5) +
+  labs(x = "Time (s)", y = "Amplitude")
+```
+
+Simulated. The traffic noise drops abruptly for half a second and comes back just as abruptly, a sign that something may have been inserted or removed there.
+
+## Splices and metadata
+
+- A [splice]{.hl} copies a stretch of signal to another place. Done carelessly, it leaves a jump in the waveform that sounds like a very short click
+- Digital files carry [metadata]{.hl}: sampling rate, number of channels, recording device, date. Editing can leave traces there
+- For example, a video said to have been filmed on an iPhone, which saves .mp4 or .mov files, turns out to be a Windows-format file
+- Experts may also give an overall judgement on provenance: which equipment was used, in how many sessions, and on which dates
+
+## Spoofing
+
+- Voices can now be synthesised with AI and used, for example, to fool banks that let customers use voice banking
+- Journalists used an AI-generated voice to access information held by the Australian Taxation Office
+- Some spoofed speech can still be detected acoustically: unnatural breathiness or creak, formants without clear definition, unnatural glottal striations, and a "robotic" quality (Kirchhübel & Brown, 2022)
+- As synthetic voices improve, such cases are likely to become more common
+
+# Enhancement
+
+::: {.fact}
+`Did you know:` the tiger moth _Bertholdia trigona_ produces its jamming clicks with a [tymbal], a sound-producing organ, at rates of up to about 4,500 clicks per second.
+
+_Source: Corcoran, Barber & Conner (2009), Science_
+:::
+
+## Studio and forensic recordings
+
+|                   | Studio                   | Covert forensic recording        |
+|-------------------|--------------------------|----------------------------------|
+| Signal-to-noise   | 90 dB or more            | negative to 40 dB                |
+| Microphone        | professional, in the open| miniature, concealed             |
+| Distance to mic   | close                    | variable                         |
+| Reverberation     | usually dampened         | often high                       |
+| Background noise  | minimal                  | uncontrolled and variable        |
+| Transmission      | usually none             | telephone or radio               |
+
+Adapted from Zjalic (2020), as in Leemann et al. (2024).
+
+## The golden rule
+
+- [Enhancement]{.hl} aims to improve [intelligibility]{.hl}, the proportion of words a listener can identify, even when the overall [quality]{.hl} of the signal suffers
+- A disturbing noise stays in if removing it would make speech harder to understand. Every step is documented so that it can be repeated, and enhanced files are usually not used for acoustic measurements, because processing can change the properties of speech sounds
+
+## The CSI effect
+
+- Television makes enhancement look like magic. Public expectations are distorted, which is sometimes called the "CSI effect"
+- What the microphone never captured cannot be recovered, for example because the speaker was too far away. Speech completely masked by a passing truck, or several people talking at once, are close to impossible to resolve
+
+## Before enhancing
+
+- The expert works on a copy. The original stays untouched, and the copy keeps the same sampling rate and quantisation
+- The copy is examined in a sound-treated room, with headphones that have a broad and flat frequency response, so that what the expert hears is as close as possible to what is on the recording
+- Critical listening then identifies the problems, which are of two kinds
+- [Noises]{.hl} are unwanted sounds captured during recording, such as sirens, engines, hiss, coughs and footsteps. [Distortions]{.hl} come from the transmission, the recording system or the room: clicks, clipping, bursts from speaking too close to the microphone, reverberation
+
+## Repair techniques
+
+- [De-clicking]{.hl} replaces a click by interpolating between the signal just before and after it. It can leave audible bumps, and a click that covers a whole speech sound cannot be undone
+- When a signal was too loud for the microphone, the waveform is cut off at the top: [clipping]{.hl}. [De-clipping]{.hl} rebuilds the missing part from the waveform on either side
+- [Spectral repair]{.hl} removes a small area of the spectrogram, such as a dog's bark, and fills it with material resynthesised from the surroundings
+
+. . .
+
+All three replace part of the signal with something that was not recorded. They should be used with great caution, and spectral repair algorithms are something of a black box.
+
+## Removing noise
+
+- [Reference cancellation]{.hl} subtracts a known sound from the signal. A fire alarm can be profiled in a stretch without speech and then removed. If a suspect turns on the TV to mask a conversation, the TV sound can be partly cancelled, provided the original broadcast is available
+- [Filtering]{.hl} weakens certain frequencies. A low-pass filter can dampen hiss above about 7 kHz while letting most speech information through. [Equalisation]{.hl} adjusts the level of frequency regions, for example to restore weak high frequencies
+- [Aliasing]{.hl}, from digitising at too low a sampling rate, adds mirror-image tones that sound a little like birdsong. Filtering removes them, but whatever was in those frequencies is lost
+
+## Loudness and reverberation
+
+- [Amplification]{.hl} can be applied by hand to quiet passages, or automatically with dynamic range compression, which raises quiet sounds and lowers loud ones. Background noise is amplified too
+- Reverberation smears the energy of each sound over the following sounds, as in a dining hall or an indoor pool. [De-reverberation]{.hl} needs the room's acoustic response and the positions of speaker and microphone, and is very hard to do well
+
+## Order matters
+
+- Enhancement is a sequence, for example a filter, then de-hum, then de-reverberation, and each step works on the output of the previous one. A different order can give a different result, so experts try several filters and orders on copies, and keep the one that gives the most intelligible speech
+- Quality and intelligibility can pull apart: a recording full of crackle and hiss may stay intelligible because fricatives are still audible, and filtering out the hiss would remove the fricatives too
+
+# Speech content
+
+::: {.fact}
+`Did you know:` Egyptian fruit bat squabbles in the roost sound alike to us, but analysis of about 15,000 calls showed that they carry information about who is calling, the context, and even [who is addressed].
+
+_Source: Prat, Taub & Yovel (2016), Scientific Reports_
+:::
+
+## Mishearing is normal
+
+- Even in quiet, people confuse _thirty_ and _thirteen_, _F_ and _S_, _I can do it_ and _I can't do it_
+- Telephones, mumbling, fast speech and background noise make this worse, and so do accent differences. Australian _Kate_ [kʰɐ̟ɪt] can sound like _kite_ to a British or American listener
+
+## Two kinds of task
+
+[Speech content determination]{.hl}, also called disputed or [questioned utterance]{.hl} analysis, is the task of describing as well as possible what was said.
+
+- A [forensic transcript]{.hl} of a whole recording, mostly done by careful listening, helps a court follow the recording
+- When lawyers dispute one word or phrase, a detailed acoustic analysis of that stretch may help
+
+## Transcripts are not neutral
+
+- Listening is subjective. What a transcriber hears can depend on what they know about the case and on the instructions they were given, and code-switching, unfamiliar accents, unclear articulation and poor recordings mean that different parties may hear different things
+- The police may be convinced a suspect is guilty, and produce a transcript that differs from an expert's
+
+## Safeguards
+
+- The analyst first works without knowing the purpose of the case. Ideally an assistant prepares the material and talks to the client, and passes on no context
+- Information can be revealed later to see whether it changes what the analyst hears. This matters most for names and places, which are especially prone to priming
+- One analyst can transcribe the material several times, or several analysts can work independently and compare. Sometimes a court decides that the content is too uncertain to be admitted
+
+## Techniques
+
+- The linguistic context helps. In _I was talking last night to a σ_, the unclear syllable σ is almost certainly a common noun. Vowels, intonation and rhythm survive noise better than consonants, so the number of syllables is often clear
+- Clearer instances of the same word elsewhere in the recording help with the unclear ones. Because of this [cross-referencing]{.hl}, transcripts are built up out of order, going back and forth
+- Consultants help with particular languages and dialects, specialist vocabulary, or speech disorders
+
+## What goes into the transcript?
+
+- Real speech has false starts, repetitions, pauses, overlaps and slang. How much should a transcript for jurors show?
+- Uncertain passages are usually marked, for example in brackets, and alternatives are given side by side. Overlap is shown only where it matters
+- Words and grammar are kept as spoken (_he weren't_), but spelling is standard: a dropped /h/ or [f] for /θ/ is not usually shown
+- Recordings in several languages raise questions of translation as well
+
+## A transcript in three languages
+
+Foulkes, French & Wilson (2019) describe a case from Ghana: an hour-long recording of five men, apparently discussing a cocaine importation. All five agreed they were there, so the question was who said what.
+
+- The transcript supplied by the client had been made by a receptionist, in standard English, and covered only part of the recording
+- The speech mixed English, Twi and some Hausa, with frequent code-switching, outdoor noise, and heated overlapping argument
+- With a linguist from Ghana, the UK team produced over 120 pages and 1,100 speaking turns: a verbatim version with the languages marked, and a literal English translation
+
+## Format of such a transcript
+
+| line | speaker | verbatim | translation |
+|------|---------|----------|-------------|
+| 12   | M       | (Who said that?) | (Who said that?) |
+| 13   | A       | **Not me.** | Not me. |
+| 14   | B       | [Twi] **but** [Twi] | That one is fine, but this one is not. |
+| 15   | M       | …        | …           |
+
+Invented example in the format of Foulkes et al. (2019). English in bold; M: a male speaker who could not be identified; brackets: lower confidence; …: speech that could not be transcribed.
+
+# Questioned utterances
+
+::: {.fact}
+`Did you know:` in horseshoe bats, call loudness rose only when the noise covered the [main frequency] of their calls, while call frequency rose for almost every noise band tested. The two adjustments seem to be controlled separately.
+
+_Source: Hage, Jiang, Berquist, Feng & Metzner (2013), PNAS_
+:::
+
+## One word in dispute
+
+- Sometimes one phrase, word or even one sound matters in a case. There may be no agreed version, or two competing ones
+- The phonetician analyses the questioned stretch acoustically, ideally comparing it with clear examples of the candidate words from the same recording, and with what is known about the speaker's accent
+
+## "I" or "they"?
+
+- In a police interview, Alex Murdaugh, later tried in South Carolina for murdering his wife and son, said: _This is so bad, X did him/it so bad_
+- The investigating officers heard X as _I_, apparently a confession. Murdaugh said it was _they_
+- The word is hard to make out. He was very emotional (f0 well above 400 Hz), the word was fast, and in his southern US accent _I_ is often a monophthong, close to [æː]
+- No expert analysed it for either side. The passage was played in court at normal speed and at one third speed, and witnesses were asked what they heard. The authors of the book do not consider this a valid approach. Murdaugh was convicted, and it is not clear whether the passage played a part
+
+## Priming
+
+- Context changes what we hear. A transcript, or a suggestion from one side, can make listeners lock in to one interpretation: this is [priming]{.hl}
+- Misheard song lyrics are a harmless example: once someone has told you the nonsense version, it is hard to hear anything else. It matters most when jurors are given a transcript of a poor recording
+
+## Before we go on: activity 6A
+
+In the next case, the recording itself is the point. If you want to try it, listen before reading any further.
+
+- The full emergency call is on Helen Fraser's website (forensictranscription.net.au), and the questioned section is at about 30–35 seconds. The speaker is very distressed, and the recording is upsetting to listen to
+- Write down what you hear, if anything. Listen several times: does your version change?
+
+## The Bain emergency call
+
+- New Zealand, 1994: David Bain called emergency services after finding his family shot dead at home. He was convicted of the murders and sentenced to life imprisonment
+- In 2007 the Privy Council quashed the convictions. For the retrial, held in 2009, a detective claimed to hear a confession in the call: "I shot the prick". No one had claimed this at the first trial
+- Experts for both sides agreed that no definite transcript was possible. Some had written "I can't breathe" in drafts, all with caution; none heard anything like a confession
+
+## Keeping it from the jury
+
+- Both legal teams agreed that the phrase should not appear in any transcript given to the jury, because of the risk of priming
+- The defence also asked for that section to be cut from the recording played in court. This was refused at first, then granted on appeal. The retrial jury found Bain not guilty. It is not clear what part the recording played
+
+## The priming experiment
+
+Fraser, Stevenson & Marks (2011) played the call to listeners.
+
+- Without any suggestion, almost no one heard "I shot the prick"
+- When it was suggested, 30% heard it
+- After they were told that the recording was too unclear to support it, half of those still heard it
+
+. . .
+
+After the trial, the call was released and newspapers printed the phrase in headlines. Listen again: can you now hear both versions?
+
+## "Can" or "can't"? {.smaller}
+
+A TV programme recorded a GP, originally from Greece, talking to an actor posing as a drug user. The subtitles read _you can inject those things_, about tablets, and the General Medical Council started proceedings. The doctor said he had said _can't_.
+
+- Peter French recorded 45 minutes of conversation with the doctor. In his speech _can_ and _can't_ had almost the same vowel, and the /t/ of _can't_ was usually dropped
+- Durations of the two words were virtually identical, but formant measurements showed the _can't_ vowel lower and further back
+- The questioned words fell within the range of _can't_ (French, 1990). The doctor was nevertheless struck off for his prescribing practices; it is not clear what role the analysis played
+
+## "Dom" or "Tim"?
+
+- Sweden, 2008: in a police interview with a witness in a murder case, one word was disputed. Was it _dom_ ('they', [dɔm]) or the name _Tim_ ([tʰɪm])?
+- The witness would not make further recordings, but the interview contained many clear tokens of both words. The experts measured voice onset time and vowel formants in every token, three times each, and compared the disputed token with the known ones (Morrison, Lindh & Curran, 2014)
+
+## Voice onset time
+
+```{r vot, fig.height = 3.8}
+set.seed(77)
+vot <- bind_rows(tibble(word = "dom", vot = rnorm(30, -70, 18)),
+                 tibble(word = "Tim", vot = rnorm(30, 75, 15)))
+ggplot(vot, aes(vot, fill = word)) +
+  geom_histogram(binwidth = 10, colour = floor_col, position = "identity", alpha = 0.85) +
+  geom_vline(xintercept = -55, colour = mist, linewidth = 1) +
+  annotate("text", x = -50, y = 7.6, label = "disputed token", hjust = 0, colour = mist, size = 4.5) +
+  scale_fill_manual(values = c(dom = kingfisher, Tim = hornbill)) +
+  labs(x = "Voice onset time (ms)", y = "Tokens", fill = NULL)
+```
+
+Simulated, following the pattern in Morrison et al. (2014). _Tim_ has a long positive VOT, _dom_ a negative one (prevoicing). The disputed token falls among the _dom_ tokens, and so did its vowel formants: the witness most likely said _dom_.
+
+## A cockpit voice recording
+
+- Cockpit voice recorders keep the last 30 minutes to two hours, from the pilots' headsets, a cockpit microphone and the cabin intercom. The cockpit microphone also picks up engines, alarms and other sounds
+- In March 2015, Germanwings flight 9525 began a rapid descent half an hour into the flight, stopped answering air traffic control, and crashed in the French Alps, killing all 150 people on board
+- Investigators reconstructed events from voices and other sounds on the recorder: the captain left the cockpit, the door was locked, alarms sounded, and the captain tried to break the door down. The co-pilot had crashed the aircraft deliberately, with no technical fault (BEA, 2016)
+
+## Discussion
+
+- Should juries ever be given a transcript of a recording that experts cannot transcribe with confidence?
+- In the Murdaugh case, the court let witnesses say what they heard. What should have happened instead?
+
+## Activities
+
+For the practical sessions (book activities 6A–6C):
+
+- 6A: the Bain call, before and after reading about the case
+- 6B: transcribe a sentence mixed with train noise at signal-to-noise ratios from −10 dB to +5 dB, and without noise. Where does it become intelligible?
+- 6C: look for evidence of tampering in a recording in Praat, and describe what you find with exact time points
+
+## Summary
+
+::: {.takeaway}
+- Work on recordings follows a [chain of evidence]{.hl}, and experts always work on copies
+- [Authentication]{.hl} looks for edits and synthetic speech: critical listening, the noise floor, splices, ENF, metadata
+- [Enhancement]{.hl} aims at intelligibility, even at the cost of quality. It cannot recover what was never recorded, and every step must be documented
+- Transcripts are interpretations, and need blind analysis, cross-checking and marked uncertainty
+- Questioned utterances are best resolved by acoustic comparison with clear tokens from the same speaker and recording
+- Priming is powerful, so juries should not be given transcripts of passages that experts cannot resolve
+:::
+
+## References {.refs}
+
+- BEA [Bureau d'Enquêtes et d'Analyses] (2016). _Final report: Accident on 24 March 2015 at Prads-Haute-Bléone (Alpes-de-Haute-Provence, France) to the Airbus A320-211 registered D-AIPX operated by Germanwings_.
+- Boss, D., Gfroerer, S., & Neoustroev, N. (2003). A new tool for the visualization of magnetic features on audiotapes. _Forensic Linguistics_, 10, 255–276.
+- Braun, A. (1994). The audio going with the video: Some observations on the Rodney King case. _Forensic Linguistics_, 1(2), 217–222.
+- Foulkes, P., French, P., & Wilson, K. (2019). LADO as forensic speaker profiling. In P. Patrick, M. Schmid, & K. Zwaan (Eds.), _Language analysis for the determination of origin_ (pp. 91–116). Springer.
+- Fraser, H. (2020). Forensic transcription: The case for transcription as a dedicated branch of linguistic science. In M. Coulthard, A. May, & R. Sousa-Silva (Eds.), _The Routledge handbook of forensic linguistics_ (pp. 416–431). Routledge.
+- Fraser, H., Stevenson, B., & Marks, T. (2011). Interpretation of a crisis call: Persistence of a primed perception of a disputed utterance. _International Journal of Speech, Language and the Law_, 18(2), 261–292.
+- French, J. P. (1990). Analytic procedures for the determination of disputed utterances. In H. Kniffka (Ed.), _Texte zu Theorie und Praxis forensischer Linguistik_ (pp. 201–213). Niemeyer.
+
+## References {.refs}
+
+- Kirchhübel, C., & Brown, G. (2022). Spoofed speech from the perspective of a forensic phonetician. _Proceedings of Interspeech 2022_.
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 6.]{.hl}
+- Maher, R. C. (2018). _Principles of forensic audio analysis_. Springer.
+- Morrison, G. S., Lindh, J., & Curran, J. M. (2014). Likelihood ratio calculation for a disputed-utterance analysis with limited available data. _Speech Communication_, 58, 81–90.
+- Tompkinson, J., Haworth, K., Deamer, F., & Richardson, E. (2023). Perceptual instability in police interview records: Examining the effect of pauses and modality on perceptions of an interviewee. _International Journal of Speech, Language and the Law_, 30(1), 22–51.
+- Zjalic, J. (2020). _Digital audio forensics fundamentals: From capture to courtroom_. Focal Press.
+
+## Sources of the animal facts {.refs}
+
+- Corcoran, A. J., Barber, J. R., & Conner, W. E. (2009). Tiger moth jams bat sonar. _Science_, 325(5938), 325–327. https://doi.org/10.1126/science.1174096
+- Corcoran, A. J., & Conner, W. E. (2014). Bats jamming bats: Food competition through sonar interference. _Science_, 346(6210), 745–747. https://doi.org/10.1126/science.1259512
+- Hage, S. R., Jiang, T., Berquist, S. W., Feng, J., & Metzner, W. (2013). Ambient noise induces independent shifts in call frequency and amplitude within the Lombard effect in echolocating bats. _PNAS_, 110(10), 4063–4068. https://doi.org/10.1073/pnas.1211533110
+- Prat, Y., Taub, M., & Yovel, Y. (2016). Everyday bat vocalizations contain information about emitter, addressee, context, and behavior. _Scientific Reports_, 6, 39419. https://doi.org/10.1038/srep39419
+
+## Slides and code
+
+<div class="qr-block">
+<img src="`r qr_uri`" alt="QR code linking to these slides">
+<div>
+<p>These slides</p>
+<p class="qr-link">mcanzi.github.io/ws27_fss/<wbr>`r lecture_file`</p>
+<p>Code and all sessions</p>
+<p class="qr-link">github.com/mcanzi/ws27_fss</p>
+</div>
+</div>
