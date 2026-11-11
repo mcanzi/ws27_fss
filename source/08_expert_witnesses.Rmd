@@ -1,0 +1,416 @@
+---
+title: "Expert witnesses"
+subtitle: "Reports, courts and legal systems"
+author: "Dr Massimiliano Canzi"
+knit: (function(input, ...) rmarkdown::render(input, output_dir = file.path(dirname(input), "..", "docs")))
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    css: theme-purple.css
+    highlight: zenburn
+    incremental: true
+    transition: fade
+    background_transition: fade
+    self_contained: true
+    reveal_options:
+      width: 1050
+      height: 700
+      slideNumber: "c/t"
+      showSlideNumber: all
+      controls: true
+      touch: true
+      transitionSpeed: fast
+      navigationMode: linear
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10, fig.height = 4.4, out.width = "100%")
+library(tidyverse)
+
+source("slides_setup.R", local = knitr::knit_global())
+```
+
+# A case without experts
+
+<style>
+  :root {
+    --footer-text:  "Expert witnesses";
+    --qr:           `r qr_css`;
+    --lecture:      `r lecture_label`;
+  }
+</style>
+
+::: {.fact}
+`Did you know:` white-handed gibbons sing in duets, and a group that spots a predator sings a different song. It uses the same notes as the morning duet, but [in a different order].
+
+_Source: Clarke, Reichard & Zuberbühler (2006), PLoS ONE_
+:::
+
+## A "linguist" who changed his accent
+
+- A Haitian-born American citizen was jailed for drug dealing on the basis of a covert recording. The court agreed that the dealer on the tape spoke African American English. The defendant spoke English with a Haitian Creole accent (Rodman, 2002)
+- The prosecution said he had disguised his voice. He had worked as an interpreter in the army, so he was a "linguist", and a dictionary definition of "linguist" mentioned sound change. They read this as an ability to change one's voice
+
+. . .
+
+The jury was persuaded that he was the speaker on the tape. No expert witness was called by either side to challenge the claim.
+
+## Today
+
+1. Who counts as an expert
+2. Rules for expert evidence in the US and the UK
+3. Principles and regulation
+4. Writing the report
+5. The expert in court
+
+. . .
+
+This session follows chapter 13 of Leemann et al. (2024).
+
+# Who is an expert?
+
+::: {.fact}
+`Did you know:` when one gibbon group sang its predator song, [neighbouring groups] joined in, and gibbons that were away from their group answered it.
+
+_Source: Clarke, Reichard & Zuberbühler (2006), PLoS ONE_
+:::
+
+## Specialist knowledge
+
+- An [expert witness]{.hl} gives an opinion or a specialist service in a legal case because of their knowledge, training and skills. In the UK, expert evidence is "information which is likely to be outside the experience and the knowledge of a judge or jury"
+- Language experts have a long history in court. In 1494, a court in Ireland called "masters of grammar" to explain a Latin word
+- Most cases are criminal, in national or state courts. Speaker comparison evidence was also heard at the UN war crimes tribunals, against Radislav Krstić and Slobodan Milošević
+- Experts also appear in civil cases, such as trademark disputes, and in employment tribunals
+
+## A first time for everything
+
+- Many legal systems know little about the value and limits of forensic sciences. A judge may have to decide whether to admit a kind of evidence for the first time
+- In the 2007 Ghana drugs case (sessions 4 and 6), forensic speech and audio analysis was used in Ghana for the first time. The team wrote a short report on the field for the judge before the trial, and answered his questions about whether to admit it
+
+. . .
+
+Courts also need to rely only on reputable disciplines. Automatic speaker recognition (session 4) is used in evidence in several countries, but has not yet been accepted in a UK case.
+
+# Rules in the US and the UK
+
+::: {.fact}
+`Did you know:` gibbons sing like trained [sopranos]. Recorded in a helium-enriched atmosphere, a gibbon tuned its vocal tract resonance to the pitch of its voice, the technique human sopranos use to sing high notes loudly.
+
+_Source: Koda et al. (2012), American Journal of Physical Anthropology_
+:::
+
+## Frye: general acceptance
+
+- For decades, US courts used the [Frye test]{.hl}, from a 1923 case about a lie detector that measured systolic blood pressure. Scientific evidence was admitted if it had "gained general acceptance in the particular field in which it belongs"
+- The trouble was the "particular field". For the lie detector, it could be lie detector technicians, haematologists or medical experts in general, and general acceptance depends on which one you choose
+- In 1975, Rule 702 of the new Federal Rules of Evidence admitted expert evidence that would "assist the trier of fact". It was unclear whether this added to Frye or replaced it
+
+## Daubert: scientific method
+
+In Daubert v. Merrell Dow Pharmaceuticals (1993), the US Supreme Court asked whether the expert's testimony on a pregnancy drug was scientifically valid. Under the [Daubert standard]{.hl}, the trial judge acts as gatekeeper and asks:
+
+1. Has the theory been tested?
+2. Has it been peer reviewed and published?
+3. What is its known error rate?
+4. Is it generally accepted in the scientific community?
+
+## Kumho and Rule 702
+
+- Two later cases completed the "Daubert trilogy". General Electric v. Joiner (1997) added guidance on reviewing these decisions, and [Kumho Tire v. Carmichael]{.hl} (1999) applied the Daubert standard to experts whose testimony rests on experience as well as on science. The expert must bring to court "the same level of intellectual rigor" as in their field
+- Rule 702 was revised in 2000. Testimony must rest on sufficient facts or data, come from reliable principles and methods, and apply them reliably to the case. A 2023 amendment says the party calling the expert must show this is more likely than not
+- Daubert applies in federal courts and more than half of the states. A few states, among them California, Illinois, New York, Pennsylvania and Washington, still apply Frye, and others follow neither
+
+## Voiceprints under Frye
+
+- The uneven rules show in [voiceprint]{.hl} evidence, the visual matching of spectrograms as if they were fingerprints (session 4). In the 1960s and 1970s a small group of practitioners used it; most phoneticians considered it invalid
+- Was it "generally accepted"? That depended on whether the field was voiceprint examiners or speech science. It was accepted in Alaska and Maine, and rejected in California, Maryland and Pennsylvania (Tiersma & Solan, 2002)
+
+. . .
+
+US judges routinely admit testimony on foreign languages, non-standard registers and trademarks. Opinion on legal language or the meaning of standard English is less established. Forensic phonetic speaker comparison has been used in over 150 cases and 40 trials (Hollien, 2016).
+
+## The United Kingdom
+
+- UK courts look mainly at the expert, while US courts look at the method. In [R v Silverlock]{.hl} (1894), a solicitor who had studied handwriting as a hobby was accepted as a handwriting expert
+- [R v Robb]{.hl} (1991) was a speaker comparison case. The prosecution expert used auditory analysis only; the defence expert argued acoustic analysis was needed. The judge admitted the evidence: the method was a minority one, but it had not been shown to be wrong
+- In [R v O'Doherty]{.hl} (2002), acoustic evidence was critical to the conclusion. A Northern Ireland appeal court ruled that most phonetic cases there should include acoustic analysis. Courts in England and Wales have kept their distance from this ruling
+
+## A century of rulings
+
+```{r timeline, fig.height = 3.6}
+ev <- tribble(
+  ~year, ~label, ~where,
+  1894, "R v Silverlock", "UK",
+  1923, "Frye", "US",
+  1975, "Federal Rules\nof Evidence", "US",
+  1991, "R v Robb", "UK",
+  1993, "Daubert", "US",
+  1997, "Joiner", "US",
+  1999, "Kumho", "US",
+  2000, "Rule 702\nrevised", "US",
+  2002, "R v O'Doherty", "UK",
+  2008, "Forensic Science\nRegulator", "UK",
+  2010, "R v T", "UK",
+  2023, "Rule 702\namended", "US",
+  2023, "Statutory\nCode of Practice", "UK"
+) |>
+  mutate(i = row_number(), where = factor(where, levels = c("UK", "US")),
+         lab = paste0(label, "\n", year))
+ggplot(ev, aes(i, where, colour = where)) +
+  geom_hline(aes(yintercept = as.numeric(where)), colour = muted, linewidth = 0.4) +
+  geom_point(size = 4, show.legend = FALSE) +
+  geom_text(aes(label = lab, vjust = if_else(i %% 2 == 0, -0.6, 1.6)),
+            size = 3.4, lineheight = 0.9, colour = mist, show.legend = FALSE) +
+  scale_colour_manual(values = c(UK = hornbill, US = kingfisher)) +
+  scale_y_discrete(expand = expansion(add = 0.9)) +
+  scale_x_continuous(expand = expansion(add = 0.6)) +
+  labs(x = NULL, y = NULL) +
+  theme(axis.text.x = element_blank(), axis.ticks = element_blank(),
+        panel.grid = element_blank(), axis.text.y = element_text(size = 14))
+```
+
+Events in order, with even spacing. The first statutory Code covers England and Wales.
+
+# Principles and regulation
+
+::: {.fact}
+`Did you know:` gibbon duets have [rhythm]. In 215 recordings of 12 lar gibbons, note onsets were more regular, like the ticking of a clock, when the gibbons sang in duet than when they sang alone.
+
+_Source: Raimondi et al. (2023), Proceedings of the Royal Society B_
+:::
+
+## Four principles
+
+Rhodes and Cambier-Langeveld (in press) describe four principles for forensic practitioners.
+
+- Analysis and reporting must show [impartiality]{.hl}. Experts owe their duty to the court
+- They need [transparency]{.hl}. Every step is documented and, ideally, another expert could reproduce it
+- [Validity]{.hl} means well-founded conclusions, from tests on appropriate data
+- [Effectiveness]{.hl} means fitting the time and budget of the case. In a kidnapping, the police need to know quickly who the caller is, and a detailed report that comes too late does not help
+
+## Who instructs the expert?
+
+- In [inquisitorial]{.hl} systems, common in Europe, the court instructs the expert, who is impartial by definition
+- In [adversarial]{.hl} systems, such as the US, UK and Australia, the prosecution or the defence engages the expert. The duty is still to the court, and the opinion may help the other side
+
+## The chain of custody
+
+Transparency includes the [chain of custody]{.hl}: who handed which material to whom, when and how, and who analysed it. If it is incomplete, the report may be inadmissible, because the material could have been altered. One entry might read:
+
+```
+Dr Parker - 01/01/2021 - opened sealed exhibit bag M5738276;
+copied interview audio from data-format CD 'Disc/01';
+converted to PCM WAV 44.1 kHz, 16 bit, 2-channel stereo
+using [SoftwareX]; file duration 01:30:00
+```
+
+Adapted from Leemann et al. (2024).
+
+## Staying within your expertise
+
+- Experts say when a question falls outside their expertise, and do not answer it. In the Ghana case, the UK experts agreed in advance that a Ghanaian linguist on the team would answer all questions about Ghanaian languages
+- They tell the instructing party if their view changes, for example because of new evidence or another expert's testimony
+
+## Limiting bias
+
+- The analyst only needs the question, for example whether the speaker in recording X is the speaker in recording Y. In larger labs, a colleague can handle the client and control what the analyst learns, and when
+- In the David Bain case (session 6), several analysts first transcribed the recording without knowing it contained a questioned utterance. They were told afterwards, and only then compared the versions offered by different parties
+- Analysts who work alone find this harder, and police officers and lawyers are often keen to tell them everything about the case
+
+## Hired guns and ethics
+
+- Experts must never act as [hired guns]{.hl} for the party that pays them, though such cases have been reported (Butters, 2009)
+- Some experts refuse certain kinds of case, such as child abuse, or work for jurisdictions with the death penalty. Once they accept a case, they put moral judgement aside: doubt or negative evidence must be reported, however damning the rest of the case looks
+
+## Regulation
+
+- England and Wales have had a [Forensic Science Regulator]{.hl} since 2008. Since the Forensic Science Regulator Act 2021 the post has statutory powers, and a statutory Code of Practice has applied since October 2023. It covers speech and audio analysis
+- Forensic linguistics is not among the activities the Regulator defines. In the US, there are calls for more consistent standards across forensic sciences (Servick, 2016)
+- Professional bodies have their own codes, such as IAFPA for forensic phonetics and IAFLL for forensic linguistics. Public confidence also means countering the [CSI effect]{.hl} of session 6
+
+# Writing the report
+
+::: {.fact}
+`Did you know:` in gibbon duets, each partner's [note onsets] predict the other's, and the two sing in synchrony more often than chance. Males and females differ in how they balance their own regularity against keeping time with the partner.
+
+_Source: Raimondi et al. (2023), Proceedings of the Royal Society B_
+:::
+
+## Written for non-experts
+
+- Most reports by language experts are for speaker comparison, and police officers, lawyers and juries must be able to follow them. They should be short, as non-technical as possible, and explain key terms
+- Likelihood ratios are hard to explain. In [R v T]{.hl} (2010), the Court of Appeal rejected numerical likelihood ratios partly because juries might not understand them (see Berger et al., 2011)
+
+## What goes in a speaker comparison report {.smaller}
+
+| Section       | Contents                                                                 |
+|---------------|--------------------------------------------------------------------------|
+| Instructions  | the instructions received                                                |
+| Materials     | recordings, durations, formats, transcripts, file names                  |
+| Tools         | software such as Praat, computer and headphones, key literature          |
+| Methods       | auditory, acoustic and automatic analysis; features examined; peer review |
+| Conclusions   | the results for a lay reader, with the typicality of shared features      |
+| Appendices    | detailed observations, the analysts' CVs, equipment, references           |
+
+The report also states the scale of conclusions used, how typicality was estimated, and that the expert understands and has met their duty to the court.
+
+## A standard caveat
+
+IAFPA members add a caveat to their reports:
+
+- Speaker comparison evidence is not comparable to fingerprints or DNA, because other people in the population may be indistinguishable in voice and speech
+- The analysis gives an opinion, supported by the phonetic and acoustic features examined, and should usually be used to corroborate other evidence
+
+## Keep everything
+
+The court, or an expert for the other side, may ask for working notes and measurements, so these must be organised.
+
+- In the Bain case, one expert's final transcript had left the questioned utterance blank. Earlier drafts, requested by the court, contained words close to the versions of other experts
+- Some experts publish reports online, such as Rose (2009) on the Bain utterance and Morrison (2014) on a Canadian speaker comparison report
+
+# The expert in court
+
+::: {.fact}
+`Did you know:` gibbons sing in dense rainforest. With soprano tuning, the voice puts its energy into one [pure tone], and the authors link these melodious songs to life in dense forest where visibility is poor.
+
+_Source: Koda et al. (2012), American Journal of Physical Anthropology_
+:::
+
+## Few cases reach court
+
+```{r waffle, fig.height = 3.4}
+waf <- expand_grid(field = c("Forensic phonetics (about 3%)", "Shuy's linguistics cases (about 10%)"),
+                   cell = 1:100) |>
+  mutate(x = (cell - 1) %% 20, y = (cell - 1) %/% 20,
+         court = if_else(str_detect(field, "phonetics"), cell <= 3, cell <= 10),
+         field = fct_inorder(field))
+ggplot(waf, aes(x, y, fill = court)) +
+  geom_tile(colour = floor_col, linewidth = 1.2, width = 0.9, height = 0.9) +
+  facet_wrap(~ field, ncol = 1) +
+  scale_fill_manual(values = c(`FALSE` = muted, `TRUE` = kingfisher),
+                    labels = c("No court appearance", "Gave evidence in court"), name = NULL) +
+  coord_equal() +
+  labs(x = NULL, y = NULL) +
+  theme(axis.text = element_blank(), axis.ticks = element_blank(), panel.grid = element_blank(),
+        legend.position = "right")
+```
+
+Each square is one case in 100. Rates from Rhodes and Cambier-Langeveld (in press: 2–3%) and Shuy (2002: about 10%).
+
+## Why so few?
+
+- Much of the work helps the police during the investigation, for example with speaker profiling, or supports access to rights, such as making the police caution understandable
+- Many cases never reach trial, and all parties may accept a report without questioning the expert
+- If a report does not help the party that ordered it, that line of evidence may be dropped
+- Defendants often plead guilty at the last minute, sometimes while the expert is on the way to court
+
+## Evidence that is not admitted
+
+- Some judges treat listening and reading as everyday matters a jury can handle. Before the Bain retrial, the judge ruled that no expert was needed to listen to the recording. An appeal court overturned this
+- In the murder trial of George Zimmerman in Florida (2013), the prosecution wanted automatic speaker recognition evidence on about two seconds of screams from a telephone call. After hearing several experts, the judge refused it: the method could not reliably analyse screams, or such short material
+
+## On the stand
+
+The expert confirms their credentials, and the barrister usually summarises the report while the expert confirms it.
+
+- In an inquisitorial court, the judge may then question the expert to clarify the facts
+- In an adversarial court, the other side's barrister may [cross-examine]{.hl} the expert. The prosecution carries the burden of proof; the defence only needs to leave reasonable doubt
+
+## Under attack
+
+- A common tactic is to expose inconsistencies or gaps in expertise. In Ghana, the defence repeatedly pointed to the UK experts' lack of knowledge of Ghanaian languages; they referred those questions to their Ghanaian colleague
+- In one UK case, barristers went through an expert's CV to show the court that the expert had no recent publications and had not attended conferences for years
+- In a US case, a young female academic on her first case had asked an eminent male expert for advice. He then testified for the other side, mostly about his experience and the fact that he had advised her. The phonetic analysis was largely sidelined
+
+## After the case
+
+- When experts disagree, they usually meet to narrow their differences and write a [joint statement]{.hl} of where they agree and why they still disagree. This helps the court a great deal
+- Experts often never learn whether their evidence made a difference. Their work should not be judged by convictions or "wins": cases are decided on many grounds, and the duty is to the court
+
+## Discussion
+
+- Should courts judge the expert, as in the UK, or the method, as under Daubert?
+- Which of the four principles is hardest to keep for an expert who works alone?
+
+## Activity
+
+For the practical sessions (our own activity; the chapter has none):
+
+1. Take the simulated speaker comparison from session 4 and write the chain of custody entry for the two recordings
+2. Draft the outline of the report, following the sections on the report slide
+3. Swap outlines with a partner, who cross-examines you on one weakness, as the opposing barrister would
+4. Write down one question you should refer to another expert
+
+## Across the course
+
+1. Forensic phonetics and forensic linguistics
+2. Phonetic analysis
+3. Speaker profiling
+4. Speaker comparison
+5. Earwitness evidence
+6. Authentication, enhancement and speech content
+7. Linguistic analysis in the asylum procedure
+8. Expert witnesses
+
+. . .
+
+The book ends with the experts' duty to explain their field to courts and the public.
+
+## Summary
+
+::: {.takeaway}
+- An [expert witness]{.hl} brings knowledge outside the experience of a judge or jury
+- US courts test the method ([Frye]{.hl}, then [Daubert]{.hl}); UK courts mainly judge the expert
+- Experts follow principles of [impartiality]{.hl}, [transparency]{.hl}, [validity]{.hl} and [effectiveness]{.hl}, and owe their duty to the court
+- Reports are written for non-experts and keep a full record of materials, methods and notes
+- Few cases reach court; those that do may involve tough [cross-examination]{.hl}
+:::
+
+## References {.refs}
+
+- Berger, C. E., Buckleton, J., Champod, C., Evett, I. W., & Jackson, G. (2011). Evidence evaluation: A response to the court of appeal judgment in R v T. _Science & Justice_, 51(2), 43–49.
+- Butters, R. R. (2009). The forensic linguist's professional credentials. _International Journal of Speech, Language and the Law_, 16(2), 237–252.
+- Finegan, E. (2021). Expert testimony by linguists in US courts: An illustrative case of practices. _Language and Law/Linguagem e Direito_, 8(1), 22–42.
+- Hollien, H. (2016). An approach to speaker identification. _Journal of Forensic Sciences_, 61(2), 334–344.
+- Keierleber, J. A., & Bohan, T. L. (2005). Ten years after Daubert: The status of the States. _Journal of Forensic Sciences_, 50, 1154–1163.
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapter 13.]{.hl}
+- Morrison, G. S. (2014). _Critique of a forensic voice comparison report submitted by Mr Edward J Primeau_. Unpublished report.
+
+## References {.refs}
+
+- Rhodes, R., & Cambier-Langeveld, T. (in press). Guidance for practitioners. In F. Nolan, K. McDougall, & T. Hudson (Eds.), _Oxford Handbook of Forensic Phonetics_. Oxford University Press.
+- Rodman, R. (2002). Linguistics and the law: How knowledge of, or ignorance of, elementary linguistics may affect the dispensing of justice. _International Journal of Speech, Language and the Law_, 9(1), 94–103.
+- Rose, P. (2009). _Evaluation of disputed utterance evidence in the matter of David Bain's retrial_. Unpublished report.
+- Servick, K. (2016). Reversing the legacy of junk science in the courtroom. _Science_, 7 March.
+- Shuy, R. W. (2002). To testify or not to testify? In J. Cotterill (Ed.), _Language in the Legal Process_ (pp. 3–18). Palgrave.
+- Tiersma, P., & Solan, L. M. (2002). The linguist on the witness stand: Forensic linguistics in American courts. _Language_, 78, 221–239.
+- Forensic Science Regulator (2025). _Code of Practice_, version 2.
+
+## Cases {.refs}
+
+- Daubert v. Merrell Dow Pharmaceuticals, Inc., 509 U.S. 579 (1993)
+- Frye v. United States, 293 F. 1013 (D.C. Cir. 1923)
+- General Electric Co. v. Joiner, 522 U.S. 136 (1997)
+- Kumho Tire Co. v. Carmichael, 526 U.S. 137 (1999)
+- R v O'Doherty (2002), Northern Ireland Court of Appeal
+- R v Robb (1991) 93 Cr App R 161
+- R v Silverlock [1894] 2 QB 766
+- R v T [2010] EWCA Crim 2439
+
+## Sources of the animal facts {.refs}
+
+- Clarke, E., Reichard, U. H., & Zuberbühler, K. (2006). The syntax and meaning of wild gibbon songs. _PLoS ONE_, 1(1), e73. https://doi.org/10.1371/journal.pone.0000073
+- Koda, H., Nishimura, T., Tokuda, I. T., Oyakawa, C., Nihonmatsu, T., & Masataka, N. (2012). Soprano singing in gibbons. _American Journal of Physical Anthropology_. https://doi.org/10.1002/ajpa.22124
+- Raimondi, T., Di Panfilo, G., Pasquali, M., Zarantonello, M., Favaro, L., Savini, T., Gamba, M., & Ravignani, A. (2023). Isochrony and rhythmic interaction in ape duetting. _Proceedings of the Royal Society B_, 290, 20222244. https://doi.org/10.1098/rspb.2022.2244
+
+## Slides and code
+
+<div class="qr-block">
+<img src="`r qr_uri`" alt="QR code linking to these slides">
+<div>
+<p>These slides</p>
+<p class="qr-link">mcanzi.github.io/ws27_fss/<wbr>`r lecture_file`</p>
+<p>Code and all sessions</p>
+<p class="qr-link">github.com/mcanzi/ws27_fss</p>
+</div>
+</div>
