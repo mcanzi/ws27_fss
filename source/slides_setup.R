@@ -1,7 +1,7 @@
 slide_palette <- list(
-  pandan = "#9d6bf0", hornbill = "#c9a23f", kingfisher = "#e2772f", orchid = "#d16fb8",
-  mist = "#e7e0f2", moss = "#8a7aa6", muted = "#9b8fb0", floor_col = "#0c0911",
-  vine = "#2f2541", dim_col = "#1c1527", qr_dark = "#0c0911", qr_light = "#e7e0f2"
+  pandan = "#a06ae6", hornbill = "#8db6c6", kingfisher = "#d5813f", orchid = "#cf6a80",
+  mist = "#ebe2cd", moss = "#8fa24a", muted = "#a69d89", floor_col = "#121310",
+  vine = "#343a2e", dim_col = "#21241e", qr_dark = "#121310", qr_light = "#ebe2cd"
 )
 list2env(slide_palette, envir = environment())
 
