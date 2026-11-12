@@ -363,7 +363,7 @@ For the next session, in pairs:
 <img src="`r qr_uri`" alt="QR code linking to these slides">
 <div>
 <p>These slides</p>
-<p class="qr-link">mcanzi.github.io/ws27_fss/<wbr>`r lecture_file`</p>
+<p class="qr-link">mcanzi.de/ws27_fss/<wbr>`r lecture_file`</p>
 <p>Code and all sessions</p>
 <p class="qr-link">github.com/mcanzi/ws27_fss</p>
 </div>

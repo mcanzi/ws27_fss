@@ -17,11 +17,11 @@ Slides for *Introduction to Forensic Speech Science* (Dr Massimiliano Canzi, Dep
 | 11 | Praat practical 1: measuring your own voice | 2, 4 |
 | 12 | Praat practical 2: casework with the class recordings | 3–5 |
 
-The slides are online at [mcanzi.github.io/ws27_fss](https://mcanzi.github.io/ws27_fss/01_course_introduction.html).
+The slides are online at [mcanzi.de/ws27_fss](https://mcanzi.de/ws27_fss/01_course_introduction.html).
 
 ## Rendering the slides
 
-Knit `source/render_all.Rmd` to render every session into `docs`, which GitHub Pages serves. Knitting a single session also writes its HTML into `docs`. All sessions use the sunset theme of mcanzi.github.io (`source/theme-sunset.css`): the colours of a sunset over Almaty, with oranges drawn in ink in the background; `source/slides_setup.R` sets the plot colours to match it (orange, dusk blue and pink for groups). The fonts are in `source/fonts` and are embedded in each HTML file.
+Knit `source/render_all.Rmd` to render every session into `docs`, which GitHub Pages serves. Knitting a single session also writes its HTML into `docs`. All sessions use the sunset theme of mcanzi.de (`source/theme-sunset.css`): the colours of a sunset over Almaty, with oranges drawn in ink in the background; `source/slides_setup.R` sets the plot colours to match it (orange, dusk blue and pink for groups). The fonts are in `source/fonts` and are embedded in each HTML file.
 
 Requires `tidyverse` and `revealjs`; optional: `qrcode` (QR codes), `ragg` and `systemfonts` (Atkinson Hyperlegible in the figures).
 
