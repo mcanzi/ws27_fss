@@ -41,9 +41,9 @@ source("slides_setup.R", local = knitr::knit_global())
 </style>
 
 ::: {.fact}
-`Did you know:` Japanese tits combine an "ABC" call, which means "scan for danger", with a "D" call, which means "come here". Birds that heard ABC–D scanned and approached, but they rarely reacted when researchers played the same calls in [reverse order]{.hl}.
+`Did you know:` vervet monkeys give [different alarm calls]{.hl} for leopards, eagles and snakes. When researchers played the recorded calls with no predator around, the monkeys ran into trees at leopard alarms, looked up at eagle alarms and looked down at snake alarms.
 
-_Source: Suzuki, Wheatcroft & Griesser (2016), Nature Communications_
+_Source: Seyfarth, Cheney & Marler (1980), Science_
 :::
 
 ## The caution
@@ -77,9 +77,9 @@ Chapter 10 of Leemann et al. (2024) covers this topic. These slides draw directl
 # Rights in words
 
 ::: {.fact}
-`Did you know:` Japanese tits also respond to a [mixed-species]{.hl} sequence, their own alert call followed by the recruitment call of the willow tit, a species they share flocks with. Played in the reverse order, the same calls got little response.
+`Did you know:` young vervet monkeys have to learn what their alarm calls refer to. Infants give eagle alarms to many harmless birds, and even to falling leaves, and only become [more selective]{.hl} with age and experience.
 
-_Source: Suzuki, Wheatcroft & Griesser (2017), Current Biology_
+_Source: Seyfarth, Cheney & Marler (1980), Science_
 :::
 
 ## All at once or one at a time
@@ -124,9 +124,9 @@ Eastwood and Snook (2012) rewrote a Canadian caution for listeners, adding instr
 # Police interviews
 
 ::: {.fact}
-`Did you know:` Japanese tits give a special "jar" call only when they meet a snake. Birds that heard a recording of it approached a [stick]{.hl} moved like a snake up a tree trunk. With other calls, or with a stick that moved differently, they ignored it.
+`Did you know:` in an experiment in South Africa, vervet groups learned to avoid maize of one colour. When young males later moved to a group that preferred the other colour, most of them switched to the [local preference]{.hl}.
 
-_Source: Suzuki (2018), PNAS_
+_Source: van de Waal, Borgeaud & Whiten (2013), Science_
 :::
 
 ## From confession to information
@@ -200,9 +200,9 @@ Next session we look at a case where linguists tested whose words a "verbatim" s
 # Questions in court
 
 ::: {.fact}
-`Did you know:` Japanese tits use a [gesture]{.hl}. At the nest box, a female often flutters her wings at her mate, who then enters first. Over more than 320 nest visits, the fluttering happened only when the mate was present.
+`Did you know:` vervet monkeys keep track of who is [unreliable]{.hl}. After hearing one monkey's call about a neighbouring group again and again with no neighbours in sight, they also ignored that monkey's other calls with the same meaning.
 
-_Source: Suzuki & Sugita (2024), Current Biology_
+_Source: Cheney & Seyfarth (1988), Animal Behaviour_
 :::
 
 ## Who controls the talk?
@@ -249,9 +249,9 @@ At the end of a trial, the judge explains the relevant law to the jury, often re
 # Interpreters
 
 ::: {.fact}
-`Did you know:` Japanese tit nestlings react to their parents' alarm calls. At the "chicka" call for crows they crouch in the nest, but at the "jar" call for snakes, which can enter the nest, they [jump out]{.hl}. In the experiment, nestlings in all 10 nests tested with a snake left.
+`Did you know:` green monkeys in Senegal, close relatives of vervets, had no eagle alarm. When researchers flew a drone over them, they gave a new alarm call that sounded [almost the same]{.hl} as the eagle alarm of East African vervets, although the two species split about 3.5 million years ago.
 
-_Source: Suzuki (2011), Current Biology_
+_Source: Wegdell, Hammerschmidt & Fischer (2019), Nature Ecology & Evolution_
 :::
 
 ## The interpreter's words are the evidence
@@ -330,11 +330,10 @@ For the next session:
 
 ## Sources of the animal facts {.refs}
 
-- Suzuki, T. N. (2011). Parental alarm calls warn nestlings about different predatory threats. _Current Biology_, 21(1), R15–R16. https://doi.org/10.1016/j.cub.2010.11.027
-- Suzuki, T. N. (2018). Alarm calls evoke a visual search image of a predator in birds. _PNAS_, 115(7), 1541–1545. https://doi.org/10.1073/pnas.1718884115
-- Suzuki, T. N., & Sugita, N. (2024). The 'after you' gesture in a bird. _Current Biology_, 34(6), R231–R232. https://doi.org/10.1016/j.cub.2024.01.030
-- Suzuki, T. N., Wheatcroft, D., & Griesser, M. (2016). Experimental evidence for compositional syntax in bird calls. _Nature Communications_, 7, 10986. https://doi.org/10.1038/ncomms10986
-- Suzuki, T. N., Wheatcroft, D., & Griesser, M. (2017). Wild birds use an ordering rule to decode novel call sequences. _Current Biology_, 27(15), 2331–2336. https://doi.org/10.1016/j.cub.2017.06.031
+- Cheney, D. L., & Seyfarth, R. M. (1988). Assessment of meaning and the detection of unreliable signals by vervet monkeys. _Animal Behaviour_, 36(2), 477–486. https://doi.org/10.1016/S0003-3472(88)80018-6
+- Seyfarth, R. M., Cheney, D. L., & Marler, P. (1980). Monkey responses to three different alarm calls: Evidence of predator classification and semantic communication. _Science_, 210(4471), 801–803. https://doi.org/10.1126/science.7433999
+- van de Waal, E., Borgeaud, C., & Whiten, A. (2013). Potent social learning and conformity shape a wild primate's foraging decisions. _Science_, 340(6131), 483–485. https://doi.org/10.1126/science.1232769
+- Wegdell, F., Hammerschmidt, K., & Fischer, J. (2019). Conserved alarm calls but rapid auditory learning in monkey responses to novel flying objects. _Nature Ecology & Evolution_, 3(7), 1039–1042. https://doi.org/10.1038/s41559-019-0903-5
 
 ## Slides and code
 
