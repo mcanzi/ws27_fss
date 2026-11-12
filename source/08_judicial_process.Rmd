@@ -48,21 +48,20 @@ _Source: Suzuki, Wheatcroft & Griesser (2016), Nature Communications_
 
 ## The caution
 
-Since the mid-1990s, police in England and Wales have cautioned suspects in these words (PACE Code C, paragraph 10.5):
+Since the mid-1990s, suspects in England and Wales have heard the [police caution]{.hl} in these words (PACE Code C, 10.5):
 
 > You do not have to say anything. But it may harm your defence if you do not mention when questioned something which you later rely on in court. Anything you do say may be given in evidence.
 
 . . .
 
-Three sentences, 37 words. The second one carries the legal change: since the Criminal Justice and Public Order Act 1994, a court may draw conclusions from a suspect's silence.
+The second of its three sentences reflects the Criminal Justice and Public Order Act 1994, which lets a court draw conclusions from a suspect's silence.
 
 ## Did suspects understand it?
 
 Fenner, Gudjonsson and Clare (2002) tested 30 suspects in police detention and 24 people at a job centre in the same area, matched for intellectual ability.
 
 - After hearing the caution as the police give it, more than 96% said they had understood it fully. None of them could explain it fully
-- Even under the best experimental conditions, only 6 people (11%) showed full understanding
-- Neither being in custody nor self-reported experience with the police made a difference
+- Even under the best experimental conditions, only 6 people (11%) showed full understanding, and neither being in custody nor experience with the police made a difference
 
 ## Today
 
@@ -106,21 +105,21 @@ Data from Clare, Gudjonsson and Harari (1998). The caution replaced a 60-word dr
 
 ## Miranda
 
-In _Miranda v. Arizona_ (1966), the US Supreme Court ruled that suspects in custody must be told of their rights before questioning: to remain silent, and to have a lawyer. The Court did not fix the wording.
+In _Miranda v. Arizona_ (1966), the US Supreme Court ruled that suspects in custody must be read the [Miranda warnings]{.hl} before questioning: to remain silent, and to have a lawyer. The Court did not fix the wording.
 
 - Rogers and colleagues (2007) collected 560 versions of the Miranda warnings used across the United States
-- Measured by Flesch-Kincaid reading level, the easiest needed about [second-grade]{.hl} reading skills. The hardest needed postgraduate education
-- A later survey of 945 jurisdictions found 866 versions, from 21 to 408 words long (Rogers et al., 2008)
+- Measured by Flesch-Kincaid reading level, the easiest needed about second-grade reading skills. The hardest needed postgraduate education
+
+A later survey of 945 jurisdictions found 866 versions, from 21 to 408 words long (Rogers et al., 2008).
 
 ## Why rights get lost
 
-- Suspects hear the caution once, under stress, from the person who will question them
-- Saying "yes, I understand" is the easy answer. Admitting confusion feels risky
+- Suspects hear the caution once, under stress, from the person who will question them. Saying "yes, I understand" is easier than admitting confusion
 - Many suspects assume they already know their rights, and stop listening
 
 . . .
 
-Wording can be improved. Eastwood and Snook (2012) rewrote a Canadian caution for listeners, with instructions, a list of the rights and explanations in other words: 73% of the information was understood, against 37% for the original.
+Eastwood and Snook (2012) rewrote a Canadian caution for listeners, adding instructions, a list of the rights and explanations in other words. Listeners understood 73% of the information, against 37% for the original.
 
 # Police interviews
 
@@ -135,7 +134,7 @@ _Source: Suzuki (2018), PNAS_
 In the 1970s and 1980s, the Court of Appeal in England and Wales found that several high-profile convictions rested on confessions that were not voluntary.
 
 - The Police and Criminal Evidence Act 1984 (PACE) brought in rules for detention and interviews, including tape-recording
-- In 1992, police training moved to [investigative interviewing]{.hl}: the aim of an interview is to gather reliable information, and a confession is one possible outcome among others
+- In 1992, police training moved to [investigative interviewing]{.hl}, which aims to gather reliable information. A confession is one possible outcome among others
 
 ## PEACE
 
@@ -149,26 +148,29 @@ In the 1970s and 1980s, the Court of Appeal in England and Wales found that seve
 
 ## The accusatorial alternative
 
-The best-known accusatorial method is the [Reid technique]{.hl}, widely taught in the United States. The interviewer presumes guilt, confronts the suspect, rejects denials and may minimise the offence or claim evidence that does not exist.
+The best-known [accusatorial]{.hl} method is the [Reid technique]{.hl}, widely taught in the United States. The interviewer presumes guilt, confronts the suspect, rejects denials and may minimise the offence or claim evidence that does not exist.
 
 . . .
 
 A meta-analysis of experiments where the truth was known compared the two styles with plain direct questioning (Meissner et al., 2014):
 
 - Accusatorial methods raised the number of true confessions, and also the number of false ones
-- Information-gathering methods kept or raised true confessions while reducing false ones
+- [Information-gathering]{.hl} methods kept or raised true confessions while reducing false ones
+
+## Discussion
+
+Accusatorial interviews produce more confessions overall, false ones included. Imagine a police chief whose force is judged on how many cases it solves.
+
+What would persuade them to switch to PEACE? And who pays the price if they don't?
 
 ## Suggestibility
 
-Some people give in to questioning more than others. Gudjonsson (1984) built a test for this.
+Some people give in to questioning more than others. Gudjonsson (1984) built a test of this [interrogative suggestibility]{.hl}.
 
-- The interviewee hears a short story and recalls it. Then come 20 questions, 15 of them leading
+- The interviewee hears a short story and recalls it. Then come 20 questions, 15 of them [leading questions]{.hl}
 - After the first round, the interviewer says firmly that there were several mistakes, and asks all the questions again
-- [Yield]{.hl} counts how many leading questions the person accepts. [Shift]{.hl} counts how many answers change after the negative feedback
 
-. . .
-
-Adolescents, people with poorer memory and anxious interviewees tend to score higher.
+[Yield]{.hl} counts how many leading questions the person accepts, and [shift]{.hl} how many answers change after the negative feedback. Adolescents and anxious interviewees tend to score higher, and so do people with poorer memory.
 
 ## One verb
 
@@ -184,12 +186,11 @@ ggplot(speed, aes(verb, mph)) +
        y = "Mean estimate (mph)")
 ```
 
-Loftus and Palmer (1974): students watched films of car crashes. A week later, 32% of those asked the "smashed" question remembered broken glass, against 14% for "hit" and 12% with no speed question. There was no broken glass in the film.
+Loftus and Palmer (1974): students watched films of car crashes. A week later, 32% of those asked the "smashed" question remembered broken glass, which the film did not show, against 14% for "hit" and 12% with no speed question.
 
 ## Who writes the statement?
 
-- Until tape-recording, a suspect's statement was often written by an officer and signed by the suspect
-- In the UK, many witness statements are still written this way: the officer listens, writes, and reads back
+- Until tape-recording, a suspect's statement was often written by an officer and signed by the suspect. In the UK, many witness statements are still written this way: the officer listens, writes, and reads back
 - What ends up on paper can follow the officer's wording more than the speaker's
 
 . . .
@@ -208,9 +209,8 @@ _Source: Suzuki & Sugita (2024), Current Biology_
 
 In adversarial systems such as those of the UK, the US and Australia, lawyers ask and witnesses answer.
 
-- In cross-examination, lawyers prefer closed questions: yes/no questions, tag questions ("You were there, weren't you?") and statements to be confirmed
-- The witness rarely gets to tell the story in their own order or words
-- The lawyer's version of events is in the question; the witness can only accept it or resist it
+- In [cross-examination]{.hl}, lawyers prefer [closed questions]{.hl}: yes/no questions, [tag questions]{.hl} ("You were there, weren't you?") and statements to be confirmed
+- The witness rarely tells the story in their own order or words. The lawyer's version of events is in the question, and the witness can accept it or resist it
 
 ## Gratuitous concurrence
 
@@ -228,19 +228,21 @@ In May 1994, six Queensland police officers picked up three Aboriginal boys, age
 
 - The officers were charged, and the boys were the prosecution witnesses
 - In cross-examination, defence lawyers asked long series of leading questions, and the boys often answered with a minimal "yes" or with silence (Eades, 2008)
-- The magistrate found that the boys had agreed to go with the police, and the charges were dropped
+
+The magistrate found that the boys had agreed to go with the police, and the charges were dropped.
 
 ## Powerful and powerless speech
 
-Studying a North Carolina courtroom, O'Barr (1982) noticed that some witnesses used many hedges ("sort of", "I think"), intensifiers ("very, very"), hesitations and polite forms. He linked this style to lower social status more than to gender.
+Studying a North Carolina courtroom, O'Barr (1982) noticed that some witnesses used a [powerless]{.hl} style, with many hedges ("sort of", "I think"), intensifiers ("very, very"), hesitations and polite forms. He linked it to lower social status more than to gender.
 
 . . .
 
-In an experiment, listeners heard the same testimony in either style (Erickson et al., 1978). Witnesses who spoke in the "powerful" style were rated as more credible and more attractive, and the position they supported was more often accepted.
+In an experiment, listeners heard the same testimony in either style (Erickson et al., 1978). Witnesses who spoke in the [powerful]{.hl} style were rated as more credible and more attractive, and the position they supported was more often accepted.
 
 ## Instructions for the jury
 
-- At the end of a trial, the judge explains the relevant law to the jury, often reading standard [pattern instructions]{.hl}
+At the end of a trial, the judge explains the relevant law to the jury, often reading standard [pattern instructions]{.hl}.
+
 - Charrow and Charrow (1979) found that jurors misunderstood much of California's civil jury instructions, and understood significantly more after a linguistic rewrite: shorter sentences, active verbs, fewer legal terms and nominalisations
 - Later studies repeated the pattern: jurors understood less than half of some instructions, and about twice as much after rewriting (Steele & Thornburg, 1988)
 
@@ -254,7 +256,8 @@ _Source: Suzuki (2011), Current Biology_
 
 ## The interpreter's words are the evidence
 
-- When a witness speaks through an interpreter, the judge and jury hear only the interpretation. That rendition becomes the testimony they assess (Hale, 2004)
+When a witness speaks through an interpreter, the judge and jury hear only the interpretation, and that rendition becomes the testimony they assess (Hale, 2004).
+
 - Berk-Seligson (1990/2017) recorded more than 100 hours of Spanish–English proceedings in US courts
 - Interpreters often lengthened answers, added or dropped politeness, changed the register, and turned active sentences into passives or the reverse, usually without noticing
 

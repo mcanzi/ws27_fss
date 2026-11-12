@@ -496,6 +496,13 @@ Simulated f0 track of an adult man. Mean with errors: `r round(mean(track$f0))` 
 - Halved values work the other way
 - Always look at the track, and listen, before trusting a summary statistic
 
+## Discussion
+
+In a bomb threat call, the caller's mean f0 comes out at 190 Hz. The suspect, interviewed calmly at the police station, has a mean of 110 Hz. The defence argues that the caller must be someone else.
+
+- What could explain the gap without a second speaker?
+- What would you look at, and listen to, before taking either side?
+
 ## Measuring voice quality
 
 - [Jitter]{.hl} measures how much the duration of one vibration cycle varies from the next. In healthy young adults it is about 0.5–1%

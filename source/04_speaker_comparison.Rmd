@@ -359,6 +359,12 @@ _Source: King & Janik (2013), PNAS_
 
 Most reputable labs use a human-machine team: ASR plus phonetic analysis, which can catch differences such as accent that ASR might miss.
 
+## Discussion
+
+An ASR system gives strong support for the same speaker. Your phonetic analysis finds that the questioned speaker has a northern English accent and the suspect a southern one.
+
+How should the report deal with the disagreement? Would your answer change if the court had never heard ASR evidence before?
+
 # Likelihood ratios
 
 ::: {.fact}

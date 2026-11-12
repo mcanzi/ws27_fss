@@ -60,11 +60,7 @@ The police asked the linguist Roger Shuy what the note could tell them about its
 
 - "Kan" and "kops" look like the spelling of a poorly educated writer. But the rest of the note, punctuation included, is fully standard. A likely explanation is an educated writer trying to look uneducated
 - A [devil strip]{.hl} is the strip of grass between the pavement and the road. The term belongs to the area around Akron, Ohio; people from nearby Cleveland would hardly use it
-- Shuy asked whether any suspect was an educated man from Akron. One was, and he confessed when confronted
-
-. . .
-
-Conclusions drawn from so little text can only be tentative.
+- Shuy asked whether any suspect was an educated man from Akron. One was, and he confessed when confronted, although one regional word on its own is thin evidence
 
 ## Today
 
@@ -89,19 +85,19 @@ _Source: Marler & Tamura (1964), Science_
 
 | Question | Spoken evidence | Written evidence |
 |---|---|---|
-| Who could have produced this? | Speaker profiling (session 3) | Authorship profiling |
-| Did this person produce it? | Speaker comparison (session 4) | Comparative authorship analysis |
+| Who could have produced this? | Speaker profiling (session 3) | [Authorship profiling]{.hl} |
+| Did this person produce it? | Speaker comparison (session 4) | [Comparative authorship analysis]{.hl} |
 
 . . .
 
-With a closed set of candidates, comparison becomes [attribution]{.hl}: which of these people wrote the text? With a single candidate, it is often called verification.
+With a closed set of candidates, comparison becomes [attribution]{.hl}: which of these people wrote the text? With a single candidate, it is often called [verification]{.hl}.
 
 ## What a text can give away
 
-- Region: words like _devil strip_, spellings like _colour_ and _color_, local grammar
-- A first language: errors and structures that carry over from another language
-- Education and training, through spelling, punctuation, vocabulary and the conventions of a profession
-- Age and gender, as tendencies in large samples
+- Region shows in words like _devil strip_, in spellings like _colour_ or _color_, and in local grammar
+- A first language can show through errors and structures carried over from it
+- Education and training show in spelling, punctuation, vocabulary and the conventions of a profession
+- Age and gender appear only as tendencies in large samples
 
 ## Profiling by machine
 
@@ -129,10 +125,7 @@ Simulated values, in the direction of the published results: the features that s
 ## Limits of profiling
 
 - Classifiers trained on thousands of texts guess gender or age group well above chance, and still get many individuals wrong
-- A forensic text is usually short, and written in one situation for one purpose
-- Writers can disguise their style, as the "kan" and "kops" of the ransom note show
-
-. . .
+- A forensic text is usually short and written for one purpose, and writers can disguise their style, as the "kan" and "kops" of the ransom note show
 
 A profile can shorten a list of suspects, as it did with the devil strip. Identifying the writer takes a comparison with texts of known authorship.
 
@@ -146,8 +139,9 @@ _Source: Konishi (1965), Zeitschrift für Tierpsychologie_
 
 ## Everyone has their own version
 
-- Linguists use [idiolect]{.hl} for the version of a language that one person knows and uses (Coulthard, 2004)
-- Whether every idiolect is unique is hard to prove. Casework needs two weaker properties: the writer is fairly consistent across their texts, and they differ from the other likely writers (Grant, 2010)
+Linguists use [idiolect]{.hl} for the version of a language that one person knows and uses (Coulthard, 2004).
+
+- Whether every idiolect is unique is hard to prove. Casework needs two weaker properties: the writer is fairly [consistent]{.hl} across their texts, and [distinctive]{.hl} among the other likely writers (Grant, 2010)
 - Nini (2023) proposes a theory grounded in cognitive linguistics: each person entrenches their own set of linguistic units, and the combination is individual. He tests it in computational experiments that report likelihood ratios
 
 ## Jenny Nicholl
@@ -159,14 +153,20 @@ Jenny Nicholl, 19, disappeared in North Yorkshire on 30 June 2005. Text messages
 
 . . .
 
-Hodgson was convicted of her murder on 19 February 2008, partly on DNA evidence. Her body has never been found.
+Hodgson was convicted of her murder on 19 February 2008, partly on DNA evidence, although her body has never been found.
+
+## Discussion
+
+Suppose Hodgson had noticed that Jenny wrote _myself_, and copied it in every message.
+
+- Which other habits would he have had to imitate to pass as her?
+- Which of them would be hardest to control?
 
 ## Derek Bentley
 
 In 1952, 19-year-old Derek Bentley was arrested with Christopher Craig after a break-in in Croydon, during which Craig shot a police officer dead. Bentley could not read or write.
 
-- His signed statement was presented in court as a verbatim record of what he had dictated
-- Bentley was convicted of murder and hanged in January 1953
+- His signed statement was presented in court as a verbatim record of what he had dictated. He was convicted of murder and hanged in January 1953
 - Coulthard argued that the statement had been produced by question and answer and then written up as a monologue, and that some of its wording belonged to the police officers
 
 ## "I then"
@@ -197,11 +197,10 @@ _Source: Luther & Baptista (2010), Proceedings of the Royal Society B_
 
 ## The Federalist papers
 
-In 1787–88, Alexander Hamilton, James Madison and John Jay published essays in favour of the new US constitution under one pen name, "Publius".
+In 1787–88, Alexander Hamilton, James Madison and John Jay published essays in favour of the new US constitution under one pen name, "Publius". Of the 77 papers that appeared in newspapers, 12 were claimed by both Hamilton and Madison.
 
-- Of the 77 papers that appeared in newspapers, 12 were claimed by both Hamilton and Madison
-- Sentence length was useless: on average 34.55 words for Hamilton and 34.59 for Madison
-- The historian Douglass Adair noticed that Hamilton wrote _while_ and Madison _whilst_. Mosteller and Wallace (1963) added words such as _upon_ and _enough_, both typical of Hamilton
+- Sentence length did not help: on average 34.55 words for Hamilton and 34.59 for Madison
+- The historian Douglass Adair noticed that Hamilton wrote _while_ and Madison _whilst_. Mosteller and Wallace (1963) added more such [marker words]{.hl}, including _upon_ and _enough_, both typical of Hamilton
 
 ## Upon
 
@@ -222,7 +221,7 @@ Simulated papers, following the pattern Mosteller and Wallace reported. Using Ba
 
 ## Why small words?
 
-- Function words such as _the_, _of_, _upon_ and _whilst_ are frequent, so even a short text gives usable counts
+- [Function words]{.hl} such as _the_, _of_, _upon_ and _whilst_ are frequent, so even a short text gives usable counts
 - They change little with the topic. Mosteller and Wallace found stable rates for _an_, _of_ and _upon_, but not for words like _war_ or _executive_
 - Writers choose them with little awareness, so they are harder to control or imitate than vocabulary
 
@@ -232,11 +231,8 @@ Burrows (2002) proposed a simple distance between a text and each candidate auth
 
 1. Take the most frequent words in all the texts: Burrows used up to 150, later work up to 800 (Hoover, 2004)
 2. Turn each word's frequency into a [z-score]{.hl}: how far it is from the mean of all texts, in standard deviations
-3. For each candidate, average the absolute differences between their z-scores and those of the disputed text. That average is Delta
-
-. . .
-
-The candidate with the smallest Delta is the most similar, and so the likeliest author.
+3. For each candidate, average the absolute differences between their z-scores and those of the disputed text. That average is [Delta]{.hl}
+4. The candidate with the smallest Delta is the most similar, and so the likeliest author
 
 ## Delta in practice
 
@@ -274,14 +270,15 @@ In 2013, _The Cuckoo's Calling_ came out as the first novel of one Robert Galbra
 
 - Patrick Juola compared it with Rowling's _The Casual Vacancy_ and with novels by three British crime writers, Ruth Rendell, P. D. James and Val McDermid (Juola, 2013)
 - He ran four tests: word lengths, the 100 most common words, pairs of adjacent words, and sequences of four characters. Peter Millican ran separate tests
-- Rowling came out as the most likely author, and she then confirmed that the book was hers
+
+Rowling came out as the most likely author, and she then confirmed that the book was hers.
 
 ## The Unabomber
 
 Between 1978 and 1995, bombs, many sent by mail, killed three people and injured many more. In 1995, newspapers published the bomber's manifesto, _Industrial Society and Its Future_.
 
 - Linda Patrik, and then her husband David Kaczynski, recognised the style of David's brother Ted, including the phrase "cool-headed logicians"
-- Ted's letters and the manifesto both reversed a common idiom: _you can't [eat your cake and have it too]{.hl}_
+- Ted's letters and the manifesto both reversed a common idiom: _you can't eat your cake and have it too_
 - The FBI analyst James Fitzgerald compared the manifesto with Ted's known writings. His comparison supported the 1996 search of Ted's cabin in Montana
 
 # What can go wrong
@@ -304,8 +301,7 @@ _Source: Derryberry et al. (2020), Science_
 
 As in speaker comparison, the question is how much more likely the observed features are if the suspect wrote the text than if someone else from the relevant population did.
 
-- Grant (2007) proposed ways to quantify the evidence of consistency and distinctiveness in casework
-- Nini (2023) reports his results as likelihood ratios. The approach of session 4 is reaching authorship analysis too
+- Grant (2007) proposed ways to quantify consistency and distinctiveness in casework, and Nini (2023) reports his results as [likelihood ratios]{.hl}, the approach of session 4
 - Reference data are still the weak point: how common is _meself_ among young men in North Yorkshire texting in 2005?
 
 ## Discussion

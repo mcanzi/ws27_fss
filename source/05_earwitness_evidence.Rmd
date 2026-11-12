@@ -148,6 +148,13 @@ Foils are matched on two things.
 
 Foils that sound very like the suspect make the task much harder, and foils that sound too different make the suspect stand out: picture one low voice among eight high ones. Speaker recognition software may help with this choice in future.
 
+## Discussion
+
+The suspect grew up in Glasgow and now lives in a small town in Cornwall, where the offence took place. The police can find only two other Glaswegian men for the parade.
+
+- Is a fair parade still possible, and how would you build it?
+- What would you tell the police if it is not?
+
 ## Building a parade
 
 - Usually five to eight foils; England and Wales use eight, so nine voices in all

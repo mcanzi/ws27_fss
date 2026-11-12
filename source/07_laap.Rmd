@@ -125,6 +125,13 @@ ggplot(out, aes(country, share)) +
 
 Figures as reported in Leemann et al. (2024). The Netherlands runs LAAP in about 10% of asylum cases, Switzerland 600–1,000 interviews a year. UK figure from a recent survey (Hoskin, 2022).
 
+## Discussion
+
+In the Netherlands and Switzerland, about half of the reports go against the claimed origin. In the UK, about 5% do.
+
+- What could explain the gap, either in who is sent for analysis or in how the analysis is done?
+- Which explanation would worry you most if you were the applicant?
+
 ## Counter-experts
 
 In some countries, including the Netherlands and the UK, a rejected applicant can ask an independent [counter-expert]{.hl} to assess the report. The counter-expert works for the asylum seeker, re-analyses the recordings, and may make new ones.

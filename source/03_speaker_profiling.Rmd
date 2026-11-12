@@ -397,6 +397,13 @@ Simulated speakers. The trends are real, but a man at 120 Hz could be 25 or 75. 
 
 Forensic phoneticians do not regard these systems as having any validity.
 
+## Discussion
+
+Independent studies put voice stress analysers at chance level, yet police forces, insurers and airports keep buying them.
+
+- Why might an organisation pay for a tool that does not work?
+- A police officer asks you to run such a system on a suspect's interview "just as a guide". How would you answer?
+
 # Disguise and spoofing
 
 ::: {.fact}

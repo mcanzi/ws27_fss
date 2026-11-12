@@ -177,6 +177,12 @@ Look at the pitch track before you trust the numbers. Octave jumps, where the tr
 
 In the next session, sentences B are the questioned samples and sentences A the known ones, so this difference is exactly what a comparison has to allow for.
 
+## Discussion
+
+Your A and B recordings were made in the same booth on the same day. In a real case, the questioned recording might be an angry phone call, and the known one a police interview months later.
+
+Which of today's measures would you expect to change most, and which would you still trust?
+
 # The class data
 
 ## Entering your values

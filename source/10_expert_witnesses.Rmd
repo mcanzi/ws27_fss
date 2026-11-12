@@ -230,6 +230,13 @@ Adapted from Leemann et al. (2024).
 - Experts must never act as [hired guns]{.hl} for the party that pays them, though such cases have been reported (Butters, 2009)
 - Some experts refuse certain kinds of case, such as child abuse, or work for jurisdictions with the death penalty. Once they accept a case, they put moral judgement aside: doubt or negative evidence must be reported, however damning the rest of the case looks
 
+## Discussion
+
+The defence instructs you in a speaker comparison. Your analysis gives moderate support for the prosecution's hypothesis, and the lawyer asks whether you could phrase the conclusion "more neutrally".
+
+- What do you reply?
+- The lawyer then decides not to use your report at all. Is that acceptable, and does it change anything for you?
+
 ## Regulation
 
 - England and Wales have had a [Forensic Science Regulator]{.hl} since 2008. Since the Forensic Science Regulator Act 2021 the post has statutory powers, and a statutory Code of Practice has applied since October 2023. It covers speech and audio analysis

@@ -275,6 +275,12 @@ _Source: Prat, Taub & Yovel (2016), Scientific Reports_
 - Information can be revealed later to see whether it changes what the analyst hears. This matters most for names and places, which are especially prone to priming
 - One analyst can transcribe the material several times, or several analysts can work independently and compare. Sometimes a court decides that the content is too uncertain to be admitted
 
+## Discussion
+
+A detective has listened to a covert recording dozens of times and knows the suspects' voices well. A phonetician has heard it twice and knows nothing about the case.
+
+Whose transcript would you rather give a jury, and what could each of them get wrong?
+
 ## Techniques
 
 - The linguistic context helps. In _I was talking last night to a σ_, the unclear syllable σ is almost certainly a common noun. Vowels, intonation and rhythm survive noise better than consonants, so the number of syllables is often clear

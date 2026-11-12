@@ -126,6 +126,12 @@ Simulated preview. Q and K2 are similar, but several classmates have a median f0
 - For each suspect, combine the features into one conclusion on the verbal scale of session 4, from strong support for different speakers to strong support for the same speaker. Give the two or three observations that weigh most, and say which differences you think are within-speaker variation
 - Present your conclusions to the class before the answers are revealed
 
+## Discussion
+
+Two members of your group reach different conclusions about the same suspect.
+
+Should the report give the majority view, the more cautious one, or both? How might a court read each option?
+
 # Profiling
 
 ::: {.fact}
