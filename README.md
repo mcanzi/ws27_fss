@@ -19,7 +19,7 @@ Slides for *Forensic Speech Science* (Dr Massimiliano Canzi, Department of Lingu
 
 ## Rendering the slides
 
-Knit `source/render_all.Rmd` to render every session into `docs`, which GitHub Pages serves. Knitting a single session also writes its HTML into `docs`. All sessions use the purple theme of mcanzi.github.io (`source/theme-purple.css`); `source/slides_setup.R` sets the plot colours to match it. The fonts are in `source/fonts` and are embedded in each HTML file.
+Knit `source/render_all.Rmd` to render every session into `docs`, which GitHub Pages serves. Knitting a single session also writes its HTML into `docs`. All sessions use the sunset theme of mcanzi.github.io (`source/theme-sunset.css`): the colours of a sunset over Almaty, with oranges drawn in ink in the background; `source/slides_setup.R` sets the plot colours to match it (orange, dusk blue and pink for groups). The fonts are in `source/fonts` and are embedded in each HTML file.
 
 Requires `tidyverse` and `revealjs`; optional: `qrcode` (QR codes), `ragg` and `systemfonts` (Atkinson Hyperlegible in the figures).
 

@@ -1,12 +1,11 @@
-/* theme-purple.css
-   The purple theme of mcanzi.github.io for {revealjs}, in the colours of
-   the Resonance cover: forest black, cream text, violet from the wizard's
-   cloak for headings, amplifier orange for accents, the guitar's ice blue
-   for links, the logo's pink and violet for titles, a faint grain, a dark
-   vignette and the cover's fly agarics over the background.
+/* theme-sunset.css
+   The sunset theme of mcanzi.github.io for {revealjs}, in the colours of a
+   sunset over Almaty: the city in shadow for the background, warm haze for
+   the text, the orange sky for headings, the sun for accents, the light
+   around it for titles, and oranges drawn in ink over the background.
    The theme of Forensic Speech Science. It has the same rules as the dark
-   theme of ws26_statistics and the light theme of ggplot2_workshop; only
-   the palette and the background differ. */
+   theme of ws26_statistics and the buttercup theme of
+   ss27_advanced_statistics; only the palette and the background differ. */
 
 /* ---- fonts: the website's own files (fonts/, licences: fonts/OFL-*.txt).
    Pandoc embeds them in the HTML, so the slides need no internet and send
@@ -44,28 +43,28 @@
 }
 
 :root {
-  --floor:      #121310;   /* background: forest black, as behind the amplifiers */
-  --understory: #191b17;   /* code panels, table header, fact cards */
-  --raised:     #21241e;
-  --vine:       #343a2e;   /* borders, grid lines: moss in the shade */
-  --mist:       #ebe2cd;   /* body text: cream of the amplifier panels */
-  --muted:      #a69d89;   /* secondary text */
-  --pandan:     #a06ae6;   /* the wizard's cloak: headings, functions */
-  --hornbill:   #d5813f;   /* amplifier orange: inline code, keywords */
-  --kingfisher: #aac6cf;   /* the guitar's ice blue: links, numbers */
-  --orchid:     #cf6a80;   /* the logo's pink: strings */
-  --moss:       #8fa24a;   /* moss green: list markers */
-  --comment:    #8d917c;   /* code comments */
-  --operator:   #c9c0aa;   /* operators in code */
-  --strong:     #fff8ea;
-  --shadow:     0 18px 50px rgba(0, 0, 0, 0.55);
-  --glow-1:     rgba(104, 128, 146, 0.12);   /* the night sky behind the trees */
-  --glow-2:     rgba(147, 88, 224, 0.07);    /* violet */
-  --title-top:  #dc7286;   /* titles: the logo's pink above, violet below */
-  --title-bottom: #9358e0;
-  --on-accent:  #121310;
-  --marker:     rgba(213, 129, 63, 0.30);   /* emphasis highlighter */
-  --output-bg:  #151713;   /* R output under the code */
+  --floor:      #13151c;   /* background: the city in shadow */
+  --understory: #191b24;   /* code panels, table header, fact cards */
+  --raised:     #20222d;
+  --vine:       #3a3240;   /* borders, grid lines: the plum haze */
+  --mist:       #f3e7da;   /* body text: warm haze */
+  --muted:      #a9978f;   /* secondary text */
+  --pandan:     #f28a1e;   /* the orange sky: headings, functions */
+  --hornbill:   #f6c445;   /* the sun: inline code, keywords */
+  --kingfisher: #f6ad7b;   /* apricot: links, numbers */
+  --orchid:     #e39abd;   /* pink haze: strings */
+  --moss:       #97807a;   /* list markers */
+  --comment:    #978c88;   /* code comments */
+  --operator:   #d9cbbf;   /* operators in code */
+  --strong:     #ffffff;
+  --shadow:     0 18px 50px rgba(0, 0, 0, 0.45);
+  --glow-1:     rgba(242, 138, 30, 0.14);   /* the sun, top right */
+  --glow-2:     rgba(181, 75, 51, 0.07);
+  --title-top:  #fdf0c4;   /* titles: the light next to the sun above, the horizon below */
+  --title-bottom: #ec6a0f;
+  --on-accent:  #13151c;
+  --marker:     rgba(246, 196, 69, 0.28);   /* emphasis highlighter: the sun */
+  --output-bg:  #161820;   /* R output under the code */
   --error:      #e0675f;
 
   /* the {revealjs} base theme reads these */
@@ -83,17 +82,15 @@
   --footer-text: "";
 }
 
-/* ---- canvas: the website's background drawings, faint, in tiles -------
-   The tile is img/motifs/rafflesia.svg, sakura.svg or toadstools.svg
-   from mcanzi.github.io, with its opacity built in. */
+/* ---- canvas: the website's background drawing, faint, in tiles -------
+   The tile is img/motifs/oranges.svg from mcanzi.github.io (oranges drawn
+   in ink), with its opacity built in. */
 
 .reveal-viewport,
 body {
   background-color: var(--floor);
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23n%29' opacity='0.05'/%3E%3C/svg%3E") 0 0 / 160px 160px repeat fixed,
-    radial-gradient(140% 120% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.5) 100%) fixed,
-    url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22560%22 height=%22560%22 viewBox=%220 0 560 560%22%3E%3Cdefs%3E%3CclipPath id=%22cap-clip%22%3E%3Cpath d=%22M8 58C10 34 38 14 72 14C104 14 130 30 134 52C135 58 131 62 124 63C100 68 44 70 18 66C10 65 7 62 8 58Z%22/%3E%3C/clipPath%3E%3CclipPath id=%22stem-clip%22%3E%3Cpath d=%22M60 70C59 96 56 120 49 140C61 146 79 146 89 139C82 119 80 95 80 70Z%22/%3E%3C/clipPath%3E%3Cg id=%22t%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22%3E%3Cpath fill=%22%23e3d6b8%22 d=%22M60 70C59 96 56 120 49 140C61 146 79 146 89 139C82 119 80 95 80 70Z%22/%3E%3Cg clip-path=%22url(%23stem-clip)%22%3E%3Cpath fill=%22%23a8997a%22 d=%22M73 70C74 96 76 120 80 143L92 141C84 119 82 95 82 70Z%22/%3E%3Cpath fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%222.2%22 d=%22M62 78l7 3M61 85l9 2M66 74l8 4M75 94l5 1M76 104l5 0M77 114l6 -1M78 124l6 -1M79 133l6 -1M56 128l3 7M59 112l2 5%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%224%22 d=%22M60 70C59 96 56 120 49 140C61 146 79 146 89 139C82 119 80 95 80 70%22/%3E%3Cpath fill=%22%230b0b0a%22 d=%22M14 62C40 72 100 72 128 60C122 72 96 79 70 79C44 79 22 74 14 62Z%22/%3E%3Cpath fill=%22%23b9533a%22 d=%22M8 58C10 34 38 14 72 14C104 14 130 30 134 52C135 58 131 62 124 63C100 68 44 70 18 66C10 65 7 62 8 58Z%22/%3E%3Cg clip-path=%22url(%23cap-clip)%22 fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%222.4%22%3E%3Cpath d=%22M14 56q5 -4 10 -3M22 61q6 -3 11 -2M30 52q4 -3 9 -2M38 62q5 -3 10 -2M48 56q5 -2 10 -1M58 63q6 -2 11 -1M66 55q5 -2 9 0M76 62q6 -1 11 0M86 55q5 -1 9 1M96 61q5 0 10 1M104 53q4 0 8 2M112 59q4 0 8 2M120 50q3 1 6 4M18 47q3 -3 7 -3M108 43q4 1 7 4M28 40q3 -3 7 -4M98 36q4 1 7 3%22/%3E%3Cpath stroke-width=%221.8%22 d=%22M44 46l5 -1M82 46l5 1M60 49l5 0M70 42l4 0%22/%3E%3C/g%3E%3Cg fill=%22%23ebe2cd%22%3E%3Cpath d=%22M34 34l6 -3 2 3 -6 3z%22/%3E%3Cpath d=%22M50 24l5 -2 1 3 -5 2z%22/%3E%3Cpath d=%22M66 20l6 -1 0 3 -6 1z%22/%3E%3Cpath d=%22M84 24l5 1 -1 3 -5 -1z%22/%3E%3Cpath d=%22M100 32l5 2 -2 3 -5 -2z%22/%3E%3Cpath d=%22M112 42l4 2 -2 3 -4 -2z%22/%3E%3Cpath d=%22M58 32l4 -1 1 2 -4 1z%22/%3E%3Cpath d=%22M76 33l4 0 0 2 -4 0z%22/%3E%3Cpath d=%22M44 38l3 -2 1 2 -3 2z%22/%3E%3Cpath d=%22M92 41l4 1 -1 2 -4 -1z%22/%3E%3Cpath d=%22M24 46l3 -2 1 2 -3 2z%22/%3E%3Cpath d=%22M66 41l3 0 0 2 -3 0z%22/%3E%3Ccircle cx=%2241%22 cy=%2227%22 r=%221.4%22/%3E%3Ccircle cx=%2274%22 cy=%2226%22 r=%221.3%22/%3E%3Ccircle cx=%2294%22 cy=%2228%22 r=%221.2%22/%3E%3Ccircle cx=%2252%22 cy=%2242%22 r=%221.2%22/%3E%3Ccircle cx=%2284%22 cy=%2238%22 r=%221.3%22/%3E%3Ccircle cx=%22104%22 cy=%2245%22 r=%221.1%22/%3E%3Ccircle cx=%2230%22 cy=%2242%22 r=%221.1%22/%3E%3Ccircle cx=%2262%22 cy=%2226%22 r=%221.1%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%224%22 d=%22M8 58C10 34 38 14 72 14C104 14 130 30 134 52C135 58 131 62 124 63C100 68 44 70 18 66C10 65 7 62 8 58Z%22/%3E%3C/g%3E%3Cg id=%22c%22%3E%3Cuse xlink:href=%22%23t%22 href=%22%23t%22 transform=%22translate(-4 40) scale(0.6) rotate(-14 70 70)%22/%3E%3Cuse xlink:href=%22%23t%22 href=%22%23t%22 transform=%22translate(58 12) scale(0.8) rotate(5 70 70)%22/%3E%3Cuse xlink:href=%22%23t%22 href=%22%23t%22 transform=%22translate(206 58) scale(-0.5 0.5) rotate(-10 70 70)%22/%3E%3C/g%3E%3C/defs%3E%3Cg opacity=%220.11%22%3E%3Cuse xlink:href=%22%23c%22 href=%22%23c%22 transform=%22translate(20 24) scale(0.88)%22/%3E%3Cuse xlink:href=%22%23t%22 href=%22%23t%22 transform=%22translate(330 20) scale(0.55) rotate(-6 70 70)%22/%3E%3Cuse xlink:href=%22%23t%22 href=%22%23t%22 transform=%22translate(400 180) scale(0.95) rotate(5 70 70)%22/%3E%3Cuse xlink:href=%22%23t%22 href=%22%23t%22 transform=%22translate(150 250) scale(0.6) rotate(-8 70 70)%22/%3E%3Cuse xlink:href=%22%23c%22 href=%22%23c%22 transform=%22translate(290 370) scale(0.72)%22/%3E%3Cuse xlink:href=%22%23t%22 href=%22%23t%22 transform=%22translate(40 410) scale(-0.6 0.6) translate(-140 0) rotate(-6 70 70)%22/%3E%3Cuse xlink:href=%22%23t%22 href=%22%23t%22 transform=%22translate(488 462) scale(0.4) rotate(8 70 70)%22/%3E%3C/g%3E%3C/svg%3E") 0 0 / 64vmin 64vmin repeat fixed,
+    url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22600%22 height=%22600%22 viewBox=%220 0 600 600%22%3E%3Cdefs%3E%3CclipPath id=%22body-clip%22%3E%3Cpath d=%22M0 -44C24 -45 45 -25 44 0C45 25 24 45 0 44C-25 45 -45 24 -44 0C-45 -24 -24 -43 0 -44Z%22/%3E%3C/clipPath%3E%3CclipPath id=%22leaf-clip%22%3E%3Cpath d=%22M2 -50C10 -70 36 -80 58 -70C48 -50 24 -42 2 -50Z%22/%3E%3C/clipPath%3E%3Cg id=%22o%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22%3E%3Cpath fill=%22%23a9541a%22 d=%22M0 -44C24 -45 45 -25 44 0C45 25 24 45 0 44C-25 45 -45 24 -44 0C-45 -24 -24 -43 0 -44Z%22/%3E%3Cg clip-path=%22url(%23body-clip)%22%3E%3Ccircle cx=%22-8%22 cy=%22-8%22 r=%2244%22 fill=%22%23e07a1f%22/%3E%3Cpath fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%222.4%22 d=%22M32.6 -15.9Q37.9 -13.8 34.5 -8.6M36.3 -9.7Q41.1 -6.5 36.7 -1.9M37.1 -2.6Q41.1 1.4 36.5 5.1M35 4.3Q38.2 8.8 33.3 11.5M33.4 10.9Q35.8 15.9 30.3 17.5M30.9 17.1Q32.2 22.5 26 22.6M28.1 23.6Q28.3 29.3 23 29.4M22.3 27.6Q21.5 33.1 15.9 31.1M17.6 33.1Q15.5 38.5 10.6 36.9M10.9 35.7Q7.9 40.5 3.2 37M4.1 38.7Q0 42.9 -4 37.8M-3.3 38.3Q-8.1 41.7 -11.1 36.4M-9.8 34.2Q-14.8 36.7 -16.3 30.7M-16.4 32.3Q-21.9 33.7 -23.2 28.7M27.7 0Q30.6 2.7 27.3 4.8M28.2 8.1Q30.2 11.6 26.4 12.9M25.1 15.7Q26 19.6 22 19.8M19.1 21.2Q19 25.1 15.1 24.2M12.8 26.2Q11.5 30.1 8 28.1M4.7 26.8Q2.6 30.1 0 27.3%22/%3E%3C/g%3E%3Cg fill=%22%230b0b0a%22%3E%3Ccircle cx=%2212.5%22 cy=%2217.7%22 r=%220.9%22/%3E%3Ccircle cx=%22-14.5%22 cy=%22-25.6%22 r=%221.2%22/%3E%3Ccircle cx=%2211.9%22 cy=%22-11.8%22 r=%221.2%22/%3E%3Ccircle cx=%22-20.1%22 cy=%22-13.5%22 r=%221.1%22/%3E%3Ccircle cx=%2218.5%22 cy=%22-29.1%22 r=%221.1%22/%3E%3Ccircle cx=%22-5%22 cy=%22-8.3%22 r=%221.3%22/%3E%3Ccircle cx=%22-21.6%22 cy=%22-28.6%22 r=%221.3%22/%3E%3Ccircle cx=%22-4.1%22 cy=%2218.4%22 r=%221.2%22/%3E%3Ccircle cx=%2220.7%22 cy=%223%22 r=%221%22/%3E%3Ccircle cx=%227.2%22 cy=%226.5%22 r=%221.3%22/%3E%3Ccircle cx=%2210.3%22 cy=%2210.8%22 r=%221.1%22/%3E%3Ccircle cx=%227.1%22 cy=%22-7.4%22 r=%221.1%22/%3E%3Ccircle cx=%22-31.2%22 cy=%22-10%22 r=%221.3%22/%3E%3Ccircle cx=%2210.4%22 cy=%22-11.9%22 r=%221.1%22/%3E%3Ccircle cx=%22-20.7%22 cy=%2225.4%22 r=%221.4%22/%3E%3Ccircle cx=%227.5%22 cy=%2210.5%22 r=%221%22/%3E%3C/g%3E%3Cg fill=%22%23ebe2cd%22%3E%3Cpath d=%22M-23.6 -11l1.5 -3.3 1.9 0.5 -1.5 3.3zM-23 -20.7l3.3 -3.6 1.8 1.1 -3.3 3.6zM-12.7 -20.4l3.5 -2.2 1.5 1.7 -3.5 2.2zM-9.9 -30.4l4.2 -1.4 1 1.8 -4.2 1.4zM-0.9 -27l5.1 -0.2 0.5 2.3 -5.1 0.2zM-9.6 -11.5l3.1 -2.6 1.7 1.5 -3.1 2.6zM-6.2 -16.9l4.3 -1.6 1.3 2.2 -4.3 1.6zM8 -32l4.8 1.2 -0.1 2 -4.8 -1.2zM-32.7 -9.4l1.5 -5.2 1.9 0.2 -1.5 5.2zM-1.7 -11.9l4.3 -0.6 0.7 2.3 -4.3 0.6z%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%224%22 d=%22M0 -44C24 -45 45 -25 44 0C45 25 24 45 0 44C-25 45 -45 24 -44 0C-45 -24 -24 -43 0 -44Z%22/%3E%3Cpath fill=%22%230b0b0a%22 d=%22M-7 -43l7 -5 7 5 -7 3z%22/%3E%3Cpath fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%224%22 d=%22M0 -46C1 -51 3 -55 7 -58%22/%3E%3C/g%3E%3Cg id=%22l%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22%3E%3Cpath fill=%22%236f8f45%22 d=%22M2 -50C10 -70 36 -80 58 -70C48 -50 24 -42 2 -50Z%22/%3E%3Cg clip-path=%22url(%23leaf-clip)%22%3E%3Cpath fill=%22%234e6a30%22 d=%22M2 -50C24 -58 40 -64 58 -70C48 -50 24 -42 2 -50Z%22/%3E%3Cpath fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%222%22 d=%22M12.1 -53.6l-3 9M18.8 -56l-3 9M25.5 -58.4l-3 9M32.2 -60.8l-3 9M39 -63.2l-3 9M45.7 -65.6l-3 9%22/%3E%3C/g%3E%3Cpath fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%222.2%22 d=%22M4 -50C22 -58 40 -64 56 -69%22/%3E%3Cpath fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%223.5%22 d=%22M2 -50C10 -70 36 -80 58 -70C48 -50 24 -42 2 -50Z%22/%3E%3C/g%3E%3Cg id=%22s%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22%3E%3Ccircle r=%2242%22 fill=%22%23e07a1f%22/%3E%3Ccircle r=%2236%22 fill=%22%23ebe2cd%22/%3E%3Cpath fill=%22%23f2a03d%22 stroke=%22%230b0b0a%22 stroke-width=%222.2%22 d=%22M0.5 -6L2.6 -32.9A33 33 0 0 1 19.2 -26.9L3.5 -4.9ZM4.2 -4.3L23.1 -23.5A33 33 0 0 1 31.9 -8.3L5.8 -1.5ZM6 -0.6L32.8 -3.2A33 33 0 0 1 29.8 14.2L5.4 2.6ZM4.9 3.4L27.2 18.7A33 33 0 0 1 13.7 30L2.5 5.5ZM1.6 5.8L8.8 31.8A33 33 0 0 1 -8.8 31.8L-1.6 5.8ZM-2.5 5.5L-13.7 30A33 33 0 0 1 -27.2 18.7L-4.9 3.4ZM-5.4 2.6L-29.8 14.2A33 33 0 0 1 -32.8 -3.2L-6 -0.6ZM-5.8 -1.5L-31.9 -8.3A33 33 0 0 1 -23.1 -23.5L-4.2 -4.3ZM-3.5 -4.9L-19.2 -26.9A33 33 0 0 1 -2.6 -32.9L-0.5 -6Z%22/%3E%3Cpath fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%221.6%22 d=%22M3.1 -14.2L5.6 -21.9M5.9 -16.3L9.5 -23.5M8.6 -16.4L13.1 -23M11.8 -9.1L18.6 -13.4M10.4 -6L17.7 -9.4M15.4 -6.3L23.1 -8.5M16 0.6L24 1.8M18 3.2L25.7 5.5M21.4 6.9L28.7 10.3M14.5 13.2L19.8 19.3M11.4 13.5L15.8 20.2M10 15.9L13.5 23.1M2.6 19.3L2.7 27.3M0 12.6L-0.7 20.6M-3 21.7L-5.1 29.5M-11 17.4L-16.1 23.6M-13.9 16.6L-19.8 22M-15.4 14L-22 18.6M-15.5 5L-23.4 6.6M-16.1 2.8L-24.2 3.4M-13.1 0.5L-21.1 0.1M-17.6 -7.2L-24.6 -11.1M-11 -6.3L-17.5 -11M-10.1 -7.8L-15.9 -13.3M-6.7 -12.7L-9.7 -20.1M-4.7 -13L-6.7 -20.7M-3.3 -15.4L-4.2 -23.4%22/%3E%3Cpath fill=%22%23ebe2cd%22 stroke=%22%230b0b0a%22 stroke-width=%222%22 d=%22M12 -14c3 -4 7 -5 9 -3 0 3 -3 6 -8 6z%22/%3E%3Ccircle r=%224%22 fill=%22%23ebe2cd%22 stroke=%22%230b0b0a%22 stroke-width=%222%22/%3E%3Ccircle r=%2236%22 fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%222%22/%3E%3Ccircle r=%2242%22 fill=%22none%22 stroke=%22%230b0b0a%22 stroke-width=%224%22/%3E%3C/g%3E%3Cg id=%22ol%22%3E%3Cuse xlink:href=%22%23l%22 href=%22%23l%22/%3E%3Cuse xlink:href=%22%23l%22 href=%22%23l%22 transform=%22scale(-0.75 0.75) translate(-2 -14)%22/%3E%3Cuse xlink:href=%22%23o%22 href=%22%23o%22/%3E%3C/g%3E%3Cg id=%22pair%22%3E%3Cuse xlink:href=%22%23o%22 href=%22%23o%22 transform=%22translate(-30 8) scale(0.8) rotate(-18)%22/%3E%3Cuse xlink:href=%22%23ol%22 href=%22%23ol%22 transform=%22translate(30 0) rotate(10)%22/%3E%3C/g%3E%3C/defs%3E%3Cg opacity=%220.15%22%3E%3Cuse xlink:href=%22%23ol%22 href=%22%23ol%22 transform=%22translate(96 112) rotate(-10)%22/%3E%3Cuse xlink:href=%22%23s%22 href=%22%23s%22 transform=%22translate(320 78) rotate(14) scale(0.72)%22/%3E%3Cuse xlink:href=%22%23o%22 href=%22%23o%22 transform=%22translate(500 176) rotate(24) scale(0.78)%22/%3E%3Cuse xlink:href=%22%23s%22 href=%22%23s%22 transform=%22translate(214 268) rotate(-32) scale(0.95)%22/%3E%3Cuse xlink:href=%22%23pair%22 href=%22%23pair%22 transform=%22translate(418 392) scale(0.95)%22/%3E%3Cuse xlink:href=%22%23s%22 href=%22%23s%22 transform=%22translate(76 420) rotate(6) scale(0.7)%22/%3E%3Cuse xlink:href=%22%23o%22 href=%22%23o%22 transform=%22translate(240 506) rotate(40) scale(0.6)%22/%3E%3Cuse xlink:href=%22%23s%22 href=%22%23s%22 transform=%22translate(540 528) rotate(-8) scale(0.5)%22/%3E%3C/g%3E%3C/svg%3E") 0 0 / 64vmin 64vmin repeat fixed,
     radial-gradient(ellipse 75% 60% at 85% -15%, var(--glow-1), transparent 70%) fixed,
     radial-gradient(ellipse 60% 50% at 0% 70%, var(--glow-2), transparent 70%) fixed,
     var(--floor);
