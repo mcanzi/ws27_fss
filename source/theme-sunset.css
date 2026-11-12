@@ -3,9 +3,9 @@
    sunset over Almaty: the city in shadow for the background, warm haze for
    the text, the orange sky for headings, the sun for accents, the light
    around it for titles, and oranges drawn in ink over the background.
-   The theme of Forensic Speech Science. It has the same rules as the dark
-   theme of ws26_statistics and the buttercup theme of
-   ss27_advanced_statistics; only the palette and the background differ. */
+   The theme of Introduction to Forensic Speech Science. Same rules as
+   theme-dark.css (ws26_statistics) and theme-buttercup.css
+   (ss27_advanced_statistics); only the palette and the background differ. */
 
 /* ---- fonts: the website's own files (fonts/, licences: fonts/OFL-*.txt).
    Pandoc embeds them in the HTML, so the slides need no internet and send
