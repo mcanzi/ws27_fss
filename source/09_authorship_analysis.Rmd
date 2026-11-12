@@ -1,0 +1,374 @@
+---
+title: "Authorship analysis"
+subtitle: "Profiling and comparing the writers of texts"
+author: "Dr Massimiliano Canzi"
+knit: (function(input, ...) rmarkdown::render(input, output_dir = file.path(dirname(input), "..", "docs")))
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    css: theme-purple.css
+    highlight: zenburn
+    incremental: true
+    transition: fade
+    background_transition: fade
+    self_contained: true
+    reveal_options:
+      width: 1050
+      height: 700
+      slideNumber: "c/t"
+      showSlideNumber: all
+      controls: true
+      touch: true
+      transitionSpeed: fast
+      navigationMode: linear
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width = 10, fig.height = 4.4, out.width = "100%")
+library(tidyverse)
+
+source("slides_setup.R", local = knitr::knit_global())
+```
+
+# A ransom note
+
+<style>
+  :root {
+    --footer-text:  "Authorship analysis";
+    --qr:           `r qr_css`;
+    --lecture:      `r lecture_label`;
+  }
+</style>
+
+::: {.fact}
+`Did you know:` white-crowned sparrows around San Francisco Bay sing in local [dialects]{.hl}. A male's song stays the same from year to year, and populations living close to each other sing recognisably different songs.
+
+_Source: Marler & Tamura (1962), The Condor_
+:::
+
+## The devil strip
+
+In the 1970s, a girl disappeared in Illinois, and her parents found a ransom note on their doorstep, written in pencil. It asked for $10,000 in a diaper bag, and went on (Shuy, 2001):
+
+> Put it in the green trash kan on the devil strip at corner 18th and Carlson. Don't bring anybody along. No kops!!
+
+. . .
+
+The police asked the linguist Roger Shuy what the note could tell them about its writer.
+
+## What Shuy saw
+
+- "Kan" and "kops" look like the spelling of a poorly educated writer. But the rest of the note, punctuation included, is fully standard. A likely explanation is an educated writer trying to look uneducated
+- A [devil strip]{.hl} is the strip of grass between the pavement and the road. The term belongs to the area around Akron, Ohio; people from nearby Cleveland would hardly use it
+- Shuy asked whether any suspect was an educated man from Akron. One was, and he confessed when confronted
+
+. . .
+
+Conclusions drawn from so little text can only be tentative.
+
+## Today
+
+1. Profiling and comparison
+2. Idiolect, and two British cases
+3. Counting words
+4. What can go wrong
+
+. . .
+
+Chapters 11 and 12 of Leemann et al. (2024) cover authorship profiling and comparative authorship analysis. These slides draw directly on the original studies.
+
+# Profiling and comparison
+
+::: {.fact}
+`Did you know:` young white-crowned sparrows learn their local dialect from adult males. Birds raised in [isolation]{.hl}, without hearing adults, develop much simpler songs.
+
+_Source: Marler & Tamura (1964), Science_
+:::
+
+## The same two questions as in speech
+
+| Question | Spoken evidence | Written evidence |
+|---|---|---|
+| Who could have produced this? | Speaker profiling (session 3) | Authorship profiling |
+| Did this person produce it? | Speaker comparison (session 4) | Comparative authorship analysis |
+
+. . .
+
+With a closed set of candidates, comparison becomes [attribution]{.hl}: which of these people wrote the text? With a single candidate, it is often called verification.
+
+## What a text can give away
+
+- Region: words like _devil strip_, spellings like _colour_ and _color_, local grammar
+- A first language: errors and structures that carry over from another language
+- Education and training, through spelling, punctuation, vocabulary and the conventions of a profession
+- Age and gender, as tendencies in large samples
+
+## Profiling by machine
+
+Schler et al. (2006) analysed blogs by 19,320 authors, balanced for gender within each age group.
+
+```{r blogs, fig.height = 2.8}
+set.seed(91)
+blogs <- expand_grid(age = c("10s", "20s", "30s+"), gender = c("Female", "Male"),
+                     feature = c("Articles and prepositions", "Personal pronouns")) |>
+  mutate(rate = case_when(
+    feature == "Articles and prepositions" ~ 180 + 14 * as.numeric(factor(age)) + 18 * (gender == "Male"),
+    TRUE ~ 120 - 12 * as.numeric(factor(age)) - 15 * (gender == "Male")
+  ) + rnorm(n(), 0, 2))
+ggplot(blogs, aes(age, rate, colour = gender, group = gender)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 3) +
+  facet_wrap(~feature, scales = "free_y") +
+  scale_colour_manual(values = c(orchid, hornbill)) +
+  labs(x = "Age of the blogger", y = "Per 1,000 words", colour = NULL) +
+  theme(legend.position = "right")
+```
+
+Simulated values, in the direction of the published results: the features that separate male from female bloggers also separate older from younger ones.
+
+## Limits of profiling
+
+- Classifiers trained on thousands of texts guess gender or age group well above chance, and still get many individuals wrong
+- A forensic text is usually short, and written in one situation for one purpose
+- Writers can disguise their style, as the "kan" and "kops" of the ransom note show
+
+. . .
+
+A profile can shorten a list of suspects, as it did with the devil strip. Identifying the writer takes a comparison with texts of known authorship.
+
+# Idiolect
+
+::: {.fact}
+`Did you know:` female white-crowned sparrows do not normally sing. When researchers gave females testosterone, they sang, and their songs showed that they had [learned the dialect]{.hl} too.
+
+_Source: Konishi (1965), Zeitschrift für Tierpsychologie_
+:::
+
+## Everyone has their own version
+
+- Linguists use [idiolect]{.hl} for the version of a language that one person knows and uses (Coulthard, 2004)
+- Whether every idiolect is unique is hard to prove. Casework needs two weaker properties: the writer is fairly consistent across their texts, and they differ from the other likely writers (Grant, 2010)
+- Nini (2023) proposes a theory grounded in cognitive linguistics: each person entrenches their own set of linguistic units, and the combination is individual. He tests it in computational experiments that report likelihood ratios
+
+## Jenny Nicholl
+
+Jenny Nicholl, 19, disappeared in North Yorkshire on 30 June 2005. Text messages kept coming from her phone (Grant, 2010).
+
+- Tim Grant compared the disputed messages with messages known to be hers and with those of her former lover, David Hodgson
+- Jenny wrote _my_ and _myself_. Hodgson often used the regional _me_ and _meself_, like the disputed messages, which were closer to his style overall
+
+. . .
+
+Hodgson was convicted of her murder on 19 February 2008, partly on DNA evidence. Her body has never been found.
+
+## Derek Bentley
+
+In 1952, 19-year-old Derek Bentley was arrested with Christopher Craig after a break-in in Croydon, during which Craig shot a police officer dead. Bentley could not read or write.
+
+- His signed statement was presented in court as a verbatim record of what he had dictated
+- Bentley was convicted of murder and hanged in January 1953
+- Coulthard argued that the statement had been produced by question and answer and then written up as a monologue, and that some of its wording belonged to the police officers
+
+## "I then"
+
+```{r ithen, fig.height = 3.1}
+fox <- tibble(corpus = rep(c("Written English", "Spoken English"), each = 2),
+              order = rep(c("then I", "I then"), 2),
+              n = c(235, 24, 202, 9)) |>
+  mutate(corpus = fct_inorder(corpus), order = fct_inorder(order))
+ggplot(fox, aes(corpus, n, fill = order)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6) +
+  geom_text(aes(label = n), position = position_dodge(width = 0.7), vjust = -0.5, colour = mist, size = 5) +
+  scale_fill_manual(values = c(hornbill, kingfisher)) +
+  scale_y_continuous(limits = c(0, 270)) +
+  labs(x = NULL, y = "Occurrences", fill = NULL) +
+  theme(legend.position = "right")
+```
+
+In a general corpus, _then_ usually comes before the subject (Fox, 1993). Bentley's statement has _Chris Craig and I then caught a bus_ and _Chris then jumped over_: an order typical of police reports. In 1998, after a referral partly based on this analysis, the Court of Appeal quashed his conviction.
+
+# Counting words
+
+::: {.fact}
+`Did you know:` between 1969 and 1998, one San Francisco sparrow dialect spread through the city at the expense of its neighbours, and the lowest pitch of the songs [rose]{.hl} as traffic noise grew.
+
+_Source: Luther & Baptista (2010), Proceedings of the Royal Society B_
+:::
+
+## The Federalist papers
+
+In 1787–88, Alexander Hamilton, James Madison and John Jay published essays in favour of the new US constitution under one pen name, "Publius".
+
+- Of the 77 papers that appeared in newspapers, 12 were claimed by both Hamilton and Madison
+- Sentence length was useless: on average 34.55 words for Hamilton and 34.59 for Madison
+- The historian Douglass Adair noticed that Hamilton wrote _while_ and Madison _whilst_. Mosteller and Wallace (1963) added words such as _upon_ and _enough_, both typical of Hamilton
+
+## Upon
+
+```{r upon, fig.height = 3.5}
+set.seed(92)
+upon <- bind_rows(
+  tibble(group = "Hamilton (known)", rate = pmax(rnorm(30, 3.2, 1.1), 0.3)),
+  tibble(group = "Madison (known)", rate = rexp(14, 1 / 0.2)),
+  tibble(group = "Disputed", rate = rexp(12, 1 / 0.15))
+) |> mutate(group = fct_inorder(group))
+ggplot(upon, aes(rate, group, colour = group)) +
+  geom_jitter(width = 0, height = 0.2, size = 3, alpha = 0.85, show.legend = FALSE) +
+  scale_colour_manual(values = c(kingfisher, hornbill, orchid)) +
+  labs(x = "Upon per 1,000 words, one point per paper", y = NULL)
+```
+
+Simulated papers, following the pattern Mosteller and Wallace reported. Using Bayesian statistics on dozens of such words, they concluded that Madison wrote all 12 disputed papers.
+
+## Why small words?
+
+- Function words such as _the_, _of_, _upon_ and _whilst_ are frequent, so even a short text gives usable counts
+- They change little with the topic. Mosteller and Wallace found stable rates for _an_, _of_ and _upon_, but not for words like _war_ or _executive_
+- Writers choose them with little awareness, so they are harder to control or imitate than vocabulary
+
+## Burrows' Delta
+
+Burrows (2002) proposed a simple distance between a text and each candidate author:
+
+1. Take the most frequent words in all the texts: Burrows used up to 150, later work up to 800 (Hoover, 2004)
+2. Turn each word's frequency into a [z-score]{.hl}: how far it is from the mean of all texts, in standard deviations
+3. For each candidate, average the absolute differences between their z-scores and those of the disputed text. That average is Delta
+
+. . .
+
+The candidate with the smallest Delta is the most similar, and so the likeliest author.
+
+## Delta in practice
+
+```{r delta, fig.height = 3.3}
+set.seed(93)
+n_words <- 30
+base <- sort(rgamma(n_words, 2, 40), decreasing = TRUE)
+authors <- c("Author A", "Author B", "Author C", "Author D")
+style <- map(authors, \(a) base * exp(rnorm(n_words, 0, 0.3))) |> set_names(authors)
+known <- map_dfr(authors, \(a) map_dfr(1:5, \(i) tibble(author = a, word = 1:n_words,
+                                                       freq = style[[a]] * exp(rnorm(n_words, 0, 0.12)))))
+disputed <- tibble(word = 1:n_words, freq = style[["Author C"]] * exp(rnorm(n_words, 0, 0.12)))
+scaling <- known |> group_by(word) |> summarise(mu = mean(freq), sigma = sd(freq))
+delta <- known |>
+  group_by(author, word) |>
+  summarise(freq = mean(freq), .groups = "drop") |>
+  left_join(scaling, by = "word") |>
+  left_join(disputed |> rename(test = freq), by = "word") |>
+  mutate(diff = abs((freq - mu) / sigma - (test - mu) / sigma)) |>
+  group_by(author) |>
+  summarise(delta = mean(diff))
+ggplot(delta, aes(author, delta, fill = delta == min(delta))) +
+  geom_col(width = 0.6, show.legend = FALSE) +
+  geom_text(aes(label = round(delta, 2)), vjust = -0.5, colour = mist, size = 5) +
+  scale_fill_manual(values = c(muted, kingfisher)) +
+  scale_y_continuous(limits = c(0, max(delta$delta) * 1.2)) +
+  labs(x = NULL, y = "Delta from the\ndisputed text")
+```
+
+Simulated: four authors with five known texts each, 30 frequent words, and one disputed text written by Author C. The code computes Delta as described.
+
+## Robert Galbraith
+
+In 2013, _The Cuckoo's Calling_ came out as the first novel of one Robert Galbraith. After an anonymous tip, the _Sunday Times_ asked two researchers whether J. K. Rowling had written it.
+
+- Patrick Juola compared it with Rowling's _The Casual Vacancy_ and with novels by three British crime writers, Ruth Rendell, P. D. James and Val McDermid (Juola, 2013)
+- He ran four tests: word lengths, the 100 most common words, pairs of adjacent words, and sequences of four characters. Peter Millican ran separate tests
+- Rowling came out as the most likely author, and she then confirmed that the book was hers
+
+## The Unabomber
+
+Between 1978 and 1995, bombs, many sent by mail, killed three people and injured many more. In 1995, newspapers published the bomber's manifesto, _Industrial Society and Its Future_.
+
+- Linda Patrik, and then her husband David Kaczynski, recognised the style of David's brother Ted, including the phrase "cool-headed logicians"
+- Ted's letters and the manifesto both reversed a common idiom: _you can't [eat your cake and have it too]{.hl}_
+- The FBI analyst James Fitzgerald compared the manifesto with Ted's known writings. His comparison supported the 1996 search of Ted's cabin in Montana
+
+# What can go wrong
+
+::: {.fact}
+`Did you know:` during the 2020 lockdown, traffic noise in San Francisco fell to levels of the 1950s. White-crowned sparrows sang more softly, yet their songs carried about [twice as far]{.hl}.
+
+_Source: Derryberry et al. (2020), Science_
+:::
+
+## Hard cases
+
+- Short texts, such as text messages or tweets, give few counts for any one feature
+- Genre and register change style: a writer's emails and reports may differ more than two writers' emails do. Delta is known to be sensitive to genre
+- The likely author may not be among the candidates at all
+- Texts can be edited or co-written, as Bentley's statement was by the police
+- People can imitate another person's style, or disguise their own
+
+## How strong is the evidence?
+
+As in speaker comparison, the question is how much more likely the observed features are if the suspect wrote the text than if someone else from the relevant population did.
+
+- Grant (2007) proposed ways to quantify the evidence of consistency and distinctiveness in casework
+- Nini (2023) reports his results as likelihood ratios. The approach of session 4 is reaching authorship analysis too
+- Reference data are still the weak point: how common is _meself_ among young men in North Yorkshire texting in 2005?
+
+## Discussion
+
+- The devil strip pointed to one suspect. What else would you want to know before acting on a single regional word?
+- Should an authorship analysis that cannot give a likelihood ratio be allowed in court?
+
+## Activity
+
+For the next session, in pairs:
+
+1. Each of you collects 10 of your own text messages or chat messages, with any personal details removed
+2. List five habits in your own messages: spellings, abbreviations, punctuation, greetings, emoji
+3. Swap the lists, then write one new message each in your partner's style
+4. Give both the real and the imitated messages to another pair. Can they tell which are imitations, and which habits gave them away?
+
+## Summary
+
+::: {.takeaway}
+- Authorship analysis mirrors forensic phonetics: [authorship profiling]{.hl} asks what kind of person wrote a text, comparison asks whether a particular person did
+- Casework relies on a writer's [consistency]{.hl} across texts and [distinctiveness]{.hl} from other writers
+- Small words carry a lot of individual information, which [Burrows' Delta]{.hl} and similar methods exploit
+- Short texts, genre differences, disguise and missing candidates all limit what can be concluded
+- As in speaker comparison, the field is moving towards likelihood ratios
+:::
+
+## References {.refs}
+
+- Argamon, S., Koppel, M., Pennebaker, J. W., & Schler, J. (2009). Automatically profiling the author of an anonymous text. _Communications of the ACM_, 52(2), 119–123.
+- Burrows, J. (2002). 'Delta': A measure of stylistic difference and a guide to likely authorship. _Literary and Linguistic Computing_, 17(3), 267–287.
+- Coulthard, M. (2004). Author identification, idiolect, and linguistic uniqueness. _Applied Linguistics_, 25(4), 431–447.
+- Fox, G. (1993). A comparison of 'policespeak' and 'normalspeak': A preliminary study. In J. M. Sinclair, M. Hoey, & G. Fox (Eds.), _Techniques of description_ (pp. 183–195). Routledge.
+- Grant, T. (2007). Quantifying evidence in forensic authorship analysis. _International Journal of Speech, Language and the Law_, 14(1), 1–25.
+- Grant, T. (2010). Txt 4n6: Idiolect free authorship analysis? In M. Coulthard & A. Johnson (Eds.), _The Routledge handbook of forensic linguistics_ (pp. 508–522). Routledge.
+- Hoover, D. L. (2004). Testing Burrows's Delta. _Literary and Linguistic Computing_, 19(4), 453–475.
+- Juola, P. (2013). Rowling and "Galbraith": An authorial analysis. _Language Log_, 16 July 2013.
+
+## References {.refs}
+
+- [Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduction to Forensic Phonetics and Forensic Linguistics_. Routledge. Chapters 11 and 12.]{.hl}
+- Mosteller, F., & Wallace, D. L. (1963). Inference in an authorship problem. _Journal of the American Statistical Association_, 58(302), 275–309.
+- Mosteller, F., & Wallace, D. L. (1964). _Inference and disputed authorship: The Federalist_. Addison-Wesley.
+- Nini, A. (2023). _A theory of linguistic individuality for authorship analysis_. Cambridge University Press.
+- Schler, J., Koppel, M., Argamon, S., & Pennebaker, J. W. (2006). Effects of age and gender on blogging. In _Computational approaches to analyzing weblogs: Papers from the 2006 AAAI Spring Symposium_ (pp. 199–205). AAAI Press.
+- Shuy, R. W. (2001). DARE's role in linguistic profiling. _DARE Newsletter_, 4(3).
+- _R v Bentley (deceased)_ [1998] EWCA Crim 2516.
+
+## Sources of the animal facts {.refs}
+
+- Derryberry, E. P., Phillips, J. N., Derryberry, G. E., Blum, M. J., & Luther, D. (2020). Singing in a silent spring: Birds respond to a half-century soundscape reversion during the COVID-19 shutdown. _Science_, 370(6516), 575–579. https://doi.org/10.1126/science.abd5777
+- Konishi, M. (1965). The role of auditory feedback in the control of vocalization in the white-crowned sparrow. _Zeitschrift für Tierpsychologie_, 22(7), 770–783.
+- Luther, D., & Baptista, L. (2010). Urban noise and the cultural evolution of bird songs. _Proceedings of the Royal Society B_, 277(1680), 469–473. https://doi.org/10.1098/rspb.2009.1571
+- Marler, P., & Tamura, M. (1962). Song "dialects" in three populations of white-crowned sparrows. _The Condor_, 64(5), 368–377.
+- Marler, P., & Tamura, M. (1964). Culturally transmitted patterns of vocal behavior in sparrows. _Science_, 146(3650), 1483–1486. https://doi.org/10.1126/science.146.3650.1483
+
+## Slides and code
+
+<div class="qr-block">
+<img src="`r qr_uri`" alt="QR code linking to these slides">
+<div>
+<p>These slides</p>
+<p class="qr-link">mcanzi.github.io/ws27_fss/<wbr>`r lecture_file`</p>
+<p>Code and all sessions</p>
+<p class="qr-link">github.com/mcanzi/ws27_fss</p>
+</div>
+</div>

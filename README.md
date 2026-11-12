@@ -1,6 +1,6 @@
 # Forensic Speech Science
 
-Slides for *Forensic Speech Science* (Dr Massimiliano Canzi, Department of Linguistics, University of Konstanz). Each session follows one chapter of Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024), *An Introduction to Forensic Phonetics and Forensic Linguistics*, Routledge: chapters 1 to 7 (forensic phonetics and LAAP) and chapter 13 (expert witnesses). The figures use simulated data, except for published results that are labelled as such (for example McGehee, 1937, in session 5).
+Slides for *Forensic Speech Science* (Dr Massimiliano Canzi, Department of Linguistics, University of Konstanz). The sessions follow the chapters of Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024), *An Introduction to Forensic Phonetics and Forensic Linguistics*, Routledge: chapters 1 to 7 (forensic phonetics and LAAP), chapters 10 to 12 (language in the legal process and authorship analysis) and chapter 13 (expert witnesses). Sessions 8 and 9 are built from the original studies those chapters cover. The figures use simulated data, except for published results that are labelled as such (for example McGehee, 1937, in session 5).
 
 | | Session | Chapter |
 |---|---|---|
@@ -11,7 +11,11 @@ Slides for *Forensic Speech Science* (Dr Massimiliano Canzi, Department of Lingu
 | 5 | Earwitness evidence | 5 |
 | 6 | Authentication, enhancement and speech content | 6 |
 | 7 | Linguistic analysis in the asylum procedure | 7 |
-| 8 | Expert witnesses | 13 |
+| 8 | Language in the legal process | 10 |
+| 9 | Authorship analysis | 11, 12 |
+| 10 | Expert witnesses | 13 |
+| 11 | Praat practical 1: measuring your own voice | 2, 4 |
+| 12 | Praat practical 2: casework with the class recordings | 3–5 |
 
 ## Rendering the slides
 

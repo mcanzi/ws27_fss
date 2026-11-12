@@ -53,7 +53,7 @@ options(
 )
 
 lecture_file <- sub("(\\.knit)?\\.(Rmd|md)$", ".html", knitr::current_input())
-lecture_count <- 10
+lecture_count <- 12
 lecture_label <- sprintf('"lecture %s / %s"', substr(lecture_file, 1, 2), lecture_count)
 slides_url <- paste0("https://mcanzi.github.io/ws27_fss/", lecture_file)
 

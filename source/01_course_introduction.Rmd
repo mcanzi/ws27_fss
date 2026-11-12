@@ -101,11 +101,11 @@ Leemann, A., Perkins, R., Sullivan Buker, G., & Foulkes, P. (2024). _An Introduc
 
 - Written by practitioners and researchers in both fields
 - Real cases, exercises and suggestions for further reading in every chapter
-- We cover the forensic phonetics part: chapters 1 to 7, and chapter 13 on expert witnesses
+- We cover the forensic phonetics part (chapters 1 to 7), two sessions on forensic linguistics, and chapter 13 on expert witnesses
 
 ## Syllabus {.smaller}
 
-Sessions 1–8 each follow one chapter of Leemann et al. (2024).
+Chapters of Leemann et al. (2024):
 
 | | Session | Chapter |
 |---|---|---|
@@ -116,9 +116,11 @@ Sessions 1–8 each follow one chapter of Leemann et al. (2024).
 | 5 | Earwitness evidence | 5 |
 | 6 | Authentication, enhancement and speech content | 6 |
 | 7 | Linguistic analysis in the asylum procedure | 7 |
-| 8 | Expert witnesses | 13 |
-| 9 | Praat practical 1: measuring your own voice | 2, 4 |
-| 10 | Praat practical 2: casework with the class recordings | 3–5 |
+| 8 | Language in the legal process | 10 |
+| 9 | Authorship analysis | 11, 12 |
+| 10 | Expert witnesses | 13 |
+| 11 | Praat practical 1: measuring your own voice | 2, 4 |
+| 12 | Praat practical 2: casework with the class recordings | 3–5 |
 
 ## Slides and materials
 
@@ -139,7 +141,7 @@ The book has exercises in every chapter, and we do many of them together.
 
 ## Recording your voice {.smaller}
 
-For the Praat practicals (sessions 9 and 10), each of you records yourself once in the LingLab booth, at any time before session 9. It takes about 15 minutes.
+For the Praat practicals (sessions 11 and 12), each of you records yourself once in the LingLab booth, at any time before session 11. It takes about 15 minutes.
 
 | Item | Content | File name |
 |---|---|---|
@@ -204,7 +206,7 @@ _Sources: Powys, Taylor & Probets (2013), Environmental Humanities; Probets, Tay
 ## Two fields
 
 - [Forensic phonetics]{.hl} deals with speech and voices as evidence: who is speaking and what was said, or whether a recording has been edited
-- [Forensic linguistics]{.hl} deals with language as evidence, from the authorship of a text to the language of police interviews and courtrooms
+- [Forensic linguistics]{.hl} deals with language as evidence, from the authorship of a text (session 9) to the language of police interviews and courtrooms (session 8)
 
 . . .
 
@@ -213,7 +215,7 @@ Despite the names, few practitioners work in both. Most specialise further, so c
 ## Where the fields meet
 
 - [Language analysis in the asylum procedure]{.hl} (LAAP): where does an asylum seeker's speech suggest they grew up? (session 7)
-- Record keeping, report writing and acting as an expert witness: the same principles apply in both fields, and in all forensic sciences (session 8)
+- Record keeping, report writing and acting as an expert witness: the same principles apply in both fields, and in all forensic sciences (session 10)
 
 ## You do it every day
 
